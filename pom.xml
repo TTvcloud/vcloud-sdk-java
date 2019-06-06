@@ -15,10 +15,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jre.version>1.6</jre.version>
-        <jackson.version>2.6.6</jackson.version>
         <skipTests>true</skipTests>
         <maven.javadoc.skip>true</maven.javadoc.skip>
-
         <dep.maven-surefire-plugin.version>2.9</dep.maven-surefire-plugin.version>
         <httpcomponents.httpclient.version>4.5.2</httpcomponents.httpclient.version>
         <dep.commons-lang.version>2.6</dep.commons-lang.version>
