@@ -10,14 +10,20 @@ import com.ttvcloud.model.ApiInfo;
 import com.ttvcloud.model.SdkResponse;
 import com.ttvcloud.model.ServiceInfo;
 import com.ttvcloud.model.SignableRequest;
+import com.ttvcloud.util.Utils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.http.Consts;
 import org.apache.http.Header;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.config.RequestConfig;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.utils.URIBuilder;
+import org.apache.http.client.utils.URLEncodedUtils;
+import org.apache.http.entity.BasicHttpEntity;
+import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
@@ -88,34 +94,81 @@ public abstract class BaseVcloudService implements VcloudService {
     }
 
     @Override
-    public SdkResponse query(String api, List<NameValuePair> query) {
+    public String getSignUrl(String api, Map<String, String> query) throws Exception {
         ApiInfo apiInfo = apiInfoList.get(api);
 
         if (apiInfo == null) {
-            return new SdkResponse(null, 500, new Exception("相关api不存在"));
+            throw new Exception("相关api不存在");
         }
-        int socketTimeout = getSocketTimeout(serviceInfo.getSocketTimeout(), apiInfo.getSocketTimeout());
-        int connectionTimeout = getConnectionTimeout(serviceInfo.getConnectionTimeout(), apiInfo.getConnectionTimeout());
-        SignableRequest request = new SignableRequest();
-        request.setMethod(apiInfo.getMethod());
 
-        Collection<Header> mergedH = mergeHeader(serviceInfo.getHeader(), apiInfo.getHeader());
-        for (Header header : mergedH) {
-            request.setHeader(header);
-        }
-        List<NameValuePair> mergedNV = mergeQuery(query, apiInfo.getQuery());
+        List<NameValuePair> mergedNV = mergeQuery(Utils.mapToPairList(query), apiInfo.getQuery());
+
+        SignableRequest request = new SignableRequest();
         URIBuilder builder = request.getUriBuilder();
 
+        request.setMethod(apiInfo.getMethod().toUpperCase());
         builder.setScheme("http");
         builder.setHost(serviceInfo.getHost());
         builder.setPath(apiInfo.getPath());
         builder.setParameters(mergedNV);
 
-        RequestConfig requestConfig = RequestConfig.custom()
-                .setSocketTimeout(socketTimeout)
-                .setConnectTimeout(connectionTimeout)
-                .build();
-        request.setConfig(requestConfig);
+        return signer.signUrl(request, serviceInfo.getCredentials());
+    }
+
+    @Override
+    public SdkResponse query(String api, Map<String, String> query) {
+        ApiInfo apiInfo = apiInfoList.get(api);
+
+        if (apiInfo == null) {
+            return new SdkResponse(null, 500, new Exception("相关api不存在"));
+        }
+
+        SignableRequest request = prepareRequest(api, query);
+
+        return makeRequest(api, request);
+    }
+
+    @Override
+    public SdkResponse json(String api, Map<String, String> query, String body) {
+        ApiInfo apiInfo = apiInfoList.get(api);
+
+        if (apiInfo == null) {
+            return new SdkResponse(null, 500, new Exception("相关api不存在"));
+        }
+
+        SignableRequest request = prepareRequest(api, query);
+
+        request.setHeader("Content-Type", "application/json");
+        request.setEntity(new StringEntity(body, "utf-8"));
+
+        return makeRequest(api, request);
+    }
+
+    @Override
+    public SdkResponse post(String api, Map<String, String> query, Map<String, String> form) {
+
+        ApiInfo apiInfo = apiInfoList.get(api);
+
+        if (apiInfo == null) {
+            return new SdkResponse(null, 500, new Exception("相关api不存在"));
+        }
+
+        SignableRequest request = prepareRequest(api, query);
+
+        request.setHeader("Content-Type", "application/x-www-form-urlencoded");
+        List<NameValuePair> mergedForm = mergeQuery(Utils.mapToPairList(form), apiInfo.getForm());
+
+        try {
+            Collections.sort(mergedForm, new Comparator<NameValuePair>() {
+                @Override
+                public int compare(NameValuePair o1, NameValuePair o2) {
+                    return o1.getName().compareTo(o2.getName());
+                }
+            });
+            request.setEntity(new UrlEncodedFormEntity(mergedForm));
+        } catch (Exception e) {
+            return new SdkResponse(null, 500, e);
+        }
 
         return makeRequest(api, request);
     }
@@ -146,6 +199,35 @@ public abstract class BaseVcloudService implements VcloudService {
             e.printStackTrace();
             return new SdkResponse(null, 500, e);
         }
+    }
+
+    private SignableRequest prepareRequest(String api, Map<String, String> query) {
+        ApiInfo apiInfo = apiInfoList.get(api);
+
+        int socketTimeout = getSocketTimeout(serviceInfo.getSocketTimeout(), apiInfo.getSocketTimeout());
+        int connectionTimeout = getConnectionTimeout(serviceInfo.getConnectionTimeout(), apiInfo.getConnectionTimeout());
+        SignableRequest request = new SignableRequest();
+        request.setMethod(apiInfo.getMethod().toUpperCase());
+
+        Collection<Header> mergedH = mergeHeader(serviceInfo.getHeader(), apiInfo.getHeader());
+        for (Header header : mergedH) {
+            request.setHeader(header);
+        }
+        List<NameValuePair> mergedNV = mergeQuery(Utils.mapToPairList(query), apiInfo.getQuery());
+        URIBuilder builder = request.getUriBuilder();
+
+        builder.setScheme("http");
+        builder.setHost(serviceInfo.getHost());
+        builder.setPath(apiInfo.getPath());
+        builder.setParameters(mergedNV);
+
+        RequestConfig requestConfig = RequestConfig.custom()
+                .setSocketTimeout(socketTimeout)
+                .setConnectTimeout(connectionTimeout)
+                .build();
+        request.setConfig(requestConfig);
+
+        return request;
     }
 
     private Collection<Header> mergeHeader(List<Header> header1, List<Header> header2) {
@@ -244,16 +326,8 @@ public abstract class BaseVcloudService implements VcloudService {
         return apiInfoList;
     }
 
-    public void setApiInfoList(Map<String, ApiInfo> apiInfoList) {
-        this.apiInfoList = apiInfoList;
-    }
-
     public Signer getSigner() {
         return signer;
-    }
-
-    public void setSigner(Signer signer) {
-        this.signer = signer;
     }
 
     public void setSocketTimeout(int socketTimeout) {

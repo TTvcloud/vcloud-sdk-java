@@ -1,4 +1,4 @@
-package com.ttvcloud.example;
+package com.ttvcloud.example.vodplay;
 
 import com.ttvcloud.model.vod.GetPlayInfoResp;
 import com.ttvcloud.model.vod.VodResponse;
@@ -8,7 +8,7 @@ import com.ttvcloud.service.vod.impl.VodServiceImpl;
 import java.util.HashMap;
 import java.util.Map;
 
-public class demo_vod_play {
+public class VodPlayDemo {
 
     public static void main(String[] args) {
         VodService vodService = VodServiceImpl.getInstance();

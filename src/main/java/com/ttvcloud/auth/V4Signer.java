@@ -29,6 +29,61 @@ public class V4Signer extends AbstractSigner{
         request.setURI(request.getUriBuilder().build());
     }
 
+    public String signUrl(SignableRequest request, Credentials credentials) throws Exception {
+
+        String ldt = timestampV4();
+        String sdt = ldt.substring(0,8);
+        MedaData meta = new MedaData();
+        meta.setDate(sdt);
+        meta.setService(credentials.getService());
+        meta.setRegion(credentials.getRegion());
+        meta.setSignedHeaders("");
+        meta.setAlgorithm("AWS4-HMAC-SHA256");
+        meta.setCredentialScope(concat("/", meta.getDate(), meta.getRegion(), meta.getService(), "aws4_request"));
+
+        URIBuilder builder = request.getUriBuilder();
+        builder.setParameter("X-Amz-Date", ldt);
+        builder.setParameter("X-Amz-NotSignBody", "");
+        builder.setParameter("X-Amz-Credential", credentials.getAccessKeyID()+"/"+meta.getCredentialScope());
+        builder.setParameter("X-Amz-Algorithm", meta.getAlgorithm());
+        builder.setParameter("X-Amz-SignedHeaders", meta.getSignedHeaders());
+        builder.setParameter("X-Amz-SignedQueries", "");
+        List<String> keys = new ArrayList<String>();
+        for (NameValuePair pair : builder.getQueryParams()) {
+            keys.add(pair.getName());
+        }
+        Collections.sort(keys, new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return o1.compareTo(o2);
+            }
+        });
+        builder.setParameter("X-Amz-SignedQueries", StringUtils.join(keys, ";"));
+
+        // Task 1
+        String hashedCanonReq = hashedSimpleCanonicalRequestV4(request, meta);
+
+        // Task 2
+        String stringToSign = concat("\n", meta.getAlgorithm(), ldt, meta.getCredentialScope(), hashedCanonReq);
+
+        // Task 3
+        byte[] signingKey = signingKeyV4(credentials.getSecretAccessKey(), meta.getDate(), meta.getRegion(), meta.getService());
+        String signature = signatureV4(signingKey, stringToSign);
+
+        builder.setParameter("X-Amz-Signature", signature);
+
+        List<NameValuePair> params = builder.getQueryParams();
+        Collections.sort(params, new Comparator<NameValuePair>() {
+            @Override
+            public int compare(NameValuePair o1, NameValuePair o2) {
+                return o1.getName().compareTo(o2.getName());
+            }
+        });
+        builder.clearParameters();
+        builder.setParameters(params);
+        return builder.build().toURL().getQuery();
+    }
+
     private void sign4(SignableRequest request, Credentials credentials) throws Exception {
 
         prepareRequestV4(request);
@@ -43,15 +98,29 @@ public class V4Signer extends AbstractSigner{
         String stringToSign = stringToSignV4(request, hashedCanonReq, meta);
 
         // Task 3
-        byte[] signingkey = signingKeyV4(credentials.getSecretAccessKey(), meta.getDate(), meta.getRegion(),
+        byte[] signingKey = signingKeyV4(credentials.getSecretAccessKey(), meta.getDate(), meta.getRegion(),
                 meta.getService());
-        String signature = signatureV4(signingkey, stringToSign);
+        String signature = signatureV4(signingKey, stringToSign);
 
         request.setHeader("Authorization", buildAuthHeaderV4(signature, meta, credentials));
     }
 
+    private String hashedSimpleCanonicalRequestV4(SignableRequest request, MedaData meta) throws Exception {
+        String payloadHash = hashSHA256(new byte[0]);
+
+        URIBuilder builder = request.getUriBuilder();
+        if (builder.getPath().equals("")) {
+            builder.setPath("/");
+        }
+
+        String canonicalRequest = concat("\n", request.getMethod(), normuri(builder.getPath()),
+                normquery(builder.getQueryParams()), "\n", meta.getSignedHeaders(), payloadHash);
+
+        return hashSHA256(canonicalRequest.getBytes());
+    }
+
     private String hashedCanonicalRequestV4(SignableRequest request, MedaData meta) throws Exception {
-       byte[] payload = readBody(request);
+        byte[] payload = readBody(request);
         String payloadHash = hashSHA256(payload);
         request.setHeader("X-Amz-Content-Sha256", payloadHash);
 
@@ -87,14 +156,10 @@ public class V4Signer extends AbstractSigner{
         }
 
         meta.setSignedHeaders(StringUtils.join(headers, ";"));
-        List<String> toJoin = new ArrayList<String>();
-        toJoin.add(request.getMethod());
-        toJoin.add(normuri(request.getUriBuilder().getPath()));
-        toJoin.add(normquery(request.getUriBuilder().getQueryParams()));
-        toJoin.add(headersToSign.toString());
-        toJoin.add(meta.getSignedHeaders());
-        toJoin.add(payloadHash);
-        String canonicalRequest = StringUtils.join(toJoin, "\n");
+
+        String canonicalRequest = concat("\n", request.getMethod(), normuri(request.getUriBuilder().getPath()),
+                normquery(request.getUriBuilder().getQueryParams()), headersToSign.toString(),
+                        meta.getSignedHeaders(), payloadHash);
 
         return hashSHA256(canonicalRequest.getBytes());
     }
@@ -105,18 +170,9 @@ public class V4Signer extends AbstractSigner{
         meta.setAlgorithm("AWS4-HMAC-SHA256");
 
         meta.setDate(tsDateV4(requestTs));
-        List<String> toJoin = new ArrayList<String>();
-        toJoin.add(meta.getDate());
-        toJoin.add(meta.getRegion());
-        toJoin.add(meta.getService());
-        toJoin.add("aws4_request");
-        meta.setCredentialScope(StringUtils.join(toJoin, "/"));
-        toJoin.clear();
-        toJoin.add(meta.getAlgorithm());
-        toJoin.add(requestTs);
-        toJoin.add(meta.getCredentialScope());
-        toJoin.add(hashedCanonReq);
-        return StringUtils.join(toJoin, "\n");
+        meta.setCredentialScope(concat("/", meta.getDate(), meta.getRegion(), meta.getService(), "aws4_request"));
+
+        return concat("\n", meta.getAlgorithm(), requestTs, meta.getCredentialScope(), hashedCanonReq);
     }
 
     private byte[] signingKeyV4(String secretKey, String date, String region, String service) throws Exception {
@@ -165,6 +221,10 @@ public class V4Signer extends AbstractSigner{
             builder.setPath(builder.getPath() + "/");
         }
 
+    }
+
+    private String concat(String delim, String... toJoin) {
+        return StringUtils.join(toJoin, delim);
     }
 
     private String timestampV4() {

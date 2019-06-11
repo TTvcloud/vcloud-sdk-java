@@ -49,6 +49,20 @@ public class Config {
                         }
                     }
             ));
+            put("StartTranscode", new ApiInfo(
+                    new HashMap<String, Object>(){
+                        {
+                            put(Method, "POST");
+                            put(Path, "/");
+                            put(Query, new ArrayList<NameValuePair>() {
+                                {
+                                    add(new BasicNameValuePair("Action", "StartTranscode"));
+                                    add(new BasicNameValuePair("Version", "2018-01-01"));
+                                }
+                            });
+                        }
+                    }
+            ));
         }
     };
 }

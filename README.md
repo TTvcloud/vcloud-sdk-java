@@ -20,7 +20,7 @@
 ```
 注：ak、sk可放入环境变量，也可以json格式放在～/.vcloud/config中
 
-#### servie可配置项：
+#### service可配置项：
 ```
     public void setClientNoReuse(); //不复用httpclient，每次通过HttpClients.createDefault()新建
 
@@ -33,10 +33,6 @@
     public void setHttpClient(HttpClient httpClient); //传入业务自己配置的httpclient
 
     public void setServiceInfo(ServiceInfo serviceInfo);
-
-    public void setApiInfoList(Map<String, ApiInfo> apiInfoList);
-
-    public void setSigner(Signer signer);
 
     public void setSocketTimeout(int socketTimeout);
 

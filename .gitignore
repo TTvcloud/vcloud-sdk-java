@@ -1,5 +1,4 @@
 .idea
 target
 .DS_Store
-*.pyc
 *.iml
