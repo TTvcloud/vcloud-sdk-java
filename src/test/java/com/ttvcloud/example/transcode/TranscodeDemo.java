@@ -2,7 +2,6 @@ package com.ttvcloud.example.transcode;
 
 import com.ttvcloud.model.vod.StartTranscodeRequest;
 import com.ttvcloud.model.vod.StartTranscodeResp;
-import com.ttvcloud.model.vod.VodResponse;
 import com.ttvcloud.service.vod.VodService;
 import com.ttvcloud.service.vod.impl.VodServiceImpl;
 
@@ -27,15 +26,14 @@ public class TranscodeDemo {
         req.setInput(input);
         req.setPriority(0);
 
-        VodResponse vodResponse = vodService.startTranscode(req);
-        if (vodResponse.getCode() == 0) {
-            StartTranscodeResp sTranscodeResp = (StartTranscodeResp) vodResponse.getResp();
-            if (sTranscodeResp.getResponseMetadata().getError() != null) {
-                System.out.println(sTranscodeResp.getResponseMetadata().getError());
+        try {
+            StartTranscodeResp resp = vodService.startTranscode(req);
+            if (resp.getResponseMetadata().getError() != null) {
+                System.out.println(resp.getResponseMetadata().getError());
             }
-            System.out.println(sTranscodeResp.getResult());
-        } else {
-            System.out.println(vodResponse);
+            System.out.println(resp.getResult());
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

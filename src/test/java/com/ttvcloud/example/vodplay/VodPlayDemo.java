@@ -1,7 +1,6 @@
 package com.ttvcloud.example.vodplay;
 
 import com.ttvcloud.model.vod.GetPlayInfoResp;
-import com.ttvcloud.model.vod.VodResponse;
 import com.ttvcloud.service.vod.VodService;
 import com.ttvcloud.service.vod.impl.VodServiceImpl;
 
@@ -18,13 +17,14 @@ public class VodPlayDemo {
 
         vodService.setAccessKey("your ak");
         vodService.setSecretKey("your sk");
-
-        VodResponse response = vodService.getPlayInfo(query);
-        if (response.getCode() == 0){
-            GetPlayInfoResp getPlayInfoResp = (GetPlayInfoResp) response.getResp();
-            System.out.println(getPlayInfoResp);
-        } else {
-            System.out.println(response);
+        try {
+            GetPlayInfoResp resp = vodService.getPlayInfo(query);
+            if (resp.getResponseMetadata().getError() != null) {
+                System.out.println(resp.getResponseMetadata().getError());
+            }
+            System.out.println(resp.getResult());
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

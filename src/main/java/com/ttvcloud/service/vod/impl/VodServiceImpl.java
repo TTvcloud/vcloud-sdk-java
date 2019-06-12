@@ -24,20 +24,17 @@ public class VodServiceImpl extends BaseVcloudService implements VodService {
     }
 
     @Override
-    public VodResponse getPlayInfo(Map<String, String> query) {
+    public GetPlayInfoResp getPlayInfo(Map<String, String> query) throws Exception {
 
         SdkResponse response = query("GetPlayInfo", query);
         if (response.getCode() != 0) {
-            return new VodResponse(response.getCode(), null, response.getException());
+            throw response.getException();
         }
-        try {
-            GetPlayInfoResp getPlayInfoResp = gson.fromJson(new String(response.getData()), GetPlayInfoResp.class);
-            getPlayInfoResp.getResponseMetadata().setService("vod");
 
-            return new VodResponse(0, getPlayInfoResp,null);
-        } catch (Exception e) {
-            return new VodResponse(500, null, e);
-        }
+        GetPlayInfoResp getPlayInfoResp = gson.fromJson(new String(response.getData()), GetPlayInfoResp.class);
+        getPlayInfoResp.getResponseMetadata().setService("vod");
+
+        return getPlayInfoResp;
 
     }
 
@@ -48,7 +45,7 @@ public class VodServiceImpl extends BaseVcloudService implements VodService {
     }
 
     @Override
-    public VodResponse startTranscode(StartTranscodeRequest req) {
+    public StartTranscodeResp startTranscode(StartTranscodeRequest req) throws Exception {
         Map<String, String> query = new HashMap<String, String>();
         query.put("TemplateId", req.getTemplateId());
 
@@ -61,14 +58,9 @@ public class VodServiceImpl extends BaseVcloudService implements VodService {
 
         SdkResponse resp = json("StartTranscode", query, body);
         if (resp.getCode() != 0) {
-            return new VodResponse(resp.getCode(), null, resp.getException());
+            throw resp.getException();
         }
 
-        try {
-            StartTranscodeResp transcodeResp = gson.fromJson(new String(resp.getData()), StartTranscodeResp.class);
-            return new VodResponse(0, transcodeResp, null);
-        } catch (Exception e) {
-            return new VodResponse(500, null, e);
-        }
+        return gson.fromJson(new String(resp.getData()), StartTranscodeResp.class);
     }
 }
