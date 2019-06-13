@@ -1,63 +1,69 @@
 package com.ttvcloud.model.vod;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.Map;
 
 public class StartTranscodeRequest {
 
-    private String Vid;
-    private String TemplateId;
-    private Map<String, Object> Input;
-    private int Priority;
+    @SerializedName("Vid")
+    private String vid;
+    @SerializedName("TemplateId")
+    private String templateId;
+    @SerializedName("Input")
+    private Map<String, Object> input;
+    @SerializedName("Priority")
+    private int priority;
 
     public StartTranscodeRequest(){
     }
 
     public StartTranscodeRequest(String vid, String templateId, Map<String, Object> input, int priority) {
-        this.Vid = vid;
-        this.TemplateId = templateId;
-        this.Input = input;
-        this.Priority = priority;
+        this.vid = vid;
+        this.templateId = templateId;
+        this.input = input;
+        this.priority = priority;
     }
 
     public String getVid() {
-        return Vid;
+        return vid;
     }
 
     public void setVid(String vid) {
-        Vid = vid;
+        this.vid = vid;
     }
 
     public String getTemplateId() {
-        return TemplateId;
+        return templateId;
     }
 
     public void setTemplateId(String templateId) {
-        TemplateId = templateId;
+        this.templateId = templateId;
     }
 
     public Map<String, Object> getInput() {
-        return Input;
+        return input;
     }
 
     public void setInput(Map<String, Object> input) {
-        Input = input;
+        this.input = input;
     }
 
     public int getPriority() {
-        return Priority;
+        return priority;
     }
 
     public void setPriority(int priority) {
-        Priority = priority;
+        this.priority = priority;
     }
 
     @Override
     public String toString() {
         return "StartTranscodeRequest{" +
-                "Vid='" + Vid + '\'' +
-                ", TemplateId='" + TemplateId + '\'' +
-                ", Input=" + Input +
-                ", Priority=" + Priority +
+                "vid='" + vid + '\'' +
+                ", templateId='" + templateId + '\'' +
+                ", input=" + input +
+                ", priority=" + priority +
                 '}';
     }
 }

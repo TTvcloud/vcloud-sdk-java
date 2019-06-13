@@ -1,43 +1,57 @@
 package com.ttvcloud.model.vod;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.Map;
 
 public class TranscodeRequestBody {
 
-    private String Vid;
-    private Map<String, Object> Input;
-    private int Priority;
+    @SerializedName("Vid")
+    private String vid;
+    @SerializedName("Input")
+    private Map<String, Object> input;
+    @SerializedName("Priority")
+    private int priority;
 
     public TranscodeRequestBody() {
     }
 
     public TranscodeRequestBody(String vid, Map<String, Object> input, int priority) {
-        Vid = vid;
-        Input = input;
-        Priority = priority;
+        this.vid = vid;
+        this.input = input;
+        this.priority = priority;
     }
 
     public String getVid() {
-        return Vid;
+        return vid;
     }
 
     public void setVid(String vid) {
-        Vid = vid;
+        this.vid = vid;
     }
 
     public Map<String, Object> getInput() {
-        return Input;
+        return input;
     }
 
     public void setInput(Map<String, Object> input) {
-        Input = input;
+        this.input = input;
     }
 
     public int getPriority() {
-        return Priority;
+        return priority;
     }
 
     public void setPriority(int priority) {
-        Priority = priority;
+        this.priority = priority;
+    }
+
+    @Override
+    public String toString() {
+        return "TranscodeRequestBody{" +
+                "vid='" + vid + '\'' +
+                ", input=" + input +
+                ", priority=" + priority +
+                '}';
     }
 }

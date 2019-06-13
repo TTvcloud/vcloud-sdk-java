@@ -1,7 +1,10 @@
 package com.ttvcloud.model.vod;
 
+import com.google.gson.annotations.SerializedName;
+
 public class StartTranscodeResult {
 
+    @SerializedName("RunId")
     private String RunId;
 
     public String getRunId() {

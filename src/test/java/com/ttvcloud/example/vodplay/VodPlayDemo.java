@@ -15,8 +15,8 @@ public class VodPlayDemo {
         Map<String, String> query = new HashMap<String, String>();
         query.put("video_id", "your vid");
 
-        vodService.setAccessKey("your ak");
-        vodService.setSecretKey("your sk");
+//        vodService.setAccessKey("your ak");
+//        vodService.setSecretKey("your sk");
         try {
             GetPlayInfoResp resp = vodService.getPlayInfo(query);
             if (resp.getResponseMetadata().getError() != null) {

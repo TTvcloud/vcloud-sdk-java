@@ -1,82 +1,91 @@
 package com.ttvcloud.model.vod;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.Arrays;
 
 public class GetPlayInfoInner {
-    private int Status;
-    private String VideoID;
-    private String CoverUrl;
-    private float Duration;
-    private String MediaType;
-    private PlayInfo[] PlayInfoList;
-    private int TotalCount;
+    @SerializedName("Status")
+    private int status;
+    @SerializedName("VideoID")
+    private String videoID;
+    @SerializedName("CoverUrl")
+    private String coverUrl;
+    @SerializedName("Duration")
+    private float duration;
+    @SerializedName("MediaType")
+    private String mediaType;
+    @SerializedName("PlayInfoList")
+    private PlayInfo[] playInfoList;
+    @SerializedName("TotalCount")
+    private int totalCount;
 
     public int getStatus() {
-        return Status;
+        return status;
     }
 
     public void setStatus(int status) {
-        Status = status;
+        this.status = status;
     }
 
     public String getVideoID() {
-        return VideoID;
+        return videoID;
     }
 
     public void setVideoID(String videoID) {
-        VideoID = videoID;
+        this.videoID = videoID;
     }
 
     public String getCoverUrl() {
-        return CoverUrl;
+        return coverUrl;
     }
 
     public void setCoverUrl(String coverUrl) {
-        CoverUrl = coverUrl;
+        this.coverUrl = coverUrl;
     }
 
     public float getDuration() {
-        return Duration;
+        return duration;
     }
 
     public void setDuration(float duration) {
-        Duration = duration;
+        this.duration = duration;
     }
 
     public String getMediaType() {
-        return MediaType;
+        return mediaType;
     }
 
     public void setMediaType(String mediaType) {
-        MediaType = mediaType;
+        this.mediaType = mediaType;
     }
 
     public PlayInfo[] getPlayInfoList() {
-        return PlayInfoList;
+        return playInfoList;
     }
 
     public void setPlayInfoList(PlayInfo[] playInfoList) {
-        PlayInfoList = playInfoList;
+        this.playInfoList = playInfoList;
     }
 
     public int getTotalCount() {
-        return TotalCount;
+        return totalCount;
     }
 
     public void setTotalCount(int totalCount) {
-        TotalCount = totalCount;
+        this.totalCount = totalCount;
     }
 
     @Override
     public String toString() {
         return "GetPlayInfoInner{" +
-                "Status=" + Status +
-                ", VideoID='" + VideoID + '\'' +
-                ", CoverUrl='" + CoverUrl + '\'' +
-                ", Duration=" + Duration +
-                ", MediaType='" + MediaType + '\'' +
-                ", PlayInfoList=" + Arrays.toString(PlayInfoList) +
-                ", TotalCount=" + TotalCount +
+                "status=" + status +
+                ", videoID='" + videoID + '\'' +
+                ", coverUrl='" + coverUrl + '\'' +
+                ", duration=" + duration +
+                ", mediaType='" + mediaType + '\'' +
+                ", playInfoList=" + Arrays.toString(playInfoList) +
+                ", totalCount=" + totalCount +
                 '}';
     }
 }

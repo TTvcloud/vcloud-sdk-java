@@ -8,6 +8,7 @@ import java.util.Map;
 
 import static com.ttvcloud.util.Const.*;
 
+@SuppressWarnings("unchecked")
 public class ServiceInfo {
 
     private int connectionTimeout;

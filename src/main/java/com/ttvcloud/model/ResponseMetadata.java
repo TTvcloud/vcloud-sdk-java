@@ -1,71 +1,79 @@
 package com.ttvcloud.model;
 
+import com.google.gson.annotations.SerializedName;
+
 public class ResponseMetadata {
 
-    private String RequestId;
-    private String Service;
-    private String Region;
-    private String Action;
-    private String Version;
-    private ErrorObj Error;
+    @SerializedName("RequestId")
+    private String requestId;
+    @SerializedName("Service")
+    private String service;
+    @SerializedName("Region")
+    private String region;
+    @SerializedName("Action")
+    private String action;
+    @SerializedName("Version")
+    private String version;
+    @SerializedName("Error")
+    private ErrorObj error;
 
     public String getRequestId() {
-        return RequestId;
+        return requestId;
     }
 
     public void setRequestId(String requestId) {
-        RequestId = requestId;
+        this.requestId = requestId;
     }
 
     public String getService() {
-        return Service;
+        return service;
     }
 
     public void setService(String service) {
-        Service = service;
+        this.service = service;
     }
 
     public String getRegion() {
-        return Region;
+        return region;
     }
 
     public void setRegion(String region) {
-        Region = region;
+        this.region = region;
     }
 
     public String getAction() {
-        return Action;
+        return action;
     }
 
     public void setAction(String action) {
-        Action = action;
+        this.action = action;
     }
 
     public String getVersion() {
-        return Version;
+        return version;
     }
 
     public void setVersion(String version) {
-        Version = version;
+        this.version = version;
     }
 
     public ErrorObj getError() {
-        return Error;
+        return error;
     }
 
     public void setError(ErrorObj error) {
-        Error = error;
+        this.error = error;
     }
 
     @Override
     public String toString() {
         return "ResponseMetadata{" +
-                "RequestId='" + RequestId + '\'' +
-                ", Service='" + Service + '\'' +
-                ", Region='" + Region + '\'' +
-                ", Action='" + Action + '\'' +
-                ", Version='" + Version + '\'' +
-                ", Error=" + Error +
+                "requestId='" + requestId + '\'' +
+                ", service='" + service + '\'' +
+                ", region='" + region + '\'' +
+                ", action='" + action + '\'' +
+                ", version='" + version + '\'' +
+                ", error=" + error +
                 '}';
     }
 }

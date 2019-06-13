@@ -1,201 +1,222 @@
 package com.ttvcloud.model.vod;
 
+import com.google.gson.annotations.SerializedName;
+
 public class PlayInfo {
 
-    private int Bitrate;
-    private String FileHash;
-    private int Size;
-    private int Height;
-    private int Width;
-    private String Format;
-    private String Codec;
-    private String Logo;
-    private String Definition;
-    private String Quality;
-    private String PlayAuth;
-    private String MainPlayUrl;
-    private String BackupPlayUrl;
-    private String FileID;
-    private String P2pVerifyURL;
-    private int PreloadInterval;
-    private int PreloadMaxStep;
-    private int PreloadMinStep;
-    private int PreloadSize;
+    @SerializedName("Bitrate")
+    private int bitrate;
+    @SerializedName("FileHash")
+    private String fileHash;
+    @SerializedName("Size")
+    private int size;
+    @SerializedName("Height")
+    private int height;
+    @SerializedName("Width")
+    private int width;
+    @SerializedName("Format")
+    private String format;
+    @SerializedName("Codec")
+    private String codec;
+    @SerializedName("Logo")
+    private String logo;
+    @SerializedName("Definition")
+    private String definition;
+    @SerializedName("Quality")
+    private String quality;
+    @SerializedName("PlayAuth")
+    private String playAuth;
+    @SerializedName("MainPlayUrl")
+    private String mainPlayUrl;
+    @SerializedName("BackupPlayUrl")
+    private String backupPlayUrl;
+    @SerializedName("FileID")
+    private String fileID;
+    @SerializedName("P2pVerifyURL")
+    private String p2pVerifyURL;
+    @SerializedName("PreloadInterval")
+    private int preloadInterval;
+    @SerializedName("PreloadMaxStep")
+    private int preloadMaxStep;
+    @SerializedName("PreloadMinStep")
+    private int preloadMinStep;
+    @SerializedName("PreloadSize")
+    private int preloadSize;
 
     public int getBitrate() {
-        return Bitrate;
+        return bitrate;
     }
 
     public void setBitrate(int bitrate) {
-        Bitrate = bitrate;
+        this.bitrate = bitrate;
     }
 
     public String getFileHash() {
-        return FileHash;
+        return fileHash;
     }
 
     public void setFileHash(String fileHash) {
-        FileHash = fileHash;
+        this.fileHash = fileHash;
     }
 
     public int getSize() {
-        return Size;
+        return size;
     }
 
     public void setSize(int size) {
-        Size = size;
+        this.size = size;
     }
 
     public int getHeight() {
-        return Height;
+        return height;
     }
 
     public void setHeight(int height) {
-        Height = height;
+        this.height = height;
     }
 
     public int getWidth() {
-        return Width;
+        return width;
     }
 
     public void setWidth(int width) {
-        Width = width;
+        this.width = width;
     }
 
     public String getFormat() {
-        return Format;
+        return format;
     }
 
     public void setFormat(String format) {
-        Format = format;
+        this.format = format;
     }
 
     public String getCodec() {
-        return Codec;
+        return codec;
     }
 
     public void setCodec(String codec) {
-        Codec = codec;
+        this.codec = codec;
     }
 
     public String getLogo() {
-        return Logo;
+        return logo;
     }
 
     public void setLogo(String logo) {
-        Logo = logo;
+        this.logo = logo;
     }
 
     public String getDefinition() {
-        return Definition;
+        return definition;
     }
 
     public void setDefinition(String definition) {
-        Definition = definition;
+        this.definition = definition;
     }
 
     public String getQuality() {
-        return Quality;
+        return quality;
     }
 
     public void setQuality(String quality) {
-        Quality = quality;
+        this.quality = quality;
     }
 
     public String getPlayAuth() {
-        return PlayAuth;
+        return playAuth;
     }
 
     public void setPlayAuth(String playAuth) {
-        PlayAuth = playAuth;
+        this.playAuth = playAuth;
     }
 
     public String getMainPlayUrl() {
-        return MainPlayUrl;
+        return mainPlayUrl;
     }
 
     public void setMainPlayUrl(String mainPlayUrl) {
-        MainPlayUrl = mainPlayUrl;
+        this.mainPlayUrl = mainPlayUrl;
     }
 
     public String getBackupPlayUrl() {
-        return BackupPlayUrl;
+        return backupPlayUrl;
     }
 
     public void setBackupPlayUrl(String backupPlayUrl) {
-        BackupPlayUrl = backupPlayUrl;
+        this.backupPlayUrl = backupPlayUrl;
     }
 
     public String getFileID() {
-        return FileID;
+        return fileID;
     }
 
     public void setFileID(String fileID) {
-        FileID = fileID;
+        this.fileID = fileID;
     }
 
     public String getP2pVerifyURL() {
-        return P2pVerifyURL;
+        return p2pVerifyURL;
     }
 
     public void setP2pVerifyURL(String p2pVerifyURL) {
-        P2pVerifyURL = p2pVerifyURL;
+        this.p2pVerifyURL = p2pVerifyURL;
     }
 
     public int getPreloadInterval() {
-        return PreloadInterval;
+        return preloadInterval;
     }
 
     public void setPreloadInterval(int preloadInterval) {
-        PreloadInterval = preloadInterval;
+        this.preloadInterval = preloadInterval;
     }
 
     public int getPreloadMaxStep() {
-        return PreloadMaxStep;
+        return preloadMaxStep;
     }
 
     public void setPreloadMaxStep(int preloadMaxStep) {
-        PreloadMaxStep = preloadMaxStep;
+        this.preloadMaxStep = preloadMaxStep;
     }
 
     public int getPreloadMinStep() {
-        return PreloadMinStep;
+        return preloadMinStep;
     }
 
     public void setPreloadMinStep(int preloadMinStep) {
-        PreloadMinStep = preloadMinStep;
+        this.preloadMinStep = preloadMinStep;
     }
 
     public int getPreloadSize() {
-        return PreloadSize;
+        return preloadSize;
     }
 
     public void setPreloadSize(int preloadSize) {
-        PreloadSize = preloadSize;
+        this.preloadSize = preloadSize;
     }
 
     @Override
     public String toString() {
         return "PlayInfo{" +
-                "Bitrate=" + Bitrate +
-                ", FileHash='" + FileHash + '\'' +
-                ", Size=" + Size +
-                ", Height=" + Height +
-                ", Width=" + Width +
-                ", Format='" + Format + '\'' +
-                ", Codec='" + Codec + '\'' +
-                ", Logo='" + Logo + '\'' +
-                ", Definition='" + Definition + '\'' +
-                ", Quality='" + Quality + '\'' +
-                ", PlayAuth='" + PlayAuth + '\'' +
-                ", MainPlayUrl='" + MainPlayUrl + '\'' +
-                ", BackupPlayUrl='" + BackupPlayUrl + '\'' +
-                ", FileID='" + FileID + '\'' +
-                ", P2pVerifyURL='" + P2pVerifyURL + '\'' +
-                ", PreloadInterval=" + PreloadInterval +
-                ", PreloadMaxStep=" + PreloadMaxStep +
-                ", PreloadMinStep=" + PreloadMinStep +
-                ", PreloadSize=" + PreloadSize +
+                "bitrate=" + bitrate +
+                ", fileHash='" + fileHash + '\'' +
+                ", size=" + size +
+                ", height=" + height +
+                ", width=" + width +
+                ", format='" + format + '\'' +
+                ", codec='" + codec + '\'' +
+                ", logo='" + logo + '\'' +
+                ", definition='" + definition + '\'' +
+                ", quality='" + quality + '\'' +
+                ", playAuth='" + playAuth + '\'' +
+                ", mainPlayUrl='" + mainPlayUrl + '\'' +
+                ", backupPlayUrl='" + backupPlayUrl + '\'' +
+                ", fileID='" + fileID + '\'' +
+                ", p2pVerifyURL='" + p2pVerifyURL + '\'' +
+                ", preloadInterval=" + preloadInterval +
+                ", preloadMaxStep=" + preloadMaxStep +
+                ", preloadMinStep=" + preloadMinStep +
+                ", preloadSize=" + preloadSize +
                 '}';
     }
 }

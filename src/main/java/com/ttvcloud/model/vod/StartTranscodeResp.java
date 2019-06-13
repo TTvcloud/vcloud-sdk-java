@@ -1,33 +1,36 @@
 package com.ttvcloud.model.vod;
 
+import com.google.gson.annotations.SerializedName;
 import com.ttvcloud.model.ResponseMetadata;
 
 public class StartTranscodeResp {
 
-    private ResponseMetadata ResponseMetadata;
-    private StartTranscodeResult Result;
+    @SerializedName("ResponseMetadata")
+    private ResponseMetadata responseMetadata;
+    @SerializedName("Result")
+    private StartTranscodeResult result;
 
-    public com.ttvcloud.model.ResponseMetadata getResponseMetadata() {
-        return ResponseMetadata;
+    public ResponseMetadata getResponseMetadata() {
+        return responseMetadata;
     }
 
-    public void setResponseMetadata(com.ttvcloud.model.ResponseMetadata responseMetadata) {
-        ResponseMetadata = responseMetadata;
+    public void setResponseMetadata(ResponseMetadata responseMetadata) {
+        this.responseMetadata = responseMetadata;
     }
 
     public StartTranscodeResult getResult() {
-        return Result;
+        return result;
     }
 
     public void setResult(StartTranscodeResult result) {
-        Result = result;
+        this.result = result;
     }
 
     @Override
     public String toString() {
         return "StartTranscodeResp{" +
-                "ResponseMetadata=" + ResponseMetadata +
-                ", Result=" + Result +
+                "responseMetadata=" + responseMetadata +
+                ", result=" + result +
                 '}';
     }
 }

@@ -1,20 +1,24 @@
 package com.ttvcloud.model.vod;
 
+import com.google.gson.annotations.SerializedName;
+
 public class GetPlayInfoData {
-    private GetPlayInfoInner Data;
+
+    @SerializedName("Data")
+    private GetPlayInfoInner data;
 
     public GetPlayInfoInner getData() {
-        return Data;
+        return data;
     }
 
     public void setData(GetPlayInfoInner data) {
-        Data = data;
+        this.data = data;
     }
 
     @Override
     public String toString() {
         return "GetPlayInfoData{" +
-                "Data=" + Data +
+                "data=" + data +
                 '}';
     }
 }

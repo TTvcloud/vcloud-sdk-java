@@ -1,31 +1,35 @@
 package com.ttvcloud.model;
 
+import com.google.gson.annotations.SerializedName;
+
 public class ErrorObj {
 
-    private String Status;
-    private String Message;
+    @SerializedName("Status")
+    private String status;
+    @SerializedName("Message")
+    private String message;
 
     public String getStatus() {
-        return Status;
+        return status;
     }
 
     public void setStatus(String status) {
-        Status = status;
+        this.status = status;
     }
 
     public String getMessage() {
-        return Message;
+        return message;
     }
 
     public void setMessage(String message) {
-        Message = message;
+        this.message = message;
     }
 
     @Override
     public String toString() {
         return "ErrorObj{" +
-                "Status='" + Status + '\'' +
-                ", Message='" + Message + '\'' +
+                "status='" + status + '\'' +
+                ", message='" + message + '\'' +
                 '}';
     }
 }
