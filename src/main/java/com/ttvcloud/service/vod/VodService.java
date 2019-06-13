@@ -14,4 +14,6 @@ public interface VodService extends VcloudService {
     public String getPlayAuthToken(Map<String, String> query) throws Exception;
 
     public StartTranscodeResp startTranscode(StartTranscodeRequest req) throws Exception;
+
+    public String getUploadAuthToken(String space) throws Exception;
 }

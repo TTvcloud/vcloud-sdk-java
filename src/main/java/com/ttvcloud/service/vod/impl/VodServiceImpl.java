@@ -7,6 +7,7 @@ import com.ttvcloud.service.BaseVcloudService;
 import com.ttvcloud.service.vod.Config;
 import com.ttvcloud.service.vod.VodService;
 
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -63,4 +64,24 @@ public class VodServiceImpl extends BaseVcloudService implements VodService {
 
         return gson.fromJson(new String(resp.getData()), StartTranscodeResp.class);
     }
+
+    @Override
+    public String getUploadAuthToken(String space) throws Exception{
+        Map<String, String> ret = new HashMap<String, String>();
+        ret.put("Version", "v1");
+
+        Map<String, String> query = new HashMap<String, String>();
+        query.put("SpaceName", space);
+
+        String applyUploadToken = getSignUrl("ApplyUpload", query);
+        ret.put("ApplyUploadToken", applyUploadToken);
+
+        String commitUploadToken = getSignUrl("CommitUpload", query);
+        ret.put("CommitUploadToken", commitUploadToken);
+
+        String retStr = gson.toJson(ret);
+        Base64.Encoder encoder = Base64.getEncoder();
+        return encoder.encodeToString(retStr.getBytes());
+    }
+
 }

@@ -36,32 +36,88 @@ public class Config {
     public static Map<String, ApiInfo> apiInfoList = new HashMap<String, ApiInfo>() {
         {
             put("GetPlayInfo", new ApiInfo(
-                    new HashMap<String, Object>(){
-                        {
-                            put(Method, "GET");
-                            put(Path, "/");
-                            put(Query, new ArrayList<NameValuePair>() {
-                                {
-                                    add(new BasicNameValuePair("Action", "GetPlayInfo"));
-                                    add(new BasicNameValuePair("Version", "2019-03-15"));
-                                }
-                            });
-                        }
+                new HashMap<String, Object>(){
+                    {
+                        put(Method, "GET");
+                        put(Path, "/");
+                        put(Query, new ArrayList<NameValuePair>() {
+                            {
+                                add(new BasicNameValuePair("Action", "GetPlayInfo"));
+                                add(new BasicNameValuePair("Version", "2019-03-15"));
+                            }
+                        });
                     }
+                }
             ));
             put("StartTranscode", new ApiInfo(
-                    new HashMap<String, Object>(){
-                        {
-                            put(Method, "POST");
-                            put(Path, "/");
-                            put(Query, new ArrayList<NameValuePair>() {
-                                {
-                                    add(new BasicNameValuePair("Action", "StartTranscode"));
-                                    add(new BasicNameValuePair("Version", "2018-01-01"));
-                                }
-                            });
-                        }
+                new HashMap<String, Object>(){
+                    {
+                        put(Method, "POST");
+                        put(Path, "/");
+                        put(Query, new ArrayList<NameValuePair>() {
+                            {
+                                add(new BasicNameValuePair("Action", "StartTranscode"));
+                                add(new BasicNameValuePair("Version", "2018-01-01"));
+                            }
+                        });
                     }
+                }
+            ));
+            put("UploadMediaByUrl", new ApiInfo(
+                new HashMap<String, Object>() {
+                    {
+                        put(Method, "GET");
+                        put(Path, "/");
+                        put(Query, new ArrayList<NameValuePair>() {
+                            {
+                                add(new BasicNameValuePair("Action", "UploadMediaByUrl"));
+                                add(new BasicNameValuePair("Version", "2018-01-01"));
+                            }
+                        });
+                    }
+                }
+            ));
+            put("ApplyUpload", new ApiInfo(
+                new HashMap<String, Object>() {
+                    {
+                        put(Method, "GET");
+                        put(Path, "/");
+                        put(Query, new ArrayList<NameValuePair>() {
+                            {
+                                add(new BasicNameValuePair("Action", "ApplyUpload"));
+                                add(new BasicNameValuePair("Version", "2018-01-01"));
+                            }
+                        });
+                    }
+                }
+            ));
+            put("CommitUpload", new ApiInfo(
+                new HashMap<String, Object>() {
+                    {
+                        put(Method, "POST");
+                        put(Path, "/");
+                        put(Query, new ArrayList<NameValuePair>() {
+                            {
+                                add(new BasicNameValuePair("Action", "CommitUpload"));
+                                add(new BasicNameValuePair("Version", "2018-01-01"));
+                            }
+                        });
+                    }
+                }
+            ));
+            put("SetVideoPublishStatus", new ApiInfo(
+                new HashMap<String, Object>() {
+                    {
+                        put(Method, "GET");
+                        put(Path, "/");
+                        put(Query, new ArrayList<NameValuePair>() {
+                            {
+                                add(new BasicNameValuePair("Action", "SetVideoPublishStatus"));
+                                add(new BasicNameValuePair("Version", "2018-01-01"));
+                            }
+                        });
+                    }
+                }
             ));
         }
     };

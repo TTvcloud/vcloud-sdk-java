@@ -22,5 +22,13 @@ public class GetTokenDemo {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        try {
+            String space = "your space";
+            String ret = vodService.getUploadAuthToken(space);
+            System.out.println(ret);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

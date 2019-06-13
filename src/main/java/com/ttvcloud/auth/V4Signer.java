@@ -52,12 +52,8 @@ public class V4Signer extends AbstractSigner{
         for (NameValuePair pair : builder.getQueryParams()) {
             keys.add(pair.getName());
         }
-        Collections.sort(keys, new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                return o1.compareTo(o2);
-            }
-        });
+        keys.sort(Comparator.naturalOrder());
+
         builder.setParameter("X-Amz-SignedQueries", StringUtils.join(keys, ";"));
 
         // Task 1
@@ -72,15 +68,6 @@ public class V4Signer extends AbstractSigner{
 
         builder.setParameter("X-Amz-Signature", signature);
 
-        List<NameValuePair> params = builder.getQueryParams();
-        Collections.sort(params, new Comparator<NameValuePair>() {
-            @Override
-            public int compare(NameValuePair o1, NameValuePair o2) {
-                return o1.getName().compareTo(o2.getName());
-            }
-        });
-        builder.clearParameters();
-        builder.setParameters(params);
         return builder.build().toURL().getQuery();
     }
 
@@ -134,12 +121,7 @@ public class V4Signer extends AbstractSigner{
                 headers.add(h.toLowerCase());
             }
         }
-        Collections.sort(headers, new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                return o1.compareTo(o2);
-            }
-        });
+        headers.sort(Comparator.naturalOrder());
         StringBuilder headersToSign = new StringBuilder();
         for (String h : headers) {
             String value = request.getFirstHeader(h).getValue().trim();
@@ -243,12 +225,7 @@ public class V4Signer extends AbstractSigner{
 
 
     private String normquery(List<NameValuePair> params) {
-        Collections.sort(params, new Comparator<NameValuePair>() {
-            @Override
-            public int compare(NameValuePair o1, NameValuePair o2) {
-                return o1.getName().compareTo(o2.getName());
-            }
-        });
+        params.sort(Comparator.comparing(NameValuePair::getName));
         String query = URLEncodedUtils.format(params, Consts.UTF_8);
         return query.replace("+", "%20");
     }
