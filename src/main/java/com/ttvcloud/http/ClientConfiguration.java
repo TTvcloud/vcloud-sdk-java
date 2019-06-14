@@ -15,13 +15,7 @@ public class ClientConfiguration {
 
     public static final int DEFAULT_MAX_CON_PER_ROUTE = 600;
 
-    public static final boolean DEFAULT_USE_REAPER = true;
 
-    public static final long DEFAULT_CONNECTION_TTL = -1;
-
-    public static final long DEFAULT_CONNECTION_MAX_IDLE_MILLIS = 60 * 1000;
-
-    public static final boolean DEFAULT_TCP_KEEP_ALIVE = false;
 
     private int maxConnections = DEFAULT_MAX_CONNECTIONS;
 
@@ -34,6 +28,7 @@ public class ClientConfiguration {
     private int requestTimeout = DEFAULT_REQUEST_TIMEOUT;
 
     private int clientExecutionTimeout = DEFAULT_CLIENT_EXECUTION_TIMEOUT;
+
 
     public int getMaxConnections() {
         return maxConnections;

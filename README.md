@@ -1,6 +1,6 @@
 ## TTVcloud SDK for Java
 
-#### vod 基本用法：
+#### vod 播放：
 ```
         VodService vodService = VodServiceImpl.getInstance();
 
@@ -18,6 +18,8 @@
             System.out.println(response);
         }
 ```
+##### 更多示例参见src/test/java/com/ttvcloud/example
+
 注：ak、sk可放入环境变量，也可以json格式放在～/.vcloud/config中
 
 #### service可配置项：
