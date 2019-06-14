@@ -18,7 +18,7 @@
             System.out.println(response);
         }
 ```
-##### 更多示例参见src/test/java/com/ttvcloud/example
+##### 更多示例参见src/test/java/com/bytedanceapi/example
 
 注：ak、sk可放入环境变量，也可以json格式放在～/.vcloud/config中
 
