@@ -1,7 +1,6 @@
 package com.bytedanceapi.auth;
 
 import org.apache.commons.codec.binary.Hex;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.http.*;
 import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.client.utils.URLEncodedUtils;
@@ -35,7 +34,7 @@ public class V4Signer extends AbstractSigner{
         meta.setRegion(credentials.getRegion());
         meta.setSignedHeaders("");
         meta.setAlgorithm("AWS4-HMAC-SHA256");
-        meta.setCredentialScope(concat("/", meta.getDate(), meta.getRegion(), meta.getService(), "aws4_request"));
+        meta.setCredentialScope(String.join("/", meta.getDate(), meta.getRegion(), meta.getService(), "aws4_request"));
 
         URIBuilder builder = request.getUriBuilder();
         builder.setParameter("X-Amz-Date", ldt);
@@ -50,13 +49,13 @@ public class V4Signer extends AbstractSigner{
         }
         keys.sort(Comparator.naturalOrder());
 
-        builder.setParameter("X-Amz-SignedQueries", StringUtils.join(keys, ";"));
+        builder.setParameter("X-Amz-SignedQueries", String.join(";", keys));
 
         // Task 1
         String hashedCanonReq = hashedSimpleCanonicalRequestV4(request, meta);
 
         // Task 2
-        String stringToSign = concat("\n", meta.getAlgorithm(), ldt, meta.getCredentialScope(), hashedCanonReq);
+        String stringToSign = String.join("\n", meta.getAlgorithm(), ldt, meta.getCredentialScope(), hashedCanonReq);
 
         // Task 3
         byte[] signingKey = signingKeyV4(credentials.getSecretAccessKey(), meta.getDate(), meta.getRegion(), meta.getService());
@@ -96,7 +95,7 @@ public class V4Signer extends AbstractSigner{
             builder.setPath("/");
         }
 
-        String canonicalRequest = concat("\n", request.getMethod(), normuri(builder.getPath()),
+        String canonicalRequest = String.join("\n", request.getMethod(), normuri(builder.getPath()),
                 normquery(builder.getQueryParams()), "\n", meta.getSignedHeaders(), payloadHash);
 
         return hashSHA256(canonicalRequest.getBytes());
@@ -133,9 +132,9 @@ public class V4Signer extends AbstractSigner{
             headersToSign.append(h).append(":").append(value).append("\n");
         }
 
-        meta.setSignedHeaders(StringUtils.join(headers, ";"));
+        meta.setSignedHeaders(String.join(";", headers));
 
-        String canonicalRequest = concat("\n", request.getMethod(), normuri(request.getUriBuilder().getPath()),
+        String canonicalRequest = String.join("\n", request.getMethod(), normuri(request.getUriBuilder().getPath()),
                 normquery(request.getUriBuilder().getQueryParams()), headersToSign.toString(),
                         meta.getSignedHeaders(), payloadHash);
 
@@ -148,9 +147,9 @@ public class V4Signer extends AbstractSigner{
         meta.setAlgorithm("AWS4-HMAC-SHA256");
 
         meta.setDate(tsDateV4(requestTs));
-        meta.setCredentialScope(concat("/", meta.getDate(), meta.getRegion(), meta.getService(), "aws4_request"));
+        meta.setCredentialScope(String.join("/", meta.getDate(), meta.getRegion(), meta.getService(), "aws4_request"));
 
-        return concat("\n", meta.getAlgorithm(), requestTs, meta.getCredentialScope(), hashedCanonReq);
+        return String.join("\n", meta.getAlgorithm(), requestTs, meta.getCredentialScope(), hashedCanonReq);
     }
 
     private byte[] signingKeyV4(String secretKey, String date, String region, String service) throws Exception {
@@ -201,9 +200,6 @@ public class V4Signer extends AbstractSigner{
 
     }
 
-    private String concat(String delim, String... toJoin) {
-        return StringUtils.join(toJoin, delim);
-    }
 
     private String timestampV4() {
         DateFormat df = new SimpleDateFormat(com.bytedanceapi.util.Const.TimeFormatV4);
