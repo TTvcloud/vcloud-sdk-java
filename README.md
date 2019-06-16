@@ -1,5 +1,14 @@
 ## TTVcloud SDK for Java
 
+#### maven依赖：
+```
+<dependency>
+    <groupId>com.bytedanceapi</groupId>
+    <artifactId>vcloud-sdk-java</artifactId>
+    <version>${version}</version>
+</dependency>
+```
+
 #### vod 播放：
 ```
         VodService vodService = VodServiceImpl.getInstance();
