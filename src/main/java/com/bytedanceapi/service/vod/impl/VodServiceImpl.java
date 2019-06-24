@@ -40,7 +40,15 @@ public class VodServiceImpl extends BaseVcloudService implements VodService {
 
     @Override
     public String getPlayAuthToken(Map<String, String> query) throws Exception {
-        return getSignUrl("GetPlayInfo", query);
+        Map<String, String> ret = new HashMap<String, String>();
+        ret.put("Version", "v1");
+
+        String getPlayInfoToken = getSignUrl("GetPlayInfo", query);
+        ret.put("GetPlayInfoToken", getPlayInfoToken);
+
+        String retStr = gson.toJson(ret);
+        Base64.Encoder encoder = Base64.getEncoder();
+        return encoder.encodeToString(retStr.getBytes());
     }
 
     @Override
