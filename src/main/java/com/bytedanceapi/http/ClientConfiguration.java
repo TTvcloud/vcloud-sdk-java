@@ -16,7 +16,6 @@ public class ClientConfiguration {
     public static final int DEFAULT_MAX_CON_PER_ROUTE = 600;
 
 
-
     private int maxConnections = DEFAULT_MAX_CONNECTIONS;
 
     private int maxConPerRoute = DEFAULT_MAX_CON_PER_ROUTE;

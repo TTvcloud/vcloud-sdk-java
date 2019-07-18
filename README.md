@@ -9,27 +9,50 @@
 </dependency>
 ```
 
-#### vod 播放：
+### API
+
+#### 上传:
 ```
-        VodService vodService = VodServiceImpl.getInstance();
-
-        Map<String, String> query = new HashMap<String, String>();
-        query.put("video_id", "your vid");
-
-        vodService.setAccessKey("your ak");
-        vodService.setSecretKey("your sk");
-
-        VodResponse response = vodService.getPlayInfo(query);
-        if (response.getCode() == 0){
-            GetPlayInfoResp getPlayInfoResp = (GetPlayInfoResp) response.getResp();
-            System.out.println(getPlayInfoResp);
-        } else {
-            System.out.println(response);
-        }
+        // 从本地文件上传
+        upload
+        // 从url上传
+        uploadMediaByUrl
 ```
+#### 转码:
+```
+        // 开始转码
+        startTranscode
+```
+
+#### 发布:
+```
+        // 设置发布状态
+        setVideoPublishStatus
+```
+#### 播放：
+```
+        // 获取播放地址
+        getPlayInfo
+        // 获取源片播放地址
+        getOriginVideoPlayInfo
+        // 获取重定向302地址
+        getRedirectPlay
+```
+#### 封面图:
+```
+        // 获取视频封面图播放地址
+        getPosterUrl
+```
+#### 其它图片:
+```
+        // 获取其它图片地址（带鉴权串）
+        getImageUrl
+```
+
 ##### 更多示例参见src/test/java/com/bytedanceapi/example
 
 注：ak、sk可放入环境变量，也可以json格式放在～/.vcloud/config中
+格式为：{"ak":"","sk":""}
 
 #### service可配置项：
 ```

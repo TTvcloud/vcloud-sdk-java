@@ -16,18 +16,11 @@ import org.apache.http.protocol.HttpContext;
 import java.io.IOException;
 import java.io.InterruptedIOException;
 import java.net.UnknownHostException;
-import java.util.concurrent.ExecutorService;
-
-import static java.util.concurrent.Executors.newSingleThreadExecutor;
 
 public class HttpClientFactory {
 
-    private static ConnectionKeepAliveStrategy connectionKeepAliveStrategy;
-
-    public static ExecutorService executorService = newSingleThreadExecutor();
-
-
-    public static HttpRequestRetryHandler httpRequestRetryHandler = new HttpRequestRetryHandler() {  //retry handler
+    public static HttpRequestRetryHandler httpRequestRetryHandler = new HttpRequestRetryHandler() {
+        @Override
         public boolean retryRequest(IOException exception,
                                     int executionCount, HttpContext context) {
             if (executionCount >= 5) {
@@ -49,12 +42,10 @@ public class HttpClientFactory {
                     .adapt(context);
             HttpRequest request = clientContext.getRequest();
 
-            if (!(request instanceof HttpEntityEnclosingRequest)) {
-                return true;
-            }
-            return false;
+            return !(request instanceof HttpEntityEnclosingRequest);
         }
     };
+    private static ConnectionKeepAliveStrategy connectionKeepAliveStrategy;
 
     public static HttpClient create(ClientConfiguration configuration) {
         PoolingHttpClientConnectionManager connectionManager = new PoolingHttpClientConnectionManager();
@@ -78,7 +69,9 @@ public class HttpClientFactory {
                 .setDefaultRequestConfig(RequestConfig.custom().setStaleConnectionCheckEnabled(true).build())
                 .build();
 
-        executorService.submit(new IdleConnectionMonitorThread(connectionManager));
+        Thread deamonThread = new Thread(new IdleConnectionMonitorThread(connectionManager));
+        deamonThread.setDaemon(true);
+        deamonThread.start();
         return httpClient;
     }
 

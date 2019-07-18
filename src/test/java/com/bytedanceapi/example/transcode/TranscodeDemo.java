@@ -1,31 +1,33 @@
 package com.bytedanceapi.example.transcode;
 
-import com.bytedanceapi.service.vod.VodService;
+import com.bytedanceapi.model.request.StartTranscodeRequest;
+import com.bytedanceapi.model.response.StartTranscodeResponse;
+import com.bytedanceapi.service.vod.IVodService;
 import com.bytedanceapi.service.vod.impl.VodServiceImpl;
-
-import java.util.HashMap;
-import java.util.Map;
 
 
 public class TranscodeDemo {
 
     public static void main(String[] args) {
-        VodService vodService = VodServiceImpl.getInstance();
+        IVodService vodService = VodServiceImpl.getInstance();
 
-//        vodService.setAccessKey("your ak");
-//        vodService.setSecretKey("your sk");
+        //vodService.setAccessKey("your ak");
+        //vodService.setSecretKey("your sk");
 
-        Map<String, Object> input = new HashMap<String, Object>();
-        input.put("watermark_str", "test");
+        //Map<String, Object> input = new HashMap<String, Object>();
+        //input.put("watermark_str", "test");
 
-        com.bytedanceapi.model.vod.StartTranscodeRequest req = new com.bytedanceapi.model.vod.StartTranscodeRequest();
-        req.setVid("your vid");
-        req.setTemplateId("your template id");
-        req.setInput(input);
+        String vid = "your vid";
+        String templateId = "template Id";
+
+        StartTranscodeRequest req = new StartTranscodeRequest();
+        req.setVid(vid);
+        req.setTemplateId(templateId);
+        //req.setInput(input);
         req.setPriority(0);
 
         try {
-            com.bytedanceapi.model.vod.StartTranscodeResp resp = vodService.startTranscode(req);
+            StartTranscodeResponse resp = vodService.startTranscode(req);
             if (resp.getResponseMetadata().getError() != null) {
                 System.out.println(resp.getResponseMetadata().getError());
             }
