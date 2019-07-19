@@ -19,8 +19,8 @@ public class ServiceInfo {
     private Credentials credentials;
 
     public ServiceInfo(Map<String, Object> params) {
-        this.connectionTimeout = ((Integer) params.get(ConnectionTimeout)) == null ? 0: (Integer) params.get(ConnectionTimeout);
-        this.socketTimeout = ((Integer) params.get(SocketTimeout)) == null ? 0 : (Integer) params.get(SocketTimeout);
+        this.connectionTimeout = ((Integer) params.get(CONNECTION_TIMEOUT)) == null ? 0: (Integer) params.get(CONNECTION_TIMEOUT);
+        this.socketTimeout = ((Integer) params.get(SOCKET_TIMEOUT)) == null ? 0 : (Integer) params.get(SOCKET_TIMEOUT);
         this.host = (String) params.get(Host);
         this.header = (List<Header>) params.get(Const.Header);
         this.credentials = (Credentials) params.get(Const.Credentials);

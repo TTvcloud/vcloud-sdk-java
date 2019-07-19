@@ -24,8 +24,8 @@ public class ApiInfo {
         this.path = (String) params.get(Const.Path);
         this.query = (List<NameValuePair>) params.get(Const.Query);
         this.form = (List<NameValuePair>) params.get(Const.Form);
-        this.connectionTimeout = params.get(Const.ConnectionTimeout) == null ? 0 : (Integer) params.get(Const.ConnectionTimeout);
-        this.socketTimeout = params.get(Const.SocketTimeout) == null ? 0 : (Integer) params.get(Const.SocketTimeout);
+        this.connectionTimeout = params.get(Const.CONNECTION_TIMEOUT) == null ? 0 : (Integer) params.get(Const.CONNECTION_TIMEOUT);
+        this.socketTimeout = params.get(Const.SOCKET_TIMEOUT) == null ? 0 : (Integer) params.get(Const.SOCKET_TIMEOUT);
         this.header = (List<Header>) params.get(Const.Header);
     }
 }

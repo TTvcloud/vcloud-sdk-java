@@ -9,8 +9,8 @@ public class Const {
 
     public static final String TIME_FORMAT_V4 = "yyyyMMdd'T'HHmmss'Z'";
 
-    public static final String ConnectionTimeout = "ConnectionTimeout";
-    public static final String SocketTimeout = "SocketTimeout";
+    public static final String CONNECTION_TIMEOUT = "ConnectionTimeout";
+    public static final String SOCKET_TIMEOUT = "SocketTimeout";
     public static final String Host = "Host";
     public static final String Header = "Header";
     public static final String Credentials = "Credentials";
@@ -19,8 +19,6 @@ public class Const {
     public static final String Path = "Path";
     public static final String Query = "Query";
     public static final String Form = "Form";
-
-    public static final String SpaceName = "SpaceName";
 
     public static final String FORMAT_JPEG = "jpeg";
     public static final String FORMAT_PNG = "png";
@@ -42,6 +40,7 @@ public class Const {
     public static final String VOD_TPL_SMART_CROP = "tplv-vod-cs";
     public static final String VOD_TPL_SIG = "tplv-bd-sig";
 
+    public static final String SpaceName = "SpaceName";
     // vod
     public static final String GetSpace = "GetSpace";
     public static final String GetPlayInfo = "GetPlayInfo";

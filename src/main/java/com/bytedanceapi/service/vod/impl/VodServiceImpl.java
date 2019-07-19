@@ -284,7 +284,8 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
         return encoder.encodeToString(retStr.getBytes());
     }
 
-    private ApplyUploadResponse applyUpload(ApplyUploadRequest applyUploadRequest) throws Exception {
+    @Override
+    public ApplyUploadResponse applyUpload(ApplyUploadRequest applyUploadRequest) throws Exception {
         RawResponse response = query(Const.ApplyUpload, Utils.paramsToMap(applyUploadRequest));
         if (response.getCode() != SdkError.SUCCESS.getNumber()) {
             throw response.getException();
@@ -295,9 +296,10 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
         return applyUploadResponse;
     }
 
-    private CommitUploadResponse commitUpload(CommitUploadRequest commitUploadRequest) throws Exception {
+    @Override
+    public CommitUploadResponse commitUpload(CommitUploadRequest commitUploadRequest) throws Exception {
         Map<String, String> params = new HashMap<>();
-        params.put("SpaceName", commitUploadRequest.getSpaceName());
+        params.put(Const.SpaceName, commitUploadRequest.getSpaceName());
 
         CommitUploadRequestBody commitUploadRequestBody = new CommitUploadRequestBody();
         commitUploadRequestBody.setCallbackArgs(commitUploadRequest.getCallbackArgs());

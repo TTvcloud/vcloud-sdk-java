@@ -195,14 +195,15 @@ public abstract class BaseServiceImpl implements IBaseService {
         } catch (Exception e) {
             return new RawResponse(null, SdkError.ESIGN.getNumber(), e);
         }
+        HttpClient client;
+        HttpResponse response = null;
         try {
-            HttpClient client;
             if (getHttpClient() != null) {
                 client = getHttpClient();
             } else {
                 client = HttpClients.createDefault();
             }
-            HttpResponse response = client.execute(request);
+            response = client.execute(request);
             int statusCode = response.getStatusLine().getStatusCode();
             if (statusCode >= 300) {
                 return new RawResponse(null, SdkError.EHTTP.getNumber(), new Exception(SdkError.getErrorDesc(SdkError.EHTTP)));
@@ -210,6 +211,9 @@ public abstract class BaseServiceImpl implements IBaseService {
             byte[] bytes = EntityUtils.toByteArray(response.getEntity());
             return new RawResponse(bytes, SdkError.SUCCESS.getNumber(), null);
         } catch (Exception e) {
+            if (response != null) {
+                EntityUtils.consumeQuietly(response.getEntity());
+            }
             return new RawResponse(null, SdkError.EHTTP.getNumber(), new Exception(SdkError.getErrorDesc(SdkError.EHTTP)));
         }
     }

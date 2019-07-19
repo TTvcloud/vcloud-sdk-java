@@ -19,7 +19,7 @@ public interface IVodService extends IBaseService {
     /**
      * Gets play info.
      *
-     * @param params the params
+     * @param getPlayInfoRequest the get play info request
      * @return the play info
      * @throws Exception the exception
      */
@@ -34,6 +34,24 @@ public interface IVodService extends IBaseService {
      */
     String getPlayAuthToken(Map<String, String> params) throws Exception;
 
+    /**
+     * Gets origin video play info.
+     *
+     * @param getOriginVideoPlayRequest the get origin video play request
+     * @return the origin video play info
+     * @throws Exception the exception
+     */
+    GetOriginVideoPlayResponse getOriginVideoPlayInfo(GetOriginVideoPlayRequest getOriginVideoPlayRequest) throws Exception;
+
+    /**
+     * Gets redirect play.
+     *
+     * @param getRedirectPlayRequest the get redirect play request
+     * @return the redirect play
+     * @throws Exception the exception
+     */
+    String getRedirectPlay(GetRedirectPlayRequest getRedirectPlayRequest) throws Exception;
+
 
     /**
      * Start transcode start transcode resp.
@@ -45,6 +63,60 @@ public interface IVodService extends IBaseService {
     StartTranscodeResponse startTranscode(StartTranscodeRequest req) throws Exception;
 
     /**
+     * Sets video publish status.
+     *
+     * @param setVideoPublishStatusRequest the set video publish status request
+     * @return the video publish status
+     * @throws Exception the exception
+     */
+    SetVideoPublishStatusResponse setVideoPublishStatus(SetVideoPublishStatusRequest setVideoPublishStatusRequest) throws Exception;
+
+    /**
+     * Gets domain weights.
+     *
+     * @param spaceName the space name
+     * @return the domain weights
+     * @throws Exception the exception
+     */
+    GetDomainWeightsResponse getDomainWeights(String spaceName);
+
+    /**
+     * Sets fallback domain weights.
+     *
+     * @param fallbackWeights the fallback weights
+     */
+    void setFallbackDomainWeights(Map<String, Integer> fallbackWeights);
+
+    /**
+     * Gets domain info.
+     *
+     * @param spaceName the space name
+     * @return the domain info
+     * @throws Exception the exception
+     */
+    DomainInfo getDomainInfo(String spaceName) throws Exception;
+
+    /**
+     * Gets poster url.
+     *
+     * @param spaceName    the space name
+     * @param uri          the uri
+     * @param imgUrlOption the img url option
+     * @return the poster url
+     */
+    ImgUrl getPosterUrl(String spaceName, String uri, ImgUrlOption imgUrlOption);
+
+    /**
+     * Gets image url.
+     *
+     * @param spaceName    the space name
+     * @param uri          the uri
+     * @param imgUrlOption the img url option
+     * @return the image url
+     */
+    ImgUrl getImageUrl(String spaceName, String uri, ImgUrlOption imgUrlOption);
+
+    /**
      * Gets upload auth token.
      *
      * @param space the space
@@ -54,29 +126,41 @@ public interface IVodService extends IBaseService {
     String getUploadAuthToken(String space) throws Exception;
 
     /**
-     * Gets domain weights.
+     * Apply upload apply upload response.
      *
-     * @param params the params
-     * @return the domain weights
+     * @param applyUploadRequest the apply upload request
+     * @return the apply upload response
      * @throws Exception the exception
      */
-    GetDomainWeightsResponse getDomainWeights(String spaceName);
+    ApplyUploadResponse applyUpload(ApplyUploadRequest applyUploadRequest) throws Exception;
 
-    void setFallbackDomainWeights(Map<String, Integer> fallbackWeights);
+    /**
+     * Commit upload commit upload response.
+     *
+     * @param commitUploadRequest the commit upload request
+     * @return the commit upload response
+     * @throws Exception the exception
+     */
+    CommitUploadResponse commitUpload(CommitUploadRequest commitUploadRequest) throws Exception;
 
-    DomainInfo getDomainInfo(String spaceName) throws Exception;
-
-    ImgUrl getPosterUrl(String spaceName, String uri, ImgUrlOption imgUrlOption);
-
-    ImgUrl getImageUrl(String spaceName, String uri, ImgUrlOption imgUrlOption);
-
-    GetOriginVideoPlayResponse getOriginVideoPlayInfo(GetOriginVideoPlayRequest getOriginVideoPlayRequest) throws Exception;
-
-    String getRedirectPlay(GetRedirectPlayRequest getRedirectPlayRequest) throws Exception;
-
+    /**
+     * Upload commit upload response.
+     *
+     * @param spaceName the space name
+     * @param filePath  the file path
+     * @param fileType  the file type
+     * @param functions the functions
+     * @return the commit upload response
+     * @throws Exception the exception
+     */
     CommitUploadResponse upload(String spaceName, String filePath, String fileType, List<Functions> functions) throws Exception;
 
+    /**
+     * Upload media by url upload media by url response.
+     *
+     * @param uploadMediaByUrlRequest the upload media by url request
+     * @return the upload media by url response
+     * @throws Exception the exception
+     */
     UploadMediaByUrlResponse uploadMediaByUrl(UploadMediaByUrlRequest uploadMediaByUrlRequest) throws Exception;
-
-    SetVideoPublishStatusResponse setVideoPublishStatus(SetVideoPublishStatusRequest setVideoPublishStatusRequest) throws Exception;
 }

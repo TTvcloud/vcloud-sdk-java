@@ -84,6 +84,7 @@ public interface IBaseService {
      * @param api    the api
      * @param params the params
      * @return the raw response
+     * @throws Exception the exception
      */
     RawResponse query(String api, Map<String, String> params) throws Exception;
 
@@ -104,6 +105,7 @@ public interface IBaseService {
      * @param params the params
      * @param body   the body
      * @return the raw response
+     * @throws Exception the exception
      */
     RawResponse json(String api, Map<String, String> params, String body) throws Exception;
 
@@ -114,8 +116,18 @@ public interface IBaseService {
      * @param params the params
      * @param form   the form
      * @return the raw response
+     * @throws Exception the exception
      */
     RawResponse post(String api, Map<String, String> params, Map<String, String> form) throws Exception;
 
+    /**
+     * Put boolean.
+     *
+     * @param url      the url
+     * @param filePath the file path
+     * @param headers  the headers
+     * @return the boolean
+     * @throws Exception the exception
+     */
     boolean put(String url, String filePath, Map<String, String> headers) throws Exception;
 }

@@ -18,8 +18,8 @@ public class IamConfig {
     public static ServiceInfo serviceInfo = new ServiceInfo(
             new HashMap<String, Object>() {
                 {
-                    put(Const.ConnectionTimeout, 5000);
-                    put(Const.SocketTimeout, 5000);
+                    put(Const.CONNECTION_TIMEOUT, 5000);
+                    put(Const.SOCKET_TIMEOUT, 5000);
                     put(Const.Host, "iam.bytedanceapi.com");
                     put(Const.Header, new ArrayList<Header>() {
                         {
