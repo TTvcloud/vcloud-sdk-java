@@ -5,7 +5,7 @@
 <dependency>
     <groupId>com.bytedanceapi</groupId>
     <artifactId>vcloud-sdk-java</artifactId>
-    <version>${version}</version>
+    <version>0.0.2</version>
 </dependency>
 ```
 

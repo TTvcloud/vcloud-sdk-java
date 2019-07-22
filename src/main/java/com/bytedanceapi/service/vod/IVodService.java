@@ -76,7 +76,6 @@ public interface IVodService extends IBaseService {
      *
      * @param spaceName the space name
      * @return the domain weights
-     * @throws Exception the exception
      */
     GetDomainWeightsResponse getDomainWeights(String spaceName);
 
