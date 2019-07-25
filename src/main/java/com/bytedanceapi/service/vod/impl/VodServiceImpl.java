@@ -154,6 +154,7 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
             this.fallbackDomainWeights = new HashMap<>();
         }
 
+        // it has no affect when multiple thread call, no need lock
         long now = System.currentTimeMillis() / 1000;
         if (this.lastDomainUpdateTime == -1 || now - this.lastDomainUpdateTime > UPDATE_INTERVAL) {
             try {
@@ -167,8 +168,8 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
                 // fallback
                 if (this.domainCache == null) {
                     this.domainCache = new HashMap<>();
+                    this.domainCache.put(spaceName, this.fallbackDomainWeights);
                 }
-                this.domainCache.put(spaceName, this.fallbackDomainWeights);
             }
         }
 
@@ -336,7 +337,7 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
         }
         long crc32 = Utils.crc32(filePath);
         if (crc32 == -1) {
-            throw new Exception(SdkError.getErrorDesc(SdkError.EINTERNAL));
+            throw new Exception("file crc32 error");
         }
         String checkSum = String.format("%x", crc32);
 
@@ -345,8 +346,11 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
 
         // apply upload
         ApplyUploadResponse applyUploadResponse = applyUpload(applyUploadRequest);
-        if (applyUploadResponse.getResponseMetadata().getError() != null || applyUploadResponse.getResult() == null || applyUploadResponse.getResult().getUploadAddress().getStoreInfos() == null) {
-            throw new Exception(SdkError.getErrorDesc(SdkError.ERESP));
+        if (applyUploadResponse.getResponseMetadata().getError() != null) {
+            throw new Exception(applyUploadResponse.getResponseMetadata().getError().getMessage());
+        }
+        if (applyUploadResponse.getResult() == null || applyUploadResponse.getResult().getUploadAddress().getStoreInfos() == null) {
+            throw new Exception("apply upload result is null");
         }
 
         String oid = applyUploadResponse.getResult().getUploadAddress().getStoreInfos().get(0).getStoreUri();
@@ -384,8 +388,8 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
 
         // commit upload
         CommitUploadResponse commitUploadResponse = commitUpload(commitUploadRequest);
-        if (commitUploadResponse.getResponseMetadata().getError() != null || commitUploadResponse.getResult() == null) {
-            throw new Exception(SdkError.getErrorDesc(SdkError.ERESP));
+        if (commitUploadResponse.getResponseMetadata().getError() != null) {
+            throw new Exception(commitUploadResponse.getResponseMetadata().getError().getMessage());
         }
 
         return commitUploadResponse;

@@ -19,14 +19,13 @@ public class GetPosterDemo {
         // construct IVodService
         IVodService vodService = VodServiceImpl.getInstance();
 
-        String ak = "ak";
-        String sk = "sk";
+        // call below method if you dont set ak and sk in ～/.vcloud/config
+        // vodService.setAccessKey("");
+        // vodService.setSecretKey("");
+
         String spaceName = "your spaceName";
         String uri = "your uri";
         String sig = "your sig";
-
-        vodService.setAccessKey(ak);
-        vodService.setSecretKey(sk);
 
         assert vodService.getAccessKey() != null;
         assert vodService.getSecretKey() != null;

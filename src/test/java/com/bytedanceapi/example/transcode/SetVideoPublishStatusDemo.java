@@ -9,8 +9,9 @@ public class SetVideoPublishStatusDemo {
     public static void main(String[] args) {
         IVodService vodService = VodServiceImpl.getInstance();
 
-        //vodService.setAccessKey("your ak");
-        //vodService.setSecretKey("your sk");
+        // call below method if you dont set ak and sk in ～/.vcloud/config
+        // vodService.setAccessKey("");
+        // vodService.setSecretKey("");
 
         String spaceName = "your spaceName";
         String vid = "your vid";

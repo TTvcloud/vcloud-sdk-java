@@ -16,8 +16,9 @@ public class VodPlayDemo {
 
         String videoId = "your vid";
 
-        // vodService.setAccessKey("your ak");
-        // vodService.setSecretKey("your sk");
+        // call below method if you dont set ak and sk in ～/.vcloud/config
+        // vodService.setAccessKey("");
+        // vodService.setSecretKey("");
 
         // get play info
         try {
