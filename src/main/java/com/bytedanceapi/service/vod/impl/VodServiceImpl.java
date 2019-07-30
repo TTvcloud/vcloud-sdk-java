@@ -17,13 +17,17 @@ import com.bytedanceapi.service.vod.VodConfig;
 
 import java.io.File;
 import java.util.*;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class VodServiceImpl extends BaseServiceImpl implements IVodService {
 
     private static final int UPDATE_INTERVAL = 10;
-    private long lastDomainUpdateTime = -1;
-    private Map<String, Map<String, Integer>> domainCache;
+    private Map<String, Map<String, Integer>> domainCache = new HashMap<>();
     private Map<String, Integer> fallbackDomainWeights;
+    private ReentrantReadWriteLock reentrantReadWriteLock = new ReentrantReadWriteLock();
+    private ScheduledThreadPoolExecutor scheduledExecutorService = new ScheduledThreadPoolExecutor(5);
 
     private VodServiceImpl() {
         super(VodConfig.serviceInfo, VodConfig.apiInfoList);
@@ -149,33 +153,43 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
     }
 
     @Override
+    public void shutdown() {
+        this.scheduledExecutorService.shutdown();
+    }
+
+    @Override
     public DomainInfo getDomainInfo(String spaceName) {
-        if (this.fallbackDomainWeights == null) {
-            this.fallbackDomainWeights = new HashMap<>();
+        reentrantReadWriteLock.readLock().lock();
+        if (!this.domainCache.containsKey(spaceName)) {
+            reentrantReadWriteLock.readLock().unlock();
+
+            reentrantReadWriteLock.writeLock().lock();
+            if (!this.domainCache.containsKey(spaceName)) {
+                Map<String, Integer> weightsMap;
+                try {
+                    GetDomainWeightsResponse getDomainWeightsResponse = getDomainWeights(spaceName);
+                    weightsMap = getDomainWeightsResponse.getResultMap().get(spaceName);
+                } catch (Exception e) {
+                    // fallback
+                    weightsMap = this.fallbackDomainWeights;
+                }
+                this.domainCache.put(spaceName, weightsMap);
+                reentrantReadWriteLock.writeLock().unlock();
+
+                AsyncGetDomainWeightsTask asyncGetDomainWeightsTask = new AsyncGetDomainWeightsTask(spaceName, this);
+                this.scheduledExecutorService.scheduleWithFixedDelay(asyncGetDomainWeightsTask, UPDATE_INTERVAL, UPDATE_INTERVAL, TimeUnit.SECONDS);
+            } else {
+                reentrantReadWriteLock.writeLock().unlock();
+            }
+        } else {
+            reentrantReadWriteLock.readLock().unlock();
         }
 
-        // it has no affect when multiple thread call, no need lock
-        long now = System.currentTimeMillis() / 1000;
-        if (this.lastDomainUpdateTime == -1 || now - this.lastDomainUpdateTime > UPDATE_INTERVAL) {
-            try {
-                GetDomainWeightsResponse getDomainWeightsResponse = getDomainWeights(spaceName);
-                if (this.domainCache == null) {
-                    this.domainCache = new HashMap<>();
-                }
-                this.domainCache.put(spaceName, getDomainWeightsResponse.getResultMap().get(spaceName));
-                this.lastDomainUpdateTime = now;
-            } catch (Exception e) {
-                // fallback
-                if (this.domainCache == null) {
-                    this.domainCache = new HashMap<>();
-                    this.domainCache.put(spaceName, this.fallbackDomainWeights);
-                }
-            }
-        }
+        Map<String, Integer> cache = this.domainCache.get(spaceName);
 
         DomainInfo domainInfo = new DomainInfo();
-        String mainDomain = Utils.randWeights(this.domainCache.get(spaceName), "");
-        String backupDomain = Utils.randWeights(this.domainCache.get(spaceName), mainDomain);
+        String mainDomain = Utils.randWeights(cache, "");
+        String backupDomain = Utils.randWeights(cache, mainDomain);
         domainInfo.setMainDomain(mainDomain);
         domainInfo.setBackupDomain(backupDomain);
         return domainInfo;
@@ -394,4 +408,32 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
 
         return commitUploadResponse;
     }
+
+    private static class AsyncGetDomainWeightsTask implements Runnable {
+        private String spaceName;
+        private VodServiceImpl vodService;
+
+        public AsyncGetDomainWeightsTask(String spaceName, VodServiceImpl vodService) {
+            this.spaceName = spaceName;
+            this.vodService = vodService;
+        }
+
+        @Override
+        public void run() {
+            Map<String, Integer> weightsMap;
+
+            try {
+                GetDomainWeightsResponse getDomainWeightsResponse = this.vodService.getDomainWeights(spaceName);
+                weightsMap = getDomainWeightsResponse.getResultMap().get(spaceName);
+            } catch (Exception e) {
+                // fallback
+                weightsMap = this.vodService.fallbackDomainWeights;
+            }
+
+            this.vodService.reentrantReadWriteLock.writeLock().lock();
+            this.vodService.domainCache.put(spaceName, weightsMap);
+            this.vodService.reentrantReadWriteLock.writeLock().unlock();
+        }
+    }
+
 }

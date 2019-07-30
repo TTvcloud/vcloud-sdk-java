@@ -16,12 +16,12 @@ import java.util.Map;
 public class GetPosterDemo {
 
     public static void main(String[] args) {
-        // construct IVodService
+        // step1: construct IVodService
         IVodService vodService = VodServiceImpl.getInstance();
 
-        // call below method if you dont set ak and sk in ～/.vcloud/config
-        // vodService.setAccessKey("");
-        // vodService.setSecretKey("");
+        // step2: call below method if you dont set ak and sk in ～/.vcloud/config
+        // vodService.setAccessKey("ak");
+        // vodService.setSecretKey("sk");
 
         String spaceName = "your spaceName";
         String uri = "your uri";
@@ -33,13 +33,13 @@ public class GetPosterDemo {
         Map<String, Integer> fallbackWeights = new HashMap<>();
         fallbackWeights.put("v1.test.com", 10);
         fallbackWeights.put("v2.test.com", 5);
-        // set fallback domain if necessary
+        // step3: set fallback domain if necessary
         vodService.setFallbackDomainWeights(fallbackWeights);
 
         GetDomainWeightsResponse getDomainWeightsResponse = vodService.getDomainWeights(spaceName);
         System.out.println(getDomainWeightsResponse.getResult());
 
-        for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 10; j++) {
             try {
                 DomainInfo domainInfo = vodService.getDomainInfo(spaceName);
                 System.out.println(domainInfo);
@@ -76,5 +76,8 @@ public class GetPosterDemo {
         imgUrl = vodService.getImageUrl(spaceName, uri, imgUrlOption);
         System.out.println(imgUrl.getMainUrl());
         System.out.println(imgUrl.getBackupUrl());
+
+        // step4: notice, shutdown the vodService if no use any more, otherwise the process would not exit
+        vodService.shutdown();
     }
 }

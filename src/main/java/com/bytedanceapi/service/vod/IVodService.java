@@ -87,6 +87,11 @@ public interface IVodService extends IBaseService {
     void setFallbackDomainWeights(Map<String, Integer> fallbackWeights);
 
     /**
+     * Shutdown.
+     */
+    void shutdown();
+
+    /**
      * Gets domain info.
      *
      * @param spaceName the space name
