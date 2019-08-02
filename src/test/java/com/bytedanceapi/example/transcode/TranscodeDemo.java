@@ -27,6 +27,7 @@ public class TranscodeDemo {
             StartTranscodeResponse resp = vodService.startTranscode(req);
             if (resp.getResponseMetadata().getError() != null) {
                 System.out.println(resp.getResponseMetadata().getError());
+                System.exit(-1);
             }
             System.out.println(resp.getResult());
         } catch (Exception e) {

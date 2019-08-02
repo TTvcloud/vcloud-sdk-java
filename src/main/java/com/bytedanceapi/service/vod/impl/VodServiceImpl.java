@@ -5,10 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.bytedanceapi.error.SdkError;
 import com.bytedanceapi.helper.Const;
 import com.bytedanceapi.helper.Utils;
-import com.bytedanceapi.model.beans.DomainInfo;
-import com.bytedanceapi.model.beans.Functions;
-import com.bytedanceapi.model.beans.ImgUrl;
-import com.bytedanceapi.model.beans.ImgUrlOption;
+import com.bytedanceapi.model.beans.*;
 import com.bytedanceapi.model.request.*;
 import com.bytedanceapi.model.response.*;
 import com.bytedanceapi.service.BaseServiceImpl;
@@ -16,7 +13,10 @@ import com.bytedanceapi.service.vod.IVodService;
 import com.bytedanceapi.service.vod.VodConfig;
 
 import java.io.File;
-import java.util.*;
+import java.util.Base64;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
@@ -223,64 +223,6 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
     }
 
     @Override
-    public ImgUrl getImageUrl(String spaceName, String uri, ImgUrlOption imgUrlOption) {
-        DomainInfo domainInfo = getDomainInfo(spaceName);
-
-        String proto = Const.HTTP;
-        if (imgUrlOption.isHttps()) {
-            proto = Const.HTTPS;
-        }
-        String format = Const.FORMAT_ORIGINAL;
-        if (imgUrlOption.getFomat() != null) {
-            format = imgUrlOption.getFomat();
-        }
-        String signKey = "";
-        if (imgUrlOption.getSigKey() != null) {
-            signKey = imgUrlOption.getSigKey();
-        }
-        String path = String.format("/%s~%s.%s", uri, imgUrlOption.getTpl(), format);
-        String sigTxt = path;
-        Map<String, List<String>> kv = null;
-        if (imgUrlOption.getKv() != null) {
-            kv = imgUrlOption.getKv();
-            if (signKey != null && kv.get(Const.KEY_SIG) != null) {
-                return null;
-            }
-            sigTxt = String.format("%s?%s", path, Utils.encode(kv));
-        }
-
-        try {
-            if (signKey != "") {
-                String sign = org.apache.commons.codec.binary.Base64.encodeBase64String(Utils.hmacSHA1(signKey.getBytes(), sigTxt));
-                // url safe base64_encode compatible with go base64
-                sign = sign.replace("/", "_").replace("+", "-");
-                if (kv == null) {
-                    kv = new HashMap<>();
-                }
-                if (kv.get(Const.KEY_SIG) == null) {
-                    List<String> list = new ArrayList<>();
-                    list.add(sign);
-                    kv.put(Const.KEY_SIG, list);
-
-                } else {
-                    kv.get(Const.KEY_SIG).add(sign);
-                }
-                path = String.format("%s?%s", path, Utils.encode(kv));
-            } else {
-                path = sigTxt;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-
-        ImgUrl imgUrl = new ImgUrl();
-        imgUrl.setMainUrl(String.format("%s://%s%s", proto, domainInfo.getMainDomain(), path));
-        imgUrl.setBackupUrl(String.format("%s://%s%s", proto, domainInfo.getBackupDomain(), path));
-        return imgUrl;
-    }
-
-    @Override
     public String getUploadAuthToken(String space) throws Exception {
         Map<String, String> ret = new HashMap<String, String>();
         ret.put("Version", "v1");
@@ -344,7 +286,18 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
     }
 
     @Override
-    public CommitUploadResponse upload(String spaceName, String filePath, String fileType, List<Functions> functions) throws Exception {
+    public ModifyVideoInfoResponse modifyVideoInfo(ModifyVideoInfoRequest modifyVideoInfoRequest) throws Exception {
+        Map<String, String> params = new HashMap<>();
+        RawResponse response = json(Const.ModifyVideoInfo, params, JSON.toJSONString(modifyVideoInfoRequest));
+        if (response.getCode() != SdkError.SUCCESS.getNumber()) {
+            throw response.getException();
+        }
+        ModifyVideoInfoResponse modifyVideoInfoResponse = JSON.parseObject(response.getData(), ModifyVideoInfoResponse.class);
+        modifyVideoInfoResponse.getResponseMetadata().setService("vod");
+        return modifyVideoInfoResponse;
+    }
+
+    private UploadCompleteInfo upload(String spaceName, String filePath) throws Exception {
         File file = new File(filePath);
         if (!(file.isFile() && file.exists())) {
             throw new Exception(SdkError.getErrorDesc(SdkError.ENOFILE));
@@ -391,12 +344,19 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
         long endTime = System.currentTimeMillis();
         long cost = endTime - startTime;
         float avgSpeed = (float) file.length() / (float) cost;
-        System.out.println(String.format("upload cost {%d} ms, avgSpeed: {%f} KB/s", cost, avgSpeed));
+        System.out.println(String.format("upload {%s} cost {%d} ms, avgSpeed: {%f} KB/s", filePath, cost, avgSpeed));
 
+        UploadCompleteInfo uploadCompleteInfo = new UploadCompleteInfo(oid, sessionKey);
+        return uploadCompleteInfo;
+    }
+
+    @Override
+    public CommitUploadResponse uploadVideo(String spaceName, String filePath, String fileType, List<Functions> functions) throws Exception {
+        UploadCompleteInfo uploadCompleteInfo = upload(spaceName, filePath);
 
         CommitUploadRequest commitUploadRequest = new CommitUploadRequest();
         commitUploadRequest.setCallbackArgs("");
-        commitUploadRequest.setSessionKey(sessionKey);
+        commitUploadRequest.setSessionKey(uploadCompleteInfo.getSessionKey());
         commitUploadRequest.setFunctions(functions);
         commitUploadRequest.setSpaceName(spaceName);
 
@@ -405,8 +365,29 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
         if (commitUploadResponse.getResponseMetadata().getError() != null) {
             throw new Exception(commitUploadResponse.getResponseMetadata().getError().getMessage());
         }
-
         return commitUploadResponse;
+    }
+
+    @Override
+    public String uploadPoster(String vid, String spaceName, String filePath, String fileType) throws Exception {
+        UploadCompleteInfo uploadCompleteInfo = upload(spaceName, filePath);
+        String oid = uploadCompleteInfo.getOid();
+
+        ModifyVideoInfoRequest modifyVideoInfoRequest = new ModifyVideoInfoRequest();
+        modifyVideoInfoRequest.setSpaceName(spaceName);
+        modifyVideoInfoRequest.setVid(vid);
+        ModifyVideoInfoRequest.UserMetaInfo userMetaInfo = new ModifyVideoInfoRequest.UserMetaInfo();
+        userMetaInfo.setPosterUri(oid);
+        modifyVideoInfoRequest.setInfo(userMetaInfo);
+
+        ModifyVideoInfoResponse modifyVideoInfoResponse = modifyVideoInfo(modifyVideoInfoRequest);
+        if (modifyVideoInfoResponse.getResponseMetadata().getError() != null) {
+            throw new Exception(modifyVideoInfoResponse.getResponseMetadata().getError().getMessage());
+        }
+        if (modifyVideoInfoResponse.getResult() == null || modifyVideoInfoResponse.getResult().getBaseResp() == null || modifyVideoInfoResponse.getResult().getBaseResp().getStatusCode() != 0) {
+            throw new Exception("modify poster error" + modifyVideoInfoResponse.getResult().getBaseResp().getStatusMessage());
+        }
+        return oid;
     }
 
     private static class AsyncGetDomainWeightsTask implements Runnable {

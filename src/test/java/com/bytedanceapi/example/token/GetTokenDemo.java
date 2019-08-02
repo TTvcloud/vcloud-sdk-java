@@ -19,6 +19,9 @@ public class GetTokenDemo {
 
         Map<String, String> params = new HashMap<String, String>();
         params.put("video_id", vid);
+        // set expires time of the redirect play url, defalut is 15min(900),
+        // set if if you know how the params' meaning exactly.
+        params.put("X-Amz-Expires", "60");
 
         try {
             String ret = vodService.getPlayAuthToken(params);

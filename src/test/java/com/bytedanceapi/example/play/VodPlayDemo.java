@@ -14,44 +14,49 @@ public class VodPlayDemo {
     public static void main(String[] args) {
         IVodService vodService = VodServiceImpl.getInstance();
 
-        String videoId = "your vid";
+        String vid = "your vid";
 
         // call below method if you dont set ak and sk in ～/.vcloud/config
         // vodService.setAccessKey("");
         // vodService.setSecretKey("");
 
-        // get play info
+        // 1. get play info
         try {
             GetPlayInfoRequest getPlayInfoRequest = new GetPlayInfoRequest();
-            getPlayInfoRequest.setVideoId(videoId);
+            getPlayInfoRequest.setVideoId(vid);
             getPlayInfoRequest.setSsl(1);
 
             GetPlayInfoResponse resp = vodService.getPlayInfo(getPlayInfoRequest);
             if (resp.getResponseMetadata().getError() != null) {
                 System.out.println(resp.getResponseMetadata().getError());
+                System.exit(-1);
             }
-            System.out.println(resp.getResult());
+            System.out.println(resp.getResult().getData().getPlayInfoList().get(0).getMainPlayUrl());
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        // get origin play info
+        // 2. get origin play info
         GetOriginVideoPlayRequest getOriginVideoPlayRequest = new GetOriginVideoPlayRequest();
         getOriginVideoPlayRequest.setSsl(1);
-        getOriginVideoPlayRequest.setVid(videoId);
+        getOriginVideoPlayRequest.setVid(vid);
         try {
             GetOriginVideoPlayResponse resp = vodService.getOriginVideoPlayInfo(getOriginVideoPlayRequest);
             if (resp.getResponseMetadata().getError() != null) {
                 System.out.println(resp.getResponseMetadata().getError());
+                System.exit(-1);
             }
-            System.out.println(resp);
+            System.out.println(resp.getOriginPlayData().getMainPlayUrl());
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        // get redirect play
+        // 3. get redirect play
         GetRedirectPlayRequest getRedirectPlayRequest = new GetRedirectPlayRequest();
-        getRedirectPlayRequest.setVid(videoId);
+        getRedirectPlayRequest.setVid(vid);
+        // set expires time of the redirect play url, defalut is 15min(900),
+        // set if if you know how the params' meaning exactly.
+        getRedirectPlayRequest.setExpires(60);
         try {
             String resp = vodService.getRedirectPlay(getRedirectPlayRequest);
             System.out.println(resp);

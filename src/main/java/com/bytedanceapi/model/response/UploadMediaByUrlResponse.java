@@ -13,7 +13,7 @@ public class UploadMediaByUrlResponse {
     @Data
     public static class ResultBean {
         @JSONField(name = "Code")
-        String code;
+        Integer code;
         @JSONField(name = "Message")
         String message;
     }

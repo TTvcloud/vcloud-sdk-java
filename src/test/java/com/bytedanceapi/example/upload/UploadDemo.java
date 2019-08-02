@@ -19,13 +19,8 @@ public class UploadDemo {
         // vodService.setSecretKey("");
 
         String space = "your spaceName";
+        String filePath = "your video file path";
         try {
-            // get upload token
-            String ret = vodService.getUploadAuthToken(space);
-            System.out.println(ret);
-
-            String filePath = "your file path";
-
             List<Functions> functionsList = new ArrayList<>();
             Functions getMetaFunc = new Functions();
             getMetaFunc.setName("GetMeta");
@@ -38,7 +33,7 @@ public class UploadDemo {
             snapShotFunc.setInput(functionsSnapshotInput);
             functionsList.add(snapShotFunc);
 
-            CommitUploadResponse commitUploadResponse = vodService.upload(space, filePath, Const.FILE_TYPE_VIDEO, functionsList);
+            CommitUploadResponse commitUploadResponse = vodService.uploadVideo(space, filePath, Const.FILE_TYPE_VIDEO, functionsList);
             System.out.println(commitUploadResponse);
 
         } catch (Exception e) {

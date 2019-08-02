@@ -111,16 +111,6 @@ public interface IVodService extends IBaseService {
     ImgUrl getPosterUrl(String spaceName, String uri, ImgUrlOption imgUrlOption);
 
     /**
-     * Gets image url.
-     *
-     * @param spaceName    the space name
-     * @param uri          the uri
-     * @param imgUrlOption the img url option
-     * @return the image url
-     */
-    ImgUrl getImageUrl(String spaceName, String uri, ImgUrlOption imgUrlOption);
-
-    /**
      * Gets upload auth token.
      *
      * @param space the space
@@ -157,7 +147,19 @@ public interface IVodService extends IBaseService {
      * @return the commit upload response
      * @throws Exception the exception
      */
-    CommitUploadResponse upload(String spaceName, String filePath, String fileType, List<Functions> functions) throws Exception;
+    CommitUploadResponse uploadVideo(String spaceName, String filePath, String fileType, List<Functions> functions) throws Exception;
+
+    /**
+     * Upload poster string.
+     *
+     * @param vid       the vid
+     * @param spaceName the space name
+     * @param filePath  the file path
+     * @param fileType  the file type
+     * @return the string
+     * @throws Exception the exception
+     */
+    String uploadPoster(String vid, String spaceName, String filePath, String fileType) throws Exception;
 
     /**
      * Upload media by url upload media by url response.
@@ -167,4 +169,13 @@ public interface IVodService extends IBaseService {
      * @throws Exception the exception
      */
     UploadMediaByUrlResponse uploadMediaByUrl(UploadMediaByUrlRequest uploadMediaByUrlRequest) throws Exception;
+
+    /**
+     * Modify video info modify video info response.
+     *
+     * @param modifyVideoInfoRequest the modify video info request
+     * @return the modify video info response
+     * @throws Exception the exception
+     */
+    ModifyVideoInfoResponse modifyVideoInfo(ModifyVideoInfoRequest modifyVideoInfoRequest) throws Exception;
 }

@@ -31,8 +31,6 @@ public class Const {
     public static final String HTTP = "http";
     public static final String HTTPS = "https";
 
-    public static final String KEY_SIG = "sig";
-
     public static final String VOD_TPL_OBJ = "tplv-vod-obj";
     public static final String VOD_TPL_NOOP = "tplv-vod-noop";
     public static final String VOD_TPL_RESIZE = "tplv-vod-rs";
@@ -52,6 +50,7 @@ public class Const {
     public static final String GetCdnDomainWeights = "GetCdnDomainWeights";
     public static final String RedirectPlay = "RedirectPlay";
     public static final String GetOriginVideoPlayInfo = "GetOriginVideoPlayInfo";
+    public static final String ModifyVideoInfo = "ModifyVideoInfo";
 
     // iam
     public static final String CreateUser = "CreateUser";

@@ -18,9 +18,8 @@ public class UploadMediaByUrlDemo {
         // vodService.setSecretKey("");
 
         String space = "your spaceName";
+        String url = "your url";
         try {
-            String url = "your url";
-
             UploadMediaByUrlRequest uploadMediaByUrlRequest = new UploadMediaByUrlRequest();
             uploadMediaByUrlRequest.setSpaceName(space);
             uploadMediaByUrlRequest.setFormat(Const.UPLOAD_FORMAT_MP4);
@@ -29,6 +28,9 @@ public class UploadMediaByUrlDemo {
             uploadMediaByUrlRequest.setSourceUrls(list);
 
             UploadMediaByUrlResponse uploadMediaByUrlResponse = vodService.uploadMediaByUrl(uploadMediaByUrlRequest);
+            if (uploadMediaByUrlResponse.getResponseMetadata() != null || uploadMediaByUrlResponse.getResult().getCode() != 0) {
+                System.exit(-1);
+            }
             System.out.println(uploadMediaByUrlResponse);
 
         } catch (Exception e) {

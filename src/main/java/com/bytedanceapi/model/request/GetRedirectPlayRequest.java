@@ -11,4 +11,6 @@ public class GetRedirectPlayRequest {
     String definition;
     @JSONField(name = "Watermark")
     String watermark;
+    @JSONField(name = "X-Amz-Expires")
+    Integer expires;
 }

@@ -8,9 +8,7 @@ import com.bytedanceapi.model.response.GetDomainWeightsResponse;
 import com.bytedanceapi.service.vod.IVodService;
 import com.bytedanceapi.service.vod.impl.VodServiceImpl;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class GetPosterDemo {
@@ -24,16 +22,14 @@ public class GetPosterDemo {
         // vodService.setSecretKey("sk");
 
         String spaceName = "your spaceName";
-        String uri = "your uri";
-        String sig = "your sig";
+        String posterUri = "your uri";
 
         assert vodService.getAccessKey() != null;
         assert vodService.getSecretKey() != null;
 
         Map<String, Integer> fallbackWeights = new HashMap<>();
-        fallbackWeights.put("v1.test.com", 10);
-        fallbackWeights.put("v2.test.com", 5);
-        // step3: set fallback domain if necessary
+        fallbackWeights.put("your fallback domain", 10);
+        // step3: set fallback domain if necessary, you can set the it to the poster domain you set in the console window
         vodService.setFallbackDomainWeights(fallbackWeights);
 
         GetDomainWeightsResponse getDomainWeightsResponse = vodService.getDomainWeights(spaceName);
@@ -56,24 +52,7 @@ public class GetPosterDemo {
         imgUrlOption.setFomat(Const.FORMAT_AWEBP);
 
 
-        ImgUrl imgUrl = vodService.getPosterUrl(spaceName, uri, imgUrlOption);
-        System.out.println(imgUrl.getMainUrl());
-        System.out.println(imgUrl.getBackupUrl());
-
-        // get other image url
-        imgUrlOption = new ImgUrlOption();
-        Map<String, List<String>> kv = new HashMap<String, List<String>>();
-        List<String> list = new ArrayList<>();
-        list.add("my测试");
-        kv.put("from", list);
-
-        imgUrlOption.setKv(kv);
-        imgUrlOption.setFomat(Const.FORMAT_AWEBP);
-        imgUrlOption.setHttps(true);
-        imgUrlOption.setTpl(Const.VOD_TPL_SIG);
-        imgUrlOption.setSigKey(sig);
-
-        imgUrl = vodService.getImageUrl(spaceName, uri, imgUrlOption);
+        ImgUrl imgUrl = vodService.getPosterUrl(spaceName, posterUri, imgUrlOption);
         System.out.println(imgUrl.getMainUrl());
         System.out.println(imgUrl.getBackupUrl());
 

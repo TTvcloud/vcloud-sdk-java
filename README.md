@@ -1,35 +1,64 @@
 ## TTVcloud SDK for Java
 
-#### maven依赖：
+### Maven依赖
 ```
 <dependency>
     <groupId>com.bytedanceapi</groupId>
     <artifactId>vcloud-sdk-java</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
 </dependency>
 ```
 
+### AK/SK设置
+- 在代码里显示调用VodService的方法setAccessKey/setSecretKey
+
+- 在当前环境变量中分别设置 VCLOUD_ACCESSKEY="your ak"  VCLOUD_SECRETKEY = "your sk"
+
+- json格式放在～/.vcloud/config中，格式为：{"ak":"your ak","sk":"your sk"}
+
+以上优先级依次降低，建议在代码里显示设置，以便问题排查
+
 ### API
 
-#### 上传:
+#### 上传
 ```
-        // 从本地文件上传
-        upload
+        // 从本地文件上传视频
+        uploadVideo
+        // 从本地文件上传封面图
+        uploadPoster
         // 从url上传
         uploadMediaByUrl
 ```
-#### 转码:
+PS: 
+
+上传视频包括 [applyUpload](https://open.bytedance.com/docs/4/2915/) 和 [commitUpload](https://open.bytedance.com/docs/4/2916/) 两步
+
+上传封面图包括 [applyUpload](https://open.bytedance.com/docs/4/2915/) 和 [modifyVideoInfo](https://open.bytedance.com/docs/4/4367/) 两步
+
+
+为方便用户使用，封装方法 uploadVideo 和 uploadPoster， 一步上传
+
+
+#### 转码
+[startTranscode](https://open.bytedance.com/docs/4/1670/)
 ```
         // 开始转码
         startTranscode
 ```
 
-#### 发布:
+#### 发布
+[setVideoPublishStatus](https://open.bytedance.com/docs/4/4709/)
+
 ```
         // 设置发布状态
         setVideoPublishStatus
 ```
 #### 播放：
+[getPlayInfo](https://open.bytedance.com/docs/4/2918/)
+
+[getOriginVideoPlayInfo](https://open.bytedance.com/docs/4/11148/)
+
+[getRedirectPlay](https://open.bytedance.com/docs/4/9205/)
 ```
         // 获取播放地址
         getPlayInfo
@@ -43,44 +72,16 @@
         // 获取视频封面图播放地址
         getPosterUrl
 ```
-#### 其它图片:
-```
-        // 获取其它图片地址（带鉴权串）
-        getImageUrl
-```
 
-##### 更多示例参见src/test/java/com/bytedanceapi/example
+#### 更多示例参见
+src/test/java/com/bytedanceapi/example
 
-注：ak、sk可放入环境变量，也可以json格式放在～/.vcloud/config中
-格式为：{"ak":"","sk":""}
 
-#### service可配置项：
-```
-    public void setClientNoReuse(); //不复用httpclient，每次通过HttpClients.createDefault()新建
 
-    public void setAccessKey(String accessKey);
+###Change log
 
-    public void setSecretKey(String secretKey);
-
-    public void setRegion(String region);
-
-    public void setHttpClient(HttpClient httpClient); //传入业务自己配置的httpclient
-
-    public void setServiceInfo(ServiceInfo serviceInfo);
-
-    public void setSocketTimeout(int socketTimeout);
-
-    public void setConnectionTimeout(int connectionTimeout);
-```
-
-#### 创建httpClient:
-
-```
-//configuration可配置项：
-//maxConnections 连接池最大连接数，默认1000;
-//maxConPerRoute 每路由最大连接数，默认600;
-//socketTimeout;
-//connectionTimeout;
-ClientConfiguration configuration = new Configuration();
-HttpClientFactory.create(configuration);
-```
+#### 0.0.4
+- 去掉image X 相关
+- 增加封面图上传接口
+- getUploadAuthToken/getPlayAuthToken/RedirectPlay支持X-Amz-Expires参数
+- 代码格式优化
