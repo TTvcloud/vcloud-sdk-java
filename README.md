@@ -5,7 +5,7 @@
 <dependency>
     <groupId>com.bytedanceapi</groupId>
     <artifactId>vcloud-sdk-java</artifactId>
-    <version>0.0.4</version>
+    <version>0.0.5</version>
 </dependency>
 ```
 
@@ -53,11 +53,9 @@
 #### 更多示例参见
 src/test/java/com/bytedanceapi/example
 
+### Change log
 
-
-###Change log
-
-#### 0.0.4
+#### 0.0.5
 - 去掉image X 相关
 - 增加封面图上传接口
 - getUploadAuthToken/getPlayAuthToken/RedirectPlay支持X-Amz-Expires参数
