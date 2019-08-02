@@ -55,7 +55,7 @@ public class VodPlayDemo {
         GetRedirectPlayRequest getRedirectPlayRequest = new GetRedirectPlayRequest();
         getRedirectPlayRequest.setVid(vid);
         // set expires time of the redirect play url, defalut is 15min(900),
-        // set if if you know how the params' meaning exactly.
+        // set if if you know the params' meaning exactly.
         getRedirectPlayRequest.setExpires(60);
         try {
             String resp = vodService.getRedirectPlay(getRedirectPlayRequest);

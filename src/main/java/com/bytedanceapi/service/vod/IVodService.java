@@ -113,11 +113,11 @@ public interface IVodService extends IBaseService {
     /**
      * Gets upload auth token.
      *
-     * @param space the space
+     * @param params the params
      * @return the upload auth token
      * @throws Exception the exception
      */
-    String getUploadAuthToken(String space) throws Exception;
+    String getUploadAuthToken(Map<String, String> params) throws Exception;
 
     /**
      * Apply upload apply upload response.

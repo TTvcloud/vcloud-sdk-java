@@ -15,15 +15,14 @@ public class GetTokenDemo {
         // vodService.setAccessKey("");
         // vodService.setSecretKey("");
 
-        String vid = "your vid";
-
-        Map<String, String> params = new HashMap<String, String>();
-        params.put("video_id", vid);
-        // set expires time of the redirect play url, defalut is 15min(900),
-        // set if if you know how the params' meaning exactly.
-        params.put("X-Amz-Expires", "60");
-
         try {
+            String vid = "your vid";
+            Map<String, String> params = new HashMap<String, String>();
+            params.put("video_id", vid);
+            // set expires time of the play auth token, defalut is 15min(900),
+            // set if if you know the params' meaning exactly.
+            params.put("X-Amz-Expires", "60");
+
             String ret = vodService.getPlayAuthToken(params);
             System.out.println(ret);
         } catch (Exception e) {
@@ -31,8 +30,13 @@ public class GetTokenDemo {
         }
 
         try {
-            String space = "your space";
-            String ret = vodService.getUploadAuthToken(space);
+            String spaceName = "your space";
+            Map<String, String> params = new HashMap<String, String>();
+            params.put("SpaceName", spaceName);
+            // set expires time of the upload token, defalut is 15min(900),
+            // set if if you know the params' meaning exactly.
+            params.put("X-Amz-Expires", "60");
+            String ret = vodService.getUploadAuthToken(params);
             System.out.println(ret);
         } catch (Exception e) {
             e.printStackTrace();

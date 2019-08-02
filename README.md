@@ -21,15 +21,7 @@
 ### API
 
 #### 上传
-```
-        // 从本地文件上传视频
-        uploadVideo
-        // 从本地文件上传封面图
-        uploadPoster
-        // 从url上传
-        uploadMediaByUrl
-```
-PS: 
+
 
 上传视频包括 [applyUpload](https://open.bytedance.com/docs/4/2915/) 和 [commitUpload](https://open.bytedance.com/docs/4/2916/) 两步
 
@@ -41,37 +33,22 @@ PS:
 
 #### 转码
 [startTranscode](https://open.bytedance.com/docs/4/1670/)
-```
-        // 开始转码
-        startTranscode
-```
+
 
 #### 发布
 [setVideoPublishStatus](https://open.bytedance.com/docs/4/4709/)
 
-```
-        // 设置发布状态
-        setVideoPublishStatus
-```
+
 #### 播放：
 [getPlayInfo](https://open.bytedance.com/docs/4/2918/)
 
 [getOriginVideoPlayInfo](https://open.bytedance.com/docs/4/11148/)
 
 [getRedirectPlay](https://open.bytedance.com/docs/4/9205/)
-```
-        // 获取播放地址
-        getPlayInfo
-        // 获取源片播放地址
-        getOriginVideoPlayInfo
-        // 获取重定向302地址
-        getRedirectPlay
-```
+
 #### 封面图:
-```
-        // 获取视频封面图播放地址
-        getPosterUrl
-```
+[getPosterUrl]()
+
 
 #### 更多示例参见
 src/test/java/com/bytedanceapi/example

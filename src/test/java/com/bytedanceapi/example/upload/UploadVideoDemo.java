@@ -10,7 +10,7 @@ import com.bytedanceapi.service.vod.impl.VodServiceImpl;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UploadDemo {
+public class UploadVideoDemo {
     public static void main(String[] args) {
         IVodService vodService = VodServiceImpl.getInstance();
 

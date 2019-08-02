@@ -223,17 +223,14 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
     }
 
     @Override
-    public String getUploadAuthToken(String space) throws Exception {
+    public String getUploadAuthToken(Map<String, String> params) throws Exception {
         Map<String, String> ret = new HashMap<String, String>();
         ret.put("Version", "v1");
 
-        Map<String, String> query = new HashMap<String, String>();
-        query.put("SpaceName", space);
-
-        String applyUploadToken = getSignUrl(Const.ApplyUpload, query);
+        String applyUploadToken = getSignUrl(Const.ApplyUpload, params);
         ret.put("ApplyUploadToken", applyUploadToken);
 
-        String commitUploadToken = getSignUrl(Const.CommitUpload, query);
+        String commitUploadToken = getSignUrl(Const.CommitUpload, params);
         ret.put("CommitUploadToken", commitUploadToken);
 
         String retStr = JSON.toJSONString(ret);
@@ -297,7 +294,7 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
         return modifyVideoInfoResponse;
     }
 
-    private UploadCompleteInfo upload(String spaceName, String filePath) throws Exception {
+    private UploadCompleteInfo upload(String spaceName, String filePath, String fileType) throws Exception {
         File file = new File(filePath);
         if (!(file.isFile() && file.exists())) {
             throw new Exception(SdkError.getErrorDesc(SdkError.ENOFILE));
@@ -310,6 +307,7 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
 
         ApplyUploadRequest applyUploadRequest = new ApplyUploadRequest();
         applyUploadRequest.setSpaceName(spaceName);
+        applyUploadRequest.setFileType(fileType);
 
         // apply upload
         ApplyUploadResponse applyUploadResponse = applyUpload(applyUploadRequest);
@@ -352,7 +350,7 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
 
     @Override
     public CommitUploadResponse uploadVideo(String spaceName, String filePath, String fileType, List<Functions> functions) throws Exception {
-        UploadCompleteInfo uploadCompleteInfo = upload(spaceName, filePath);
+        UploadCompleteInfo uploadCompleteInfo = upload(spaceName, filePath, fileType);
 
         CommitUploadRequest commitUploadRequest = new CommitUploadRequest();
         commitUploadRequest.setCallbackArgs("");
@@ -370,7 +368,7 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
 
     @Override
     public String uploadPoster(String vid, String spaceName, String filePath, String fileType) throws Exception {
-        UploadCompleteInfo uploadCompleteInfo = upload(spaceName, filePath);
+        UploadCompleteInfo uploadCompleteInfo = upload(spaceName, filePath, fileType);
         String oid = uploadCompleteInfo.getOid();
 
         ModifyVideoInfoRequest modifyVideoInfoRequest = new ModifyVideoInfoRequest();
