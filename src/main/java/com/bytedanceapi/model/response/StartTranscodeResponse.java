@@ -8,10 +8,12 @@ public class StartTranscodeResponse {
 
     @JSONField(name = "ResponseMetadata")
     private ResponseMetadata responseMetadata;
-    private TranscodeResult Result;
+    @JSONField(name = "Result")
+    private TranscodeResult result;
 
     @Data
     public static class TranscodeResult {
-        private String RunId;
+        @JSONField(name = "RunId")
+        private String runId;
     }
 }

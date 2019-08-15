@@ -38,6 +38,18 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
     }
 
     @Override
+    public GetSpaceResponse getSpace(GetSpaceRequest getSpaceRequest) throws Exception {
+        RawResponse response = query(Const.GetSpace, Utils.paramsToMap(getSpaceRequest));
+        if (response.getCode() != SdkError.SUCCESS.getNumber()) {
+            throw response.getException();
+        }
+
+        GetSpaceResponse getSpaceResponse = JSON.parseObject(response.getData(), GetSpaceResponse.class);
+        getSpaceResponse.getResponseMetadata().setService("vod");
+        return getSpaceResponse;
+    }
+
+    @Override
     public GetPlayInfoResponse getPlayInfo(GetPlayInfoRequest getPlayInfoRequest) throws Exception {
         RawResponse response = query(Const.GetPlayInfo, Utils.paramsToMap(getPlayInfoRequest));
         if (response.getCode() != SdkError.SUCCESS.getNumber()) {

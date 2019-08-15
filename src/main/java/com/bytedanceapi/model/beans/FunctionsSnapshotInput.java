@@ -1,8 +1,10 @@
 package com.bytedanceapi.model.beans;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import lombok.Data;
 
 @Data
 public class FunctionsSnapshotInput {
-    double SnapshotTime;
+    @JSONField(name = "SnapshotTime")
+    double snapshotTime;
 }

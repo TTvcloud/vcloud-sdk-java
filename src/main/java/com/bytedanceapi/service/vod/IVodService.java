@@ -16,6 +16,9 @@ import java.util.Map;
  */
 public interface IVodService extends IBaseService {
 
+
+    GetSpaceResponse getSpace(GetSpaceRequest getSpaceRequest) throws Exception;
+
     /**
      * Gets play info.
      *

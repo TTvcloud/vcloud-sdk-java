@@ -9,6 +9,8 @@ import java.util.Map;
 public class GetDomainWeightsResponse {
     @JSONField(name = "ResponseMetadata")
     private ResponseMetadata responseMetadata;
-    private String Result;
-    private Map<String, Map<String, Integer>> ResultMap;
+    @JSONField(name = "Result")
+    private String result;
+    @JSONField(name = "ResultMap")
+    private Map<String, Map<String, Integer>> resultMap;
 }

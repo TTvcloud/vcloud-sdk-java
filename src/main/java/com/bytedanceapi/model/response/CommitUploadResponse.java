@@ -15,53 +15,81 @@ public class CommitUploadResponse {
 
     @Data
     public static class CommitUploadResultBean {
-        String RequestId;
-        List<UploadResultBean> Results;
+        @JSONField(name = "RequestId")
+        String requestId;
+        @JSONField(name = "Results")
+        List<UploadResultBean> results;
     }
 
     @Data
     public static class UploadResultBean {
-        String Vid;
-        VideoMetaBean VideoMeta;
-        ImageMetaBean ImageMeta;
-        ObjectMetaBean ObjectMeta;
-        EncryptionBean Encryption;
-        String SnapshotUri;
+        @JSONField(name = "Vid")
+        String vid;
+        @JSONField(name = "VideoMeta")
+        VideoMetaBean videoMeta;
+        @JSONField(name = "ImageMeta")
+        ImageMetaBean imageMeta;
+        @JSONField(name = "ObjectMeta")
+        ObjectMetaBean objectMeta;
+        @JSONField(name = "Encryption")
+        EncryptionBean encryption;
+        @JSONField(name = "SnapshotUri")
+        String snapshotUri;
     }
 
     @Data
     public static class VideoMetaBean {
-        String Uri;
-        int Height;
-        int Width;
-        float Duration;
-        int Bitrate;
-        String Md5;
-        String Format;
-        int Size;
+        @JSONField(name = "Uri")
+        String uri;
+        @JSONField(name = "Height")
+        int height;
+        @JSONField(name = "Width")
+        int width;
+        @JSONField(name = "Duration")
+        float duration;
+        @JSONField(name = "Bitrate")
+        int bitrate;
+        @JSONField(name = "Md5")
+        String md5;
+        @JSONField(name = "Format")
+        String format;
+        @JSONField(name = "Size")
+        int size;
     }
 
     @Data
     public static class ImageMetaBean {
-        String Uri;
-        int Height;
-        int Width;
-        String Md5;
+        @JSONField(name = "Uri")
+        String uri;
+        @JSONField(name = "Height")
+        int height;
+        @JSONField(name = "Width")
+        int width;
+        @JSONField(name = "Md5")
+        String md5;
     }
 
     @Data
     public static class ObjectMetaBean {
-        String Uri;
-        String Md5;
+        @JSONField(name = "Uri")
+        String uri;
+        @JSONField(name = "Md5")
+        String md5;
     }
 
     @Data
     public static class EncryptionBean {
-        String Uri;
-        String SecretKey;
-        String Algorithm;
-        String Version;
-        String SourceMd5;
-        Map<String, String> Extra;
+        @JSONField(name = "Uri")
+        String uri;
+        @JSONField(name = "SecretKey")
+        String secretKey;
+        @JSONField(name = "Algorithm")
+        String algorithm;
+        @JSONField(name = "Version")
+        String version;
+        @JSONField(name = "SourceMd5")
+        String sourceMd5;
+        @JSONField(name = "Extra")
+        Map<String, String> extra;
     }
 }

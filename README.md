@@ -1,6 +1,6 @@
 ## TTVcloud SDK for Java
 
-### Maven依赖
+### - Maven依赖
 ```
 <dependency>
     <groupId>com.bytedanceapi</groupId>
@@ -53,7 +53,7 @@
 [getRedirectPlay](https://open.bytedance.com/docs/4/9205/)
 
 #### 封面图
-[getPosterUrl]()
+[getPosterUrl](https://open.bytedance.com/docs/4/5335/)
 
 #### token相关
 [getUploadAuthToken](https://open.bytedance.com/docs/4/6275/)
@@ -68,11 +68,3 @@ PS: 上述两个接口和 [getRedirectPlay](https://open.bytedance.com/docs/4/92
 
 #### 更多示例参见
 src/test/java/com/bytedanceapi/example
-
-### Change log
-
-#### 0.0.5
-- 去掉image X 相关
-- 增加封面图上传接口
-- getUploadAuthToken/getPlayAuthToken/RedirectPlay支持X-Amz-Expires参数
-- 代码格式优化

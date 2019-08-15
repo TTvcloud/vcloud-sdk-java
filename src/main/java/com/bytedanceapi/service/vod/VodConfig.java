@@ -105,7 +105,7 @@ public class VodConfig {
             put(Const.SetVideoPublishStatus, new ApiInfo(
                     new HashMap<String, Object>() {
                         {
-                            put(Const.Method, "GET");
+                            put(Const.Method, "POST");
                             put(Const.Path, "/");
                             put(Const.Query, new ArrayList<NameValuePair>() {
                                 {
@@ -167,6 +167,20 @@ public class VodConfig {
                                 {
                                     add(new BasicNameValuePair("Action", Const.ModifyVideoInfo));
                                     add(new BasicNameValuePair("Version", "2018-01-01"));
+                                }
+                            });
+                        }
+                    }
+            ));
+            put(Const.GetSpace, new ApiInfo(
+                    new HashMap<String, Object>() {
+                        {
+                            put(Const.Method, "GET");
+                            put(Const.Path, "/");
+                            put(Const.Query, new ArrayList<NameValuePair>() {
+                                {
+                                    add(new BasicNameValuePair("Action", Const.GetSpace));
+                                    add(new BasicNameValuePair("Version", "2018-12-01"));
                                 }
                             });
                         }

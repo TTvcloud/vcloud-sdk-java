@@ -14,11 +14,16 @@ public class ApplyUploadResponse {
 
     @Data
     public static class UploadAddressBean {
-        private UploadHeaderBean UploadHeader;
-        private String SessionKey;
-        private AdvanceOptionBean AdvanceOption;
-        private List<StoreInfosBean> StoreInfos;
-        private List<String> UploadHosts;
+        @JSONField(name = "UploadHeader")
+        private UploadHeaderBean uploadHeader;
+        @JSONField(name = "SessionKey")
+        private String sessionKey;
+        @JSONField(name = "AdvanceOption")
+        private AdvanceOptionBean advanceOption;
+        @JSONField(name = "StoreInfos")
+        private List<StoreInfosBean> storeInfos;
+        @JSONField(name = "UploadHosts")
+        private List<String> uploadHosts;
     }
 
     @Data
@@ -27,21 +32,27 @@ public class ApplyUploadResponse {
 
     @Data
     public static class AdvanceOptionBean {
-        private int Parallel;
-        private int Stream;
-        private int SliceSize;
+        @JSONField(name = "Parallel")
+        private int parallel;
+        @JSONField(name = "Stream")
+        private int stream;
+        @JSONField(name = "SliceSize")
+        private int sliceSize;
     }
 
     @Data
     public static class StoreInfosBean {
-        private String StoreUri;
-        private String Auth;
+        @JSONField(name = "StoreUri")
+        private String storeUri;
+        @JSONField(name = "Auth")
+        private String auth;
     }
 
     @Data
     public class UploadResult {
         @JSONField(name = "UploadAddress")
         private UploadAddressBean uploadAddress;
-        private String RequestId;
+        @JSONField(name = "RequestId")
+        private String requestId;
     }
 }
