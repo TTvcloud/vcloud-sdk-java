@@ -11,7 +11,7 @@ import com.bytedanceapi.service.vod.impl.VodServiceImpl;
 public class VodPlayDemo {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         IVodService vodService = VodServiceImpl.getInstance();
 
         String vid = "your vid";

@@ -15,21 +15,57 @@ import java.util.Map;
 
 public class VodConfig {
 
-    public static ServiceInfo serviceInfo = new ServiceInfo(
-            new HashMap<String, Object>() {
-                {
-                    put(Const.CONNECTION_TIMEOUT, 5000);
-                    put(Const.SOCKET_TIMEOUT, 5000);
-                    put(Const.Host, "vod.bytedanceapi.com");
-                    put(Const.Header, new ArrayList<Header>() {
+
+    public static Map<String, ServiceInfo> ServiceInfoMap = new HashMap<String, ServiceInfo>() {
+        {
+            put(Const.REGION_CN_NORTH_1, new ServiceInfo(
+                    new HashMap<String, Object>() {
                         {
-                            add(new BasicHeader("Accept", "application/json"));
+                            put(Const.CONNECTION_TIMEOUT, 5000);
+                            put(Const.SOCKET_TIMEOUT, 5000);
+                            put(Const.Host, "vod.bytedanceapi.com");
+                            put(Const.Header, new ArrayList<Header>() {
+                                {
+                                    add(new BasicHeader("Accept", "application/json"));
+                                }
+                            });
+                            put(Const.Credentials, new Credentials(Const.REGION_CN_NORTH_1, "vod"));
                         }
-                    });
-                    put(Const.Credentials, new Credentials(Const.REGION_CN_NORTH_1, "vod"));
-                }
-            }
-    );
+                    }
+            ));
+            put(Const.REGION_AP_SINGAPORE_1, new ServiceInfo(
+                    new HashMap<String, Object>() {
+                        {
+                            put(Const.CONNECTION_TIMEOUT, 5000);
+                            put(Const.SOCKET_TIMEOUT, 5000);
+                            put(Const.Host, "vod.ap-singapore-1.bytedanceapi.com");
+                            put(Const.Header, new ArrayList<Header>() {
+                                {
+                                    add(new BasicHeader("Accept", "application/json"));
+                                }
+                            });
+                            put(Const.Credentials, new Credentials(Const.REGION_AP_SINGAPORE_1, "vod"));
+                        }
+                    }
+            ));
+            put(Const.REGION_US_EASE_1, new ServiceInfo(
+                    new HashMap<String, Object>() {
+                        {
+                            put(Const.CONNECTION_TIMEOUT, 5000);
+                            put(Const.SOCKET_TIMEOUT, 5000);
+                            put(Const.Host, "vod.us-east-1.bytedanceapi.com");
+                            put(Const.Header, new ArrayList<Header>() {
+                                {
+                                    add(new BasicHeader("Accept", "application/json"));
+                                }
+                            });
+                            put(Const.Credentials, new Credentials(Const.REGION_US_EASE_1, "vod"));
+                        }
+                    }
+            ));
+        }
+    };
+
     public static Map<String, ApiInfo> apiInfoList = new HashMap<String, ApiInfo>() {
         {
             put(Const.GetPlayInfo, new ApiInfo(

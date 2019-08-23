@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.bytedanceapi.error.SdkError;
 import com.bytedanceapi.helper.Const;
 import com.bytedanceapi.helper.Utils;
+import com.bytedanceapi.model.ServiceInfo;
 import com.bytedanceapi.model.beans.*;
 import com.bytedanceapi.model.request.*;
 import com.bytedanceapi.model.response.*;
@@ -30,12 +31,25 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
     private ScheduledThreadPoolExecutor scheduledExecutorService = new ScheduledThreadPoolExecutor(5);
 
     private VodServiceImpl() {
-        super(VodConfig.serviceInfo, VodConfig.apiInfoList);
+        super(VodConfig.ServiceInfoMap.get(Const.REGION_CN_NORTH_1), VodConfig.apiInfoList);
+    }
+
+    private VodServiceImpl(ServiceInfo serviceInfo) {
+        super(serviceInfo, VodConfig.apiInfoList);
     }
 
     public static IVodService getInstance() {
         return new VodServiceImpl();
     }
+
+    public static IVodService getInstance(String region) throws Exception {
+        ServiceInfo serviceInfo = VodConfig.ServiceInfoMap.get(region);
+        if (serviceInfo == null) {
+            throw new Exception("Cant find the region, please check it carefully");
+        }
+        return new VodServiceImpl(serviceInfo);
+    }
+
 
     @Override
     public GetSpaceResponse getSpace(GetSpaceRequest getSpaceRequest) throws Exception {
