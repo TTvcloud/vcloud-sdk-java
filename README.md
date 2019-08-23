@@ -5,7 +5,7 @@
 <dependency>
     <groupId>com.bytedanceapi</groupId>
     <artifactId>vcloud-sdk-java</artifactId>
-    <version>0.0.5</version>
+    <version>0.0.6</version>
 </dependency>
 ```
 ### AK/SK设置
