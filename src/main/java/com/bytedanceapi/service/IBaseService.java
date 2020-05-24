@@ -1,6 +1,8 @@
 package com.bytedanceapi.service;
 
 import com.bytedanceapi.model.response.RawResponse;
+import com.bytedanceapi.model.sts2.Policy;
+import com.bytedanceapi.model.sts2.SecurityToken2;
 import org.apache.http.client.HttpClient;
 
 import java.util.Map;
@@ -130,4 +132,14 @@ public interface IBaseService {
      * @throws Exception the exception
      */
     boolean put(String url, String filePath, Map<String, String> headers) throws Exception;
+
+
+    /**
+     * Sign by sts2.
+     * @param inlinePolicy  the Policy
+     * @param expire        expire time
+     * @return  the sts2
+     * @throws Exception    the exception
+     */
+    SecurityToken2 signSts2(Policy inlinePolicy, long expire) throws Exception;
 }

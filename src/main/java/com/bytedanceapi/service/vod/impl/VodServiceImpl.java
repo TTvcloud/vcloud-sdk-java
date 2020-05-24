@@ -9,15 +9,17 @@ import com.bytedanceapi.model.ServiceInfo;
 import com.bytedanceapi.model.beans.*;
 import com.bytedanceapi.model.request.*;
 import com.bytedanceapi.model.response.*;
+import com.bytedanceapi.model.sts2.Policy;
+import com.bytedanceapi.model.sts2.SecurityToken2;
+import com.bytedanceapi.model.sts2.Statement;
 import com.bytedanceapi.service.BaseServiceImpl;
 import com.bytedanceapi.service.vod.IVodService;
 import com.bytedanceapi.service.vod.VodConfig;
+import com.bytedanceapi.util.Sts2Utils;
+import com.bytedanceapi.util.Time;
 
 import java.io.File;
-import java.util.Base64;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
@@ -439,6 +441,37 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
             this.vodService.domainCache.put(spaceName, weightsMap);
             this.vodService.reentrantReadWriteLock.writeLock().unlock();
         }
+    }
+
+    public SecurityToken2 getVideoPlayAuthWithExpiredTime(List<String> vidList, List<String> streamTypeList, List<String> watermarkList, long expiredTime) throws Exception {
+        Policy inlinePolicy = new Policy();
+        List<String> actions = new ArrayList<>();
+        actions.add(VodConfig.ACTION_GET_PLAY_INFO);
+        List<String> resources = new ArrayList<>();
+
+        // 设置vid的resource权限
+        addResourceFormat(vidList, resources, VodConfig.RESOURCE_VIDEO_FORMAT);
+
+        // 设置streamType的resource权限
+        addResourceFormat(streamTypeList, resources, VodConfig.RESOURCE_STREAM_TYPE_FORMAT);
+
+        // 设置watermark的resource权限
+        addResourceFormat(watermarkList, resources, VodConfig.RESOURCE_WATERMARK_FORMAT);
+
+        Statement statement = Sts2Utils.newAllowStatement(actions, resources);
+        inlinePolicy.addStatement(statement);
+        return signSts2(inlinePolicy, expiredTime);
+    }
+
+    private void addResourceFormat(List<String> list, List<String> resources, String resourceFormat) {
+        if (list.size() == 0)
+            resources.add(String.format(resourceFormat, VodConfig.STAR));
+        else
+            list.forEach(value -> resources.add(String.format(resourceFormat, value)));
+    }
+
+    public SecurityToken2 getVideoPlayAuth(List<String> vidList, List<String> streamTypeList, List<String> watermarkList) throws Exception {
+        return getVideoPlayAuthWithExpiredTime(vidList, streamTypeList, watermarkList, Time.Hour);
     }
 
 }
