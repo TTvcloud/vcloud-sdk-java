@@ -12,6 +12,10 @@ import com.bytedanceapi.model.ApiInfo;
 import com.bytedanceapi.model.Credentials;
 import com.bytedanceapi.model.ServiceInfo;
 import com.bytedanceapi.model.response.RawResponse;
+import com.bytedanceapi.model.sts2.InnerToken;
+import com.bytedanceapi.model.sts2.Policy;
+import com.bytedanceapi.model.sts2.SecurityToken2;
+import com.bytedanceapi.util.Sts2Utils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.http.Header;
@@ -30,6 +34,7 @@ import org.apache.http.util.EntityUtils;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public abstract class BaseServiceImpl implements IBaseService {
@@ -362,6 +367,23 @@ public abstract class BaseServiceImpl implements IBaseService {
     @Override
     public void setConnectionTimeout(int connectionTimeout) {
         this.connectionTimeout = connectionTimeout;
+    }
+
+    @Override
+    public SecurityToken2 signSts2(Policy inlinePolicy, long expire) throws Exception {
+        SecurityToken2 sts2 = new SecurityToken2();
+        sts2.setAccessKeyId(Sts2Utils.generateAccessKeyId("AKTP"));
+        sts2.setSecretAccessKey(Sts2Utils.generateSecretKey());
+
+        Date now = new Date();
+        Date expireTime = new Date(now.getTime() + expire);
+        sts2.setCurrentTime(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX").format(now));
+        sts2.setExpiredTime(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX").format(expireTime));
+
+        InnerToken innerToken = Sts2Utils.createInnerToken(serviceInfo.getCredentials(),sts2,inlinePolicy,expireTime.getTime());
+        String sessionToken = "STS2" + Base64.getEncoder().encodeToString(JSON.toJSONString(innerToken).getBytes());
+        sts2.setSessionToken(sessionToken);
+        return sts2;
     }
 
 }
