@@ -16,9 +16,15 @@ public class Sts2SignDemo {
     public static void main(String[] args) throws Exception {
         Policy inlinePolicy = new Policy();
 
+//        ArrayList<String> action = new ArrayList<>();
+//        action.add("iam:*");
+//        ArrayList<String> resources = new ArrayList<>();
+//        Statement statement = Sts2Utils.newAllowStatement(action,resources);
+
         ArrayList<String> action = new ArrayList<>();
-        action.add("iam:*");
+        action.add("*");
         ArrayList<String> resources = new ArrayList<>();
+        resources.add("*");
         Statement statement = Sts2Utils.newAllowStatement(action,resources);
 
         inlinePolicy.addStatement(statement);

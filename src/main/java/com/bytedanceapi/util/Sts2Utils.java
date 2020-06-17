@@ -6,6 +6,7 @@ import com.bytedanceapi.model.sts2.InnerToken;
 import com.bytedanceapi.model.sts2.Policy;
 import com.bytedanceapi.model.sts2.SecurityToken2;
 import com.bytedanceapi.model.sts2.Statement;
+import org.apache.commons.codec.CharEncoding;
 import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.lang3.RandomStringUtils;
 
@@ -33,8 +34,31 @@ public class Sts2Utils {
 
     public static String generateSecretKey() throws Exception {
         String randString32 = RandomStringUtils.randomAlphabetic(32);
-        return aesEncryptCBC(randString32, "bytedance-isgood".getBytes());
+        return aesEncryptCBC(randString32, "bytedance-isgood".getBytes(CharEncoding.ISO_8859_1));
+
     }
+
+
+    public static byte[] encrypt(String data, String key) throws Exception{
+        String ivString = key;
+        //偏移量
+        byte[] iv = ivString.getBytes(CharEncoding.ISO_8859_1);
+        Cipher cipher = Cipher.getInstance("AES/CBC/NoPadding");
+        int blockSize = cipher.getBlockSize();
+        byte[] dataBytes = data.getBytes();
+        int length = dataBytes.length;
+        //计算需填充长度
+        length = length + (blockSize - (length % blockSize));
+        byte[] plaintext = new byte[length];
+        //填充
+        System.arraycopy(dataBytes, 0, plaintext, 0, dataBytes.length);
+        SecretKeySpec keySpec = new SecretKeySpec(key.getBytes(CharEncoding.ISO_8859_1), "AES");
+        //设置偏移量参数
+        IvParameterSpec ivSpec = new IvParameterSpec(iv);
+        cipher.init(Cipher.ENCRYPT_MODE, keySpec, ivSpec);
+        return cipher.doFinal(plaintext);
+    }
+
 
     public static String aesEncryptCBC(String sSrc, byte[] sKey) throws Exception {
         if (sKey == null) {
@@ -43,11 +67,7 @@ public class Sts2Utils {
         if (sKey.length != 16) {
             throw new RuntimeException("Key长度不是16位");
         }
-        SecretKeySpec skeySpec = new SecretKeySpec(sKey, "AES");
-        Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");//"算法/模式/补码方式"
-        IvParameterSpec iv = new IvParameterSpec(sKey);//使用CBC模式，需要一个向量iv，可增加加密算法的强度
-        cipher.init(Cipher.ENCRYPT_MODE, skeySpec, iv);
-        byte[] encrypted = cipher.doFinal(sSrc.getBytes());
+        byte[] encrypted = encrypt(sSrc, new String(sKey, CharEncoding.ISO_8859_1));
         return Base64.getEncoder().encodeToString(encrypted);//此处使用BASE64做转码功能，同时能起到2次加密的作用。
     }
 
