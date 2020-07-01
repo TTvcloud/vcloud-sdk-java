@@ -5,7 +5,6 @@ import com.bytedanceapi.auth.ISignerV4;
 import com.bytedanceapi.auth.impl.SignerV4Impl;
 import com.bytedanceapi.error.SdkError;
 import com.bytedanceapi.helper.Const;
-import com.bytedanceapi.helper.Utils;
 import com.bytedanceapi.http.ClientConfiguration;
 import com.bytedanceapi.http.HttpClientFactory;
 import com.bytedanceapi.model.ApiInfo;
@@ -27,6 +26,7 @@ import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.client.utils.URIBuilder;
+import org.apache.http.entity.ByteArrayEntity;
 import org.apache.http.entity.FileEntity;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClients;
@@ -87,20 +87,20 @@ public abstract class BaseServiceImpl implements IBaseService {
     }
 
     @Override
-    public String getSignUrl(String api, Map<String, String> params) throws Exception {
+    public String getSignUrl(String api, List<NameValuePair> params) throws Exception {
         ApiInfo apiInfo = apiInfoList.get(api);
 
         if (apiInfo == null) {
             throw new Exception(SdkError.getErrorDesc(SdkError.ENOAPI));
         }
 
-        List<NameValuePair> mergedNV = mergeQuery(Utils.mapToPairList(params), apiInfo.getQuery());
+        List<NameValuePair> mergedNV = mergeQuery(params, apiInfo.getQuery());
 
         SignableRequest request = new SignableRequest();
         URIBuilder builder = request.getUriBuilder();
 
         request.setMethod(apiInfo.getMethod().toUpperCase());
-        builder.setScheme("http");
+        builder.setScheme(serviceInfo.getScheme());
         builder.setHost(serviceInfo.getHost());
         builder.setPath(apiInfo.getPath());
         builder.setParameters(mergedNV);
@@ -109,7 +109,7 @@ public abstract class BaseServiceImpl implements IBaseService {
     }
 
     @Override
-    public RawResponse query(String api, Map<String, String> params) {
+    public RawResponse query(String api, List<NameValuePair> params) {
         ApiInfo apiInfo = apiInfoList.get(api);
         if (apiInfo == null) {
             return new RawResponse(null, SdkError.ENOAPI.getNumber(), new Exception(SdkError.getErrorDesc(SdkError.ENOAPI)));
@@ -121,17 +121,24 @@ public abstract class BaseServiceImpl implements IBaseService {
 
     @Override
     public boolean put(String url, String filePath, Map<String, String> headers) {
+        HttpEntity httpEntity = new FileEntity(new File(filePath));
+        return doPut(url, httpEntity, headers);
+    }
 
+    @Override
+    public boolean putData(String url, byte[] data, Map<String, String> headers) {
+        HttpEntity httpEntity = new ByteArrayEntity(data);
+        return doPut(url, httpEntity, headers);
+    }
+
+    private boolean doPut(String url, HttpEntity entity, Map<String, String> headers) {
         HttpPut httpPut = new HttpPut(url);
         if (headers != null && headers.size() > 0) {
             for (Map.Entry<String, String> entry : headers.entrySet()) {
                 httpPut.setHeader(entry.getKey(), entry.getValue());
             }
         }
-
-        HttpEntity httpEntity = new FileEntity(new File(filePath));
-        httpPut.setEntity(httpEntity);
-
+        httpPut.setEntity(entity);
         HttpResponse response = null;
         try {
             HttpClient client;
@@ -146,7 +153,6 @@ public abstract class BaseServiceImpl implements IBaseService {
             }
         } catch (Exception e) {
             e.printStackTrace();
-
         } finally {
             if (response != null) {
                 EntityUtils.consumeQuietly(response.getEntity());
@@ -155,9 +161,8 @@ public abstract class BaseServiceImpl implements IBaseService {
         return false;
     }
 
-
     @Override
-    public RawResponse json(String api, Map<String, String> params, String body) {
+    public RawResponse json(String api, List<NameValuePair> params, String body) {
         ApiInfo apiInfo = apiInfoList.get(api);
         if (apiInfo == null) {
             return new RawResponse(null, SdkError.ENOAPI.getNumber(), new Exception(SdkError.getErrorDesc(SdkError.ENOAPI)));
@@ -170,7 +175,7 @@ public abstract class BaseServiceImpl implements IBaseService {
     }
 
     @Override
-    public RawResponse post(String api, Map<String, String> query, Map<String, String> form) {
+    public RawResponse post(String api, List<NameValuePair> query, List<NameValuePair> form) {
         ApiInfo apiInfo = apiInfoList.get(api);
         if (apiInfo == null) {
             return new RawResponse(null, SdkError.ENOAPI.getNumber(), new Exception(SdkError.getErrorDesc(SdkError.ENOAPI)));
@@ -178,7 +183,7 @@ public abstract class BaseServiceImpl implements IBaseService {
 
         SignableRequest request = prepareRequest(api, query);
         request.setHeader("Content-Type", "application/x-www-form-urlencoded");
-        List<NameValuePair> mergedForm = mergeQuery(Utils.mapToPairList(form), apiInfo.getForm());
+        List<NameValuePair> mergedForm = mergeQuery(form, apiInfo.getForm());
 
         try {
             Collections.sort(mergedForm, new Comparator<NameValuePair>() {
@@ -223,7 +228,7 @@ public abstract class BaseServiceImpl implements IBaseService {
         }
     }
 
-    private SignableRequest prepareRequest(String api, Map<String, String> params) {
+    private SignableRequest prepareRequest(String api, List<NameValuePair> params) {
         ApiInfo apiInfo = apiInfoList.get(api);
 
         int socketTimeout = getSocketTimeout(serviceInfo.getSocketTimeout(), apiInfo.getSocketTimeout());
@@ -235,10 +240,10 @@ public abstract class BaseServiceImpl implements IBaseService {
         for (Header header : mergedH) {
             request.setHeader(header);
         }
-        List<NameValuePair> mergedNV = mergeQuery(Utils.mapToPairList(params), apiInfo.getQuery());
+        List<NameValuePair> mergedNV = mergeQuery(params, apiInfo.getQuery());
         URIBuilder builder = request.getUriBuilder();
 
-        builder.setScheme("http");
+        builder.setScheme(serviceInfo.getScheme());
         builder.setHost(serviceInfo.getHost());
         builder.setPath(apiInfo.getPath());
         builder.setParameters(mergedNV);
@@ -331,6 +336,16 @@ public abstract class BaseServiceImpl implements IBaseService {
     @Override
     public void setRegion(String region) {
         serviceInfo.getCredentials().setRegion(region);
+    }
+
+    @Override
+    public void setHost(String host) {
+        serviceInfo.setHost(host);
+    }
+
+    @Override
+    public void setScheme(String scheme) {
+        serviceInfo.setScheme(scheme);
     }
 
     public HttpClient getHttpClient() {

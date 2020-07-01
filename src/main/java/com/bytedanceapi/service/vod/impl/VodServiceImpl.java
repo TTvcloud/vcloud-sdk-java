@@ -17,6 +17,7 @@ import com.bytedanceapi.service.vod.IVodService;
 import com.bytedanceapi.service.vod.VodConfig;
 import com.bytedanceapi.util.Sts2Utils;
 import com.bytedanceapi.util.Time;
+import org.apache.http.NameValuePair;
 
 import java.io.File;
 import java.util.*;
@@ -55,7 +56,7 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
 
     @Override
     public GetSpaceResponse getSpace(GetSpaceRequest getSpaceRequest) throws Exception {
-        RawResponse response = query(Const.GetSpace, Utils.paramsToMap(getSpaceRequest));
+        RawResponse response = query(Const.GetSpace, Utils.mapToPairList(Utils.paramsToMap(getSpaceRequest)));
         if (response.getCode() != SdkError.SUCCESS.getNumber()) {
             throw response.getException();
         }
@@ -67,7 +68,7 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
 
     @Override
     public GetPlayInfoResponse getPlayInfo(GetPlayInfoRequest getPlayInfoRequest) throws Exception {
-        RawResponse response = query(Const.GetPlayInfo, Utils.paramsToMap(getPlayInfoRequest));
+        RawResponse response = query(Const.GetPlayInfo, Utils.mapToPairList(Utils.paramsToMap(getPlayInfoRequest)));
         if (response.getCode() != SdkError.SUCCESS.getNumber()) {
             throw response.getException();
         }
@@ -81,7 +82,7 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
     public String getPlayAuthToken(Map<String, String> params) throws Exception {
         Map<String, String> ret = new HashMap<>();
         ret.put("Version", "v1");
-        String getPlayInfoToken = getSignUrl(Const.GetPlayInfo, params);
+        String getPlayInfoToken = getSignUrl(Const.GetPlayInfo, Utils.mapToPairList(params));
         ret.put("GetPlayInfoToken", getPlayInfoToken);
 
         String retStr = JSON.toJSONString(ret);
@@ -91,7 +92,7 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
 
     @Override
     public GetOriginVideoPlayResponse getOriginVideoPlayInfo(GetOriginVideoPlayRequest getOriginVideoPlayRequest) throws Exception {
-        RawResponse response = query(Const.GetOriginVideoPlayInfo, Utils.paramsToMap(getOriginVideoPlayRequest));
+        RawResponse response = query(Const.GetOriginVideoPlayInfo, Utils.mapToPairList(Utils.paramsToMap(getOriginVideoPlayRequest)));
         if (response.getCode() != SdkError.SUCCESS.getNumber()) {
             throw response.getException();
         }
@@ -103,7 +104,7 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
 
     @Override
     public String getRedirectPlay(GetRedirectPlayRequest getRedirectPlayRequest) throws Exception {
-        String uri = getSignUrl(Const.RedirectPlay, Utils.paramsToMap(getRedirectPlayRequest));
+        String uri = getSignUrl(Const.RedirectPlay, Utils.mapToPairList(Utils.paramsToMap(getRedirectPlayRequest)));
         String proto = "http";
         String host = serviceInfo.getHost();
         return String.format("%s://%s/?%s", proto, host, uri);
@@ -119,7 +120,7 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
         startTranscodeRequestBody.setInput(startTranscodeRequest.getInput());
         startTranscodeRequestBody.setPriority(startTranscodeRequest.getPriority());
 
-        RawResponse resp = json(Const.StartTranscode, params, JSON.toJSONString(startTranscodeRequestBody));
+        RawResponse resp = json(Const.StartTranscode, Utils.mapToPairList(params), JSON.toJSONString(startTranscodeRequestBody));
         if (resp.getCode() != SdkError.SUCCESS.getNumber()) {
             throw resp.getException();
         }
@@ -130,7 +131,7 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
     @Override
     public SetVideoPublishStatusResponse setVideoPublishStatus(SetVideoPublishStatusRequest setVideoPublishStatusRequest) throws Exception {
         Map<String, String> params = new HashMap<>();
-        RawResponse resp = json(Const.SetVideoPublishStatus, params, JSON.toJSONString(setVideoPublishStatusRequest));
+        RawResponse resp = json(Const.SetVideoPublishStatus, Utils.mapToPairList(params), JSON.toJSONString(setVideoPublishStatusRequest));
         if (resp.getCode() != SdkError.SUCCESS.getNumber()) {
             throw resp.getException();
         }
@@ -143,7 +144,7 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
         Map<String, String> params = new HashMap<>();
         params.put(Const.SpaceName, spaceName);
 
-        RawResponse response = query(Const.GetCdnDomainWeights, params);
+        RawResponse response = query(Const.GetCdnDomainWeights, Utils.mapToPairList(params));
         if (response.getCode() != SdkError.SUCCESS.getNumber()) {
             return null;
         }
@@ -254,11 +255,12 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
     public String getUploadAuthToken(Map<String, String> params) throws Exception {
         Map<String, String> ret = new HashMap<String, String>();
         ret.put("Version", "v1");
+        List<NameValuePair> pairs = Utils.mapToPairList(params);
 
-        String applyUploadToken = getSignUrl(Const.ApplyUpload, params);
+        String applyUploadToken = getSignUrl(Const.ApplyUpload, pairs);
         ret.put("ApplyUploadToken", applyUploadToken);
 
-        String commitUploadToken = getSignUrl(Const.CommitUpload, params);
+        String commitUploadToken = getSignUrl(Const.CommitUpload, pairs);
         ret.put("CommitUploadToken", commitUploadToken);
 
         String retStr = JSON.toJSONString(ret);
@@ -268,7 +270,7 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
 
     @Override
     public ApplyUploadResponse applyUpload(ApplyUploadRequest applyUploadRequest) throws Exception {
-        RawResponse response = query(Const.ApplyUpload, Utils.paramsToMap(applyUploadRequest));
+        RawResponse response = query(Const.ApplyUpload, Utils.mapToPairList(Utils.paramsToMap(applyUploadRequest)));
         if (response.getCode() != SdkError.SUCCESS.getNumber()) {
             throw response.getException();
         }
@@ -288,7 +290,7 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
         commitUploadRequestBody.setFunctions(commitUploadRequest.getFunctions());
         commitUploadRequestBody.setSessionKey(commitUploadRequest.getSessionKey());
 
-        RawResponse response = json(Const.CommitUpload, params, JSON.toJSONString(commitUploadRequestBody));
+        RawResponse response = json(Const.CommitUpload, Utils.mapToPairList(params), JSON.toJSONString(commitUploadRequestBody));
         if (response.getCode() != SdkError.SUCCESS.getNumber()) {
             throw response.getException();
         }
@@ -300,7 +302,7 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
 
     @Override
     public UploadMediaByUrlResponse uploadMediaByUrl(UploadMediaByUrlRequest uploadMediaByUrlRequest) throws Exception {
-        RawResponse response = query(Const.UploadMediaByUrl, Utils.paramsToMap(uploadMediaByUrlRequest));
+        RawResponse response = query(Const.UploadMediaByUrl, Utils.mapToPairList(Utils.paramsToMap(uploadMediaByUrlRequest)));
         if (response.getCode() != SdkError.SUCCESS.getNumber()) {
             throw response.getException();
         }
@@ -313,7 +315,7 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
     @Override
     public ModifyVideoInfoResponse modifyVideoInfo(ModifyVideoInfoRequest modifyVideoInfoRequest) throws Exception {
         Map<String, String> params = new HashMap<>();
-        RawResponse response = json(Const.ModifyVideoInfo, params, JSON.toJSONString(modifyVideoInfoRequest));
+        RawResponse response = json(Const.ModifyVideoInfo, Utils.mapToPairList(params), JSON.toJSONString(modifyVideoInfoRequest));
         if (response.getCode() != SdkError.SUCCESS.getNumber()) {
             throw response.getException();
         }
