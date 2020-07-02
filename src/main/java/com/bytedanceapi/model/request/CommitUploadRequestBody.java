@@ -2,6 +2,7 @@ package com.bytedanceapi.model.request;
 
 import com.alibaba.fastjson.annotation.JSONField;
 import com.bytedanceapi.model.beans.Functions;
+import com.bytedanceapi.model.beans.ImageOption;
 import lombok.Data;
 
 import java.util.List;
@@ -14,4 +15,6 @@ public class CommitUploadRequestBody {
     String sessionKey;
     @JSONField(name = "Functions")
     List<Functions> functions;
+    @JSONField(name = "OptionInfos")
+    List<ImageOption> optionInfos;
 }

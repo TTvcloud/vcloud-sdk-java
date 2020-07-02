@@ -1,6 +1,7 @@
 package com.bytedanceapi.model.response;
 
 import com.alibaba.fastjson.annotation.JSONField;
+import com.bytedanceapi.model.beans.ImageInfo;
 import lombok.Data;
 
 import java.util.List;
@@ -19,10 +20,14 @@ public class CommitUploadResponse {
         String requestId;
         @JSONField(name = "Results")
         List<UploadResultBean> results;
+        @JSONField(name = "PluginResult")
+        List<ImageInfo> imageInfos;
     }
 
     @Data
     public static class UploadResultBean {
+        @JSONField(name = "Uri")
+        String uri;
         @JSONField(name = "Vid")
         String vid;
         @JSONField(name = "VideoMeta")
