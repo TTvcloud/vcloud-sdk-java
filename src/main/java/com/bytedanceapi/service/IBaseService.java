@@ -3,8 +3,10 @@ package com.bytedanceapi.service;
 import com.bytedanceapi.model.response.RawResponse;
 import com.bytedanceapi.model.sts2.Policy;
 import com.bytedanceapi.model.sts2.SecurityToken2;
+import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -53,6 +55,20 @@ public interface IBaseService {
     void setRegion(String region);
 
     /**
+     * Sets host.
+     *
+     * @param host the host
+     */
+    void setHost(String host);
+
+    /**
+     * Sets scheme.
+     *
+     * @param scheme the scheme
+     */
+    void setScheme(String scheme);
+
+    /**
      * Sets http client.
      *
      * @param httpClient the http client
@@ -88,7 +104,7 @@ public interface IBaseService {
      * @return the raw response
      * @throws Exception the exception
      */
-    RawResponse query(String api, Map<String, String> params) throws Exception;
+    RawResponse query(String api, List<NameValuePair> params) throws Exception;
 
     /**
      * Gets sign url.
@@ -98,7 +114,7 @@ public interface IBaseService {
      * @return the sign url
      * @throws Exception the exception
      */
-    String getSignUrl(String api, Map<String, String> params) throws Exception;
+    String getSignUrl(String api, List<NameValuePair> params) throws Exception;
 
     /**
      * Json raw response.
@@ -109,7 +125,7 @@ public interface IBaseService {
      * @return the raw response
      * @throws Exception the exception
      */
-    RawResponse json(String api, Map<String, String> params, String body) throws Exception;
+    RawResponse json(String api, List<NameValuePair> params, String body) throws Exception;
 
     /**
      * Post raw response.
@@ -120,7 +136,7 @@ public interface IBaseService {
      * @return the raw response
      * @throws Exception the exception
      */
-    RawResponse post(String api, Map<String, String> params, Map<String, String> form) throws Exception;
+    RawResponse post(String api, List<NameValuePair> params, List<NameValuePair> form) throws Exception;
 
     /**
      * Put boolean.
@@ -132,6 +148,17 @@ public interface IBaseService {
      * @throws Exception the exception
      */
     boolean put(String url, String filePath, Map<String, String> headers) throws Exception;
+
+    /**
+     * Put binary data.
+     *
+     * @param url target url
+     * @param data binary data
+     * @param headers http headers
+     * @return put status
+     * @throws Exception exception
+     */
+    boolean putData(String url, byte[] data, Map<String, String> headers) throws Exception;
 
 
     /**

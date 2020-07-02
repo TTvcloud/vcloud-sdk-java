@@ -24,7 +24,7 @@ public class IamServiceImpl extends BaseServiceImpl implements IIamService {
 
     @Override
     public ListUsersResponse listUsers(ListUsersRequest listUsersRequest) throws Exception {
-        RawResponse response = query(Const.ListUsers, Utils.paramsToMap(listUsersRequest));
+        RawResponse response = query(Const.ListUsers, Utils.mapToPairList(Utils.paramsToMap(listUsersRequest)));
         if (response.getCode() != SdkError.SUCCESS.getNumber()) {
             throw response.getException();
         }

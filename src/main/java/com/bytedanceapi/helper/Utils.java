@@ -138,6 +138,7 @@ public class Utils {
         }
     }
 
+    // 对于List类型entry，逗号连接生成string value
     public static Map<String, String> paramsToMap(Object obj) {
         Map<String, Object> map = JSONObject.toJavaObject(JSONObject.parseObject(JSON.toJSONString(obj)), Map.class);
         Map<String, String> params = new HashMap<>();
@@ -156,5 +157,22 @@ public class Utils {
             }
         }
         return params;
+    }
+
+    // 对于List类型entry，拆分为多个Name-Value pair
+    public static List<NameValuePair> paramsToPair(Object obj) {
+        Map<String, Object> map = JSONObject.toJavaObject(JSONObject.parseObject(JSON.toJSONString(obj)), Map.class);
+        List<NameValuePair> pairs = new ArrayList<>();
+        for (Map.Entry<String, Object> entry : map.entrySet()) {
+            if (entry.getValue().getClass() == Integer.class) {
+                pairs.add(new BasicNameValuePair(entry.getKey(), ((Integer) entry.getValue()).toString()));
+            } else if (entry.getValue().getClass() == String.class) {
+                pairs.add(new BasicNameValuePair(entry.getKey(), (String) entry.getValue()));
+            } else if (entry.getValue().getClass() == JSONArray.class) {
+                List<String> list = (List<String>) entry.getValue();
+                list.forEach(value -> pairs.add(new BasicNameValuePair(entry.getKey(), value)));
+            }
+        }
+        return pairs;
     }
 }
