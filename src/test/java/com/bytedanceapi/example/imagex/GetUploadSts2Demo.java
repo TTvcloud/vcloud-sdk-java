@@ -12,7 +12,6 @@ public class GetUploadSts2Demo {
     public static void main(String[] args) {
         // default region cn-north-1, for other region, call ImageXServiceImpl.getInstance(region)
         IImageXService service = ImageXServiceImpl.getInstance();
-        service.setHost("staging-openapi-boe.byted.org");
 
         // call below method if you dont set ak and sk in ～/.vcloud/config
         service.setAccessKey("ak");

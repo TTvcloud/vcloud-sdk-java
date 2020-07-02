@@ -61,7 +61,7 @@ public interface IImageXService extends IBaseService {
      * Get image upload sts2 auth.
      *
      * @param serviceIds service id list allowed to upload image to
-     * @param expire expire time in seconds
+     * @param expire expire time in milliseconds
      * @return the upload sts2 auth
      * @throws Exception the exception
      */
