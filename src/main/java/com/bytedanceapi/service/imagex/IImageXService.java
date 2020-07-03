@@ -10,6 +10,9 @@ import com.bytedanceapi.service.IBaseService;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * The interface ImageX service.
+ */
 public interface IImageXService extends IBaseService {
 
     /**
@@ -35,6 +38,7 @@ public interface IImageXService extends IBaseService {
      *
      * @param request the apply upload request
      * @param imageDatas image data array
+     * @return the commit upload response
      * @throws Exception the exception
      */
     CommitUploadResponse uploadImages(ApplyUploadRequest request, List<byte[]> imageDatas) throws Exception;
