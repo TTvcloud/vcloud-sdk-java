@@ -72,10 +72,7 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
         if (response.getCode() != SdkError.SUCCESS.getNumber()) {
             throw response.getException();
         }
-
-        GetPlayInfoResponse getPlayInfoResp = JSON.parseObject(response.getData(), GetPlayInfoResponse.class);
-        getPlayInfoResp.getResponseMetadata().setService("vod");
-        return getPlayInfoResp;
+        return JSON.parseObject(response.getData(), GetPlayInfoResponse.class);
     }
 
     @Override

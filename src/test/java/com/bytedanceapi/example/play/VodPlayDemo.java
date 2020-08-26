@@ -24,14 +24,14 @@ public class VodPlayDemo {
         try {
             GetPlayInfoRequest getPlayInfoRequest = new GetPlayInfoRequest();
             getPlayInfoRequest.setVideoId(vid);
-            getPlayInfoRequest.setSsl(1);
+            getPlayInfoRequest.setSsl(1L);
 
             GetPlayInfoResponse resp = vodService.getPlayInfo(getPlayInfoRequest);
             if (resp.getResponseMetadata().getError() != null) {
                 System.out.println(resp.getResponseMetadata().getError());
                 System.exit(-1);
             }
-            System.out.println(resp.getResult().getData().getPlayInfoList().get(0).getMainPlayUrl());
+            System.out.println(resp.getResult().getPlayInfoList().get(0).getMainPlayUrl());
         } catch (Exception e) {
             e.printStackTrace();
         }

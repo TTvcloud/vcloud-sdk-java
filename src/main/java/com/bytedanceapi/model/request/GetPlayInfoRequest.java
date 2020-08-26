@@ -5,20 +5,20 @@ import lombok.Data;
 
 @Data
 public class GetPlayInfoRequest {
-    @JSONField(name = "video_id")
+    @JSONField(name = "Vid")
     String videoId;
-    @JSONField(name = "format_type")
+    @JSONField(name = "Format")
     String formatType;
-    @JSONField(name = "codec_type")
-    Integer codecType;
-    @JSONField(name = "definition")
+    @JSONField(name = "Codec")
+    String codecType;
+    @JSONField(name = "Definition")
     String definition;
-    @JSONField(name = "stream_type")
+    @JSONField(name = "StreamType")
     String streamType;
+    @JSONField(name = "Watermark")
     String watermark;
-    String ptoken;
-    @JSONField(name = "cdn_type")
-    Integer cdnType;
-    Integer base64;
-    Integer ssl;
+    @JSONField(name = "Base64")
+    Long base64;
+    @JSONField(name = "Ssl")
+    Long ssl;
 }

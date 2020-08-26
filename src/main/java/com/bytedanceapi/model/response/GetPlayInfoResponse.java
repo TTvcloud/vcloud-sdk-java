@@ -16,24 +16,20 @@ public class GetPlayInfoResponse {
 
     @Data
     public static class PlayResult {
-        @JSONField(name = "Data")
-        private PlayData data;
-    }
-
-    @Data
-    public static class PlayData {
-        @JSONField(name = "Status")
-        private int status;
-        @JSONField(name = "VideoID")
+        @JSONField(name = "Vid")
         private String videoID;
-        @JSONField(name = "CoverUrl")
-        private String coverUrl;
+        @JSONField(name = "Status")
+        private Long status;
+        @JSONField(name = "PosterUrl")
+        private String posterUrl;
         @JSONField(name = "Duration")
-        private int duration;
-        @JSONField(name = "MediaType")
+        private Float duration;
+        @JSONField(name = "FileType")
         private String mediaType;
         @JSONField(name = "TotalCount")
-        private int totalCount;
+        private Integer totalCount;
+        @JSONField(name = "EnableAdaptive")
+        private Boolean enableAdaptive;
         @JSONField(name = "PlayInfoList")
         private List<PlayInfoList> playInfoList;
     }
@@ -41,44 +37,56 @@ public class GetPlayInfoResponse {
     @Data
     public static class PlayInfoList {
         @JSONField(name = "Bitrate")
-        private int bitrate;
+        private Float bitrate;
         @JSONField(name = "Encrypt")
-        private boolean encrypt;
+        private Long encrypt;
         @JSONField(name = "FileHash")
         private String fileHash;
         @JSONField(name = "Size")
-        private int size;
+        private Long size;
         @JSONField(name = "Height")
-        private int height;
+        private Long height;
         @JSONField(name = "Width")
-        private int width;
+        private Long width;
         @JSONField(name = "Format")
         private String format;
         @JSONField(name = "Codec")
         private String codec;
-        @JSONField(name = "Logo")
-        private String logo;
+        @JSONField(name = "LogoType")
+        private String logoType;
         @JSONField(name = "Definition")
         private String definition;
         @JSONField(name = "Quality")
         private String quality;
         @JSONField(name = "PlayAuth")
         private String playAuth;
+        @JSONField(name = "PlayAuthID")
+        private String playAuthID;
+
         @JSONField(name = "MainPlayUrl")
         private String mainPlayUrl;
         @JSONField(name = "BackupPlayUrl")
         private String backupPlayUrl;
         @JSONField(name = "FileID")
         private String fileID;
+        @JSONField(name = "FileType")
+        private String fileType;
         @JSONField(name = "P2pVerifyURL")
         private String p2pVerifyURL;
         @JSONField(name = "PreloadInterval")
-        private int preloadInterval;
+        private Long preloadInterval;
         @JSONField(name = "PreloadMaxStep")
-        private int preloadMaxStep;
+        private Long preloadMaxStep;
         @JSONField(name = "PreloadMinStep")
-        private int preloadMinStep;
+        private Long preloadMinStep;
         @JSONField(name = "PreloadSize")
-        private int preloadSize;
+        private Long preloadSize;
+        @JSONField(name = "InitRange")
+        private String initRange;
+        @JSONField(name = "IndexRange")
+        private String indexRange;
+        @JSONField(name = "CheckInfo")
+        private String checkInfo;
+
     }
 }
