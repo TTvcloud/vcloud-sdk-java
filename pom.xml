@@ -6,7 +6,7 @@
 
     <groupId>com.bytedanceapi</groupId>
     <artifactId>vcloud-sdk-java</artifactId>
-    <version>0.0.7</version>
+    <version>0.0.8</version>
     <packaging>jar</packaging>
 
     <name>vcloud-sdk-java</name>
@@ -127,7 +127,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.0.0</version>
+                <version>3.1.0</version>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
@@ -136,6 +136,9 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <source>${jre.version}</source>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
