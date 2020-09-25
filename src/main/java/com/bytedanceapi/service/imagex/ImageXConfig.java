@@ -144,6 +144,20 @@ public class ImageXConfig {
                         }
                     }
             ));
+            put("DeleteImageUploadFiles", new ApiInfo(
+                    new HashMap<String, Object>() {
+                        {
+                            put(Const.Method, "POST");
+                            put(Const.Path, "/");
+                            put(Const.Query, new ArrayList<NameValuePair>() {
+                                {
+                                    add(new BasicNameValuePair("Action", "DeleteImageUploadFiles"));
+                                    add(new BasicNameValuePair("Version", "2018-08-01"));
+                                }
+                            });
+                        }
+                    }
+            ));
         }
     };
 }
