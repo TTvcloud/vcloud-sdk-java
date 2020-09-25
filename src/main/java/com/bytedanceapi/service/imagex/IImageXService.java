@@ -2,8 +2,10 @@ package com.bytedanceapi.service.imagex;
 
 import com.bytedanceapi.model.request.ApplyUploadRequest;
 import com.bytedanceapi.model.request.CommitUploadRequest;
+import com.bytedanceapi.model.request.DeleteImageReq;
 import com.bytedanceapi.model.response.ApplyUploadResponse;
 import com.bytedanceapi.model.response.CommitUploadResponse;
+import com.bytedanceapi.model.response.DeleteImageResp;
 import com.bytedanceapi.model.sts2.SecurityToken2;
 import com.bytedanceapi.service.IBaseService;
 
@@ -70,4 +72,13 @@ public interface IImageXService extends IBaseService {
      * @throws Exception the exception
      */
     SecurityToken2 getUploadSts2WithExpire(List<String> serviceIds, long expire) throws Exception;
+
+    /**
+     * Delete images.
+     *
+     * @param req delete image req
+     * @return delete image resp
+     * @throws Exception the exception
+     */
+    DeleteImageResp deleteImages(DeleteImageReq req) throws Exception;
 }
