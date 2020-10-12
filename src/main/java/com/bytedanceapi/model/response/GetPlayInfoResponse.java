@@ -40,7 +40,7 @@ public class GetPlayInfoResponse {
         private Float bitrate;
         @JSONField(name = "Encrypt")
         private Long encrypt;
-        @JSONField(name = "FileHash")
+        @JSONField(name = "Md5")
         private String fileHash;
         @JSONField(name = "Size")
         private Long size;

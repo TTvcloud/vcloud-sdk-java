@@ -240,8 +240,6 @@ public abstract class BaseServiceImpl implements IBaseService {
         for (Header header : mergedH) {
             request.setHeader(header);
         }
-        request.setHeader("X-Amz-Service", serviceInfo.getCredentials().getService());
-        request.setHeader("X-Amz-Region", serviceInfo.getCredentials().getRegion());
         List<NameValuePair> mergedNV = mergeQuery(params, apiInfo.getQuery());
         URIBuilder builder = request.getUriBuilder();
 
