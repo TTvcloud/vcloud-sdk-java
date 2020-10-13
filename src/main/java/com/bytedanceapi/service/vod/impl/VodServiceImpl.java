@@ -111,21 +111,21 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
     }
 
     @Override
-    public StartTranscodeResponse startTranscode(StartTranscodeRequest startTranscodeRequest) throws Exception {
+    public StartWorkflowResponse startWorkflow(StartWorkflowRequest startWorkflowRequest) throws Exception {
         Map<String, String> params = new HashMap<>();
-        params.put("TemplateId", startTranscodeRequest.getTemplateId());
+        params.put("TemplateId", startWorkflowRequest.getTemplateId());
+        params.put("Vid", startWorkflowRequest.getVid());
+        params.put("Priority", Integer.toString(startWorkflowRequest.getPriority()));
+        String inputStr = JSON.toJSONString(startWorkflowRequest.getInput());
+        params.put("Input", inputStr);
+        params.put("CallbackArgs", startWorkflowRequest.getCallbackArgs());
 
-        StartTranscodeRequestBody startTranscodeRequestBody = new StartTranscodeRequestBody();
-        startTranscodeRequestBody.setVid(startTranscodeRequest.getVid());
-        startTranscodeRequestBody.setInput(startTranscodeRequest.getInput());
-        startTranscodeRequestBody.setPriority(startTranscodeRequest.getPriority());
-
-        RawResponse resp = json(Const.StartTranscode, Utils.mapToPairList(params), JSON.toJSONString(startTranscodeRequestBody));
+        RawResponse resp = post(Const.StartWorkflow, new ArrayList<NameValuePair>(), Utils.mapToPairList(params));
         if (resp.getCode() != SdkError.SUCCESS.getNumber()) {
             throw resp.getException();
         }
 
-        return JSON.parseObject(resp.getData(), StartTranscodeResponse.class);
+        return JSON.parseObject(resp.getData(), StartWorkflowResponse.class);
     }
 
     @Override

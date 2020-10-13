@@ -93,15 +93,15 @@ public class VodConfig {
                         }
                     }
             ));
-            put(Const.StartTranscode, new ApiInfo(
+            put(Const.StartWorkflow, new ApiInfo(
                     new HashMap<String, Object>() {
                         {
                             put(Const.Method, "POST");
                             put(Const.Path, "/");
                             put(Const.Query, new ArrayList<NameValuePair>() {
                                 {
-                                    add(new BasicNameValuePair("Action", Const.StartTranscode));
-                                    add(new BasicNameValuePair("Version", "2018-01-01"));
+                                    add(new BasicNameValuePair("Action", Const.StartWorkflow));
+                                    add(new BasicNameValuePair("Version", "2020-08-01"));
                                 }
                             });
                         }
