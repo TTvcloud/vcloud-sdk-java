@@ -12,23 +12,23 @@ public class GetOriginVideoPlayResponse {
 
     @Data
     public static class OriginPlayData {
-        @JSONField(name = "MediaType")
+        @JSONField(name = "FileType")
         private String mediaType;
         @JSONField(name = "Duration")
-        private double duration;
+        private Float duration;
         @JSONField(name = "Size")
-        private int size;
+        private Long size;
         @JSONField(name = "Height")
-        private int height;
+        private Long height;
         @JSONField(name = "Width")
-        private int width;
+        private Long width;
         @JSONField(name = "Format")
         private String format;
         @JSONField(name = "Codec")
         private String codec;
         @JSONField(name = "Bitrate")
-        private int bitrate;
-        @JSONField(name = "FileHash")
+        private Float bitrate;
+        @JSONField(name = "Md5")
         private String fileHash;
         @JSONField(name = "MainPlayUrl")
         private String mainPlayUrl;
