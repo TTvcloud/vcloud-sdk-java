@@ -1,21 +1,16 @@
-package com.bytedanceapi.example.upload;
+package com.bytedanceapi.example.top.upload;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.bytedanceapi.helper.Const;
 import com.bytedanceapi.model.beans.URLSet;
-import com.bytedanceapi.model.request.UploadMediaByUrlRequest;
 import com.bytedanceapi.model.request.UploadVideoByUrlRequest;
-import com.bytedanceapi.model.response.UploadMediaByUrlResponse;
 import com.bytedanceapi.model.response.UploadVideoByUrlResponse;
 import com.bytedanceapi.service.vod.IVodService;
 import com.bytedanceapi.service.vod.impl.VodServiceImpl;
-import lombok.NonNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class UploadMediaByUrlDemo {
+public class UploadVideoByUrlDemo {
     public static void main(String[] args) {
         IVodService vodService = VodServiceImpl.getInstance();
 

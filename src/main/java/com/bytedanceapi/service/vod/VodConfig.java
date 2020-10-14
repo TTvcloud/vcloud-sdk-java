@@ -34,10 +34,14 @@ public class VodConfig {
                         {
                             put(Const.CONNECTION_TIMEOUT, 5000);
                             put(Const.SOCKET_TIMEOUT, 5000);
-                            put(Const.Host, "vod.bytedanceapi.com");
+//                            put(Const.Host, "vod.bytedanceapi.com");
+                            //TODO 测试完毕修改回来
+                            put(Const.Host, "staging-openapi-boe.byted.org");
                             put(Const.Header, new ArrayList<Header>() {
                                 {
                                     add(new BasicHeader("Accept", "application/json"));
+                                    //TODO 测试完毕后删掉
+                                    add(new BasicHeader("X-TT-ENV", "boe_husky_feature"));
                                 }
                             });
                             put(Const.Credentials, new Credentials(Const.REGION_CN_NORTH_1, "vod"));
@@ -121,6 +125,34 @@ public class VodConfig {
                         }
                     }
             ));
+            put(Const.UploadVideoByUrl, new ApiInfo(
+                    new HashMap<String, Object>() {
+                        {
+                            put(Const.Method, "GET");
+                            put(Const.Path, "/");
+                            put(Const.Query, new ArrayList<NameValuePair>() {
+                                {
+                                    add(new BasicNameValuePair("Action", Const.UploadVideoByUrl));
+                                    add(new BasicNameValuePair("Version", "2020-08-01"));
+                                }
+                            });
+                        }
+                    }
+            ));
+            put(Const.QueryUploadTaskInfo, new ApiInfo(
+                    new HashMap<String, Object>() {
+                        {
+                            put(Const.Method, "GET");
+                            put(Const.Path, "/");
+                            put(Const.Query, new ArrayList<NameValuePair>() {
+                                {
+                                    add(new BasicNameValuePair("Action", Const.QueryUploadTaskInfo));
+                                    add(new BasicNameValuePair("Version", "2020-08-01"));
+                                }
+                            });
+                        }
+                    }
+            ));
             put(Const.ApplyUpload, new ApiInfo(
                     new HashMap<String, Object>() {
                         {
@@ -130,6 +162,34 @@ public class VodConfig {
                                 {
                                     add(new BasicNameValuePair("Action", Const.ApplyUpload));
                                     add(new BasicNameValuePair("Version", "2018-01-01"));
+                                }
+                            });
+                        }
+                    }
+            ));
+            put(Const.ApplyUploadInfo, new ApiInfo(
+                    new HashMap<String, Object>() {
+                        {
+                            put(Const.Method, "GET");
+                            put(Const.Path, "/");
+                            put(Const.Query, new ArrayList<NameValuePair>() {
+                                {
+                                    add(new BasicNameValuePair("Action", Const.ApplyUploadInfo));
+                                    add(new BasicNameValuePair("Version", "2020-08-01"));
+                                }
+                            });
+                        }
+                    }
+            ));
+            put(Const.CommitUploadInfo, new ApiInfo(
+                    new HashMap<String, Object>() {
+                        {
+                            put(Const.Method, "POST");
+                            put(Const.Path, "/");
+                            put(Const.Query, new ArrayList<NameValuePair>() {
+                                {
+                                    add(new BasicNameValuePair("Action", Const.CommitUploadInfo));
+                                    add(new BasicNameValuePair("Version", "2020-08-01"));
                                 }
                             });
                         }

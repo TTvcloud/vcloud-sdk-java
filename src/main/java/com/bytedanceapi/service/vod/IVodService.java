@@ -131,6 +131,25 @@ public interface IVodService extends IBaseService {
      */
     ApplyUploadResponse applyUpload(ApplyUploadRequest applyUploadRequest) throws Exception;
 
+
+    /**
+     * ToB open api 2.0
+     *
+     * @param applyUploadInfoRequest
+     * @return
+     * @throws Exception
+     */
+    ApplyUploadInfoResponse applyUploadInfo(ApplyUploadInfoRequest applyUploadInfoRequest) throws Exception;
+
+    /**
+     * ToB open api 2.0
+     *
+     * @param commitUploadInfoRequest
+     * @return
+     * @throws Exception
+     */
+    CommitUploadInfoResponse commitUploadInfo(CommitUploadInfoRequest commitUploadInfoRequest) throws Exception;
+
     /**
      * Commit upload commit upload response.
      *
@@ -152,6 +171,18 @@ public interface IVodService extends IBaseService {
      */
     CommitUploadResponse uploadVideo(String spaceName, String filePath, String fileType, List<Functions> functions) throws Exception;
 
+
+    /**
+     * ToB open api 2.0
+     *
+     * @param spaceName
+     * @param filePath
+     * @param functions
+     * @return
+     * @throws Exception
+     */
+    CommitUploadInfoResponse uploadVideoToB(String spaceName, String filePath, String functions, String callbackArgs) throws Exception;
+
     /**
      * Upload poster string.
      *
@@ -172,6 +203,27 @@ public interface IVodService extends IBaseService {
      * @throws Exception the exception
      */
     UploadMediaByUrlResponse uploadMediaByUrl(UploadMediaByUrlRequest uploadMediaByUrlRequest) throws Exception;
+
+
+    /**
+     * OpenAPI 2.0
+     * Upload video by url
+     *
+     * @param uploadVideoByUrlRequest
+     * @return
+     * @throws Exception
+     */
+    UploadVideoByUrlResponse uploadVideoByUrl(UploadVideoByUrlRequest uploadVideoByUrlRequest) throws Exception;
+
+    /**
+     * OpenAPI 2.0
+     * query upload task state
+     *
+     * @param queryUploadTaskInfoRequest
+     * @return
+     * @throws Exception
+     */
+    QueryUploadTaskInfoResponse queryUploadTaskInfo(QueryUploadTaskInfoRequest queryUploadTaskInfoRequest) throws Exception;
 
     /**
      * Modify video info modify video info response.

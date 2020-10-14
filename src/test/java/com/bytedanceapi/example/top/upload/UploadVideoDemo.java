@@ -1,8 +1,10 @@
-package com.bytedanceapi.example.upload;
+package com.bytedanceapi.example.top.upload;
 
+import com.alibaba.fastjson.JSON;
 import com.bytedanceapi.helper.Const;
 import com.bytedanceapi.model.beans.Functions;
 import com.bytedanceapi.model.beans.FunctionsSnapshotInput;
+import com.bytedanceapi.model.response.CommitUploadInfoResponse;
 import com.bytedanceapi.model.response.CommitUploadResponse;
 import com.bytedanceapi.service.vod.IVodService;
 import com.bytedanceapi.service.vod.impl.VodServiceImpl;
@@ -11,14 +13,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UploadVideoDemo {
+
     public static void main(String[] args) {
         IVodService vodService = VodServiceImpl.getInstance();
 
         // call below method if you dont set ak and sk in ～/.vcloud/config
-         vodService.setAccessKey("AKLTZmM4YTM3MGZlMDMyNDE2MDhhNjUxZmFjZmRmZjA1ZDU");
-         vodService.setSecretKey("SGIxxU0uc3k090XUHoqFPLaMwboMpElJ594+wlPNbBMxjp4MhCkDl6ZYrsLt71Cq");
+        vodService.setAccessKey("AKLTNDQ2YTRlNTBiYTg1NDcyNmE3MDA1MTUzNzc5MWMwNmI");
+        vodService.setSecretKey("1ZOtyBZ89VERZdOfiUrPf24a3tTjRo1XIJbzccVHMrBvZo1jEn60LjClP2t05qWz");
 
-        String space = "james-upload-test";
+        String space = "james-test";
         String filePath = "/Users/bytedance/Downloads/objects.mp4";
         try {
             List<Functions> functionsList = new ArrayList<>();
@@ -33,14 +36,13 @@ public class UploadVideoDemo {
             snapShotFunc.setInput(functionsSnapshotInput);
             functionsList.add(snapShotFunc);
 
-            CommitUploadResponse commitUploadResponse = vodService.uploadVideo(space, filePath, Const.FILE_TYPE_VIDEO, functionsList);
-            System.out.println(commitUploadResponse);
-
+            CommitUploadInfoResponse commitUploadInfoResponse = vodService.uploadVideoToB(space, filePath, JSON.toJSONString(functionsList), "");
+            System.out.println(JSON.toJSONString(commitUploadInfoResponse));
         } catch (Exception e) {
             System.out.println(e.getMessage());
             e.printStackTrace();
         }
 
-
     }
+
 }

@@ -281,6 +281,37 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
     }
 
     @Override
+    public ApplyUploadInfoResponse applyUploadInfo(ApplyUploadInfoRequest applyUploadInfoRequest) throws Exception {
+        RawResponse response = query(Const.ApplyUploadInfo, Utils.mapToPairList(Utils.paramsToMap(applyUploadInfoRequest)));
+        if (response.getCode() != SdkError.SUCCESS.getNumber()) {
+            throw response.getException();
+        }
+
+        ApplyUploadInfoResponse applyUploadInfoResponse = JSON.parseObject(response.getData(), ApplyUploadInfoResponse.class);
+        applyUploadInfoResponse.getResponseMetadata().setService("vod");
+        return applyUploadInfoResponse;
+    }
+
+    @Override
+    public CommitUploadInfoResponse commitUploadInfo(CommitUploadInfoRequest commitUploadInfoRequest) throws Exception {
+        Map<String, String> params = new HashMap<>();
+        Map<String, String> form = new HashMap<>();
+        form.put(Const.SpaceName, commitUploadInfoRequest.getSpaceName());
+        form.put(Const.SessionKey, commitUploadInfoRequest.getSessionKey());
+        form.put(Const.Functions, commitUploadInfoRequest.getFunctions());
+        form.put(Const.CallbackArgs, commitUploadInfoRequest.getCallbackArgs());
+
+        RawResponse response = post(Const.CommitUploadInfo, Utils.mapToPairList(params), Utils.mapToPairList(form));
+        if (response.getCode() != SdkError.SUCCESS.getNumber()) {
+            throw response.getException();
+        }
+
+        CommitUploadInfoResponse commitUploadInfoResponse = JSON.parseObject(response.getData(), CommitUploadInfoResponse.class);
+        commitUploadInfoResponse.getResponseMetadata().setService("vod");
+        return commitUploadInfoResponse;
+    }
+
+    @Override
     public CommitUploadResponse commitUpload(CommitUploadRequest commitUploadRequest) throws Exception {
         Map<String, String> params = new HashMap<>();
         params.put(Const.SpaceName, commitUploadRequest.getSpaceName());
@@ -310,6 +341,28 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
         UploadMediaByUrlResponse uploadMediaByUrlResponse = JSON.parseObject(response.getData(), UploadMediaByUrlResponse.class);
         uploadMediaByUrlResponse.getResponseMetadata().setService("vod");
         return uploadMediaByUrlResponse;
+    }
+
+    @Override
+    public UploadVideoByUrlResponse uploadVideoByUrl(UploadVideoByUrlRequest uploadVideoByUrlRequest) throws Exception {
+        RawResponse response = query(Const.UploadVideoByUrl, Utils.mapToPairList(Utils.paramsToMap(uploadVideoByUrlRequest)));
+        if (response.getCode() != SdkError.SUCCESS.getNumber()) {
+            throw response.getException();
+        }
+        UploadVideoByUrlResponse uploadVideoByUrlResponse = JSON.parseObject(response.getData(), UploadVideoByUrlResponse.class);
+        uploadVideoByUrlResponse.getResponseMetadata().setService("vod");
+        return uploadVideoByUrlResponse;
+    }
+
+    @Override
+    public QueryUploadTaskInfoResponse queryUploadTaskInfo(QueryUploadTaskInfoRequest queryUploadTaskInfoRequest) throws Exception {
+        RawResponse response = query(Const.QueryUploadTaskInfo, Utils.mapToPairList(Utils.paramsToMap(queryUploadTaskInfoRequest)));
+        if (response.getCode() != SdkError.SUCCESS.getNumber()) {
+            throw response.getException();
+        }
+        QueryUploadTaskInfoResponse queryUploadTaskInfoResponse = JSON.parseObject(response.getData(), QueryUploadTaskInfoResponse.class);
+        queryUploadTaskInfoResponse.getResponseMetadata().setService("vod");
+        return queryUploadTaskInfoResponse;
     }
 
     @Override
@@ -378,6 +431,59 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
         return uploadCompleteInfo;
     }
 
+    private UploadCompleteInfo uploadToB(String spaceName, String filePath) throws Exception {
+        File file = new File(filePath);
+        if (!(file.isFile() && file.exists())) {
+            throw new Exception(SdkError.getErrorDesc(SdkError.ENOFILE));
+        }
+        long crc32 = Utils.crc32(filePath);
+        if (crc32 == -1) {
+            throw new Exception("file crc32 error");
+        }
+        String checkSum = String.format("%x", crc32);
+
+        ApplyUploadInfoRequest applyUploadInfoRequest = new ApplyUploadInfoRequest();
+        applyUploadInfoRequest.setSpaceName(spaceName);
+
+        // apply upload
+        ApplyUploadInfoResponse applyUploadInfoResponse = applyUploadInfo(applyUploadInfoRequest);
+        if (applyUploadInfoResponse.getResponseMetadata().getError() != null) {
+            throw new Exception(applyUploadInfoResponse.getResponseMetadata().getError().getMessage());
+        }
+        if (applyUploadInfoResponse.getResult() == null || applyUploadInfoResponse.getResult().getData().getUploadAddress().getStoreInfos() == null) {
+            throw new Exception("apply upload result is null");
+        }
+
+        String oid = applyUploadInfoResponse.getResult().getData().getUploadAddress().getStoreInfos().get(0).getStoreUri();
+        String sessionKey = applyUploadInfoResponse.getResult().getData().getUploadAddress().getSessionKey();
+        String auth = applyUploadInfoResponse.getResult().getData().getUploadAddress().getStoreInfos().get(0).getAuth();
+        String host = applyUploadInfoResponse.getResult().getData().getUploadAddress().getUploadHosts().get(0);
+        String url = String.format("http://%s/%s", host, oid);
+
+        Map<String, String> headers = new HashMap<>();
+        headers.put("Content-CRC32", checkSum);
+        headers.put("Authorization", auth);
+
+        long startTime = System.currentTimeMillis();
+        boolean uploadStatus = false;
+        for (int i = 0; i < 3; i++) {
+            uploadStatus = put(url, filePath, headers);
+            if (uploadStatus) {
+                break;
+            }
+        }
+        if (!uploadStatus) {
+            throw new Exception(SdkError.getErrorDesc(SdkError.EUPLOAD));
+        }
+        long endTime = System.currentTimeMillis();
+        long cost = endTime - startTime;
+        float avgSpeed = (float) file.length() / (float) cost;
+        System.out.println(String.format("upload {%s} cost {%d} ms, avgSpeed: {%f} KB/s", filePath, cost, avgSpeed));
+
+        UploadCompleteInfo uploadCompleteInfo = new UploadCompleteInfo(oid, sessionKey);
+        return uploadCompleteInfo;
+    }
+
     @Override
     public CommitUploadResponse uploadVideo(String spaceName, String filePath, String fileType, List<Functions> functions) throws Exception {
         UploadCompleteInfo uploadCompleteInfo = upload(spaceName, filePath, fileType);
@@ -395,6 +501,21 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
         }
         return commitUploadResponse;
     }
+
+    @Override
+    public CommitUploadInfoResponse uploadVideoToB(String spaceName, String filePath, String functions, String callbackArgs) throws Exception {
+        UploadCompleteInfo uploadCompleteInfo = uploadToB(spaceName, filePath);
+
+        CommitUploadInfoRequest commitUploadInfoRequest = new CommitUploadInfoRequest();
+        commitUploadInfoRequest.setSpaceName(spaceName);
+        commitUploadInfoRequest.setSessionKey(uploadCompleteInfo.getSessionKey());
+        commitUploadInfoRequest.setCallbackArgs(callbackArgs);
+        commitUploadInfoRequest.setFunctions(functions);
+
+        // commit upload
+        return commitUploadInfo(commitUploadInfoRequest);
+    }
+
 
     @Override
     public String uploadPoster(String vid, String spaceName, String filePath, String fileType) throws Exception {

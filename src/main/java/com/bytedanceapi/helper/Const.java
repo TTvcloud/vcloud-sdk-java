@@ -46,6 +46,9 @@ public class Const {
     public static final String VOD_TPL_SIG = "tplv-bd-sig";
 
     public static final String SpaceName = "SpaceName";
+    public static final String SessionKey = "SessionKey";
+    public static final String CallbackArgs = "CallbackArgs";
+    public static final String Functions = "Functions";
     // vod
     public static final String GetSpace = "GetSpace";
     public static final String GetPlayInfo = "GetPlayInfo";
@@ -58,6 +61,13 @@ public class Const {
     public static final String RedirectPlay = "RedirectPlay";
     public static final String GetOriginVideoPlayInfo = "GetOriginVideoPlayInfo";
     public static final String ModifyVideoInfo = "ModifyVideoInfo";
+
+    //top open api 2.0
+    public static final String UploadVideoByUrl = "UploadVideoByUrl";
+    public static final String QueryUploadTaskInfo = "QueryUploadTaskInfo";
+    public static final String ApplyUploadInfo = "ApplyUploadInfo";
+    public static final String CommitUploadInfo = "CommitUploadInfo";
+
 
     // iam
     public static final String CreateUser = "CreateUser";
