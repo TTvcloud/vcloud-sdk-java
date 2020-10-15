@@ -46,6 +46,13 @@ public class Const {
     public static final String VOD_TPL_SIG = "tplv-bd-sig";
 
     public static final String SpaceName = "SpaceName";
+    public static final String Vid = "Vid";
+    public static final String Vids = "Vids";
+    public static final String Status = "Status";
+    public static final String PosterUri = "PosterUri";
+    public static final String Title = "Title";
+    public static final String Description = "Description";
+    public static final String Tags = "Tags";
     // vod
     public static final String GetSpace = "GetSpace";
     public static final String GetPlayInfo = "GetPlayInfo";
@@ -53,11 +60,13 @@ public class Const {
     public static final String UploadMediaByUrl = "UploadMediaByUrl";
     public static final String ApplyUpload = "ApplyUpload";
     public static final String CommitUpload = "CommitUpload";
-    public static final String SetVideoPublishStatus = "SetVideoPublishStatus";
+    public static final String UpdateVideoPublishStatus = "UpdateVideoPublishStatus";
     public static final String GetCdnDomainWeights = "GetCdnDomainWeights";
     public static final String RedirectPlay = "RedirectPlay";
     public static final String GetOriginVideoPlayInfo = "GetOriginVideoPlayInfo";
-    public static final String ModifyVideoInfo = "ModifyVideoInfo";
+    public static final String UpdateVideoInfo = "UpdateVideoInfo";
+    public static final String GetVideoInfos = "GetVideoInfos";
+    public static final String GetRecommendedPosters = "GetRecommendedPosters";
 
     // iam
     public static final String CreateUser = "CreateUser";
@@ -70,4 +79,7 @@ public class Const {
     // upload by url format type
     public static final String UPLOAD_FORMAT_MP4 = "mp4";
     public static final String UPLOAD_FORMAT_M3U8 = "m3u8";
+
+    // response code
+    public static final String RESP_SUCCESS = "Success";
 }

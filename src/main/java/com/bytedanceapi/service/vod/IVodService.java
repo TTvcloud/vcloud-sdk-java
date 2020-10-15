@@ -68,11 +68,12 @@ public interface IVodService extends IBaseService {
     /**
      * Sets video publish status.
      *
-     * @param setVideoPublishStatusRequest the set video publish status request
+     * @param vid the video id
+     * @param status the video publish status
      * @return the video publish status
      * @throws Exception the exception
      */
-    SetVideoPublishStatusResponse setVideoPublishStatus(SetVideoPublishStatusRequest setVideoPublishStatusRequest) throws Exception;
+    void updateVideoPublishStatus(String vid, String  status) throws Exception;
 
     /**
      * Gets domain weights.
@@ -174,11 +175,29 @@ public interface IVodService extends IBaseService {
     UploadMediaByUrlResponse uploadMediaByUrl(UploadMediaByUrlRequest uploadMediaByUrlRequest) throws Exception;
 
     /**
-     * Modify video info modify video info response.
+     * Update video info modify video info response.
      *
-     * @param modifyVideoInfoRequest the modify video info request
+     * @param updateVideoInfoRequest the update video info request
      * @return the modify video info response
      * @throws Exception the exception
      */
-    ModifyVideoInfoResponse modifyVideoInfo(ModifyVideoInfoRequest modifyVideoInfoRequest) throws Exception;
+    void updateVideoInfo(UpdateVideoInfoRequest updateVideoInfoRequest) throws Exception;
+
+    /**
+     * Update video info modify video info response.
+     *
+     * @param vids the video id list request
+     * @return the video info list response
+     * @throws Exception the exception
+     */
+    GetVideoInfosResponse getVideoInfos(String[] vids) throws Exception;
+
+    /**
+     * Update video info modify video info response.
+     *
+     * @param vids the video id list request
+     * @return the video poster uri list response
+     * @throws Exception the exception
+     */
+    GetRecommendedPostersResponse getRecommendedPostersResponse(String[] vids) throws Exception;
 }

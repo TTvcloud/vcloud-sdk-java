@@ -149,15 +149,15 @@ public class VodConfig {
                         }
                     }
             ));
-            put(Const.SetVideoPublishStatus, new ApiInfo(
+            put(Const.UpdateVideoPublishStatus, new ApiInfo(
                     new HashMap<String, Object>() {
                         {
-                            put(Const.Method, "POST");
+                            put(Const.Method, "GET");
                             put(Const.Path, "/");
                             put(Const.Query, new ArrayList<NameValuePair>() {
                                 {
-                                    add(new BasicNameValuePair("Action", Const.SetVideoPublishStatus));
-                                    add(new BasicNameValuePair("Version", "2018-01-01"));
+                                    add(new BasicNameValuePair("Action", Const.UpdateVideoPublishStatus));
+                                    add(new BasicNameValuePair("Version", "2020-08-01"));
                                 }
                             });
                         }
@@ -205,15 +205,15 @@ public class VodConfig {
                         }
                     }
             ));
-            put(Const.ModifyVideoInfo, new ApiInfo(
+            put(Const.UpdateVideoInfo, new ApiInfo(
                     new HashMap<String, Object>() {
                         {
-                            put(Const.Method, "POST");
+                            put(Const.Method, "GET");
                             put(Const.Path, "/");
                             put(Const.Query, new ArrayList<NameValuePair>() {
                                 {
-                                    add(new BasicNameValuePair("Action", Const.ModifyVideoInfo));
-                                    add(new BasicNameValuePair("Version", "2018-01-01"));
+                                    add(new BasicNameValuePair("Action", Const.UpdateVideoInfo));
+                                    add(new BasicNameValuePair("Version", "2020-08-01"));
                                 }
                             });
                         }
@@ -228,6 +228,34 @@ public class VodConfig {
                                 {
                                     add(new BasicNameValuePair("Action", Const.GetSpace));
                                     add(new BasicNameValuePair("Version", "2018-12-01"));
+                                }
+                            });
+                        }
+                    }
+            ));
+            put(Const.GetVideoInfos, new ApiInfo(
+                    new HashMap<String, Object>() {
+                        {
+                            put(Const.Method, "GET");
+                            put(Const.Path, "/");
+                            put(Const.Query, new ArrayList<NameValuePair>() {
+                                {
+                                    add(new BasicNameValuePair("Action", Const.GetVideoInfos));
+                                    add(new BasicNameValuePair("Version", "2020-08-01"));
+                                }
+                            });
+                        }
+                    }
+            ));
+            put(Const.GetRecommendedPosters, new ApiInfo(
+                    new HashMap<String, Object>() {
+                        {
+                            put(Const.Method, "GET");
+                            put(Const.Path, "/");
+                            put(Const.Query, new ArrayList<NameValuePair>() {
+                                {
+                                    add(new BasicNameValuePair("Action", Const.GetRecommendedPosters));
+                                    add(new BasicNameValuePair("Version", "2020-08-01"));
                                 }
                             });
                         }

@@ -126,14 +126,19 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
     }
 
     @Override
-    public SetVideoPublishStatusResponse setVideoPublishStatus(SetVideoPublishStatusRequest setVideoPublishStatusRequest) throws Exception {
+    public void updateVideoPublishStatus(String vid, String status) throws Exception {
         Map<String, String> params = new HashMap<>();
-        RawResponse resp = json(Const.SetVideoPublishStatus, Utils.mapToPairList(params), JSON.toJSONString(setVideoPublishStatusRequest));
-        if (resp.getCode() != SdkError.SUCCESS.getNumber()) {
-            throw resp.getException();
+        params.put(Const.Vid, vid);
+        params.put(Const.Status, status);
+        RawResponse response = query(Const.UpdateVideoPublishStatus, Utils.mapToPairList(params));
+        if (response.getCode() != SdkError.SUCCESS.getNumber()) {
+            throw response.getException();
         }
 
-        return JSON.parseObject(resp.getData(), SetVideoPublishStatusResponse.class);
+        UpdateVideoPublishStatusResponse updateVideoPublishStatusResponse = JSON.parseObject(response.getData(), UpdateVideoPublishStatusResponse.class);
+        if(updateVideoPublishStatusResponse.getResponseMetadata().getError() != null && updateVideoPublishStatusResponse.getResponseMetadata().getError().getCode() != Const.RESP_SUCCESS){
+            throw new Exception("update video publish status error " + updateVideoPublishStatusResponse.getResponseMetadata().getError().getMessage());
+        }
     }
 
     @Override
@@ -310,15 +315,56 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
     }
 
     @Override
-    public ModifyVideoInfoResponse modifyVideoInfo(ModifyVideoInfoRequest modifyVideoInfoRequest) throws Exception {
+    public void updateVideoInfo(UpdateVideoInfoRequest updateVideoInfoRequest) throws Exception {
         Map<String, String> params = new HashMap<>();
-        RawResponse response = json(Const.ModifyVideoInfo, Utils.mapToPairList(params), JSON.toJSONString(modifyVideoInfoRequest));
+        params.put(Const.Vid, updateVideoInfoRequest.getVid());
+        if(updateVideoInfoRequest.getPosterUri() != null) {
+            params.put(Const.PosterUri, updateVideoInfoRequest.getPosterUri());
+        }
+        if(updateVideoInfoRequest.getTitle() != null) {
+            params.put(Const.Title, updateVideoInfoRequest.getTitle());
+        }
+        if(updateVideoInfoRequest.getDescription() != null) {
+            params.put(Const.Description, updateVideoInfoRequest.getDescription());
+        }
+        if(updateVideoInfoRequest.getTags() != null) {
+            params.put(Const.Tags, updateVideoInfoRequest.getTags());
+        }
+
+        RawResponse response = query(Const.UpdateVideoInfo, Utils.mapToPairList(params));
         if (response.getCode() != SdkError.SUCCESS.getNumber()) {
             throw response.getException();
         }
-        ModifyVideoInfoResponse modifyVideoInfoResponse = JSON.parseObject(response.getData(), ModifyVideoInfoResponse.class);
-        modifyVideoInfoResponse.getResponseMetadata().setService("vod");
-        return modifyVideoInfoResponse;
+        UpdateVideoInfoResponse updateVideoInfoResponse = JSON.parseObject(response.getData(), UpdateVideoInfoResponse.class);
+        updateVideoInfoResponse.getResponseMetadata().setService("vod");
+
+        if(updateVideoInfoResponse.getResponseMetadata().getError() != null && updateVideoInfoResponse.getResponseMetadata().getError().getCode() != Const.RESP_SUCCESS){
+            throw new Exception("update video info error " + updateVideoInfoResponse.getResponseMetadata().getError().getMessage());
+        }
+    }
+
+    @Override
+    public GetVideoInfosResponse getVideoInfos(String[] vids) throws Exception {
+        Map<String, String> params = new HashMap<>();
+        params.put(Const.Vids, String.join(",", vids));
+        RawResponse response = query(Const.GetVideoInfos, Utils.mapToPairList(params));
+        if (response.getCode() != SdkError.SUCCESS.getNumber()) {
+            throw response.getException();
+        }
+
+        return JSON.parseObject(response.getData(), GetVideoInfosResponse.class);
+    }
+
+    @Override
+    public GetRecommendedPostersResponse getRecommendedPostersResponse(String[] vids) throws Exception {
+        Map<String, String> params = new HashMap<>();
+        params.put(Const.Vids, String.join(",", vids));
+        RawResponse response = query(Const.GetRecommendedPosters, Utils.mapToPairList(params));
+        if (response.getCode() != SdkError.SUCCESS.getNumber()) {
+            throw response.getException();
+        }
+
+        return JSON.parseObject(response.getData(), GetRecommendedPostersResponse.class);
     }
 
     private UploadCompleteInfo upload(String spaceName, String filePath, String fileType) throws Exception {
@@ -398,20 +444,16 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
         UploadCompleteInfo uploadCompleteInfo = upload(spaceName, filePath, fileType);
         String oid = uploadCompleteInfo.getOid();
 
-        ModifyVideoInfoRequest modifyVideoInfoRequest = new ModifyVideoInfoRequest();
-        modifyVideoInfoRequest.setSpaceName(spaceName);
-        modifyVideoInfoRequest.setVid(vid);
-        ModifyVideoInfoRequest.UserMetaInfo userMetaInfo = new ModifyVideoInfoRequest.UserMetaInfo();
-        userMetaInfo.setPosterUri(oid);
-        modifyVideoInfoRequest.setInfo(userMetaInfo);
+        UpdateVideoInfoRequest updateVideoInfoRequest = new UpdateVideoInfoRequest();
+        updateVideoInfoRequest.setVid(vid);
+        updateVideoInfoRequest.setPosterUri(oid);
 
-        ModifyVideoInfoResponse modifyVideoInfoResponse = modifyVideoInfo(modifyVideoInfoRequest);
-        if (modifyVideoInfoResponse.getResponseMetadata().getError() != null) {
-            throw new Exception(modifyVideoInfoResponse.getResponseMetadata().getError().getMessage());
-        }
-        if (modifyVideoInfoResponse.getResult() == null || modifyVideoInfoResponse.getResult().getBaseResp() == null || modifyVideoInfoResponse.getResult().getBaseResp().getStatusCode() != 0) {
-            throw new Exception("modify poster error" + modifyVideoInfoResponse.getResult().getBaseResp().getStatusMessage());
-        }
+        updateVideoInfo(updateVideoInfoRequest);
+
+//        if (updateVideoInfoResponse.getResult() == null || updateVideoInfoResponse.getResult().getBaseResp() == null || updateVideoInfoResponse.getResult().getBaseResp().getStatusCode() != 0) {
+//            throw new Exception("update poster error" + updateVideoInfoResponse.getResult().getBaseResp().getStatusMessage());
+//        }
+
         return oid;
     }
 
