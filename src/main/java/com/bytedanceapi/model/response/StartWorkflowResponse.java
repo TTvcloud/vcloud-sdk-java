@@ -4,7 +4,7 @@ import com.alibaba.fastjson.annotation.JSONField;
 import lombok.Data;
 
 @Data
-public class StartTranscodeResponse {
+public class StartWorkflowResponse {
 
     @JSONField(name = "ResponseMetadata")
     private ResponseMetadata responseMetadata;
