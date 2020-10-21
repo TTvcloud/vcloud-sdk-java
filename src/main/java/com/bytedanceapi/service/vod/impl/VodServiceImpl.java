@@ -126,10 +126,10 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
     }
 
     @Override
-    public void updateVideoPublishStatus(String vid, String status) throws Exception {
+    public void updateVideoPublishStatus(UpdateVideoPublishStatusRequest req) throws Exception {
         Map<String, String> params = new HashMap<>();
-        params.put(Const.Vid, vid);
-        params.put(Const.Status, status);
+        params.put(Const.Vid, req.getVid());
+        params.put(Const.Status, req.getStatus());
         RawResponse response = query(Const.UpdateVideoPublishStatus, Utils.mapToPairList(params));
         if (response.getCode() != SdkError.SUCCESS.getNumber()) {
             throw response.getException();
@@ -315,20 +315,20 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
     }
 
     @Override
-    public void updateVideoInfo(UpdateVideoInfoRequest updateVideoInfoRequest) throws Exception {
+    public void updateVideoInfo(UpdateVideoInfoRequest req) throws Exception {
         Map<String, String> params = new HashMap<>();
-        params.put(Const.Vid, updateVideoInfoRequest.getVid());
-        if(updateVideoInfoRequest.getPosterUri() != null) {
-            params.put(Const.PosterUri, updateVideoInfoRequest.getPosterUri());
+        params.put(Const.Vid, req.getVid());
+        if(req.getPosterUri() != null) {
+            params.put(Const.PosterUri, req.getPosterUri());
         }
-        if(updateVideoInfoRequest.getTitle() != null) {
-            params.put(Const.Title, updateVideoInfoRequest.getTitle());
+        if(req.getTitle() != null) {
+            params.put(Const.Title, req.getTitle());
         }
-        if(updateVideoInfoRequest.getDescription() != null) {
-            params.put(Const.Description, updateVideoInfoRequest.getDescription());
+        if(req.getDescription() != null) {
+            params.put(Const.Description, req.getDescription());
         }
-        if(updateVideoInfoRequest.getTags() != null) {
-            params.put(Const.Tags, updateVideoInfoRequest.getTags());
+        if(req.getTags() != null) {
+            params.put(Const.Tags, req.getTags());
         }
 
         RawResponse response = query(Const.UpdateVideoInfo, Utils.mapToPairList(params));
@@ -344,9 +344,9 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
     }
 
     @Override
-    public GetVideoInfosResponse getVideoInfos(String[] vids) throws Exception {
+    public GetVideoInfosResponse getVideoInfos(GetVideoInfosRequest req) throws Exception {
         Map<String, String> params = new HashMap<>();
-        params.put(Const.Vids, String.join(",", vids));
+        params.put(Const.Vids, String.join(",", req.getVids()));
         RawResponse response = query(Const.GetVideoInfos, Utils.mapToPairList(params));
         if (response.getCode() != SdkError.SUCCESS.getNumber()) {
             throw response.getException();
@@ -356,9 +356,9 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
     }
 
     @Override
-    public GetRecommendedPostersResponse getRecommendedPostersResponse(String[] vids) throws Exception {
+    public GetRecommendedPostersResponse getRecommendedPosters(GetRecommendedPostersRequest req) throws Exception {
         Map<String, String> params = new HashMap<>();
-        params.put(Const.Vids, String.join(",", vids));
+        params.put(Const.Vids, String.join(",", req.getVids()));
         RawResponse response = query(Const.GetRecommendedPosters, Utils.mapToPairList(params));
         if (response.getCode() != SdkError.SUCCESS.getNumber()) {
             throw response.getException();

@@ -18,10 +18,10 @@ public class UpdateVideoInfoDemo {
         try {
             UpdateVideoInfoRequest req = new UpdateVideoInfoRequest();
             req.setVid(vid);
-            req.setTags(title);
-            req.setTitle(""); //置空
+            req.setTags(""); //置空
+            req.setTitle(title);
             vodService.updateVideoInfo(req);
-            System.out.println("update video publish status success");
+            System.out.println("update video video success");
         } catch (Exception e) {
             e.printStackTrace();
         }

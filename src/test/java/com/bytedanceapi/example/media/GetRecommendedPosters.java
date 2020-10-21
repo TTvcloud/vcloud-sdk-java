@@ -1,5 +1,6 @@
 package com.bytedanceapi.example.media;
 
+import com.bytedanceapi.model.request.GetRecommendedPostersRequest;
 import com.bytedanceapi.model.response.GetRecommendedPostersResponse;
 import com.bytedanceapi.model.response.GetVideoInfosResponse;
 import com.bytedanceapi.service.vod.IVodService;
@@ -14,9 +15,11 @@ public class GetRecommendedPosters {
         // vodService.setSecretKey("your sk");
 
         String[] vids = new String[]{"vid1", "vid2", "vid3"};
+        GetRecommendedPostersRequest req = new GetRecommendedPostersRequest();
+        req.setVids(vids);
 
         try {
-            GetRecommendedPostersResponse resp = vodService.getRecommendedPostersResponse(vids);
+            GetRecommendedPostersResponse resp = vodService.getRecommendedPosters(req);
             System.out.println(resp);
             for (String[] uris : resp.getResult().getStoreUriGroups().values()){
                 for (String uri : uris) {

@@ -20,12 +20,18 @@ public class UpdateVideoPublishStatusDemo {
 
         try {
             // publish
-            vodService.updateVideoPublishStatus(vid, statusPublished);
+            UpdateVideoPublishStatusRequest publishReq = new UpdateVideoPublishStatusRequest();
+            publishReq.setVid(vid);
+            publishReq.setStatus(statusPublished);
+            vodService.updateVideoPublishStatus(publishReq);
             System.out.println("update video publish status success");
 
             Thread.sleep(20000);
 
-            vodService.updateVideoPublishStatus(vid, statusUnpublished);
+            UpdateVideoPublishStatusRequest unpublishReq = new UpdateVideoPublishStatusRequest();
+            unpublishReq.setVid(vid);
+            unpublishReq.setStatus(statusUnpublished);
+            vodService.updateVideoPublishStatus(unpublishReq);
             System.out.println("update video publish status success");
         } catch (Exception e) {
             e.printStackTrace();

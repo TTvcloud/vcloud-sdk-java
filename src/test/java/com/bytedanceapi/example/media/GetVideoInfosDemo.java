@@ -1,5 +1,6 @@
 package com.bytedanceapi.example.media;
 
+import com.bytedanceapi.model.request.GetVideoInfosRequest;
 import com.bytedanceapi.model.request.UpdateVideoInfoRequest;
 import com.bytedanceapi.model.response.GetVideoInfosResponse;
 import com.bytedanceapi.service.vod.IVodService;
@@ -14,9 +15,11 @@ public class GetVideoInfosDemo {
         // vodService.setSecretKey("");
 
         String[] vids = new String[]{"vid1", "vid2", "vid3"};
+        GetVideoInfosRequest req = new GetVideoInfosRequest();
+        req.setVids(vids);
 
         try {
-            GetVideoInfosResponse resp = vodService.getVideoInfos(vids);
+            GetVideoInfosResponse resp = vodService.getVideoInfos(req);
             System.out.println(resp);
         } catch (Exception e) {
             e.printStackTrace();
