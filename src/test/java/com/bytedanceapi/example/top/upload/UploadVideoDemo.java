@@ -1,11 +1,9 @@
 package com.bytedanceapi.example.top.upload;
 
 import com.alibaba.fastjson.JSON;
-import com.bytedanceapi.helper.Const;
 import com.bytedanceapi.model.beans.Functions;
 import com.bytedanceapi.model.beans.FunctionsSnapshotInput;
 import com.bytedanceapi.model.response.CommitUploadInfoResponse;
-import com.bytedanceapi.model.response.CommitUploadResponse;
 import com.bytedanceapi.service.vod.IVodService;
 import com.bytedanceapi.service.vod.impl.VodServiceImpl;
 

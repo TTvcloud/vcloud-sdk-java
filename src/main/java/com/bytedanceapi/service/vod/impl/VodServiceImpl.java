@@ -450,23 +450,28 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
         if (applyUploadInfoResponse.getResponseMetadata().getError() != null) {
             throw new Exception(applyUploadInfoResponse.getResponseMetadata().getError().getMessage());
         }
-        if (applyUploadInfoResponse.getResult() == null || applyUploadInfoResponse.getResult().getData().getUploadAddress().getStoreInfos() == null) {
+        ApplyUploadInfoResponse.UploadAddressBean uploadAddressBean = applyUploadInfoResponse.getResult().getData().getUploadAddress();
+        if (applyUploadInfoResponse.getResult() == null || uploadAddressBean.getStoreInfos() == null || uploadAddressBean.getStoreInfos().size() == 0) {
             throw new Exception("apply upload result is null");
         }
 
-        String oid = applyUploadInfoResponse.getResult().getData().getUploadAddress().getStoreInfos().get(0).getStoreUri();
-        String sessionKey = applyUploadInfoResponse.getResult().getData().getUploadAddress().getSessionKey();
-        String auth = applyUploadInfoResponse.getResult().getData().getUploadAddress().getStoreInfos().get(0).getAuth();
-        String host = applyUploadInfoResponse.getResult().getData().getUploadAddress().getUploadHosts().get(0);
+        String oid = uploadAddressBean.getStoreInfos().get(0).getStoreUri();
+        String sessionKey = uploadAddressBean.getSessionKey();
+        String auth = uploadAddressBean.getStoreInfos().get(0).getAuth();
+        String host = uploadAddressBean.getUploadHosts().get(0);
+        //TODO 提取成函数，url 生成
         String url = String.format("http://%s/%s", host, oid);
 
         Map<String, String> headers = new HashMap<>();
+        //TODO 常量提取
         headers.put("Content-CRC32", checkSum);
         headers.put("Authorization", auth);
 
         long startTime = System.currentTimeMillis();
         boolean uploadStatus = false;
+        //TODO 抽出 retry
         for (int i = 0; i < 3; i++) {
+            //TODO put 方法需要改进，HTTPUtil.Put
             uploadStatus = put(url, filePath, headers);
             if (uploadStatus) {
                 break;
@@ -494,7 +499,6 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
         commitUploadRequest.setFunctions(functions);
         commitUploadRequest.setSpaceName(spaceName);
 
-        // commit upload
         CommitUploadResponse commitUploadResponse = commitUpload(commitUploadRequest);
         if (commitUploadResponse.getResponseMetadata().getError() != null) {
             throw new Exception(commitUploadResponse.getResponseMetadata().getError().getMessage());
@@ -512,7 +516,6 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
         commitUploadInfoRequest.setCallbackArgs(callbackArgs);
         commitUploadInfoRequest.setFunctions(functions);
 
-        // commit upload
         return commitUploadInfo(commitUploadInfoRequest);
     }
 

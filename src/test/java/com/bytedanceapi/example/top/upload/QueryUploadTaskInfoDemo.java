@@ -24,7 +24,7 @@ public class QueryUploadTaskInfoDemo {
 
         try {
             QueryUploadTaskInfoRequest request = new QueryUploadTaskInfoRequest();
-            String jobId = "5f4f61d887664b388d03877f481b44d8";
+            String jobId = "216651b88a59482e89812b1715831397";
 
             List<String> jobIds = Arrays.asList(jobId);
             request.setJobIds(String.join(",", jobIds));
