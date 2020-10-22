@@ -1,10 +1,10 @@
 package com.bytedanceapi.example.play;
 
-import com.bytedanceapi.model.request.GetOriginVideoPlayRequest;
-import com.bytedanceapi.model.request.GetPlayInfoRequest;
+import com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest;
+import com.bytedanceapi.model.common.VodGetOriginalPlayInfoResponse;
+import com.bytedanceapi.model.common.VodGetPlayInfoRequest;
+import com.bytedanceapi.model.common.VodGetPlayInfoResponse;
 import com.bytedanceapi.model.request.GetRedirectPlayRequest;
-import com.bytedanceapi.model.response.GetOriginVideoPlayResponse;
-import com.bytedanceapi.model.response.GetPlayInfoResponse;
 import com.bytedanceapi.service.vod.IVodService;
 import com.bytedanceapi.service.vod.impl.VodServiceImpl;
 
@@ -14,52 +14,40 @@ public class VodPlayDemo {
     public static void main(String[] args) throws Exception {
         IVodService vodService = VodServiceImpl.getInstance();
 
-        String vid = "your vid";
+        String vid = "v0c2c369007abu04ru8riko30uo9n73g";
 
         // call below method if you dont set ak and sk in ～/.vcloud/config
-        // vodService.setAccessKey("");
-        // vodService.setSecretKey("");
+//         vodService.setAccessKey("");
+//         vodService.setSecretKey("");
 
         // 1. get play info
         try {
-            GetPlayInfoRequest getPlayInfoRequest = new GetPlayInfoRequest();
-            getPlayInfoRequest.setVideoId(vid);
-            getPlayInfoRequest.setSsl(1L);
+            VodGetPlayInfoRequest.Builder reqBuilder = VodGetPlayInfoRequest.newBuilder();
+            reqBuilder.setVid(vid);
+            reqBuilder.setSsl("1");
 
-            GetPlayInfoResponse resp = vodService.getPlayInfo(getPlayInfoRequest);
-            if (resp.getResponseMetadata().getError() != null) {
+            VodGetPlayInfoResponse resp = vodService.getPlayInfo(reqBuilder.build());
+            if (resp.getResponseMetadata().hasError()) {
                 System.out.println(resp.getResponseMetadata().getError());
                 System.exit(-1);
             }
-            System.out.println(resp.getResult().getPlayInfoList().get(0).getMainPlayUrl());
+            System.out.println(resp.getResult().getPlayInfoList(0).getMainPlayUrl());
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         // 2. get origin play info
-        GetOriginVideoPlayRequest getOriginVideoPlayRequest = new GetOriginVideoPlayRequest();
-        getOriginVideoPlayRequest.setSsl(1);
-        getOriginVideoPlayRequest.setVid(vid);
+
         try {
-            GetOriginVideoPlayResponse resp = vodService.getOriginVideoPlayInfo(getOriginVideoPlayRequest);
-            if (resp.getResponseMetadata().getError() != null) {
+            VodGetOriginalPlayInfoRequest.Builder reqBuilder = VodGetOriginalPlayInfoRequest.newBuilder();
+            reqBuilder.setSsl("1");
+            reqBuilder.setVid(vid);
+            VodGetOriginalPlayInfoResponse resp = vodService.getOriginVideoPlayInfo(reqBuilder.build());
+            if (resp.getResponseMetadata().hasError()) {
                 System.out.println(resp.getResponseMetadata().getError());
                 System.exit(-1);
             }
-            System.out.println(resp.getOriginPlayData().getMainPlayUrl());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        // 3. get redirect play
-        GetRedirectPlayRequest getRedirectPlayRequest = new GetRedirectPlayRequest();
-        getRedirectPlayRequest.setVid(vid);
-        // set expires time of the redirect play url, defalut is 15min(900),
-        // set if if you know the params' meaning exactly.
-        getRedirectPlayRequest.setExpires(60);
-        try {
-            String resp = vodService.getRedirectPlay(getRedirectPlayRequest);
-            System.out.println(resp);
+            System.out.println(resp.getResult().getMainPlayUrl());
         } catch (Exception e) {
             e.printStackTrace();
         }

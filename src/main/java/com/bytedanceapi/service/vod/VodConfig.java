@@ -34,7 +34,8 @@ public class VodConfig {
                         {
                             put(Const.CONNECTION_TIMEOUT, 5000);
                             put(Const.SOCKET_TIMEOUT, 5000);
-                            put(Const.Host, "vod.bytedanceapi.com");
+                            //put(Const.Host, "vod.bytedanceapi.com");
+                            put(Const.Host, "staging-openapi-boe.byted.org");
                             put(Const.Header, new ArrayList<Header>() {
                                 {
                                     add(new BasicHeader("Accept", "application/json"));

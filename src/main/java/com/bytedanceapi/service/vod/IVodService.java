@@ -4,6 +4,10 @@ import com.bytedanceapi.model.beans.DomainInfo;
 import com.bytedanceapi.model.beans.Functions;
 import com.bytedanceapi.model.beans.ImgUrl;
 import com.bytedanceapi.model.beans.ImgUrlOption;
+import com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest;
+import com.bytedanceapi.model.common.VodGetOriginalPlayInfoResponse;
+import com.bytedanceapi.model.common.VodGetPlayInfoRequest;
+import com.bytedanceapi.model.common.VodGetPlayInfoResponse;
 import com.bytedanceapi.model.request.*;
 import com.bytedanceapi.model.response.*;
 import com.bytedanceapi.service.IBaseService;
@@ -26,7 +30,7 @@ public interface IVodService extends IBaseService {
      * @return the play info
      * @throws Exception the exception
      */
-    GetPlayInfoResponse getPlayInfo(GetPlayInfoRequest getPlayInfoRequest) throws Exception;
+    VodGetPlayInfoResponse getPlayInfo(VodGetPlayInfoRequest getPlayInfoRequest) throws Exception;
 
     /**
      * Gets play auth token.
@@ -44,7 +48,7 @@ public interface IVodService extends IBaseService {
      * @return the origin video play info
      * @throws Exception the exception
      */
-    GetOriginVideoPlayResponse getOriginVideoPlayInfo(GetOriginVideoPlayRequest getOriginVideoPlayRequest) throws Exception;
+    VodGetOriginalPlayInfoResponse getOriginVideoPlayInfo(VodGetOriginalPlayInfoRequest getOriginVideoPlayRequest) throws Exception;
 
     /**
      * Gets redirect play.
@@ -53,7 +57,7 @@ public interface IVodService extends IBaseService {
      * @return the redirect play
      * @throws Exception the exception
      */
-    String getRedirectPlay(GetRedirectPlayRequest getRedirectPlayRequest) throws Exception;
+//    String getRedirectPlay(GetRedirectPlayRequest getRedirectPlayRequest) throws Exception;
 
 
     /**
