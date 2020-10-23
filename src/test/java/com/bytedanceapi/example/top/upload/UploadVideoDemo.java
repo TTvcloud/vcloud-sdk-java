@@ -23,15 +23,10 @@ public class UploadVideoDemo {
         String filePath = "/Users/bytedance/Downloads/objects.mp4";
         try {
             List<Functions> functionsList = new ArrayList<>();
-            Functions getMetaFunc = new Functions();
-            getMetaFunc.setName("GetMeta");
+            Functions getMetaFunc = Functions.GetMetaFunction();
             functionsList.add(getMetaFunc);
 
-            Functions snapShotFunc = new Functions();
-            snapShotFunc.setName("Snapshot");
-            FunctionsSnapshotInput functionsSnapshotInput = new FunctionsSnapshotInput();
-            functionsSnapshotInput.setSnapshotTime(2.3);
-            snapShotFunc.setInput(functionsSnapshotInput);
+            Functions snapShotFunc = Functions.SnapShotFunction(2.3);
             functionsList.add(snapShotFunc);
 
             CommitUploadInfoResponse commitUploadInfoResponse = vodService.uploadVideoToB(space, filePath, JSON.toJSONString(functionsList), "");
