@@ -8,8 +8,10 @@ import com.bytedanceapi.model.ServiceInfo;
 import com.bytedanceapi.model.request.ApplyUploadRequest;
 import com.bytedanceapi.model.request.CommitUploadRequest;
 import com.bytedanceapi.model.request.CommitUploadRequestBody;
+import com.bytedanceapi.model.request.DeleteImageReq;
 import com.bytedanceapi.model.response.ApplyUploadResponse;
 import com.bytedanceapi.model.response.CommitUploadResponse;
+import com.bytedanceapi.model.response.DeleteImageResp;
 import com.bytedanceapi.model.response.RawResponse;
 import com.bytedanceapi.model.sts2.Policy;
 import com.bytedanceapi.model.sts2.SecurityToken2;
@@ -185,5 +187,22 @@ public class ImageXServiceImpl extends BaseServiceImpl implements IImageXService
         Statement statement = Sts2Utils.newAllowStatement(actions, resources);
         inlinePolicy.addStatement(statement);
         return signSts2(inlinePolicy, expire);
+    }
+
+    @Override
+    public DeleteImageResp deleteImages(DeleteImageReq req) throws Exception {
+        Map<String, String> params = new HashMap<>();
+        params.put("ServiceId", req.getServiceId());
+
+        RawResponse response = json("DeleteImageUploadFiles", Utils.mapToPairList(params), JSON.toJSONString(req));
+        if (response.getCode() != SdkError.SUCCESS.getNumber()) {
+            throw response.getException();
+        }
+        DeleteImageResp resp = JSON.parseObject(response.getData(), DeleteImageResp.class);
+        if (resp.getResponseMetadata().getError() != null) {
+            throw new Exception(resp.getResponseMetadata().getError().getMessage());
+        }
+        resp.getResponseMetadata().setService("ImageX");
+        return resp;
     }
 }

@@ -3,3 +3,7 @@ target
 .DS_Store
 *.iml
 scripts/build.out
+.settings
+.project
+.factorypath
+.classpath

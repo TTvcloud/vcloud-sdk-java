@@ -61,13 +61,13 @@ public interface IVodService extends IBaseService {
 
 
     /**
-     * Start transcode start transcode resp.
+     * Start workflow.
      *
      * @param req the req
-     * @return the start transcode resp
+     * @return the start workflow resp
      * @throws Exception the exception
      */
-    StartTranscodeResponse startTranscode(StartTranscodeRequest req) throws Exception;
+    StartWorkflowResponse startWorkflow(StartWorkflowRequest req) throws Exception;
 
     /**
      * Sets video publish status.
