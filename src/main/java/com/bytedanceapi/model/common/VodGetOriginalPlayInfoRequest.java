@@ -17,8 +17,6 @@ private static final long serialVersionUID = 0L;
   }
   private VodGetOriginalPlayInfoRequest() {
     vid_ = "";
-    base64_ = "";
-    ssl_ = "";
   }
 
   @java.lang.Override
@@ -57,16 +55,14 @@ private static final long serialVersionUID = 0L;
             vid_ = s;
             break;
           }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 16: {
 
-            base64_ = s;
+            base64_ = input.readInt64();
             break;
           }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 24: {
 
-            ssl_ = s;
+            ssl_ = input.readInt64();
             break;
           }
           default: {
@@ -148,95 +144,33 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int BASE64_FIELD_NUMBER = 2;
-  private volatile java.lang.Object base64_;
+  private long base64_;
   /**
    * <pre>
    *播放地址是否base64编码,默认否，0-否，1-是
    * </pre>
    *
-   * <code>string Base64 = 2;</code>
+   * <code>int64 Base64 = 2;</code>
    * @return The base64.
    */
   @java.lang.Override
-  public java.lang.String getBase64() {
-    java.lang.Object ref = base64_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      base64_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   *播放地址是否base64编码,默认否，0-否，1-是
-   * </pre>
-   *
-   * <code>string Base64 = 2;</code>
-   * @return The bytes for base64.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getBase64Bytes() {
-    java.lang.Object ref = base64_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      base64_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getBase64() {
+    return base64_;
   }
 
   public static final int SSL_FIELD_NUMBER = 3;
-  private volatile java.lang.Object ssl_;
+  private long ssl_;
   /**
    * <pre>
    *返回https播放地址,默认否, 0-否，1-是
    * </pre>
    *
-   * <code>string Ssl = 3;</code>
+   * <code>int64 Ssl = 3;</code>
    * @return The ssl.
    */
   @java.lang.Override
-  public java.lang.String getSsl() {
-    java.lang.Object ref = ssl_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      ssl_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   *返回https播放地址,默认否, 0-否，1-是
-   * </pre>
-   *
-   * <code>string Ssl = 3;</code>
-   * @return The bytes for ssl.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getSslBytes() {
-    java.lang.Object ref = ssl_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      ssl_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public long getSsl() {
+    return ssl_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -256,11 +190,11 @@ private static final long serialVersionUID = 0L;
     if (!getVidBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, vid_);
     }
-    if (!getBase64Bytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, base64_);
+    if (base64_ != 0L) {
+      output.writeInt64(2, base64_);
     }
-    if (!getSslBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, ssl_);
+    if (ssl_ != 0L) {
+      output.writeInt64(3, ssl_);
     }
     unknownFields.writeTo(output);
   }
@@ -274,11 +208,13 @@ private static final long serialVersionUID = 0L;
     if (!getVidBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, vid_);
     }
-    if (!getBase64Bytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, base64_);
+    if (base64_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(2, base64_);
     }
-    if (!getSslBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, ssl_);
+    if (ssl_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(3, ssl_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -297,10 +233,10 @@ private static final long serialVersionUID = 0L;
 
     if (!getVid()
         .equals(other.getVid())) return false;
-    if (!getBase64()
-        .equals(other.getBase64())) return false;
-    if (!getSsl()
-        .equals(other.getSsl())) return false;
+    if (getBase64()
+        != other.getBase64()) return false;
+    if (getSsl()
+        != other.getSsl()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -315,9 +251,11 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + VID_FIELD_NUMBER;
     hash = (53 * hash) + getVid().hashCode();
     hash = (37 * hash) + BASE64_FIELD_NUMBER;
-    hash = (53 * hash) + getBase64().hashCode();
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getBase64());
     hash = (37 * hash) + SSL_FIELD_NUMBER;
-    hash = (53 * hash) + getSsl().hashCode();
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getSsl());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -453,9 +391,9 @@ private static final long serialVersionUID = 0L;
       super.clear();
       vid_ = "";
 
-      base64_ = "";
+      base64_ = 0L;
 
-      ssl_ = "";
+      ssl_ = 0L;
 
       return this;
     }
@@ -538,13 +476,11 @@ private static final long serialVersionUID = 0L;
         vid_ = other.vid_;
         onChanged();
       }
-      if (!other.getBase64().isEmpty()) {
-        base64_ = other.base64_;
-        onChanged();
+      if (other.getBase64() != 0L) {
+        setBase64(other.getBase64());
       }
-      if (!other.getSsl().isEmpty()) {
-        ssl_ = other.ssl_;
-        onChanged();
+      if (other.getSsl() != 0L) {
+        setSsl(other.getSsl());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -671,63 +607,30 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object base64_ = "";
+    private long base64_ ;
     /**
      * <pre>
      *播放地址是否base64编码,默认否，0-否，1-是
      * </pre>
      *
-     * <code>string Base64 = 2;</code>
+     * <code>int64 Base64 = 2;</code>
      * @return The base64.
      */
-    public java.lang.String getBase64() {
-      java.lang.Object ref = base64_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        base64_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getBase64() {
+      return base64_;
     }
     /**
      * <pre>
      *播放地址是否base64编码,默认否，0-否，1-是
      * </pre>
      *
-     * <code>string Base64 = 2;</code>
-     * @return The bytes for base64.
-     */
-    public com.google.protobuf.ByteString
-        getBase64Bytes() {
-      java.lang.Object ref = base64_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        base64_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     *播放地址是否base64编码,默认否，0-否，1-是
-     * </pre>
-     *
-     * <code>string Base64 = 2;</code>
+     * <code>int64 Base64 = 2;</code>
      * @param value The base64 to set.
      * @return This builder for chaining.
      */
-    public Builder setBase64(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+    public Builder setBase64(long value) {
+      
       base64_ = value;
       onChanged();
       return this;
@@ -737,93 +640,40 @@ private static final long serialVersionUID = 0L;
      *播放地址是否base64编码,默认否，0-否，1-是
      * </pre>
      *
-     * <code>string Base64 = 2;</code>
+     * <code>int64 Base64 = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearBase64() {
       
-      base64_ = getDefaultInstance().getBase64();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     *播放地址是否base64编码,默认否，0-否，1-是
-     * </pre>
-     *
-     * <code>string Base64 = 2;</code>
-     * @param value The bytes for base64 to set.
-     * @return This builder for chaining.
-     */
-    public Builder setBase64Bytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      base64_ = value;
+      base64_ = 0L;
       onChanged();
       return this;
     }
 
-    private java.lang.Object ssl_ = "";
+    private long ssl_ ;
     /**
      * <pre>
      *返回https播放地址,默认否, 0-否，1-是
      * </pre>
      *
-     * <code>string Ssl = 3;</code>
+     * <code>int64 Ssl = 3;</code>
      * @return The ssl.
      */
-    public java.lang.String getSsl() {
-      java.lang.Object ref = ssl_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        ssl_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public long getSsl() {
+      return ssl_;
     }
     /**
      * <pre>
      *返回https播放地址,默认否, 0-否，1-是
      * </pre>
      *
-     * <code>string Ssl = 3;</code>
-     * @return The bytes for ssl.
-     */
-    public com.google.protobuf.ByteString
-        getSslBytes() {
-      java.lang.Object ref = ssl_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        ssl_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     *返回https播放地址,默认否, 0-否，1-是
-     * </pre>
-     *
-     * <code>string Ssl = 3;</code>
+     * <code>int64 Ssl = 3;</code>
      * @param value The ssl to set.
      * @return This builder for chaining.
      */
-    public Builder setSsl(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+    public Builder setSsl(long value) {
+      
       ssl_ = value;
       onChanged();
       return this;
@@ -833,32 +683,12 @@ private static final long serialVersionUID = 0L;
      *返回https播放地址,默认否, 0-否，1-是
      * </pre>
      *
-     * <code>string Ssl = 3;</code>
+     * <code>int64 Ssl = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearSsl() {
       
-      ssl_ = getDefaultInstance().getSsl();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     *返回https播放地址,默认否, 0-否，1-是
-     * </pre>
-     *
-     * <code>string Ssl = 3;</code>
-     * @param value The bytes for ssl to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSslBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      ssl_ = value;
+      ssl_ = 0L;
       onChanged();
       return this;
     }

@@ -24,7 +24,7 @@ public class VodPlayDemo {
         try {
             VodGetPlayInfoRequest.Builder reqBuilder = VodGetPlayInfoRequest.newBuilder();
             reqBuilder.setVid(vid);
-            reqBuilder.setSsl("1");
+            reqBuilder.setSsl(1);
 
             VodGetPlayInfoResponse resp = vodService.getPlayInfo(reqBuilder.build());
             if (resp.getResponseMetadata().hasError()) {
@@ -40,7 +40,7 @@ public class VodPlayDemo {
 
         try {
             VodGetOriginalPlayInfoRequest.Builder reqBuilder = VodGetOriginalPlayInfoRequest.newBuilder();
-            reqBuilder.setSsl("1");
+            reqBuilder.setSsl(1);
             reqBuilder.setVid(vid);
             VodGetOriginalPlayInfoResponse resp = vodService.getOriginVideoPlayInfo(reqBuilder.build());
             if (resp.getResponseMetadata().hasError()) {

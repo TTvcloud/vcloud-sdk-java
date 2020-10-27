@@ -12,20 +12,20 @@ public interface VodPlayInfoOrBuilder extends
    *文件ID
    * </pre>
    *
-   * <code>string FileID = 1;</code>
-   * @return The fileID.
+   * <code>string FileId = 1;</code>
+   * @return The fileId.
    */
-  java.lang.String getFileID();
+  java.lang.String getFileId();
   /**
    * <pre>
    *文件ID
    * </pre>
    *
-   * <code>string FileID = 1;</code>
-   * @return The bytes for fileID.
+   * <code>string FileId = 1;</code>
+   * @return The bytes for fileId.
    */
   com.google.protobuf.ByteString
-      getFileIDBytes();
+      getFileIdBytes();
 
   /**
    * <pre>
@@ -352,20 +352,20 @@ public interface VodPlayInfoOrBuilder extends
    *密钥keyID
    * </pre>
    *
-   * <code>string PlayAuthID = 22;</code>
-   * @return The playAuthID.
+   * <code>string PlayAuthId = 22;</code>
+   * @return The playAuthId.
    */
-  java.lang.String getPlayAuthID();
+  java.lang.String getPlayAuthId();
   /**
    * <pre>
    *密钥keyID
    * </pre>
    *
-   * <code>string PlayAuthID = 22;</code>
-   * @return The bytes for playAuthID.
+   * <code>string PlayAuthId = 22;</code>
+   * @return The bytes for playAuthId.
    */
   com.google.protobuf.ByteString
-      getPlayAuthIDBytes();
+      getPlayAuthIdBytes();
 
   /**
    * <pre>
