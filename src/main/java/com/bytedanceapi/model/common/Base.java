@@ -38,9 +38,10 @@ public final class Base {
       "on\030\002 \001(\t\022\017\n\007Version\030\003 \001(\t\022\017\n\007Service\030\004 \001" +
       "(\t\022\016\n\006Region\030\005 \001(\t\0220\n\005Error\030\006 \001(\0132!.Vclo" +
       "ud.Models.Base.ResponseError\".\n\rResponse" +
-      "Error\022\014\n\004Code\030\001 \001(\t\022\017\n\007Message\030\002 \001(\tB7\n\035" +
+      "Error\022\014\n\004Code\030\001 \001(\t\022\017\n\007Message\030\002 \001(\tBk\n\035" +
       "com.bytedanceapi.model.commonB\004BaseP\001Z\010." +
-      ";models\240\001\001\330\001\001b\006proto3"
+      ";models\240\001\001\330\001\001\302\002\000\312\002\022Vcloud\\Models\\Base\342\002\031" +
+      "Vcloud\\Models\\GPBMetadatab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

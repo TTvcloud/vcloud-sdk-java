@@ -32,38 +32,18 @@ public interface VodGetOriginalPlayInfoRequestOrBuilder extends
    *播放地址是否base64编码,默认否，0-否，1-是
    * </pre>
    *
-   * <code>string Base64 = 2;</code>
+   * <code>int64 Base64 = 2;</code>
    * @return The base64.
    */
-  java.lang.String getBase64();
-  /**
-   * <pre>
-   *播放地址是否base64编码,默认否，0-否，1-是
-   * </pre>
-   *
-   * <code>string Base64 = 2;</code>
-   * @return The bytes for base64.
-   */
-  com.google.protobuf.ByteString
-      getBase64Bytes();
+  long getBase64();
 
   /**
    * <pre>
    *返回https播放地址,默认否, 0-否，1-是
    * </pre>
    *
-   * <code>string Ssl = 3;</code>
+   * <code>int64 Ssl = 3;</code>
    * @return The ssl.
    */
-  java.lang.String getSsl();
-  /**
-   * <pre>
-   *返回https播放地址,默认否, 0-否，1-是
-   * </pre>
-   *
-   * <code>string Ssl = 3;</code>
-   * @return The bytes for ssl.
-   */
-  com.google.protobuf.ByteString
-      getSslBytes();
+  long getSsl();
 }

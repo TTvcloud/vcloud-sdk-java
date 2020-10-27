@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private VodPlayInfo() {
-    fileID_ = "";
+    fileId_ = "";
     md5_ = "";
     fileType_ = "";
     format_ = "";
@@ -29,7 +29,7 @@ private static final long serialVersionUID = 0L;
     initRange_ = "";
     p2PVerifyUrl_ = "";
     playAuth_ = "";
-    playAuthID_ = "";
+    playAuthId_ = "";
     logoType_ = "";
     quality_ = "";
   }
@@ -67,7 +67,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            fileID_ = s;
+            fileId_ = s;
             break;
           }
           case 18: {
@@ -185,7 +185,7 @@ private static final long serialVersionUID = 0L;
           case 178: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            playAuthID_ = s;
+            playAuthId_ = s;
             break;
           }
           case 186: {
@@ -233,25 +233,25 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int FILEID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object fileID_;
+  private volatile java.lang.Object fileId_;
   /**
    * <pre>
    *文件ID
    * </pre>
    *
-   * <code>string FileID = 1;</code>
-   * @return The fileID.
+   * <code>string FileId = 1;</code>
+   * @return The fileId.
    */
   @java.lang.Override
-  public java.lang.String getFileID() {
-    java.lang.Object ref = fileID_;
+  public java.lang.String getFileId() {
+    java.lang.Object ref = fileId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      fileID_ = s;
+      fileId_ = s;
       return s;
     }
   }
@@ -260,18 +260,18 @@ private static final long serialVersionUID = 0L;
    *文件ID
    * </pre>
    *
-   * <code>string FileID = 1;</code>
-   * @return The bytes for fileID.
+   * <code>string FileId = 1;</code>
+   * @return The bytes for fileId.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getFileIDBytes() {
-    java.lang.Object ref = fileID_;
+      getFileIdBytes() {
+    java.lang.Object ref = fileId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      fileID_ = b;
+      fileId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -951,25 +951,25 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PLAYAUTHID_FIELD_NUMBER = 22;
-  private volatile java.lang.Object playAuthID_;
+  private volatile java.lang.Object playAuthId_;
   /**
    * <pre>
    *密钥keyID
    * </pre>
    *
-   * <code>string PlayAuthID = 22;</code>
-   * @return The playAuthID.
+   * <code>string PlayAuthId = 22;</code>
+   * @return The playAuthId.
    */
   @java.lang.Override
-  public java.lang.String getPlayAuthID() {
-    java.lang.Object ref = playAuthID_;
+  public java.lang.String getPlayAuthId() {
+    java.lang.Object ref = playAuthId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      playAuthID_ = s;
+      playAuthId_ = s;
       return s;
     }
   }
@@ -978,18 +978,18 @@ private static final long serialVersionUID = 0L;
    *密钥keyID
    * </pre>
    *
-   * <code>string PlayAuthID = 22;</code>
-   * @return The bytes for playAuthID.
+   * <code>string PlayAuthId = 22;</code>
+   * @return The bytes for playAuthId.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getPlayAuthIDBytes() {
-    java.lang.Object ref = playAuthID_;
+      getPlayAuthIdBytes() {
+    java.lang.Object ref = playAuthId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      playAuthID_ = b;
+      playAuthId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -1102,8 +1102,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getFileIDBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fileID_);
+    if (!getFileIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fileId_);
     }
     if (!getMd5Bytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, md5_);
@@ -1165,8 +1165,8 @@ private static final long serialVersionUID = 0L;
     if (!getPlayAuthBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 21, playAuth_);
     }
-    if (!getPlayAuthIDBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 22, playAuthID_);
+    if (!getPlayAuthIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 22, playAuthId_);
     }
     if (!getLogoTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 23, logoType_);
@@ -1183,8 +1183,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getFileIDBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, fileID_);
+    if (!getFileIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, fileId_);
     }
     if (!getMd5Bytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, md5_);
@@ -1254,8 +1254,8 @@ private static final long serialVersionUID = 0L;
     if (!getPlayAuthBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, playAuth_);
     }
-    if (!getPlayAuthIDBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, playAuthID_);
+    if (!getPlayAuthIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, playAuthId_);
     }
     if (!getLogoTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(23, logoType_);
@@ -1278,8 +1278,8 @@ private static final long serialVersionUID = 0L;
     }
     com.bytedanceapi.model.common.VodPlayInfo other = (com.bytedanceapi.model.common.VodPlayInfo) obj;
 
-    if (!getFileID()
-        .equals(other.getFileID())) return false;
+    if (!getFileId()
+        .equals(other.getFileId())) return false;
     if (!getMd5()
         .equals(other.getMd5())) return false;
     if (!getFileType()
@@ -1321,8 +1321,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getP2PVerifyUrl())) return false;
     if (!getPlayAuth()
         .equals(other.getPlayAuth())) return false;
-    if (!getPlayAuthID()
-        .equals(other.getPlayAuthID())) return false;
+    if (!getPlayAuthId()
+        .equals(other.getPlayAuthId())) return false;
     if (!getLogoType()
         .equals(other.getLogoType())) return false;
     if (!getQuality()
@@ -1339,7 +1339,7 @@ private static final long serialVersionUID = 0L;
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + FILEID_FIELD_NUMBER;
-    hash = (53 * hash) + getFileID().hashCode();
+    hash = (53 * hash) + getFileId().hashCode();
     hash = (37 * hash) + MD5_FIELD_NUMBER;
     hash = (53 * hash) + getMd5().hashCode();
     hash = (37 * hash) + FILETYPE_FIELD_NUMBER;
@@ -1389,7 +1389,7 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + PLAYAUTH_FIELD_NUMBER;
     hash = (53 * hash) + getPlayAuth().hashCode();
     hash = (37 * hash) + PLAYAUTHID_FIELD_NUMBER;
-    hash = (53 * hash) + getPlayAuthID().hashCode();
+    hash = (53 * hash) + getPlayAuthId().hashCode();
     hash = (37 * hash) + LOGOTYPE_FIELD_NUMBER;
     hash = (53 * hash) + getLogoType().hashCode();
     hash = (37 * hash) + QUALITY_FIELD_NUMBER;
@@ -1527,7 +1527,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      fileID_ = "";
+      fileId_ = "";
 
       md5_ = "";
 
@@ -1569,7 +1569,7 @@ private static final long serialVersionUID = 0L;
 
       playAuth_ = "";
 
-      playAuthID_ = "";
+      playAuthId_ = "";
 
       logoType_ = "";
 
@@ -1601,7 +1601,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.bytedanceapi.model.common.VodPlayInfo buildPartial() {
       com.bytedanceapi.model.common.VodPlayInfo result = new com.bytedanceapi.model.common.VodPlayInfo(this);
-      result.fileID_ = fileID_;
+      result.fileId_ = fileId_;
       result.md5_ = md5_;
       result.fileType_ = fileType_;
       result.format_ = format_;
@@ -1622,7 +1622,7 @@ private static final long serialVersionUID = 0L;
       result.preloadInterval_ = preloadInterval_;
       result.p2PVerifyUrl_ = p2PVerifyUrl_;
       result.playAuth_ = playAuth_;
-      result.playAuthID_ = playAuthID_;
+      result.playAuthId_ = playAuthId_;
       result.logoType_ = logoType_;
       result.quality_ = quality_;
       onBuilt();
@@ -1673,8 +1673,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.bytedanceapi.model.common.VodPlayInfo other) {
       if (other == com.bytedanceapi.model.common.VodPlayInfo.getDefaultInstance()) return this;
-      if (!other.getFileID().isEmpty()) {
-        fileID_ = other.fileID_;
+      if (!other.getFileId().isEmpty()) {
+        fileId_ = other.fileId_;
         onChanged();
       }
       if (!other.getMd5().isEmpty()) {
@@ -1749,8 +1749,8 @@ private static final long serialVersionUID = 0L;
         playAuth_ = other.playAuth_;
         onChanged();
       }
-      if (!other.getPlayAuthID().isEmpty()) {
-        playAuthID_ = other.playAuthID_;
+      if (!other.getPlayAuthId().isEmpty()) {
+        playAuthId_ = other.playAuthId_;
         onChanged();
       }
       if (!other.getLogoType().isEmpty()) {
@@ -1790,22 +1790,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object fileID_ = "";
+    private java.lang.Object fileId_ = "";
     /**
      * <pre>
      *文件ID
      * </pre>
      *
-     * <code>string FileID = 1;</code>
-     * @return The fileID.
+     * <code>string FileId = 1;</code>
+     * @return The fileId.
      */
-    public java.lang.String getFileID() {
-      java.lang.Object ref = fileID_;
+    public java.lang.String getFileId() {
+      java.lang.Object ref = fileId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        fileID_ = s;
+        fileId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1816,17 +1816,17 @@ private static final long serialVersionUID = 0L;
      *文件ID
      * </pre>
      *
-     * <code>string FileID = 1;</code>
-     * @return The bytes for fileID.
+     * <code>string FileId = 1;</code>
+     * @return The bytes for fileId.
      */
     public com.google.protobuf.ByteString
-        getFileIDBytes() {
-      java.lang.Object ref = fileID_;
+        getFileIdBytes() {
+      java.lang.Object ref = fileId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        fileID_ = b;
+        fileId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1837,17 +1837,17 @@ private static final long serialVersionUID = 0L;
      *文件ID
      * </pre>
      *
-     * <code>string FileID = 1;</code>
-     * @param value The fileID to set.
+     * <code>string FileId = 1;</code>
+     * @param value The fileId to set.
      * @return This builder for chaining.
      */
-    public Builder setFileID(
+    public Builder setFileId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      fileID_ = value;
+      fileId_ = value;
       onChanged();
       return this;
     }
@@ -1856,12 +1856,12 @@ private static final long serialVersionUID = 0L;
      *文件ID
      * </pre>
      *
-     * <code>string FileID = 1;</code>
+     * <code>string FileId = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearFileID() {
+    public Builder clearFileId() {
       
-      fileID_ = getDefaultInstance().getFileID();
+      fileId_ = getDefaultInstance().getFileId();
       onChanged();
       return this;
     }
@@ -1870,18 +1870,18 @@ private static final long serialVersionUID = 0L;
      *文件ID
      * </pre>
      *
-     * <code>string FileID = 1;</code>
-     * @param value The bytes for fileID to set.
+     * <code>string FileId = 1;</code>
+     * @param value The bytes for fileId to set.
      * @return This builder for chaining.
      */
-    public Builder setFileIDBytes(
+    public Builder setFileIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      fileID_ = value;
+      fileId_ = value;
       onChanged();
       return this;
     }
@@ -3382,22 +3382,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object playAuthID_ = "";
+    private java.lang.Object playAuthId_ = "";
     /**
      * <pre>
      *密钥keyID
      * </pre>
      *
-     * <code>string PlayAuthID = 22;</code>
-     * @return The playAuthID.
+     * <code>string PlayAuthId = 22;</code>
+     * @return The playAuthId.
      */
-    public java.lang.String getPlayAuthID() {
-      java.lang.Object ref = playAuthID_;
+    public java.lang.String getPlayAuthId() {
+      java.lang.Object ref = playAuthId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        playAuthID_ = s;
+        playAuthId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -3408,17 +3408,17 @@ private static final long serialVersionUID = 0L;
      *密钥keyID
      * </pre>
      *
-     * <code>string PlayAuthID = 22;</code>
-     * @return The bytes for playAuthID.
+     * <code>string PlayAuthId = 22;</code>
+     * @return The bytes for playAuthId.
      */
     public com.google.protobuf.ByteString
-        getPlayAuthIDBytes() {
-      java.lang.Object ref = playAuthID_;
+        getPlayAuthIdBytes() {
+      java.lang.Object ref = playAuthId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        playAuthID_ = b;
+        playAuthId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -3429,17 +3429,17 @@ private static final long serialVersionUID = 0L;
      *密钥keyID
      * </pre>
      *
-     * <code>string PlayAuthID = 22;</code>
-     * @param value The playAuthID to set.
+     * <code>string PlayAuthId = 22;</code>
+     * @param value The playAuthId to set.
      * @return This builder for chaining.
      */
-    public Builder setPlayAuthID(
+    public Builder setPlayAuthId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      playAuthID_ = value;
+      playAuthId_ = value;
       onChanged();
       return this;
     }
@@ -3448,12 +3448,12 @@ private static final long serialVersionUID = 0L;
      *密钥keyID
      * </pre>
      *
-     * <code>string PlayAuthID = 22;</code>
+     * <code>string PlayAuthId = 22;</code>
      * @return This builder for chaining.
      */
-    public Builder clearPlayAuthID() {
+    public Builder clearPlayAuthId() {
       
-      playAuthID_ = getDefaultInstance().getPlayAuthID();
+      playAuthId_ = getDefaultInstance().getPlayAuthId();
       onChanged();
       return this;
     }
@@ -3462,18 +3462,18 @@ private static final long serialVersionUID = 0L;
      *密钥keyID
      * </pre>
      *
-     * <code>string PlayAuthID = 22;</code>
-     * @param value The bytes for playAuthID to set.
+     * <code>string PlayAuthId = 22;</code>
+     * @param value The bytes for playAuthId to set.
      * @return This builder for chaining.
      */
-    public Builder setPlayAuthIDBytes(
+    public Builder setPlayAuthIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      playAuthID_ = value;
+      playAuthId_ = value;
       onChanged();
       return this;
     }

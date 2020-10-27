@@ -89,7 +89,7 @@ public interface VodGetPlayInfoRequestOrBuilder extends
 
   /**
    * <pre>
-   * Definition
+   *流文件类型，默认video，支持：加密视频流evideo，加密音频流传eaudio，非加密视频流video，普通音频音频流audio
    * </pre>
    *
    * <code>string FileType = 5;</code>
@@ -98,7 +98,7 @@ public interface VodGetPlayInfoRequestOrBuilder extends
   java.lang.String getFileType();
   /**
    * <pre>
-   * Definition
+   *流文件类型，默认video，支持：加密视频流evideo，加密音频流传eaudio，非加密视频流video，普通音频音频流audio
    * </pre>
    *
    * <code>string FileType = 5;</code>
@@ -109,7 +109,7 @@ public interface VodGetPlayInfoRequestOrBuilder extends
 
   /**
    * <pre>
-   * FileType
+   * 水印贴片标签
    * </pre>
    *
    * <code>string LogoType = 6;</code>
@@ -118,7 +118,7 @@ public interface VodGetPlayInfoRequestOrBuilder extends
   java.lang.String getLogoType();
   /**
    * <pre>
-   * FileType
+   * 水印贴片标签
    * </pre>
    *
    * <code>string LogoType = 6;</code>
@@ -132,38 +132,18 @@ public interface VodGetPlayInfoRequestOrBuilder extends
    *播放地址是否base64编码，默认否，支持设置： 0-否，1-是
    * </pre>
    *
-   * <code>string Base64 = 7;</code>
+   * <code>int64 Base64 = 7;</code>
    * @return The base64.
    */
-  java.lang.String getBase64();
-  /**
-   * <pre>
-   *播放地址是否base64编码，默认否，支持设置： 0-否，1-是
-   * </pre>
-   *
-   * <code>string Base64 = 7;</code>
-   * @return The bytes for base64.
-   */
-  com.google.protobuf.ByteString
-      getBase64Bytes();
+  long getBase64();
 
   /**
    * <pre>
    *返回https播放地址，默认否, 1-是；0-否
    * </pre>
    *
-   * <code>string Ssl = 8;</code>
+   * <code>int64 Ssl = 8;</code>
    * @return The ssl.
    */
-  java.lang.String getSsl();
-  /**
-   * <pre>
-   *返回https播放地址，默认否, 1-是；0-否
-   * </pre>
-   *
-   * <code>string Ssl = 8;</code>
-   * @return The bytes for ssl.
-   */
-  com.google.protobuf.ByteString
-      getSslBytes();
+  long getSsl();
 }
