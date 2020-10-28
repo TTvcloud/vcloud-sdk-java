@@ -11,10 +11,10 @@ public class ApplyUploadInfoDemo {
         IVodService vodService = VodServiceImpl.getInstance();
 
         // call below method if you dont set ak and sk in ～/.vcloud/config
-        vodService.setAccessKey("AKLTNDQ2YTRlNTBiYTg1NDcyNmE3MDA1MTUzNzc5MWMwNmI");
-        vodService.setSecretKey("1ZOtyBZ89VERZdOfiUrPf24a3tTjRo1XIJbzccVHMrBvZo1jEn60LjClP2t05qWz");
+        vodService.setAccessKey("your ak");
+        vodService.setSecretKey("your sk");
 
-        String space = "james-test";
+        String space = "your space name";
         try {
             ApplyUploadInfoRequest applyUploadInfoRequest = new ApplyUploadInfoRequest();
             applyUploadInfoRequest.setSpaceName(space);

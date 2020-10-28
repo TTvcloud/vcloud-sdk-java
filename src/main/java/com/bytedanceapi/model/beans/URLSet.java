@@ -1,9 +1,15 @@
 package com.bytedanceapi.model.beans;
 
 import com.alibaba.fastjson.annotation.JSONField;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class URLSet {
     @JSONField(name = "SourceUrl")
     String SourceUrl;
