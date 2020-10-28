@@ -3,6 +3,9 @@ package com.bytedanceapi.helper;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.google.protobuf.InvalidProtocolBufferException;
+import com.google.protobuf.MessageOrBuilder;
+import com.google.protobuf.util.JsonFormat;
 import org.apache.commons.codec.binary.Hex;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -141,6 +144,27 @@ public class Utils {
     // 对于List类型entry，逗号连接生成string value
     public static Map<String, String> paramsToMap(Object obj) {
         Map<String, Object> map = JSONObject.toJavaObject(JSONObject.parseObject(JSON.toJSONString(obj)), Map.class);
+        Map<String, String> params = new HashMap<>();
+        for (Map.Entry<String, Object> entry : map.entrySet()) {
+            if (entry.getValue().getClass() == Integer.class) {
+                params.put(entry.getKey(), ((Integer) entry.getValue()).toString());
+            } else if (entry.getValue().getClass() == String.class) {
+                params.put(entry.getKey(), (String) entry.getValue());
+            } else if (entry.getValue().getClass() == JSONArray.class) {
+                List<String> list = (List<String>) entry.getValue();
+                try {
+                    params.put(entry.getKey(), URLEncoder.encode(String.join(",", list), "UTF-8"));
+                } catch (UnsupportedEncodingException e) {
+                    params.put(entry.getKey(), "");
+                }
+            }
+        }
+        return params;
+    }
+
+    // 对于List类型entry，逗号连接生成string value
+    public static Map<String, String> protoBufferToMap(MessageOrBuilder obj) throws InvalidProtocolBufferException {
+        Map<String, Object> map = JSONObject.toJavaObject(JSONObject.parseObject(JsonFormat.printer().includingDefaultValueFields().print(obj)), Map.class);
         Map<String, String> params = new HashMap<>();
         for (Map.Entry<String, Object> entry : map.entrySet()) {
             if (entry.getValue().getClass() == Integer.class) {

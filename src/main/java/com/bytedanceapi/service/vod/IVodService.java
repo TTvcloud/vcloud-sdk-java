@@ -4,10 +4,6 @@ import com.bytedanceapi.model.beans.DomainInfo;
 import com.bytedanceapi.model.beans.Functions;
 import com.bytedanceapi.model.beans.ImgUrl;
 import com.bytedanceapi.model.beans.ImgUrlOption;
-import com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest;
-import com.bytedanceapi.model.common.VodGetOriginalPlayInfoResponse;
-import com.bytedanceapi.model.common.VodGetPlayInfoRequest;
-import com.bytedanceapi.model.common.VodGetPlayInfoResponse;
 import com.bytedanceapi.model.request.*;
 import com.bytedanceapi.model.response.*;
 import com.bytedanceapi.service.IBaseService;
@@ -23,14 +19,24 @@ public interface IVodService extends IBaseService {
 
     GetSpaceResponse getSpace(GetSpaceRequest getSpaceRequest) throws Exception;
 
+
     /**
-     * Gets play info.
+     * getPlayInfo.
      *
-     * @param getPlayInfoRequest the get play info request
-     * @return the play info
+     * @param input com.bytedanceapi.model.common.VodGetPlayInfoRequest
+     * @return com.bytedanceapi.model.common.VodGetPlayInfoResponse
      * @throws Exception the exception
      */
-    VodGetPlayInfoResponse getPlayInfo(VodGetPlayInfoRequest getPlayInfoRequest) throws Exception;
+    com.bytedanceapi.model.common.VodGetPlayInfoResponse getPlayInfo(com.bytedanceapi.model.common.VodGetPlayInfoRequest input) throws Exception;
+
+    /**
+     * getOriginalPlayInfo.
+     *
+     * @param input com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest
+     * @return com.bytedanceapi.model.common.VodGetOriginalPlayInfoResponse
+     * @throws Exception the exception
+     */
+    com.bytedanceapi.model.common.VodGetOriginalPlayInfoResponse getOriginalPlayInfo(com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest input) throws Exception;
 
     /**
      * Gets play auth token.
@@ -41,14 +47,7 @@ public interface IVodService extends IBaseService {
      */
     String getPlayAuthToken(Map<String, String> params) throws Exception;
 
-    /**
-     * Gets origin video play info.
-     *
-     * @param getOriginVideoPlayRequest the get origin video play request
-     * @return the origin video play info
-     * @throws Exception the exception
-     */
-    VodGetOriginalPlayInfoResponse getOriginVideoPlayInfo(VodGetOriginalPlayInfoRequest getOriginVideoPlayRequest) throws Exception;
+
 
     /**
      * Gets redirect play.
