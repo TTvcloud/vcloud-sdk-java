@@ -52,14 +52,14 @@ public class Const {
     // vod
     public static final String GetSpace = "GetSpace";
     public static final String GetPlayInfo = "GetPlayInfo";
-    public static final String StartTranscode = "StartTranscode";
+    public static final String StartWorkflow = "StartWorkflow";
     public static final String UploadMediaByUrl = "UploadMediaByUrl";
     public static final String ApplyUpload = "ApplyUpload";
     public static final String CommitUpload = "CommitUpload";
     public static final String SetVideoPublishStatus = "SetVideoPublishStatus";
     public static final String GetCdnDomainWeights = "GetCdnDomainWeights";
     public static final String RedirectPlay = "RedirectPlay";
-    public static final String GetOriginVideoPlayInfo = "GetOriginVideoPlayInfo";
+    public static final String GetOriginalPlayInfo = "GetOriginVideoPlayInfo";
     public static final String ModifyVideoInfo = "ModifyVideoInfo";
 
     //top open api 2.0

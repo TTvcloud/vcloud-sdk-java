@@ -19,14 +19,24 @@ public interface IVodService extends IBaseService {
 
     GetSpaceResponse getSpace(GetSpaceRequest getSpaceRequest) throws Exception;
 
+
     /**
-     * Gets play info.
+     * getPlayInfo.
      *
-     * @param getPlayInfoRequest the get play info request
-     * @return the play info
+     * @param input com.bytedanceapi.model.common.VodGetPlayInfoRequest
+     * @return com.bytedanceapi.model.common.VodGetPlayInfoResponse
      * @throws Exception the exception
      */
-    GetPlayInfoResponse getPlayInfo(GetPlayInfoRequest getPlayInfoRequest) throws Exception;
+    com.bytedanceapi.model.common.VodGetPlayInfoResponse getPlayInfo(com.bytedanceapi.model.common.VodGetPlayInfoRequest input) throws Exception;
+
+    /**
+     * getOriginalPlayInfo.
+     *
+     * @param input com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest
+     * @return com.bytedanceapi.model.common.VodGetOriginalPlayInfoResponse
+     * @throws Exception the exception
+     */
+    com.bytedanceapi.model.common.VodGetOriginalPlayInfoResponse getOriginalPlayInfo(com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest input) throws Exception;
 
     /**
      * Gets play auth token.
@@ -37,14 +47,7 @@ public interface IVodService extends IBaseService {
      */
     String getPlayAuthToken(Map<String, String> params) throws Exception;
 
-    /**
-     * Gets origin video play info.
-     *
-     * @param getOriginVideoPlayRequest the get origin video play request
-     * @return the origin video play info
-     * @throws Exception the exception
-     */
-    GetOriginVideoPlayResponse getOriginVideoPlayInfo(GetOriginVideoPlayRequest getOriginVideoPlayRequest) throws Exception;
+
 
     /**
      * Gets redirect play.
@@ -53,17 +56,17 @@ public interface IVodService extends IBaseService {
      * @return the redirect play
      * @throws Exception the exception
      */
-    String getRedirectPlay(GetRedirectPlayRequest getRedirectPlayRequest) throws Exception;
+//    String getRedirectPlay(GetRedirectPlayRequest getRedirectPlayRequest) throws Exception;
 
 
     /**
-     * Start transcode start transcode resp.
+     * Start workflow.
      *
      * @param req the req
-     * @return the start transcode resp
+     * @return the start workflow resp
      * @throws Exception the exception
      */
-    StartTranscodeResponse startTranscode(StartTranscodeRequest req) throws Exception;
+    StartWorkflowResponse startWorkflow(StartWorkflowRequest req) throws Exception;
 
     /**
      * Sets video publish status.
