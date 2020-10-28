@@ -42,7 +42,7 @@ public class VodPlayDemo {
             VodGetOriginalPlayInfoRequest.Builder reqBuilder = VodGetOriginalPlayInfoRequest.newBuilder();
             reqBuilder.setSsl("1");
             reqBuilder.setVid(vid);
-            VodGetOriginalPlayInfoResponse resp = vodService.getOriginVideoPlayInfo(reqBuilder.build());
+            VodGetOriginalPlayInfoResponse resp = vodService.getOriginalPlayInfo(reqBuilder.build());
             if (resp.getResponseMetadata().hasError()) {
                 System.out.println(resp.getResponseMetadata().getError());
                 System.exit(-1);
