@@ -248,14 +248,14 @@ public class VodConfig {
                         }
                     }
             ));
-            put(Const.GetRecommendedPosters, new ApiInfo(
+            put(Const.GetRecommendedPoster, new ApiInfo(
                     new HashMap<String, Object>() {
                         {
                             put(Const.Method, "GET");
                             put(Const.Path, "/");
                             put(Const.Query, new ArrayList<NameValuePair>() {
                                 {
-                                    add(new BasicNameValuePair("Action", Const.GetRecommendedPosters));
+                                    add(new BasicNameValuePair("Action", Const.GetRecommendedPoster));
                                     add(new BasicNameValuePair("Version", "2020-08-01"));
                                 }
                             });

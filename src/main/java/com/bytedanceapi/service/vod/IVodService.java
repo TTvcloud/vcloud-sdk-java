@@ -4,10 +4,18 @@ import com.bytedanceapi.model.beans.DomainInfo;
 import com.bytedanceapi.model.beans.Functions;
 import com.bytedanceapi.model.beans.ImgUrl;
 import com.bytedanceapi.model.beans.ImgUrlOption;
+import com.bytedanceapi.model.common.GetVideoInfosResponse;
 import com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest;
 import com.bytedanceapi.model.common.VodGetOriginalPlayInfoResponse;
 import com.bytedanceapi.model.common.VodGetPlayInfoRequest;
 import com.bytedanceapi.model.common.VodGetPlayInfoResponse;
+import com.bytedanceapi.model.common.UpdateVideoInfoRequest;
+import com.bytedanceapi.model.common.UpdateVideoInfoResponse;
+import com.bytedanceapi.model.common.GetVideoInfosRequest;
+import com.bytedanceapi.model.common.UpdateVideoPublishStatusRequest;
+import com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse;
+import com.bytedanceapi.model.common.GetRecommendedPostersRequest;
+import com.bytedanceapi.model.common.GetRecPostersResponse;
 import com.bytedanceapi.model.request.*;
 import com.bytedanceapi.model.response.*;
 import com.bytedanceapi.service.IBaseService;
@@ -76,7 +84,7 @@ public interface IVodService extends IBaseService {
      * @return the video publish status
      * @throws Exception the exception
      */
-    void updateVideoPublishStatus(UpdateVideoPublishStatusRequest req) throws Exception;
+    UpdateVideoPublishStatusResponse updateVideoPublishStatus(UpdateVideoPublishStatusRequest req) throws Exception;
 
     /**
      * Gets domain weights.
@@ -177,14 +185,22 @@ public interface IVodService extends IBaseService {
      */
     UploadMediaByUrlResponse uploadMediaByUrl(UploadMediaByUrlRequest uploadMediaByUrlRequest) throws Exception;
 
+//    /**
+//     * Update video info modify video info response.
+//     *
+//     * @param updateVideoInfoRequest the update video info request
+//     * @return the modify video info response
+//     * @throws Exception the exception
+//     */
+//    void updateVideoInfo(UpdateVideoInfoRequest updateVideoInfoRequest) throws Exception;
     /**
-     * Update video info modify video info response.
+     * updateVideoInfo.
      *
-     * @param updateVideoInfoRequest the update video info request
-     * @return the modify video info response
+     * @param input com.bytedanceapi.model.common.UpdateVideoInfoRequest
+     * @return com.bytedanceapi.model.common.UpdateVideoInfoResponse
      * @throws Exception the exception
      */
-    void updateVideoInfo(UpdateVideoInfoRequest updateVideoInfoRequest) throws Exception;
+    UpdateVideoInfoResponse updateVideoInfo(UpdateVideoInfoRequest input) throws Exception;
 
     /**
      * Update video info modify video info response.
@@ -202,5 +218,5 @@ public interface IVodService extends IBaseService {
      * @return the video poster uri list response
      * @throws Exception the exception
      */
-    GetRecommendedPostersResponse getRecommendedPosters(GetRecommendedPostersRequest req) throws Exception;
+    GetRecPostersResponse getRecommendedPosters(GetRecommendedPostersRequest req) throws Exception;
 }

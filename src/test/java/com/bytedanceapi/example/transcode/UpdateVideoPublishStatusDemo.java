@@ -1,7 +1,7 @@
 package com.bytedanceapi.example.transcode;
 
-import com.bytedanceapi.model.request.UpdateVideoPublishStatusRequest;
-import com.bytedanceapi.model.response.UpdateVideoPublishStatusResponse;
+import com.bytedanceapi.model.common.UpdateVideoPublishStatusRequest;
+import com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse;
 import com.bytedanceapi.service.vod.IVodService;
 import com.bytedanceapi.service.vod.impl.VodServiceImpl;
 
@@ -20,18 +20,18 @@ public class UpdateVideoPublishStatusDemo {
 
         try {
             // publish
-            UpdateVideoPublishStatusRequest publishReq = new UpdateVideoPublishStatusRequest();
+            UpdateVideoPublishStatusRequest.Builder publishReq = UpdateVideoPublishStatusRequest.newBuilder();
             publishReq.setVid(vid);
             publishReq.setStatus(statusPublished);
-            vodService.updateVideoPublishStatus(publishReq);
+            vodService.updateVideoPublishStatus(publishReq.build());
             System.out.println("update video publish status success");
 
             Thread.sleep(20000);
 
-            UpdateVideoPublishStatusRequest unpublishReq = new UpdateVideoPublishStatusRequest();
+            UpdateVideoPublishStatusRequest.Builder unpublishReq = UpdateVideoPublishStatusRequest.newBuilder();
             unpublishReq.setVid(vid);
             unpublishReq.setStatus(statusUnpublished);
-            vodService.updateVideoPublishStatus(unpublishReq);
+            vodService.updateVideoPublishStatus(unpublishReq.build());
             System.out.println("update video publish status success");
         } catch (Exception e) {
             e.printStackTrace();
