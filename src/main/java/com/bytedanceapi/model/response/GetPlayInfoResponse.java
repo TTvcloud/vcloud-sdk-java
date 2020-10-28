@@ -71,7 +71,7 @@ public class GetPlayInfoResponse {
         private String fileID;
         @JSONField(name = "FileType")
         private String fileType;
-        @JSONField(name = "P2pVerifyURL")
+        @JSONField(name = "P2pVerifyUrl")
         private String p2pVerifyURL;
         @JSONField(name = "PreloadInterval")
         private Long preloadInterval;

@@ -56,7 +56,7 @@ public class Const {
     // vod
     public static final String GetSpace = "GetSpace";
     public static final String GetPlayInfo = "GetPlayInfo";
-    public static final String StartTranscode = "StartTranscode";
+    public static final String StartWorkflow = "StartWorkflow";
     public static final String UploadMediaByUrl = "UploadMediaByUrl";
     public static final String ApplyUpload = "ApplyUpload";
     public static final String CommitUpload = "CommitUpload";

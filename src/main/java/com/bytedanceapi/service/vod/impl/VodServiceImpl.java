@@ -7,6 +7,10 @@ import com.bytedanceapi.helper.Const;
 import com.bytedanceapi.helper.Utils;
 import com.bytedanceapi.model.ServiceInfo;
 import com.bytedanceapi.model.beans.*;
+import com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest;
+import com.bytedanceapi.model.common.VodGetOriginalPlayInfoResponse;
+import com.bytedanceapi.model.common.VodGetPlayInfoRequest;
+import com.bytedanceapi.model.common.VodGetPlayInfoResponse;
 import com.bytedanceapi.model.request.*;
 import com.bytedanceapi.model.response.*;
 import com.bytedanceapi.model.sts2.Policy;
@@ -17,9 +21,12 @@ import com.bytedanceapi.service.vod.IVodService;
 import com.bytedanceapi.service.vod.VodConfig;
 import com.bytedanceapi.util.Sts2Utils;
 import com.bytedanceapi.util.Time;
+import com.google.protobuf.util.JsonFormat;
 import org.apache.http.NameValuePair;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.InputStreamReader;
 import java.util.*;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -67,12 +74,14 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
     }
 
     @Override
-    public GetPlayInfoResponse getPlayInfo(GetPlayInfoRequest getPlayInfoRequest) throws Exception {
+    public VodGetPlayInfoResponse getPlayInfo(VodGetPlayInfoRequest getPlayInfoRequest) throws Exception {
         RawResponse response = query(Const.GetPlayInfo, Utils.mapToPairList(Utils.paramsToMap(getPlayInfoRequest)));
         if (response.getCode() != SdkError.SUCCESS.getNumber()) {
             throw response.getException();
         }
-        return JSON.parseObject(response.getData(), GetPlayInfoResponse.class);
+        VodGetPlayInfoResponse.Builder responseBuilder = VodGetPlayInfoResponse.newBuilder();
+        JsonFormat.parser().ignoringUnknownFields().merge(new InputStreamReader(new ByteArrayInputStream(response.getData())), responseBuilder);
+        return responseBuilder.build();
     }
 
     @Override
@@ -88,41 +97,40 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
     }
 
     @Override
-    public GetOriginVideoPlayResponse getOriginVideoPlayInfo(GetOriginVideoPlayRequest getOriginVideoPlayRequest) throws Exception {
+    public VodGetOriginalPlayInfoResponse getOriginVideoPlayInfo(VodGetOriginalPlayInfoRequest getOriginVideoPlayRequest) throws Exception {
         RawResponse response = query(Const.GetOriginVideoPlayInfo, Utils.mapToPairList(Utils.paramsToMap(getOriginVideoPlayRequest)));
         if (response.getCode() != SdkError.SUCCESS.getNumber()) {
             throw response.getException();
         }
-
-        GetOriginVideoPlayResponse getOriginVideoPlayResponse = JSON.parseObject(response.getData(), GetOriginVideoPlayResponse.class);
-        getOriginVideoPlayResponse.getResponseMetadata().setService("vod");
-        return getOriginVideoPlayResponse;
+        VodGetOriginalPlayInfoResponse.Builder responseBuilder = VodGetOriginalPlayInfoResponse.newBuilder();
+        JsonFormat.parser().ignoringUnknownFields().merge(new InputStreamReader(new ByteArrayInputStream(response.getData())), responseBuilder);
+        return responseBuilder.build();
     }
 
-    @Override
-    public String getRedirectPlay(GetRedirectPlayRequest getRedirectPlayRequest) throws Exception {
-        String uri = getSignUrl(Const.RedirectPlay, Utils.mapToPairList(Utils.paramsToMap(getRedirectPlayRequest)));
-        String proto = "http";
-        String host = serviceInfo.getHost();
-        return String.format("%s://%s/?%s", proto, host, uri);
-    }
+//    @Override
+//    public String getRedirectPlay(GetRedirectPlayRequest getRedirectPlayRequest) throws Exception {
+//        String uri = getSignUrl(Const.RedirectPlay, Utils.mapToPairList(Utils.paramsToMap(getRedirectPlayRequest)));
+//        String proto = "http";
+//        String host = serviceInfo.getHost();
+//        return String.format("%s://%s/?%s", proto, host, uri);
+//    }
 
     @Override
-    public StartTranscodeResponse startTranscode(StartTranscodeRequest startTranscodeRequest) throws Exception {
+    public StartWorkflowResponse startWorkflow(StartWorkflowRequest startWorkflowRequest) throws Exception {
         Map<String, String> params = new HashMap<>();
-        params.put("TemplateId", startTranscodeRequest.getTemplateId());
+        params.put("TemplateId", startWorkflowRequest.getTemplateId());
+        params.put("Vid", startWorkflowRequest.getVid());
+        params.put("Priority", Integer.toString(startWorkflowRequest.getPriority()));
+        String inputStr = JSON.toJSONString(startWorkflowRequest.getInput());
+        params.put("Input", inputStr);
+        params.put("CallbackArgs", startWorkflowRequest.getCallbackArgs());
 
-        StartTranscodeRequestBody startTranscodeRequestBody = new StartTranscodeRequestBody();
-        startTranscodeRequestBody.setVid(startTranscodeRequest.getVid());
-        startTranscodeRequestBody.setInput(startTranscodeRequest.getInput());
-        startTranscodeRequestBody.setPriority(startTranscodeRequest.getPriority());
-
-        RawResponse resp = json(Const.StartTranscode, Utils.mapToPairList(params), JSON.toJSONString(startTranscodeRequestBody));
+        RawResponse resp = post(Const.StartWorkflow, new ArrayList<NameValuePair>(), Utils.mapToPairList(params));
         if (resp.getCode() != SdkError.SUCCESS.getNumber()) {
             throw resp.getException();
         }
 
-        return JSON.parseObject(resp.getData(), StartTranscodeResponse.class);
+        return JSON.parseObject(resp.getData(), StartWorkflowResponse.class);
     }
 
     @Override

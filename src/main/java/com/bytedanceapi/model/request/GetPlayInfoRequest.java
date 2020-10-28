@@ -15,8 +15,8 @@ public class GetPlayInfoRequest {
     String definition;
     @JSONField(name = "StreamType")
     String streamType;
-    @JSONField(name = "Watermark")
-    String watermark;
+    @JSONField(name = "LogoType")
+    String logoType;
     @JSONField(name = "Base64")
     Long base64;
     @JSONField(name = "Ssl")

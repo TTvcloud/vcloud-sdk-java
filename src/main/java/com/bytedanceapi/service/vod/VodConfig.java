@@ -34,7 +34,8 @@ public class VodConfig {
                         {
                             put(Const.CONNECTION_TIMEOUT, 5000);
                             put(Const.SOCKET_TIMEOUT, 5000);
-                            put(Const.Host, "vod.bytedanceapi.com");
+                            //put(Const.Host, "vod.bytedanceapi.com");
+                            put(Const.Host, "staging-openapi-boe.byted.org");
                             put(Const.Header, new ArrayList<Header>() {
                                 {
                                     add(new BasicHeader("Accept", "application/json"));
@@ -93,15 +94,15 @@ public class VodConfig {
                         }
                     }
             ));
-            put(Const.StartTranscode, new ApiInfo(
+            put(Const.StartWorkflow, new ApiInfo(
                     new HashMap<String, Object>() {
                         {
                             put(Const.Method, "POST");
                             put(Const.Path, "/");
                             put(Const.Query, new ArrayList<NameValuePair>() {
                                 {
-                                    add(new BasicNameValuePair("Action", Const.StartTranscode));
-                                    add(new BasicNameValuePair("Version", "2018-01-01"));
+                                    add(new BasicNameValuePair("Action", Const.StartWorkflow));
+                                    add(new BasicNameValuePair("Version", "2020-08-01"));
                                 }
                             });
                         }
