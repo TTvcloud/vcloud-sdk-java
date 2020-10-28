@@ -4,11 +4,11 @@
 package com.bytedanceapi.model.common;
 
 /**
- * Protobuf type {@code Vcloud.Models.Vod.VodGetOriginalPlayInfoResult}
+ * Protobuf type {@code ttvcloud.models.VodGetOriginalPlayInfoResult}
  */
 public final class VodGetOriginalPlayInfoResult extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:Vcloud.Models.Vod.VodGetOriginalPlayInfoResult)
+    // @@protoc_insertion_point(message_implements:ttvcloud.models.VodGetOriginalPlayInfoResult)
     VodGetOriginalPlayInfoResultOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use VodGetOriginalPlayInfoResult.newBuilder() to construct.
@@ -136,13 +136,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.bytedanceapi.model.common.VodPlay.internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoResult_descriptor;
+    return com.bytedanceapi.model.common.VodPlay.internal_static_ttvcloud_models_VodGetOriginalPlayInfoResult_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.bytedanceapi.model.common.VodPlay.internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoResult_fieldAccessorTable
+    return com.bytedanceapi.model.common.VodPlay.internal_static_ttvcloud_models_VodGetOriginalPlayInfoResult_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.bytedanceapi.model.common.VodGetOriginalPlayInfoResult.class, com.bytedanceapi.model.common.VodGetOriginalPlayInfoResult.Builder.class);
   }
@@ -765,21 +765,21 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code Vcloud.Models.Vod.VodGetOriginalPlayInfoResult}
+   * Protobuf type {@code ttvcloud.models.VodGetOriginalPlayInfoResult}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:Vcloud.Models.Vod.VodGetOriginalPlayInfoResult)
+      // @@protoc_insertion_point(builder_implements:ttvcloud.models.VodGetOriginalPlayInfoResult)
       com.bytedanceapi.model.common.VodGetOriginalPlayInfoResultOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.bytedanceapi.model.common.VodPlay.internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoResult_descriptor;
+      return com.bytedanceapi.model.common.VodPlay.internal_static_ttvcloud_models_VodGetOriginalPlayInfoResult_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.bytedanceapi.model.common.VodPlay.internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoResult_fieldAccessorTable
+      return com.bytedanceapi.model.common.VodPlay.internal_static_ttvcloud_models_VodGetOriginalPlayInfoResult_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.bytedanceapi.model.common.VodGetOriginalPlayInfoResult.class, com.bytedanceapi.model.common.VodGetOriginalPlayInfoResult.Builder.class);
     }
@@ -830,7 +830,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.bytedanceapi.model.common.VodPlay.internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoResult_descriptor;
+      return com.bytedanceapi.model.common.VodPlay.internal_static_ttvcloud_models_VodGetOriginalPlayInfoResult_descriptor;
     }
 
     @java.lang.Override
@@ -1780,10 +1780,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:Vcloud.Models.Vod.VodGetOriginalPlayInfoResult)
+    // @@protoc_insertion_point(builder_scope:ttvcloud.models.VodGetOriginalPlayInfoResult)
   }
 
-  // @@protoc_insertion_point(class_scope:Vcloud.Models.Vod.VodGetOriginalPlayInfoResult)
+  // @@protoc_insertion_point(class_scope:ttvcloud.models.VodGetOriginalPlayInfoResult)
   private static final com.bytedanceapi.model.common.VodGetOriginalPlayInfoResult DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new com.bytedanceapi.model.common.VodGetOriginalPlayInfoResult();

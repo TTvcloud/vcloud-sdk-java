@@ -4,7 +4,7 @@
 package com.bytedanceapi.model.common;
 
 public interface VodGetOriginalPlayInfoRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:Vcloud.Models.Vod.VodGetOriginalPlayInfoRequest)
+    // @@protoc_insertion_point(interface_extends:ttvcloud.models.VodGetOriginalPlayInfoRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -32,18 +32,38 @@ public interface VodGetOriginalPlayInfoRequestOrBuilder extends
    *播放地址是否base64编码,默认否，0-否，1-是
    * </pre>
    *
-   * <code>int64 Base64 = 2;</code>
+   * <code>string Base64 = 2;</code>
    * @return The base64.
    */
-  long getBase64();
+  java.lang.String getBase64();
+  /**
+   * <pre>
+   *播放地址是否base64编码,默认否，0-否，1-是
+   * </pre>
+   *
+   * <code>string Base64 = 2;</code>
+   * @return The bytes for base64.
+   */
+  com.google.protobuf.ByteString
+      getBase64Bytes();
 
   /**
    * <pre>
    *返回https播放地址,默认否, 0-否，1-是
    * </pre>
    *
-   * <code>int64 Ssl = 3;</code>
+   * <code>string Ssl = 3;</code>
    * @return The ssl.
    */
-  long getSsl();
+  java.lang.String getSsl();
+  /**
+   * <pre>
+   *返回https播放地址,默认否, 0-否，1-是
+   * </pre>
+   *
+   * <code>string Ssl = 3;</code>
+   * @return The bytes for ssl.
+   */
+  com.google.protobuf.ByteString
+      getSslBytes();
 }

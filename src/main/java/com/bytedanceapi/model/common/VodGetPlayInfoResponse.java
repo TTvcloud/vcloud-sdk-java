@@ -4,11 +4,11 @@
 package com.bytedanceapi.model.common;
 
 /**
- * Protobuf type {@code Vcloud.Models.Vod.VodGetPlayInfoResponse}
+ * Protobuf type {@code ttvcloud.models.VodGetPlayInfoResponse}
  */
 public final class VodGetPlayInfoResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:Vcloud.Models.Vod.VodGetPlayInfoResponse)
+    // @@protoc_insertion_point(message_implements:ttvcloud.models.VodGetPlayInfoResponse)
     VodGetPlayInfoResponseOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use VodGetPlayInfoResponse.newBuilder() to construct.
@@ -95,13 +95,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.bytedanceapi.model.common.VodPlay.internal_static_Vcloud_Models_Vod_VodGetPlayInfoResponse_descriptor;
+    return com.bytedanceapi.model.common.VodPlay.internal_static_ttvcloud_models_VodGetPlayInfoResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.bytedanceapi.model.common.VodPlay.internal_static_Vcloud_Models_Vod_VodGetPlayInfoResponse_fieldAccessorTable
+    return com.bytedanceapi.model.common.VodPlay.internal_static_ttvcloud_models_VodGetPlayInfoResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.bytedanceapi.model.common.VodGetPlayInfoResponse.class, com.bytedanceapi.model.common.VodGetPlayInfoResponse.Builder.class);
   }
@@ -135,7 +135,7 @@ private static final long serialVersionUID = 0L;
   public static final int RESULT_FIELD_NUMBER = 2;
   private com.bytedanceapi.model.common.VodGetPlayInfoResult result_;
   /**
-   * <code>.Vcloud.Models.Vod.VodGetPlayInfoResult Result = 2;</code>
+   * <code>.ttvcloud.models.VodGetPlayInfoResult Result = 2;</code>
    * @return Whether the result field is set.
    */
   @java.lang.Override
@@ -143,7 +143,7 @@ private static final long serialVersionUID = 0L;
     return result_ != null;
   }
   /**
-   * <code>.Vcloud.Models.Vod.VodGetPlayInfoResult Result = 2;</code>
+   * <code>.ttvcloud.models.VodGetPlayInfoResult Result = 2;</code>
    * @return The result.
    */
   @java.lang.Override
@@ -151,7 +151,7 @@ private static final long serialVersionUID = 0L;
     return result_ == null ? com.bytedanceapi.model.common.VodGetPlayInfoResult.getDefaultInstance() : result_;
   }
   /**
-   * <code>.Vcloud.Models.Vod.VodGetPlayInfoResult Result = 2;</code>
+   * <code>.ttvcloud.models.VodGetPlayInfoResult Result = 2;</code>
    */
   @java.lang.Override
   public com.bytedanceapi.model.common.VodGetPlayInfoResultOrBuilder getResultOrBuilder() {
@@ -335,21 +335,21 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code Vcloud.Models.Vod.VodGetPlayInfoResponse}
+   * Protobuf type {@code ttvcloud.models.VodGetPlayInfoResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:Vcloud.Models.Vod.VodGetPlayInfoResponse)
+      // @@protoc_insertion_point(builder_implements:ttvcloud.models.VodGetPlayInfoResponse)
       com.bytedanceapi.model.common.VodGetPlayInfoResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.bytedanceapi.model.common.VodPlay.internal_static_Vcloud_Models_Vod_VodGetPlayInfoResponse_descriptor;
+      return com.bytedanceapi.model.common.VodPlay.internal_static_ttvcloud_models_VodGetPlayInfoResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.bytedanceapi.model.common.VodPlay.internal_static_Vcloud_Models_Vod_VodGetPlayInfoResponse_fieldAccessorTable
+      return com.bytedanceapi.model.common.VodPlay.internal_static_ttvcloud_models_VodGetPlayInfoResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.bytedanceapi.model.common.VodGetPlayInfoResponse.class, com.bytedanceapi.model.common.VodGetPlayInfoResponse.Builder.class);
     }
@@ -390,7 +390,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.bytedanceapi.model.common.VodPlay.internal_static_Vcloud_Models_Vod_VodGetPlayInfoResponse_descriptor;
+      return com.bytedanceapi.model.common.VodPlay.internal_static_ttvcloud_models_VodGetPlayInfoResponse_descriptor;
     }
 
     @java.lang.Override
@@ -626,14 +626,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.bytedanceapi.model.common.VodGetPlayInfoResult, com.bytedanceapi.model.common.VodGetPlayInfoResult.Builder, com.bytedanceapi.model.common.VodGetPlayInfoResultOrBuilder> resultBuilder_;
     /**
-     * <code>.Vcloud.Models.Vod.VodGetPlayInfoResult Result = 2;</code>
+     * <code>.ttvcloud.models.VodGetPlayInfoResult Result = 2;</code>
      * @return Whether the result field is set.
      */
     public boolean hasResult() {
       return resultBuilder_ != null || result_ != null;
     }
     /**
-     * <code>.Vcloud.Models.Vod.VodGetPlayInfoResult Result = 2;</code>
+     * <code>.ttvcloud.models.VodGetPlayInfoResult Result = 2;</code>
      * @return The result.
      */
     public com.bytedanceapi.model.common.VodGetPlayInfoResult getResult() {
@@ -644,7 +644,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.Vcloud.Models.Vod.VodGetPlayInfoResult Result = 2;</code>
+     * <code>.ttvcloud.models.VodGetPlayInfoResult Result = 2;</code>
      */
     public Builder setResult(com.bytedanceapi.model.common.VodGetPlayInfoResult value) {
       if (resultBuilder_ == null) {
@@ -660,7 +660,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.Vcloud.Models.Vod.VodGetPlayInfoResult Result = 2;</code>
+     * <code>.ttvcloud.models.VodGetPlayInfoResult Result = 2;</code>
      */
     public Builder setResult(
         com.bytedanceapi.model.common.VodGetPlayInfoResult.Builder builderForValue) {
@@ -674,7 +674,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.Vcloud.Models.Vod.VodGetPlayInfoResult Result = 2;</code>
+     * <code>.ttvcloud.models.VodGetPlayInfoResult Result = 2;</code>
      */
     public Builder mergeResult(com.bytedanceapi.model.common.VodGetPlayInfoResult value) {
       if (resultBuilder_ == null) {
@@ -692,7 +692,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.Vcloud.Models.Vod.VodGetPlayInfoResult Result = 2;</code>
+     * <code>.ttvcloud.models.VodGetPlayInfoResult Result = 2;</code>
      */
     public Builder clearResult() {
       if (resultBuilder_ == null) {
@@ -706,7 +706,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.Vcloud.Models.Vod.VodGetPlayInfoResult Result = 2;</code>
+     * <code>.ttvcloud.models.VodGetPlayInfoResult Result = 2;</code>
      */
     public com.bytedanceapi.model.common.VodGetPlayInfoResult.Builder getResultBuilder() {
       
@@ -714,7 +714,7 @@ private static final long serialVersionUID = 0L;
       return getResultFieldBuilder().getBuilder();
     }
     /**
-     * <code>.Vcloud.Models.Vod.VodGetPlayInfoResult Result = 2;</code>
+     * <code>.ttvcloud.models.VodGetPlayInfoResult Result = 2;</code>
      */
     public com.bytedanceapi.model.common.VodGetPlayInfoResultOrBuilder getResultOrBuilder() {
       if (resultBuilder_ != null) {
@@ -725,7 +725,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.Vcloud.Models.Vod.VodGetPlayInfoResult Result = 2;</code>
+     * <code>.ttvcloud.models.VodGetPlayInfoResult Result = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.bytedanceapi.model.common.VodGetPlayInfoResult, com.bytedanceapi.model.common.VodGetPlayInfoResult.Builder, com.bytedanceapi.model.common.VodGetPlayInfoResultOrBuilder> 
@@ -753,10 +753,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:Vcloud.Models.Vod.VodGetPlayInfoResponse)
+    // @@protoc_insertion_point(builder_scope:ttvcloud.models.VodGetPlayInfoResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:Vcloud.Models.Vod.VodGetPlayInfoResponse)
+  // @@protoc_insertion_point(class_scope:ttvcloud.models.VodGetPlayInfoResponse)
   private static final com.bytedanceapi.model.common.VodGetPlayInfoResponse DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new com.bytedanceapi.model.common.VodGetPlayInfoResponse();

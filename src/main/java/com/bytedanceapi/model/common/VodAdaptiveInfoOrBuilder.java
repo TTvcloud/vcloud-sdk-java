@@ -4,7 +4,7 @@
 package com.bytedanceapi.model.common;
 
 public interface VodAdaptiveInfoOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:Vcloud.Models.Vod.VodAdaptiveInfo)
+    // @@protoc_insertion_point(interface_extends:ttvcloud.models.VodAdaptiveInfo)
     com.google.protobuf.MessageOrBuilder {
 
   /**

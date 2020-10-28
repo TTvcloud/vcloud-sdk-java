@@ -4,7 +4,7 @@
 package com.bytedanceapi.model.common;
 
 public interface VodGetOriginalPlayInfoResultOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:Vcloud.Models.Vod.VodGetOriginalPlayInfoResult)
+    // @@protoc_insertion_point(interface_extends:ttvcloud.models.VodGetOriginalPlayInfoResult)
     com.google.protobuf.MessageOrBuilder {
 
   /**

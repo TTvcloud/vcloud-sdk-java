@@ -4,7 +4,7 @@
 package com.bytedanceapi.model.common;
 
 public interface VodGetPlayInfoResultOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:Vcloud.Models.Vod.VodGetPlayInfoResult)
+    // @@protoc_insertion_point(interface_extends:ttvcloud.models.VodGetPlayInfoResult)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -112,7 +112,7 @@ public interface VodGetPlayInfoResultOrBuilder extends
    * dash播放信息
    * </pre>
    *
-   * <code>.Vcloud.Models.Vod.VodAdaptiveInfo AdaptiveInfo = 8;</code>
+   * <code>.ttvcloud.models.VodAdaptiveInfo AdaptiveInfo = 8;</code>
    * @return Whether the adaptiveInfo field is set.
    */
   boolean hasAdaptiveInfo();
@@ -121,7 +121,7 @@ public interface VodGetPlayInfoResultOrBuilder extends
    * dash播放信息
    * </pre>
    *
-   * <code>.Vcloud.Models.Vod.VodAdaptiveInfo AdaptiveInfo = 8;</code>
+   * <code>.ttvcloud.models.VodAdaptiveInfo AdaptiveInfo = 8;</code>
    * @return The adaptiveInfo.
    */
   com.bytedanceapi.model.common.VodAdaptiveInfo getAdaptiveInfo();
@@ -130,7 +130,7 @@ public interface VodGetPlayInfoResultOrBuilder extends
    * dash播放信息
    * </pre>
    *
-   * <code>.Vcloud.Models.Vod.VodAdaptiveInfo AdaptiveInfo = 8;</code>
+   * <code>.ttvcloud.models.VodAdaptiveInfo AdaptiveInfo = 8;</code>
    */
   com.bytedanceapi.model.common.VodAdaptiveInfoOrBuilder getAdaptiveInfoOrBuilder();
 
@@ -139,7 +139,7 @@ public interface VodGetPlayInfoResultOrBuilder extends
    *播放列表
    * </pre>
    *
-   * <code>repeated .Vcloud.Models.Vod.VodPlayInfo PlayInfoList = 9;</code>
+   * <code>repeated .ttvcloud.models.VodPlayInfo PlayInfoList = 9;</code>
    */
   java.util.List<com.bytedanceapi.model.common.VodPlayInfo> 
       getPlayInfoListList();
@@ -148,7 +148,7 @@ public interface VodGetPlayInfoResultOrBuilder extends
    *播放列表
    * </pre>
    *
-   * <code>repeated .Vcloud.Models.Vod.VodPlayInfo PlayInfoList = 9;</code>
+   * <code>repeated .ttvcloud.models.VodPlayInfo PlayInfoList = 9;</code>
    */
   com.bytedanceapi.model.common.VodPlayInfo getPlayInfoList(int index);
   /**
@@ -156,7 +156,7 @@ public interface VodGetPlayInfoResultOrBuilder extends
    *播放列表
    * </pre>
    *
-   * <code>repeated .Vcloud.Models.Vod.VodPlayInfo PlayInfoList = 9;</code>
+   * <code>repeated .ttvcloud.models.VodPlayInfo PlayInfoList = 9;</code>
    */
   int getPlayInfoListCount();
   /**
@@ -164,7 +164,7 @@ public interface VodGetPlayInfoResultOrBuilder extends
    *播放列表
    * </pre>
    *
-   * <code>repeated .Vcloud.Models.Vod.VodPlayInfo PlayInfoList = 9;</code>
+   * <code>repeated .ttvcloud.models.VodPlayInfo PlayInfoList = 9;</code>
    */
   java.util.List<? extends com.bytedanceapi.model.common.VodPlayInfoOrBuilder> 
       getPlayInfoListOrBuilderList();
@@ -173,7 +173,7 @@ public interface VodGetPlayInfoResultOrBuilder extends
    *播放列表
    * </pre>
    *
-   * <code>repeated .Vcloud.Models.Vod.VodPlayInfo PlayInfoList = 9;</code>
+   * <code>repeated .ttvcloud.models.VodPlayInfo PlayInfoList = 9;</code>
    */
   com.bytedanceapi.model.common.VodPlayInfoOrBuilder getPlayInfoListOrBuilder(
       int index);

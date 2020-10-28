@@ -4,11 +4,11 @@
 package com.bytedanceapi.model.common;
 
 /**
- * Protobuf type {@code Vcloud.Models.Vod.VodPlayInfo}
+ * Protobuf type {@code ttvcloud.models.VodPlayInfo}
  */
 public final class VodPlayInfo extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:Vcloud.Models.Vod.VodPlayInfo)
+    // @@protoc_insertion_point(message_implements:ttvcloud.models.VodPlayInfo)
     VodPlayInfoOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use VodPlayInfo.newBuilder() to construct.
@@ -221,13 +221,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.bytedanceapi.model.common.VodPlay.internal_static_Vcloud_Models_Vod_VodPlayInfo_descriptor;
+    return com.bytedanceapi.model.common.VodPlay.internal_static_ttvcloud_models_VodPlayInfo_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.bytedanceapi.model.common.VodPlay.internal_static_Vcloud_Models_Vod_VodPlayInfo_fieldAccessorTable
+    return com.bytedanceapi.model.common.VodPlay.internal_static_ttvcloud_models_VodPlayInfo_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.bytedanceapi.model.common.VodPlayInfo.class, com.bytedanceapi.model.common.VodPlayInfo.Builder.class);
   }
@@ -1490,21 +1490,21 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code Vcloud.Models.Vod.VodPlayInfo}
+   * Protobuf type {@code ttvcloud.models.VodPlayInfo}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:Vcloud.Models.Vod.VodPlayInfo)
+      // @@protoc_insertion_point(builder_implements:ttvcloud.models.VodPlayInfo)
       com.bytedanceapi.model.common.VodPlayInfoOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.bytedanceapi.model.common.VodPlay.internal_static_Vcloud_Models_Vod_VodPlayInfo_descriptor;
+      return com.bytedanceapi.model.common.VodPlay.internal_static_ttvcloud_models_VodPlayInfo_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.bytedanceapi.model.common.VodPlay.internal_static_Vcloud_Models_Vod_VodPlayInfo_fieldAccessorTable
+      return com.bytedanceapi.model.common.VodPlay.internal_static_ttvcloud_models_VodPlayInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.bytedanceapi.model.common.VodPlayInfo.class, com.bytedanceapi.model.common.VodPlayInfo.Builder.class);
     }
@@ -1581,7 +1581,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.bytedanceapi.model.common.VodPlay.internal_static_Vcloud_Models_Vod_VodPlayInfo_descriptor;
+      return com.bytedanceapi.model.common.VodPlay.internal_static_ttvcloud_models_VodPlayInfo_descriptor;
     }
 
     @java.lang.Override
@@ -3682,10 +3682,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:Vcloud.Models.Vod.VodPlayInfo)
+    // @@protoc_insertion_point(builder_scope:ttvcloud.models.VodPlayInfo)
   }
 
-  // @@protoc_insertion_point(class_scope:Vcloud.Models.Vod.VodPlayInfo)
+  // @@protoc_insertion_point(class_scope:ttvcloud.models.VodPlayInfo)
   private static final com.bytedanceapi.model.common.VodPlayInfo DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new com.bytedanceapi.model.common.VodPlayInfo();

@@ -4,11 +4,11 @@
 package com.bytedanceapi.model.common;
 
 /**
- * Protobuf type {@code Vcloud.Models.Vod.VodGetPlayInfoResult}
+ * Protobuf type {@code ttvcloud.models.VodGetPlayInfoResult}
  */
 public final class VodGetPlayInfoResult extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:Vcloud.Models.Vod.VodGetPlayInfoResult)
+    // @@protoc_insertion_point(message_implements:ttvcloud.models.VodGetPlayInfoResult)
     VodGetPlayInfoResultOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use VodGetPlayInfoResult.newBuilder() to construct.
@@ -137,13 +137,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.bytedanceapi.model.common.VodPlay.internal_static_Vcloud_Models_Vod_VodGetPlayInfoResult_descriptor;
+    return com.bytedanceapi.model.common.VodPlay.internal_static_ttvcloud_models_VodGetPlayInfoResult_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.bytedanceapi.model.common.VodPlay.internal_static_Vcloud_Models_Vod_VodGetPlayInfoResult_fieldAccessorTable
+    return com.bytedanceapi.model.common.VodPlay.internal_static_ttvcloud_models_VodGetPlayInfoResult_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.bytedanceapi.model.common.VodGetPlayInfoResult.class, com.bytedanceapi.model.common.VodGetPlayInfoResult.Builder.class);
   }
@@ -353,7 +353,7 @@ private static final long serialVersionUID = 0L;
    * dash播放信息
    * </pre>
    *
-   * <code>.Vcloud.Models.Vod.VodAdaptiveInfo AdaptiveInfo = 8;</code>
+   * <code>.ttvcloud.models.VodAdaptiveInfo AdaptiveInfo = 8;</code>
    * @return Whether the adaptiveInfo field is set.
    */
   @java.lang.Override
@@ -365,7 +365,7 @@ private static final long serialVersionUID = 0L;
    * dash播放信息
    * </pre>
    *
-   * <code>.Vcloud.Models.Vod.VodAdaptiveInfo AdaptiveInfo = 8;</code>
+   * <code>.ttvcloud.models.VodAdaptiveInfo AdaptiveInfo = 8;</code>
    * @return The adaptiveInfo.
    */
   @java.lang.Override
@@ -377,7 +377,7 @@ private static final long serialVersionUID = 0L;
    * dash播放信息
    * </pre>
    *
-   * <code>.Vcloud.Models.Vod.VodAdaptiveInfo AdaptiveInfo = 8;</code>
+   * <code>.ttvcloud.models.VodAdaptiveInfo AdaptiveInfo = 8;</code>
    */
   @java.lang.Override
   public com.bytedanceapi.model.common.VodAdaptiveInfoOrBuilder getAdaptiveInfoOrBuilder() {
@@ -391,7 +391,7 @@ private static final long serialVersionUID = 0L;
    *播放列表
    * </pre>
    *
-   * <code>repeated .Vcloud.Models.Vod.VodPlayInfo PlayInfoList = 9;</code>
+   * <code>repeated .ttvcloud.models.VodPlayInfo PlayInfoList = 9;</code>
    */
   @java.lang.Override
   public java.util.List<com.bytedanceapi.model.common.VodPlayInfo> getPlayInfoListList() {
@@ -402,7 +402,7 @@ private static final long serialVersionUID = 0L;
    *播放列表
    * </pre>
    *
-   * <code>repeated .Vcloud.Models.Vod.VodPlayInfo PlayInfoList = 9;</code>
+   * <code>repeated .ttvcloud.models.VodPlayInfo PlayInfoList = 9;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.bytedanceapi.model.common.VodPlayInfoOrBuilder> 
@@ -414,7 +414,7 @@ private static final long serialVersionUID = 0L;
    *播放列表
    * </pre>
    *
-   * <code>repeated .Vcloud.Models.Vod.VodPlayInfo PlayInfoList = 9;</code>
+   * <code>repeated .ttvcloud.models.VodPlayInfo PlayInfoList = 9;</code>
    */
   @java.lang.Override
   public int getPlayInfoListCount() {
@@ -425,7 +425,7 @@ private static final long serialVersionUID = 0L;
    *播放列表
    * </pre>
    *
-   * <code>repeated .Vcloud.Models.Vod.VodPlayInfo PlayInfoList = 9;</code>
+   * <code>repeated .ttvcloud.models.VodPlayInfo PlayInfoList = 9;</code>
    */
   @java.lang.Override
   public com.bytedanceapi.model.common.VodPlayInfo getPlayInfoList(int index) {
@@ -436,7 +436,7 @@ private static final long serialVersionUID = 0L;
    *播放列表
    * </pre>
    *
-   * <code>repeated .Vcloud.Models.Vod.VodPlayInfo PlayInfoList = 9;</code>
+   * <code>repeated .ttvcloud.models.VodPlayInfo PlayInfoList = 9;</code>
    */
   @java.lang.Override
   public com.bytedanceapi.model.common.VodPlayInfoOrBuilder getPlayInfoListOrBuilder(
@@ -697,21 +697,21 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code Vcloud.Models.Vod.VodGetPlayInfoResult}
+   * Protobuf type {@code ttvcloud.models.VodGetPlayInfoResult}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:Vcloud.Models.Vod.VodGetPlayInfoResult)
+      // @@protoc_insertion_point(builder_implements:ttvcloud.models.VodGetPlayInfoResult)
       com.bytedanceapi.model.common.VodGetPlayInfoResultOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.bytedanceapi.model.common.VodPlay.internal_static_Vcloud_Models_Vod_VodGetPlayInfoResult_descriptor;
+      return com.bytedanceapi.model.common.VodPlay.internal_static_ttvcloud_models_VodGetPlayInfoResult_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.bytedanceapi.model.common.VodPlay.internal_static_Vcloud_Models_Vod_VodGetPlayInfoResult_fieldAccessorTable
+      return com.bytedanceapi.model.common.VodPlay.internal_static_ttvcloud_models_VodGetPlayInfoResult_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.bytedanceapi.model.common.VodGetPlayInfoResult.class, com.bytedanceapi.model.common.VodGetPlayInfoResult.Builder.class);
     }
@@ -767,7 +767,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.bytedanceapi.model.common.VodPlay.internal_static_Vcloud_Models_Vod_VodGetPlayInfoResult_descriptor;
+      return com.bytedanceapi.model.common.VodPlay.internal_static_ttvcloud_models_VodGetPlayInfoResult_descriptor;
     }
 
     @java.lang.Override
@@ -1408,7 +1408,7 @@ private static final long serialVersionUID = 0L;
      * dash播放信息
      * </pre>
      *
-     * <code>.Vcloud.Models.Vod.VodAdaptiveInfo AdaptiveInfo = 8;</code>
+     * <code>.ttvcloud.models.VodAdaptiveInfo AdaptiveInfo = 8;</code>
      * @return Whether the adaptiveInfo field is set.
      */
     public boolean hasAdaptiveInfo() {
@@ -1419,7 +1419,7 @@ private static final long serialVersionUID = 0L;
      * dash播放信息
      * </pre>
      *
-     * <code>.Vcloud.Models.Vod.VodAdaptiveInfo AdaptiveInfo = 8;</code>
+     * <code>.ttvcloud.models.VodAdaptiveInfo AdaptiveInfo = 8;</code>
      * @return The adaptiveInfo.
      */
     public com.bytedanceapi.model.common.VodAdaptiveInfo getAdaptiveInfo() {
@@ -1434,7 +1434,7 @@ private static final long serialVersionUID = 0L;
      * dash播放信息
      * </pre>
      *
-     * <code>.Vcloud.Models.Vod.VodAdaptiveInfo AdaptiveInfo = 8;</code>
+     * <code>.ttvcloud.models.VodAdaptiveInfo AdaptiveInfo = 8;</code>
      */
     public Builder setAdaptiveInfo(com.bytedanceapi.model.common.VodAdaptiveInfo value) {
       if (adaptiveInfoBuilder_ == null) {
@@ -1454,7 +1454,7 @@ private static final long serialVersionUID = 0L;
      * dash播放信息
      * </pre>
      *
-     * <code>.Vcloud.Models.Vod.VodAdaptiveInfo AdaptiveInfo = 8;</code>
+     * <code>.ttvcloud.models.VodAdaptiveInfo AdaptiveInfo = 8;</code>
      */
     public Builder setAdaptiveInfo(
         com.bytedanceapi.model.common.VodAdaptiveInfo.Builder builderForValue) {
@@ -1472,7 +1472,7 @@ private static final long serialVersionUID = 0L;
      * dash播放信息
      * </pre>
      *
-     * <code>.Vcloud.Models.Vod.VodAdaptiveInfo AdaptiveInfo = 8;</code>
+     * <code>.ttvcloud.models.VodAdaptiveInfo AdaptiveInfo = 8;</code>
      */
     public Builder mergeAdaptiveInfo(com.bytedanceapi.model.common.VodAdaptiveInfo value) {
       if (adaptiveInfoBuilder_ == null) {
@@ -1494,7 +1494,7 @@ private static final long serialVersionUID = 0L;
      * dash播放信息
      * </pre>
      *
-     * <code>.Vcloud.Models.Vod.VodAdaptiveInfo AdaptiveInfo = 8;</code>
+     * <code>.ttvcloud.models.VodAdaptiveInfo AdaptiveInfo = 8;</code>
      */
     public Builder clearAdaptiveInfo() {
       if (adaptiveInfoBuilder_ == null) {
@@ -1512,7 +1512,7 @@ private static final long serialVersionUID = 0L;
      * dash播放信息
      * </pre>
      *
-     * <code>.Vcloud.Models.Vod.VodAdaptiveInfo AdaptiveInfo = 8;</code>
+     * <code>.ttvcloud.models.VodAdaptiveInfo AdaptiveInfo = 8;</code>
      */
     public com.bytedanceapi.model.common.VodAdaptiveInfo.Builder getAdaptiveInfoBuilder() {
       
@@ -1524,7 +1524,7 @@ private static final long serialVersionUID = 0L;
      * dash播放信息
      * </pre>
      *
-     * <code>.Vcloud.Models.Vod.VodAdaptiveInfo AdaptiveInfo = 8;</code>
+     * <code>.ttvcloud.models.VodAdaptiveInfo AdaptiveInfo = 8;</code>
      */
     public com.bytedanceapi.model.common.VodAdaptiveInfoOrBuilder getAdaptiveInfoOrBuilder() {
       if (adaptiveInfoBuilder_ != null) {
@@ -1539,7 +1539,7 @@ private static final long serialVersionUID = 0L;
      * dash播放信息
      * </pre>
      *
-     * <code>.Vcloud.Models.Vod.VodAdaptiveInfo AdaptiveInfo = 8;</code>
+     * <code>.ttvcloud.models.VodAdaptiveInfo AdaptiveInfo = 8;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.bytedanceapi.model.common.VodAdaptiveInfo, com.bytedanceapi.model.common.VodAdaptiveInfo.Builder, com.bytedanceapi.model.common.VodAdaptiveInfoOrBuilder> 
@@ -1572,7 +1572,7 @@ private static final long serialVersionUID = 0L;
      *播放列表
      * </pre>
      *
-     * <code>repeated .Vcloud.Models.Vod.VodPlayInfo PlayInfoList = 9;</code>
+     * <code>repeated .ttvcloud.models.VodPlayInfo PlayInfoList = 9;</code>
      */
     public java.util.List<com.bytedanceapi.model.common.VodPlayInfo> getPlayInfoListList() {
       if (playInfoListBuilder_ == null) {
@@ -1586,7 +1586,7 @@ private static final long serialVersionUID = 0L;
      *播放列表
      * </pre>
      *
-     * <code>repeated .Vcloud.Models.Vod.VodPlayInfo PlayInfoList = 9;</code>
+     * <code>repeated .ttvcloud.models.VodPlayInfo PlayInfoList = 9;</code>
      */
     public int getPlayInfoListCount() {
       if (playInfoListBuilder_ == null) {
@@ -1600,7 +1600,7 @@ private static final long serialVersionUID = 0L;
      *播放列表
      * </pre>
      *
-     * <code>repeated .Vcloud.Models.Vod.VodPlayInfo PlayInfoList = 9;</code>
+     * <code>repeated .ttvcloud.models.VodPlayInfo PlayInfoList = 9;</code>
      */
     public com.bytedanceapi.model.common.VodPlayInfo getPlayInfoList(int index) {
       if (playInfoListBuilder_ == null) {
@@ -1614,7 +1614,7 @@ private static final long serialVersionUID = 0L;
      *播放列表
      * </pre>
      *
-     * <code>repeated .Vcloud.Models.Vod.VodPlayInfo PlayInfoList = 9;</code>
+     * <code>repeated .ttvcloud.models.VodPlayInfo PlayInfoList = 9;</code>
      */
     public Builder setPlayInfoList(
         int index, com.bytedanceapi.model.common.VodPlayInfo value) {
@@ -1635,7 +1635,7 @@ private static final long serialVersionUID = 0L;
      *播放列表
      * </pre>
      *
-     * <code>repeated .Vcloud.Models.Vod.VodPlayInfo PlayInfoList = 9;</code>
+     * <code>repeated .ttvcloud.models.VodPlayInfo PlayInfoList = 9;</code>
      */
     public Builder setPlayInfoList(
         int index, com.bytedanceapi.model.common.VodPlayInfo.Builder builderForValue) {
@@ -1653,7 +1653,7 @@ private static final long serialVersionUID = 0L;
      *播放列表
      * </pre>
      *
-     * <code>repeated .Vcloud.Models.Vod.VodPlayInfo PlayInfoList = 9;</code>
+     * <code>repeated .ttvcloud.models.VodPlayInfo PlayInfoList = 9;</code>
      */
     public Builder addPlayInfoList(com.bytedanceapi.model.common.VodPlayInfo value) {
       if (playInfoListBuilder_ == null) {
@@ -1673,7 +1673,7 @@ private static final long serialVersionUID = 0L;
      *播放列表
      * </pre>
      *
-     * <code>repeated .Vcloud.Models.Vod.VodPlayInfo PlayInfoList = 9;</code>
+     * <code>repeated .ttvcloud.models.VodPlayInfo PlayInfoList = 9;</code>
      */
     public Builder addPlayInfoList(
         int index, com.bytedanceapi.model.common.VodPlayInfo value) {
@@ -1694,7 +1694,7 @@ private static final long serialVersionUID = 0L;
      *播放列表
      * </pre>
      *
-     * <code>repeated .Vcloud.Models.Vod.VodPlayInfo PlayInfoList = 9;</code>
+     * <code>repeated .ttvcloud.models.VodPlayInfo PlayInfoList = 9;</code>
      */
     public Builder addPlayInfoList(
         com.bytedanceapi.model.common.VodPlayInfo.Builder builderForValue) {
@@ -1712,7 +1712,7 @@ private static final long serialVersionUID = 0L;
      *播放列表
      * </pre>
      *
-     * <code>repeated .Vcloud.Models.Vod.VodPlayInfo PlayInfoList = 9;</code>
+     * <code>repeated .ttvcloud.models.VodPlayInfo PlayInfoList = 9;</code>
      */
     public Builder addPlayInfoList(
         int index, com.bytedanceapi.model.common.VodPlayInfo.Builder builderForValue) {
@@ -1730,7 +1730,7 @@ private static final long serialVersionUID = 0L;
      *播放列表
      * </pre>
      *
-     * <code>repeated .Vcloud.Models.Vod.VodPlayInfo PlayInfoList = 9;</code>
+     * <code>repeated .ttvcloud.models.VodPlayInfo PlayInfoList = 9;</code>
      */
     public Builder addAllPlayInfoList(
         java.lang.Iterable<? extends com.bytedanceapi.model.common.VodPlayInfo> values) {
@@ -1749,7 +1749,7 @@ private static final long serialVersionUID = 0L;
      *播放列表
      * </pre>
      *
-     * <code>repeated .Vcloud.Models.Vod.VodPlayInfo PlayInfoList = 9;</code>
+     * <code>repeated .ttvcloud.models.VodPlayInfo PlayInfoList = 9;</code>
      */
     public Builder clearPlayInfoList() {
       if (playInfoListBuilder_ == null) {
@@ -1766,7 +1766,7 @@ private static final long serialVersionUID = 0L;
      *播放列表
      * </pre>
      *
-     * <code>repeated .Vcloud.Models.Vod.VodPlayInfo PlayInfoList = 9;</code>
+     * <code>repeated .ttvcloud.models.VodPlayInfo PlayInfoList = 9;</code>
      */
     public Builder removePlayInfoList(int index) {
       if (playInfoListBuilder_ == null) {
@@ -1783,7 +1783,7 @@ private static final long serialVersionUID = 0L;
      *播放列表
      * </pre>
      *
-     * <code>repeated .Vcloud.Models.Vod.VodPlayInfo PlayInfoList = 9;</code>
+     * <code>repeated .ttvcloud.models.VodPlayInfo PlayInfoList = 9;</code>
      */
     public com.bytedanceapi.model.common.VodPlayInfo.Builder getPlayInfoListBuilder(
         int index) {
@@ -1794,7 +1794,7 @@ private static final long serialVersionUID = 0L;
      *播放列表
      * </pre>
      *
-     * <code>repeated .Vcloud.Models.Vod.VodPlayInfo PlayInfoList = 9;</code>
+     * <code>repeated .ttvcloud.models.VodPlayInfo PlayInfoList = 9;</code>
      */
     public com.bytedanceapi.model.common.VodPlayInfoOrBuilder getPlayInfoListOrBuilder(
         int index) {
@@ -1808,7 +1808,7 @@ private static final long serialVersionUID = 0L;
      *播放列表
      * </pre>
      *
-     * <code>repeated .Vcloud.Models.Vod.VodPlayInfo PlayInfoList = 9;</code>
+     * <code>repeated .ttvcloud.models.VodPlayInfo PlayInfoList = 9;</code>
      */
     public java.util.List<? extends com.bytedanceapi.model.common.VodPlayInfoOrBuilder> 
          getPlayInfoListOrBuilderList() {
@@ -1823,7 +1823,7 @@ private static final long serialVersionUID = 0L;
      *播放列表
      * </pre>
      *
-     * <code>repeated .Vcloud.Models.Vod.VodPlayInfo PlayInfoList = 9;</code>
+     * <code>repeated .ttvcloud.models.VodPlayInfo PlayInfoList = 9;</code>
      */
     public com.bytedanceapi.model.common.VodPlayInfo.Builder addPlayInfoListBuilder() {
       return getPlayInfoListFieldBuilder().addBuilder(
@@ -1834,7 +1834,7 @@ private static final long serialVersionUID = 0L;
      *播放列表
      * </pre>
      *
-     * <code>repeated .Vcloud.Models.Vod.VodPlayInfo PlayInfoList = 9;</code>
+     * <code>repeated .ttvcloud.models.VodPlayInfo PlayInfoList = 9;</code>
      */
     public com.bytedanceapi.model.common.VodPlayInfo.Builder addPlayInfoListBuilder(
         int index) {
@@ -1846,7 +1846,7 @@ private static final long serialVersionUID = 0L;
      *播放列表
      * </pre>
      *
-     * <code>repeated .Vcloud.Models.Vod.VodPlayInfo PlayInfoList = 9;</code>
+     * <code>repeated .ttvcloud.models.VodPlayInfo PlayInfoList = 9;</code>
      */
     public java.util.List<com.bytedanceapi.model.common.VodPlayInfo.Builder> 
          getPlayInfoListBuilderList() {
@@ -1879,10 +1879,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:Vcloud.Models.Vod.VodGetPlayInfoResult)
+    // @@protoc_insertion_point(builder_scope:ttvcloud.models.VodGetPlayInfoResult)
   }
 
-  // @@protoc_insertion_point(class_scope:Vcloud.Models.Vod.VodGetPlayInfoResult)
+  // @@protoc_insertion_point(class_scope:ttvcloud.models.VodGetPlayInfoResult)
   private static final com.bytedanceapi.model.common.VodGetPlayInfoResult DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new com.bytedanceapi.model.common.VodGetPlayInfoResult();

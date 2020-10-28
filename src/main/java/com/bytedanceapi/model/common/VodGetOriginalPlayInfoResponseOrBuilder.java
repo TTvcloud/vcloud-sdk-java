@@ -4,7 +4,7 @@
 package com.bytedanceapi.model.common;
 
 public interface VodGetOriginalPlayInfoResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:Vcloud.Models.Vod.VodGetOriginalPlayInfoResponse)
+    // @@protoc_insertion_point(interface_extends:ttvcloud.models.VodGetOriginalPlayInfoResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -23,17 +23,17 @@ public interface VodGetOriginalPlayInfoResponseOrBuilder extends
   com.bytedanceapi.model.common.ResponseMetadataOrBuilder getResponseMetadataOrBuilder();
 
   /**
-   * <code>.Vcloud.Models.Vod.VodGetOriginalPlayInfoResult Result = 2;</code>
+   * <code>.ttvcloud.models.VodGetOriginalPlayInfoResult Result = 2;</code>
    * @return Whether the result field is set.
    */
   boolean hasResult();
   /**
-   * <code>.Vcloud.Models.Vod.VodGetOriginalPlayInfoResult Result = 2;</code>
+   * <code>.ttvcloud.models.VodGetOriginalPlayInfoResult Result = 2;</code>
    * @return The result.
    */
   com.bytedanceapi.model.common.VodGetOriginalPlayInfoResult getResult();
   /**
-   * <code>.Vcloud.Models.Vod.VodGetOriginalPlayInfoResult Result = 2;</code>
+   * <code>.ttvcloud.models.VodGetOriginalPlayInfoResult Result = 2;</code>
    */
   com.bytedanceapi.model.common.VodGetOriginalPlayInfoResultOrBuilder getResultOrBuilder();
 }
