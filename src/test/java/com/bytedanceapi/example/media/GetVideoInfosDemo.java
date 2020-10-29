@@ -14,17 +14,20 @@ public class GetVideoInfosDemo {
         IVodService vodService = VodServiceImpl.getInstance();
 
         // call below method if you dont set ak and sk in ～/.vcloud/config
-        vodService.setAccessKey("AKLTZDg4ZDlhOTBhYjQxNDdkOTg3MjQwYTQyNDA2NGZiZGU");
-        vodService.setSecretKey("j1BGQboVi5502ri5FQytZadS3cPrnvescrWyC/rUDD/h+RHUvf4wpkrKmrUqIzsA");
-        vodService.setHost("staging-openapi-boe.byted.org");
+        // vodService.setAccessKey("your ak");
+        // vodService.setSecretKey("your sk");
 
-        String[] vids = new String[]{"v0c80e6a0000bu02dp6bajs8e253r6k0", "vid2", "vid3"};
+        String[] vids = new String[]{"vid1", "vid2", "vid3"};
         GetVideoInfosRequest.Builder req = GetVideoInfosRequest.newBuilder();
         List<String> vidList = Arrays.asList(vids);
         req.addAllVids(vidList);
 
         try {
             GetVideoInfosResponse resp = vodService.getVideoInfos(req.build());
+            if(resp.getResponseMetadata().hasError()){
+                System.out.println("get video infos error: " + resp.getResponseMetadata().getError().getMessage());
+                return;
+            }
             System.out.println(resp.toString());
         } catch (Exception e) {
             e.printStackTrace();

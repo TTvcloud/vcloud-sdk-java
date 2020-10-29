@@ -346,35 +346,6 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
         return uploadMediaByUrlResponse;
     }
 
-//    @Override
-//    public void updateVideoInfo(UpdateVideoInfoRequest req) throws Exception {
-//        Map<String, String> params = new HashMap<>();
-//        params.put(Const.Vid, req.getVid());
-//        if(req.hasPosterUri()){
-//            params.put(Const.PosterUri, req.getPosterUri().getValue());
-//        }
-//        if(req.hasTitle()){
-//            params.put(Const.Title, req.getTitle().getValue());
-//        }
-//        if(req.hasDescription()){
-//            params.put(Const.Description, req.getDescription().getValue());
-//        }
-//        if(req.hasTags()){
-//            params.put(Const.Tags, req.getTags().getValue());
-//        }
-//
-//        RawResponse response = query(Const.UpdateVideoInfo, Utils.mapToPairList(params));
-//        if (response.getCode() != SdkError.SUCCESS.getNumber()) {
-//            throw response.getException();
-//        }
-//
-//        UpdateVideoInfoResponse.Builder responseBuilder = UpdateVideoInfoResponse.newBuilder();
-//        JsonFormat.parser().ignoringUnknownFields().merge(new InputStreamReader(new ByteArrayInputStream(response.getData())), responseBuilder);
-//        if(responseBuilder.getResponseMetadata().getError() != null){
-//            throw new Exception("update video info error " + responseBuilder.getResponseMetadata().getError().getMessage());
-//        }
-//    }
-
     /**
      * updateVideoInfo.
      *
@@ -384,11 +355,7 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
      */
     @Override
     public UpdateVideoInfoResponse updateVideoInfo(UpdateVideoInfoRequest input) throws Exception {
-        String jsonString = JsonFormat.printer().includingDefaultValueFields().print(input);
-        Map<String, Object> jm = JSONObject.toJavaObject(JSONObject.parseObject(jsonString), Map.class);
-        Map<String, String> params = new HashMap<>();
-
-        RawResponse response = query(Const.UpdateVideoInfo, Utils.mapToPairList(params));
+        RawResponse response = query(Const.UpdateVideoInfo, Utils.mapToPairList(Utils.protoBufferToMap(input.toBuilder())));
         if (response.getCode() != SdkError.SUCCESS.getNumber()) {
             throw response.getException();
         }
@@ -506,7 +473,10 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
         req.setVid(vid);
         req.setPosterUri(StringValue.of(oid));
 
-        updateVideoInfo(req.build());
+        UpdateVideoInfoResponse resp = updateVideoInfo(req.build());
+        if(resp.getResponseMetadata().hasError()) {
+            throw new Exception("update poster error" + resp.getResponseMetadata().getError().getMessage());
+        }
 
         return oid;
     }
