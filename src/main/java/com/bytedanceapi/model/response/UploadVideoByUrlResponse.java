@@ -13,13 +13,13 @@ public class UploadVideoByUrlResponse {
     DataBean result;
 
     @Data
-    static class DataBean {
+    public static class DataBean {
         @JSONField(name = "Data")
         private List<ValuePair> valuePairs;
     }
 
     @Data
-    static class ValuePair {
+    public static class ValuePair {
         @JSONField(name = "SourceUrl")
         private String sourceUrl;
         @JSONField(name = "JobId")

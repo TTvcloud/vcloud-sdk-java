@@ -15,11 +15,11 @@ public class UploadVideoDemo {
         IVodService vodService = VodServiceImpl.getInstance();
 
         // call below method if you dont set ak and sk in ～/.vcloud/config
-         vodService.setAccessKey("AKLTZmM4YTM3MGZlMDMyNDE2MDhhNjUxZmFjZmRmZjA1ZDU");
-         vodService.setSecretKey("SGIxxU0uc3k090XUHoqFPLaMwboMpElJ594+wlPNbBMxjp4MhCkDl6ZYrsLt71Cq");
+         vodService.setAccessKey("your ak");
+         vodService.setSecretKey("your sk");
 
-        String space = "james-upload-test";
-        String filePath = "/Users/bytedance/Downloads/objects.mp4";
+        String space = "your space name";
+        String filePath = "file path";
         try {
             List<Functions> functionsList = new ArrayList<>();
             Functions getMetaFunc = new Functions();

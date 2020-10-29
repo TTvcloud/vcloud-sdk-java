@@ -20,11 +20,11 @@ public class UploadMediaByUrlDemo {
         IVodService vodService = VodServiceImpl.getInstance();
 
         // call below method if you dont set ak and sk in ～/.vcloud/config
-        vodService.setAccessKey("AKLTNDQ2YTRlNTBiYTg1NDcyNmE3MDA1MTUzNzc5MWMwNmI");
-        vodService.setSecretKey("1ZOtyBZ89VERZdOfiUrPf24a3tTjRo1XIJbzccVHMrBvZo1jEn60LjClP2t05qWz");
+        vodService.setAccessKey("your ak");
+        vodService.setSecretKey("your sk");
 
-        String space = "james-test";
-        String url = "https://stream7.iqilu.com/10339/upload_transcode/202002/18/20200218114723HDu3hhxqIT.mp4";
+        String space = "your space name";
+        String url = "video url";
         try {
             UploadVideoByUrlRequest request = new UploadVideoByUrlRequest();
             request.setSpaceName(space);

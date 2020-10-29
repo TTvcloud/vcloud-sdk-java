@@ -34,14 +34,10 @@ public class VodConfig {
                         {
                             put(Const.CONNECTION_TIMEOUT, 5000);
                             put(Const.SOCKET_TIMEOUT, 5000);
-//                            put(Const.Host, "vod.bytedanceapi.com");
-                            //TODO 测试完毕修改回来
-                            put(Const.Host, "staging-openapi-boe.byted.org");
+                            put(Const.Host, "vod.bytedanceapi.com");
                             put(Const.Header, new ArrayList<Header>() {
                                 {
                                     add(new BasicHeader("Accept", "application/json"));
-                                    //TODO 测试完毕后删掉
-                                    add(new BasicHeader("X-TT-ENV", "boe_husky_feature"));
                                 }
                             });
                             put(Const.Credentials, new Credentials(Const.REGION_CN_NORTH_1, "vod"));
@@ -91,21 +87,21 @@ public class VodConfig {
                             put(Const.Query, new ArrayList<NameValuePair>() {
                                 {
                                     add(new BasicNameValuePair("Action", Const.GetPlayInfo));
-                                    add(new BasicNameValuePair("Version", "2019-03-15"));
+                                    add(new BasicNameValuePair("Version", "2020-08-01"));
                                 }
                             });
                         }
                     }
             ));
-            put(Const.StartTranscode, new ApiInfo(
+            put(Const.StartWorkflow, new ApiInfo(
                     new HashMap<String, Object>() {
                         {
                             put(Const.Method, "POST");
                             put(Const.Path, "/");
                             put(Const.Query, new ArrayList<NameValuePair>() {
                                 {
-                                    add(new BasicNameValuePair("Action", Const.StartTranscode));
-                                    add(new BasicNameValuePair("Version", "2018-01-01"));
+                                    add(new BasicNameValuePair("Action", Const.StartWorkflow));
+                                    add(new BasicNameValuePair("Version", "2018-08-01"));
                                 }
                             });
                         }
@@ -237,15 +233,15 @@ public class VodConfig {
                         }
                     }
             ));
-            put(Const.GetOriginVideoPlayInfo, new ApiInfo(
+            put(Const.GetOriginalPlayInfo, new ApiInfo(
                     new HashMap<String, Object>() {
                         {
                             put(Const.Method, "GET");
                             put(Const.Path, "/");
                             put(Const.Query, new ArrayList<NameValuePair>() {
                                 {
-                                    add(new BasicNameValuePair("Action", Const.GetOriginVideoPlayInfo));
-                                    add(new BasicNameValuePair("Version", "2018-01-01"));
+                                    add(new BasicNameValuePair("Action", Const.GetOriginalPlayInfo));
+                                    add(new BasicNameValuePair("Version", "2018-08-01"));
                                 }
                             });
                         }

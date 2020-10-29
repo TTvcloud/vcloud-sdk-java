@@ -18,8 +18,8 @@ public class UploadVideoByUrlDemo {
         vodService.setAccessKey("your ak");
         vodService.setSecretKey("your sk");
 
-        String space = "your space";
-        String url = "video url";
+        String space = "your space name";
+        String url = "url";
         try {
             UploadVideoByUrlRequest request = new UploadVideoByUrlRequest();
             request.setSpaceName(space);

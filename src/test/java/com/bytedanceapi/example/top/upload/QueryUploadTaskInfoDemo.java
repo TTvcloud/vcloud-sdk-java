@@ -30,6 +30,7 @@ public class QueryUploadTaskInfoDemo {
             request.setJobIds(String.join(",", jobIds));
 
             QueryUploadTaskInfoResponse queryUploadTaskInfoResponse = vodService.queryUploadTaskInfo(request);
+            System.out.println(queryUploadTaskInfoResponse.getResult().getData().getVideoInfoList().get(0).getVid());
             System.out.println(JSON.toJSONString(queryUploadTaskInfoResponse));
         } catch (Exception e) {
             System.out.println(e.getMessage());
