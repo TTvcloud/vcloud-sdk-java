@@ -67,6 +67,7 @@ public class Const {
     public static final String UpdateVideoInfo = "UpdateVideoInfo";
     public static final String GetVideoInfos = "GetVideoInfos";
     public static final String GetRecommendedPoster = "GetRecommendedPoster";
+    public static final String GetOriginalPlayInfo = "GetOriginVideoPlayInfo";
 
     // iam
     public static final String CreateUser = "CreateUser";

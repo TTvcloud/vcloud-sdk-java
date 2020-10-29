@@ -20,14 +20,14 @@ private static final long serialVersionUID = 0L;
     notExistVids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
-  @Override
+  @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected Object newInstance(
+  protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
     return new GetRecPostersData();
   }
 
-  @Override
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -38,7 +38,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new NullPointerException();
+      throw new java.lang.NullPointerException();
     }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -53,15 +53,15 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              storeUriGroups_ = new java.util.ArrayList<StoreUriGroup>();
+              storeUriGroups_ = new java.util.ArrayList<com.bytedanceapi.model.common.StoreUriGroup>();
               mutable_bitField0_ |= 0x00000001;
             }
             storeUriGroups_.add(
-                input.readMessage(StoreUriGroup.parser(), extensionRegistry));
+                input.readMessage(com.bytedanceapi.model.common.StoreUriGroup.parser(), extensionRegistry));
             break;
           }
           case 18: {
-            String s = input.readStringRequireUtf8();
+            java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               notExistVids_ = new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00000002;
@@ -96,19 +96,19 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return VodMedia.internal_static_Vcloud_Models_Vod_GetRecPostersData_descriptor;
+    return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_GetRecPostersData_descriptor;
   }
 
-  @Override
-  protected FieldAccessorTable
+  @java.lang.Override
+  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return VodMedia.internal_static_Vcloud_Models_Vod_GetRecPostersData_fieldAccessorTable
+    return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_GetRecPostersData_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            GetRecPostersData.class, Builder.class);
+            com.bytedanceapi.model.common.GetRecPostersData.class, com.bytedanceapi.model.common.GetRecPostersData.Builder.class);
   }
 
   public static final int STOREURIGROUPS_FIELD_NUMBER = 1;
-  private java.util.List<StoreUriGroup> storeUriGroups_;
+  private java.util.List<com.bytedanceapi.model.common.StoreUriGroup> storeUriGroups_;
   /**
    * <pre>
    *封面图信息
@@ -116,8 +116,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
    */
-  @Override
-  public java.util.List<StoreUriGroup> getStoreUriGroupsList() {
+  @java.lang.Override
+  public java.util.List<com.bytedanceapi.model.common.StoreUriGroup> getStoreUriGroupsList() {
     return storeUriGroups_;
   }
   /**
@@ -127,8 +127,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
    */
-  @Override
-  public java.util.List<? extends StoreUriGroupOrBuilder>
+  @java.lang.Override
+  public java.util.List<? extends com.bytedanceapi.model.common.StoreUriGroupOrBuilder> 
       getStoreUriGroupsOrBuilderList() {
     return storeUriGroups_;
   }
@@ -139,7 +139,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
    */
-  @Override
+  @java.lang.Override
   public int getStoreUriGroupsCount() {
     return storeUriGroups_.size();
   }
@@ -150,8 +150,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
    */
-  @Override
-  public StoreUriGroup getStoreUriGroups(int index) {
+  @java.lang.Override
+  public com.bytedanceapi.model.common.StoreUriGroup getStoreUriGroups(int index) {
     return storeUriGroups_.get(index);
   }
   /**
@@ -161,8 +161,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
    */
-  @Override
-  public StoreUriGroupOrBuilder getStoreUriGroupsOrBuilder(
+  @java.lang.Override
+  public com.bytedanceapi.model.common.StoreUriGroupOrBuilder getStoreUriGroupsOrBuilder(
       int index) {
     return storeUriGroups_.get(index);
   }
@@ -201,7 +201,7 @@ private static final long serialVersionUID = 0L;
    * @param index The index of the element to return.
    * @return The notExistVids at the given index.
    */
-  public String getNotExistVids(int index) {
+  public java.lang.String getNotExistVids(int index) {
     return notExistVids_.get(index);
   }
   /**
@@ -219,7 +219,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
-  @Override
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -229,7 +229,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @Override
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     for (int i = 0; i < storeUriGroups_.size(); i++) {
@@ -241,7 +241,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @Override
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -264,15 +264,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @Override
-  public boolean equals(final Object obj) {
+  @java.lang.Override
+  public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof GetRecPostersData)) {
+    if (!(obj instanceof com.bytedanceapi.model.common.GetRecPostersData)) {
       return super.equals(obj);
     }
-    GetRecPostersData other = (GetRecPostersData) obj;
+    com.bytedanceapi.model.common.GetRecPostersData other = (com.bytedanceapi.model.common.GetRecPostersData) obj;
 
     if (!getStoreUriGroupsList()
         .equals(other.getStoreUriGroupsList())) return false;
@@ -282,7 +282,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @Override
+  @java.lang.Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -302,69 +302,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static GetRecPostersData parseFrom(
+  public static com.bytedanceapi.model.common.GetRecPostersData parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static GetRecPostersData parseFrom(
+  public static com.bytedanceapi.model.common.GetRecPostersData parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static GetRecPostersData parseFrom(
+  public static com.bytedanceapi.model.common.GetRecPostersData parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static GetRecPostersData parseFrom(
+  public static com.bytedanceapi.model.common.GetRecPostersData parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static GetRecPostersData parseFrom(byte[] data)
+  public static com.bytedanceapi.model.common.GetRecPostersData parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static GetRecPostersData parseFrom(
+  public static com.bytedanceapi.model.common.GetRecPostersData parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static GetRecPostersData parseFrom(java.io.InputStream input)
+  public static com.bytedanceapi.model.common.GetRecPostersData parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static GetRecPostersData parseFrom(
+  public static com.bytedanceapi.model.common.GetRecPostersData parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static GetRecPostersData parseDelimitedFrom(java.io.InputStream input)
+  public static com.bytedanceapi.model.common.GetRecPostersData parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static GetRecPostersData parseDelimitedFrom(
+  public static com.bytedanceapi.model.common.GetRecPostersData parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static GetRecPostersData parseFrom(
+  public static com.bytedanceapi.model.common.GetRecPostersData parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static GetRecPostersData parseFrom(
+  public static com.bytedanceapi.model.common.GetRecPostersData parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -372,23 +372,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @Override
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(GetRecPostersData prototype) {
+  public static Builder newBuilder(com.bytedanceapi.model.common.GetRecPostersData prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @Override
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @Override
+  @java.lang.Override
   protected Builder newBuilderForType(
-      BuilderParent parent) {
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -398,18 +398,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:Vcloud.Models.Vod.GetRecPostersData)
-      GetRecPostersDataOrBuilder {
+      com.bytedanceapi.model.common.GetRecPostersDataOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return VodMedia.internal_static_Vcloud_Models_Vod_GetRecPostersData_descriptor;
+      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_GetRecPostersData_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return VodMedia.internal_static_Vcloud_Models_Vod_GetRecPostersData_fieldAccessorTable
+      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_GetRecPostersData_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              GetRecPostersData.class, Builder.class);
+              com.bytedanceapi.model.common.GetRecPostersData.class, com.bytedanceapi.model.common.GetRecPostersData.Builder.class);
     }
 
     // Construct using com.bytedanceapi.model.common.GetRecPostersData.newBuilder()
@@ -418,7 +418,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -428,7 +428,7 @@ private static final long serialVersionUID = 0L;
         getStoreUriGroupsFieldBuilder();
       }
     }
-    @Override
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (storeUriGroupsBuilder_ == null) {
@@ -442,29 +442,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return VodMedia.internal_static_Vcloud_Models_Vod_GetRecPostersData_descriptor;
+      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_GetRecPostersData_descriptor;
     }
 
-    @Override
-    public GetRecPostersData getDefaultInstanceForType() {
-      return GetRecPostersData.getDefaultInstance();
+    @java.lang.Override
+    public com.bytedanceapi.model.common.GetRecPostersData getDefaultInstanceForType() {
+      return com.bytedanceapi.model.common.GetRecPostersData.getDefaultInstance();
     }
 
-    @Override
-    public GetRecPostersData build() {
-      GetRecPostersData result = buildPartial();
+    @java.lang.Override
+    public com.bytedanceapi.model.common.GetRecPostersData build() {
+      com.bytedanceapi.model.common.GetRecPostersData result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @Override
-    public GetRecPostersData buildPartial() {
-      GetRecPostersData result = new GetRecPostersData(this);
+    @java.lang.Override
+    public com.bytedanceapi.model.common.GetRecPostersData buildPartial() {
+      com.bytedanceapi.model.common.GetRecPostersData result = new com.bytedanceapi.model.common.GetRecPostersData(this);
       int from_bitField0_ = bitField0_;
       if (storeUriGroupsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
@@ -484,50 +484,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public Builder clone() {
       return super.clone();
     }
-    @Override
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-    @Override
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @Override
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @Override
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @Override
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-    @Override
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof GetRecPostersData) {
-        return mergeFrom((GetRecPostersData)other);
+      if (other instanceof com.bytedanceapi.model.common.GetRecPostersData) {
+        return mergeFrom((com.bytedanceapi.model.common.GetRecPostersData)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(GetRecPostersData other) {
-      if (other == GetRecPostersData.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.bytedanceapi.model.common.GetRecPostersData other) {
+      if (other == com.bytedanceapi.model.common.GetRecPostersData.getDefaultInstance()) return this;
       if (storeUriGroupsBuilder_ == null) {
         if (!other.storeUriGroups_.isEmpty()) {
           if (storeUriGroups_.isEmpty()) {
@@ -569,21 +569,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      GetRecPostersData parsedMessage = null;
+      com.bytedanceapi.model.common.GetRecPostersData parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (GetRecPostersData) e.getUnfinishedMessage();
+        parsedMessage = (com.bytedanceapi.model.common.GetRecPostersData) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -594,17 +594,17 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.util.List<StoreUriGroup> storeUriGroups_ =
+    private java.util.List<com.bytedanceapi.model.common.StoreUriGroup> storeUriGroups_ =
       java.util.Collections.emptyList();
     private void ensureStoreUriGroupsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        storeUriGroups_ = new java.util.ArrayList<StoreUriGroup>(storeUriGroups_);
+        storeUriGroups_ = new java.util.ArrayList<com.bytedanceapi.model.common.StoreUriGroup>(storeUriGroups_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        StoreUriGroup, StoreUriGroup.Builder, StoreUriGroupOrBuilder> storeUriGroupsBuilder_;
+        com.bytedanceapi.model.common.StoreUriGroup, com.bytedanceapi.model.common.StoreUriGroup.Builder, com.bytedanceapi.model.common.StoreUriGroupOrBuilder> storeUriGroupsBuilder_;
 
     /**
      * <pre>
@@ -613,7 +613,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
      */
-    public java.util.List<StoreUriGroup> getStoreUriGroupsList() {
+    public java.util.List<com.bytedanceapi.model.common.StoreUriGroup> getStoreUriGroupsList() {
       if (storeUriGroupsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(storeUriGroups_);
       } else {
@@ -641,7 +641,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
      */
-    public StoreUriGroup getStoreUriGroups(int index) {
+    public com.bytedanceapi.model.common.StoreUriGroup getStoreUriGroups(int index) {
       if (storeUriGroupsBuilder_ == null) {
         return storeUriGroups_.get(index);
       } else {
@@ -656,7 +656,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
      */
     public Builder setStoreUriGroups(
-        int index, StoreUriGroup value) {
+        int index, com.bytedanceapi.model.common.StoreUriGroup value) {
       if (storeUriGroupsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -677,7 +677,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
      */
     public Builder setStoreUriGroups(
-        int index, StoreUriGroup.Builder builderForValue) {
+        int index, com.bytedanceapi.model.common.StoreUriGroup.Builder builderForValue) {
       if (storeUriGroupsBuilder_ == null) {
         ensureStoreUriGroupsIsMutable();
         storeUriGroups_.set(index, builderForValue.build());
@@ -694,7 +694,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
      */
-    public Builder addStoreUriGroups(StoreUriGroup value) {
+    public Builder addStoreUriGroups(com.bytedanceapi.model.common.StoreUriGroup value) {
       if (storeUriGroupsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -715,7 +715,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
      */
     public Builder addStoreUriGroups(
-        int index, StoreUriGroup value) {
+        int index, com.bytedanceapi.model.common.StoreUriGroup value) {
       if (storeUriGroupsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -736,7 +736,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
      */
     public Builder addStoreUriGroups(
-        StoreUriGroup.Builder builderForValue) {
+        com.bytedanceapi.model.common.StoreUriGroup.Builder builderForValue) {
       if (storeUriGroupsBuilder_ == null) {
         ensureStoreUriGroupsIsMutable();
         storeUriGroups_.add(builderForValue.build());
@@ -754,7 +754,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
      */
     public Builder addStoreUriGroups(
-        int index, StoreUriGroup.Builder builderForValue) {
+        int index, com.bytedanceapi.model.common.StoreUriGroup.Builder builderForValue) {
       if (storeUriGroupsBuilder_ == null) {
         ensureStoreUriGroupsIsMutable();
         storeUriGroups_.add(index, builderForValue.build());
@@ -772,7 +772,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
      */
     public Builder addAllStoreUriGroups(
-        Iterable<? extends StoreUriGroup> values) {
+        java.lang.Iterable<? extends com.bytedanceapi.model.common.StoreUriGroup> values) {
       if (storeUriGroupsBuilder_ == null) {
         ensureStoreUriGroupsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -824,7 +824,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
      */
-    public StoreUriGroup.Builder getStoreUriGroupsBuilder(
+    public com.bytedanceapi.model.common.StoreUriGroup.Builder getStoreUriGroupsBuilder(
         int index) {
       return getStoreUriGroupsFieldBuilder().getBuilder(index);
     }
@@ -835,7 +835,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
      */
-    public StoreUriGroupOrBuilder getStoreUriGroupsOrBuilder(
+    public com.bytedanceapi.model.common.StoreUriGroupOrBuilder getStoreUriGroupsOrBuilder(
         int index) {
       if (storeUriGroupsBuilder_ == null) {
         return storeUriGroups_.get(index);  } else {
@@ -849,7 +849,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
      */
-    public java.util.List<? extends StoreUriGroupOrBuilder>
+    public java.util.List<? extends com.bytedanceapi.model.common.StoreUriGroupOrBuilder> 
          getStoreUriGroupsOrBuilderList() {
       if (storeUriGroupsBuilder_ != null) {
         return storeUriGroupsBuilder_.getMessageOrBuilderList();
@@ -864,9 +864,9 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
      */
-    public StoreUriGroup.Builder addStoreUriGroupsBuilder() {
+    public com.bytedanceapi.model.common.StoreUriGroup.Builder addStoreUriGroupsBuilder() {
       return getStoreUriGroupsFieldBuilder().addBuilder(
-          StoreUriGroup.getDefaultInstance());
+          com.bytedanceapi.model.common.StoreUriGroup.getDefaultInstance());
     }
     /**
      * <pre>
@@ -875,10 +875,10 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
      */
-    public StoreUriGroup.Builder addStoreUriGroupsBuilder(
+    public com.bytedanceapi.model.common.StoreUriGroup.Builder addStoreUriGroupsBuilder(
         int index) {
       return getStoreUriGroupsFieldBuilder().addBuilder(
-          index, StoreUriGroup.getDefaultInstance());
+          index, com.bytedanceapi.model.common.StoreUriGroup.getDefaultInstance());
     }
     /**
      * <pre>
@@ -887,16 +887,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
      */
-    public java.util.List<StoreUriGroup.Builder>
+    public java.util.List<com.bytedanceapi.model.common.StoreUriGroup.Builder> 
          getStoreUriGroupsBuilderList() {
       return getStoreUriGroupsFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        StoreUriGroup, StoreUriGroup.Builder, StoreUriGroupOrBuilder>
+        com.bytedanceapi.model.common.StoreUriGroup, com.bytedanceapi.model.common.StoreUriGroup.Builder, com.bytedanceapi.model.common.StoreUriGroupOrBuilder> 
         getStoreUriGroupsFieldBuilder() {
       if (storeUriGroupsBuilder_ == null) {
         storeUriGroupsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            StoreUriGroup, StoreUriGroup.Builder, StoreUriGroupOrBuilder>(
+            com.bytedanceapi.model.common.StoreUriGroup, com.bytedanceapi.model.common.StoreUriGroup.Builder, com.bytedanceapi.model.common.StoreUriGroupOrBuilder>(
                 storeUriGroups_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
@@ -945,7 +945,7 @@ private static final long serialVersionUID = 0L;
      * @param index The index of the element to return.
      * @return The notExistVids at the given index.
      */
-    public String getNotExistVids(int index) {
+    public java.lang.String getNotExistVids(int index) {
       return notExistVids_.get(index);
     }
     /**
@@ -972,7 +972,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setNotExistVids(
-        int index, String value) {
+        int index, java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -991,7 +991,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder addNotExistVids(
-        String value) {
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1010,7 +1010,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder addAllNotExistVids(
-        Iterable<String> values) {
+        java.lang.Iterable<java.lang.String> values) {
       ensureNotExistVidsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, notExistVids_);
@@ -1051,13 +1051,13 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    @Override
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @Override
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -1068,18 +1068,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:Vcloud.Models.Vod.GetRecPostersData)
-  private static final GetRecPostersData DEFAULT_INSTANCE;
+  private static final com.bytedanceapi.model.common.GetRecPostersData DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new GetRecPostersData();
+    DEFAULT_INSTANCE = new com.bytedanceapi.model.common.GetRecPostersData();
   }
 
-  public static GetRecPostersData getDefaultInstance() {
+  public static com.bytedanceapi.model.common.GetRecPostersData getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<GetRecPostersData>
       PARSER = new com.google.protobuf.AbstractParser<GetRecPostersData>() {
-    @Override
+    @java.lang.Override
     public GetRecPostersData parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1092,13 +1092,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @Override
+  @java.lang.Override
   public com.google.protobuf.Parser<GetRecPostersData> getParserForType() {
     return PARSER;
   }
 
-  @Override
-  public GetRecPostersData getDefaultInstanceForType() {
+  @java.lang.Override
+  public com.bytedanceapi.model.common.GetRecPostersData getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

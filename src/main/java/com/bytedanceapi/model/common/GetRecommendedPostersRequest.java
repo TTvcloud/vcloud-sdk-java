@@ -19,14 +19,14 @@ private static final long serialVersionUID = 0L;
     vids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
-  @Override
+  @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected Object newInstance(
+  protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
     return new GetRecommendedPostersRequest();
   }
 
-  @Override
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +37,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new NullPointerException();
+      throw new java.lang.NullPointerException();
     }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -51,7 +51,7 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            String s = input.readStringRequireUtf8();
+            java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               vids_ = new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00000001;
@@ -83,15 +83,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return VodMedia.internal_static_Vcloud_Models_Vod_GetRecommendedPostersRequest_descriptor;
+    return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_GetRecommendedPostersRequest_descriptor;
   }
 
-  @Override
-  protected FieldAccessorTable
+  @java.lang.Override
+  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return VodMedia.internal_static_Vcloud_Models_Vod_GetRecommendedPostersRequest_fieldAccessorTable
+    return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_GetRecommendedPostersRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            GetRecommendedPostersRequest.class, Builder.class);
+            com.bytedanceapi.model.common.GetRecommendedPostersRequest.class, com.bytedanceapi.model.common.GetRecommendedPostersRequest.Builder.class);
   }
 
   public static final int VIDS_FIELD_NUMBER = 1;
@@ -128,7 +128,7 @@ private static final long serialVersionUID = 0L;
    * @param index The index of the element to return.
    * @return The vids at the given index.
    */
-  public String getVids(int index) {
+  public java.lang.String getVids(int index) {
     return vids_.get(index);
   }
   /**
@@ -146,7 +146,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
-  @Override
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -156,7 +156,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @Override
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     for (int i = 0; i < vids_.size(); i++) {
@@ -165,7 +165,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @Override
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -184,15 +184,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @Override
-  public boolean equals(final Object obj) {
+  @java.lang.Override
+  public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof GetRecommendedPostersRequest)) {
+    if (!(obj instanceof com.bytedanceapi.model.common.GetRecommendedPostersRequest)) {
       return super.equals(obj);
     }
-    GetRecommendedPostersRequest other = (GetRecommendedPostersRequest) obj;
+    com.bytedanceapi.model.common.GetRecommendedPostersRequest other = (com.bytedanceapi.model.common.GetRecommendedPostersRequest) obj;
 
     if (!getVidsList()
         .equals(other.getVidsList())) return false;
@@ -200,7 +200,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @Override
+  @java.lang.Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -216,69 +216,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static GetRecommendedPostersRequest parseFrom(
+  public static com.bytedanceapi.model.common.GetRecommendedPostersRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static GetRecommendedPostersRequest parseFrom(
+  public static com.bytedanceapi.model.common.GetRecommendedPostersRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static GetRecommendedPostersRequest parseFrom(
+  public static com.bytedanceapi.model.common.GetRecommendedPostersRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static GetRecommendedPostersRequest parseFrom(
+  public static com.bytedanceapi.model.common.GetRecommendedPostersRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static GetRecommendedPostersRequest parseFrom(byte[] data)
+  public static com.bytedanceapi.model.common.GetRecommendedPostersRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static GetRecommendedPostersRequest parseFrom(
+  public static com.bytedanceapi.model.common.GetRecommendedPostersRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static GetRecommendedPostersRequest parseFrom(java.io.InputStream input)
+  public static com.bytedanceapi.model.common.GetRecommendedPostersRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static GetRecommendedPostersRequest parseFrom(
+  public static com.bytedanceapi.model.common.GetRecommendedPostersRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static GetRecommendedPostersRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.bytedanceapi.model.common.GetRecommendedPostersRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static GetRecommendedPostersRequest parseDelimitedFrom(
+  public static com.bytedanceapi.model.common.GetRecommendedPostersRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static GetRecommendedPostersRequest parseFrom(
+  public static com.bytedanceapi.model.common.GetRecommendedPostersRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static GetRecommendedPostersRequest parseFrom(
+  public static com.bytedanceapi.model.common.GetRecommendedPostersRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -286,23 +286,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @Override
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(GetRecommendedPostersRequest prototype) {
+  public static Builder newBuilder(com.bytedanceapi.model.common.GetRecommendedPostersRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @Override
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @Override
+  @java.lang.Override
   protected Builder newBuilderForType(
-      BuilderParent parent) {
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -312,18 +312,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:Vcloud.Models.Vod.GetRecommendedPostersRequest)
-      GetRecommendedPostersRequestOrBuilder {
+      com.bytedanceapi.model.common.GetRecommendedPostersRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return VodMedia.internal_static_Vcloud_Models_Vod_GetRecommendedPostersRequest_descriptor;
+      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_GetRecommendedPostersRequest_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return VodMedia.internal_static_Vcloud_Models_Vod_GetRecommendedPostersRequest_fieldAccessorTable
+      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_GetRecommendedPostersRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              GetRecommendedPostersRequest.class, Builder.class);
+              com.bytedanceapi.model.common.GetRecommendedPostersRequest.class, com.bytedanceapi.model.common.GetRecommendedPostersRequest.Builder.class);
     }
 
     // Construct using com.bytedanceapi.model.common.GetRecommendedPostersRequest.newBuilder()
@@ -332,7 +332,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -341,7 +341,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @Override
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       vids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -349,29 +349,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return VodMedia.internal_static_Vcloud_Models_Vod_GetRecommendedPostersRequest_descriptor;
+      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_GetRecommendedPostersRequest_descriptor;
     }
 
-    @Override
-    public GetRecommendedPostersRequest getDefaultInstanceForType() {
-      return GetRecommendedPostersRequest.getDefaultInstance();
+    @java.lang.Override
+    public com.bytedanceapi.model.common.GetRecommendedPostersRequest getDefaultInstanceForType() {
+      return com.bytedanceapi.model.common.GetRecommendedPostersRequest.getDefaultInstance();
     }
 
-    @Override
-    public GetRecommendedPostersRequest build() {
-      GetRecommendedPostersRequest result = buildPartial();
+    @java.lang.Override
+    public com.bytedanceapi.model.common.GetRecommendedPostersRequest build() {
+      com.bytedanceapi.model.common.GetRecommendedPostersRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @Override
-    public GetRecommendedPostersRequest buildPartial() {
-      GetRecommendedPostersRequest result = new GetRecommendedPostersRequest(this);
+    @java.lang.Override
+    public com.bytedanceapi.model.common.GetRecommendedPostersRequest buildPartial() {
+      com.bytedanceapi.model.common.GetRecommendedPostersRequest result = new com.bytedanceapi.model.common.GetRecommendedPostersRequest(this);
       int from_bitField0_ = bitField0_;
       if (((bitField0_ & 0x00000001) != 0)) {
         vids_ = vids_.getUnmodifiableView();
@@ -382,50 +382,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public Builder clone() {
       return super.clone();
     }
-    @Override
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-    @Override
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @Override
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @Override
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @Override
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-    @Override
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof GetRecommendedPostersRequest) {
-        return mergeFrom((GetRecommendedPostersRequest)other);
+      if (other instanceof com.bytedanceapi.model.common.GetRecommendedPostersRequest) {
+        return mergeFrom((com.bytedanceapi.model.common.GetRecommendedPostersRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(GetRecommendedPostersRequest other) {
-      if (other == GetRecommendedPostersRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.bytedanceapi.model.common.GetRecommendedPostersRequest other) {
+      if (other == com.bytedanceapi.model.common.GetRecommendedPostersRequest.getDefaultInstance()) return this;
       if (!other.vids_.isEmpty()) {
         if (vids_.isEmpty()) {
           vids_ = other.vids_;
@@ -441,21 +441,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      GetRecommendedPostersRequest parsedMessage = null;
+      com.bytedanceapi.model.common.GetRecommendedPostersRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (GetRecommendedPostersRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.bytedanceapi.model.common.GetRecommendedPostersRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -505,7 +505,7 @@ private static final long serialVersionUID = 0L;
      * @param index The index of the element to return.
      * @return The vids at the given index.
      */
-    public String getVids(int index) {
+    public java.lang.String getVids(int index) {
       return vids_.get(index);
     }
     /**
@@ -532,7 +532,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setVids(
-        int index, String value) {
+        int index, java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -551,7 +551,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder addVids(
-        String value) {
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -570,7 +570,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder addAllVids(
-        Iterable<String> values) {
+        java.lang.Iterable<java.lang.String> values) {
       ensureVidsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, vids_);
@@ -611,13 +611,13 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    @Override
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @Override
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -628,18 +628,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:Vcloud.Models.Vod.GetRecommendedPostersRequest)
-  private static final GetRecommendedPostersRequest DEFAULT_INSTANCE;
+  private static final com.bytedanceapi.model.common.GetRecommendedPostersRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new GetRecommendedPostersRequest();
+    DEFAULT_INSTANCE = new com.bytedanceapi.model.common.GetRecommendedPostersRequest();
   }
 
-  public static GetRecommendedPostersRequest getDefaultInstance() {
+  public static com.bytedanceapi.model.common.GetRecommendedPostersRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<GetRecommendedPostersRequest>
       PARSER = new com.google.protobuf.AbstractParser<GetRecommendedPostersRequest>() {
-    @Override
+    @java.lang.Override
     public GetRecommendedPostersRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -652,13 +652,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @Override
+  @java.lang.Override
   public com.google.protobuf.Parser<GetRecommendedPostersRequest> getParserForType() {
     return PARSER;
   }
 
-  @Override
-  public GetRecommendedPostersRequest getDefaultInstanceForType() {
+  @java.lang.Override
+  public com.bytedanceapi.model.common.GetRecommendedPostersRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

@@ -23,14 +23,14 @@ private static final long serialVersionUID = 0L;
     region_ = "";
   }
 
-  @Override
+  @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected Object newInstance(
+  protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
     return new ResponseMetadata();
   }
 
-  @Override
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -41,7 +41,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new NullPointerException();
+      throw new java.lang.NullPointerException();
     }
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -54,41 +54,41 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            String s = input.readStringRequireUtf8();
+            java.lang.String s = input.readStringRequireUtf8();
 
             requestId_ = s;
             break;
           }
           case 18: {
-            String s = input.readStringRequireUtf8();
+            java.lang.String s = input.readStringRequireUtf8();
 
             action_ = s;
             break;
           }
           case 26: {
-            String s = input.readStringRequireUtf8();
+            java.lang.String s = input.readStringRequireUtf8();
 
             version_ = s;
             break;
           }
           case 34: {
-            String s = input.readStringRequireUtf8();
+            java.lang.String s = input.readStringRequireUtf8();
 
             service_ = s;
             break;
           }
           case 42: {
-            String s = input.readStringRequireUtf8();
+            java.lang.String s = input.readStringRequireUtf8();
 
             region_ = s;
             break;
           }
           case 50: {
-            ResponseError.Builder subBuilder = null;
+            com.bytedanceapi.model.common.ResponseError.Builder subBuilder = null;
             if (error_ != null) {
               subBuilder = error_.toBuilder();
             }
-            error_ = input.readMessage(ResponseError.parser(), extensionRegistry);
+            error_ = input.readMessage(com.bytedanceapi.model.common.ResponseError.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(error_);
               error_ = subBuilder.buildPartial();
@@ -117,19 +117,19 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return Base.internal_static_Vcloud_Models_Base_ResponseMetadata_descriptor;
+    return com.bytedanceapi.model.common.Base.internal_static_Vcloud_Models_Base_ResponseMetadata_descriptor;
   }
 
-  @Override
-  protected FieldAccessorTable
+  @java.lang.Override
+  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return Base.internal_static_Vcloud_Models_Base_ResponseMetadata_fieldAccessorTable
+    return com.bytedanceapi.model.common.Base.internal_static_Vcloud_Models_Base_ResponseMetadata_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            ResponseMetadata.class, Builder.class);
+            com.bytedanceapi.model.common.ResponseMetadata.class, com.bytedanceapi.model.common.ResponseMetadata.Builder.class);
   }
 
   public static final int REQUESTID_FIELD_NUMBER = 1;
-  private volatile Object requestId_;
+  private volatile java.lang.Object requestId_;
   /**
    * <pre>
    * 请求ID
@@ -138,15 +138,15 @@ private static final long serialVersionUID = 0L;
    * <code>string RequestId = 1;</code>
    * @return The requestId.
    */
-  @Override
-  public String getRequestId() {
-    Object ref = requestId_;
-    if (ref instanceof String) {
-      return (String) ref;
+  @java.lang.Override
+  public java.lang.String getRequestId() {
+    java.lang.Object ref = requestId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
+      java.lang.String s = bs.toStringUtf8();
       requestId_ = s;
       return s;
     }
@@ -159,14 +159,14 @@ private static final long serialVersionUID = 0L;
    * <code>string RequestId = 1;</code>
    * @return The bytes for requestId.
    */
-  @Override
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getRequestIdBytes() {
-    Object ref = requestId_;
-    if (ref instanceof String) {
+    java.lang.Object ref = requestId_;
+    if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
+              (java.lang.String) ref);
       requestId_ = b;
       return b;
     } else {
@@ -175,7 +175,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ACTION_FIELD_NUMBER = 2;
-  private volatile Object action_;
+  private volatile java.lang.Object action_;
   /**
    * <pre>
    * 请求接口
@@ -184,15 +184,15 @@ private static final long serialVersionUID = 0L;
    * <code>string Action = 2;</code>
    * @return The action.
    */
-  @Override
-  public String getAction() {
-    Object ref = action_;
-    if (ref instanceof String) {
-      return (String) ref;
+  @java.lang.Override
+  public java.lang.String getAction() {
+    java.lang.Object ref = action_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
+      java.lang.String s = bs.toStringUtf8();
       action_ = s;
       return s;
     }
@@ -205,14 +205,14 @@ private static final long serialVersionUID = 0L;
    * <code>string Action = 2;</code>
    * @return The bytes for action.
    */
-  @Override
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getActionBytes() {
-    Object ref = action_;
-    if (ref instanceof String) {
+    java.lang.Object ref = action_;
+    if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
+              (java.lang.String) ref);
       action_ = b;
       return b;
     } else {
@@ -221,7 +221,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int VERSION_FIELD_NUMBER = 3;
-  private volatile Object version_;
+  private volatile java.lang.Object version_;
   /**
    * <pre>
    * 版本
@@ -230,15 +230,15 @@ private static final long serialVersionUID = 0L;
    * <code>string Version = 3;</code>
    * @return The version.
    */
-  @Override
-  public String getVersion() {
-    Object ref = version_;
-    if (ref instanceof String) {
-      return (String) ref;
+  @java.lang.Override
+  public java.lang.String getVersion() {
+    java.lang.Object ref = version_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
+      java.lang.String s = bs.toStringUtf8();
       version_ = s;
       return s;
     }
@@ -251,14 +251,14 @@ private static final long serialVersionUID = 0L;
    * <code>string Version = 3;</code>
    * @return The bytes for version.
    */
-  @Override
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getVersionBytes() {
-    Object ref = version_;
-    if (ref instanceof String) {
+    java.lang.Object ref = version_;
+    if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
+              (java.lang.String) ref);
       version_ = b;
       return b;
     } else {
@@ -267,7 +267,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int SERVICE_FIELD_NUMBER = 4;
-  private volatile Object service_;
+  private volatile java.lang.Object service_;
   /**
    * <pre>
    * 服务
@@ -276,15 +276,15 @@ private static final long serialVersionUID = 0L;
    * <code>string Service = 4;</code>
    * @return The service.
    */
-  @Override
-  public String getService() {
-    Object ref = service_;
-    if (ref instanceof String) {
-      return (String) ref;
+  @java.lang.Override
+  public java.lang.String getService() {
+    java.lang.Object ref = service_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
+      java.lang.String s = bs.toStringUtf8();
       service_ = s;
       return s;
     }
@@ -297,14 +297,14 @@ private static final long serialVersionUID = 0L;
    * <code>string Service = 4;</code>
    * @return The bytes for service.
    */
-  @Override
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getServiceBytes() {
-    Object ref = service_;
-    if (ref instanceof String) {
+    java.lang.Object ref = service_;
+    if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
+              (java.lang.String) ref);
       service_ = b;
       return b;
     } else {
@@ -313,7 +313,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int REGION_FIELD_NUMBER = 5;
-  private volatile Object region_;
+  private volatile java.lang.Object region_;
   /**
    * <pre>
    * 区域
@@ -322,15 +322,15 @@ private static final long serialVersionUID = 0L;
    * <code>string Region = 5;</code>
    * @return The region.
    */
-  @Override
-  public String getRegion() {
-    Object ref = region_;
-    if (ref instanceof String) {
-      return (String) ref;
+  @java.lang.Override
+  public java.lang.String getRegion() {
+    java.lang.Object ref = region_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
+      java.lang.String s = bs.toStringUtf8();
       region_ = s;
       return s;
     }
@@ -343,14 +343,14 @@ private static final long serialVersionUID = 0L;
    * <code>string Region = 5;</code>
    * @return The bytes for region.
    */
-  @Override
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getRegionBytes() {
-    Object ref = region_;
-    if (ref instanceof String) {
+    java.lang.Object ref = region_;
+    if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
+              (java.lang.String) ref);
       region_ = b;
       return b;
     } else {
@@ -359,7 +359,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ERROR_FIELD_NUMBER = 6;
-  private ResponseError error_;
+  private com.bytedanceapi.model.common.ResponseError error_;
   /**
    * <pre>
    * 异常信息
@@ -368,7 +368,7 @@ private static final long serialVersionUID = 0L;
    * <code>.Vcloud.Models.Base.ResponseError Error = 6;</code>
    * @return Whether the error field is set.
    */
-  @Override
+  @java.lang.Override
   public boolean hasError() {
     return error_ != null;
   }
@@ -380,9 +380,9 @@ private static final long serialVersionUID = 0L;
    * <code>.Vcloud.Models.Base.ResponseError Error = 6;</code>
    * @return The error.
    */
-  @Override
-  public ResponseError getError() {
-    return error_ == null ? ResponseError.getDefaultInstance() : error_;
+  @java.lang.Override
+  public com.bytedanceapi.model.common.ResponseError getError() {
+    return error_ == null ? com.bytedanceapi.model.common.ResponseError.getDefaultInstance() : error_;
   }
   /**
    * <pre>
@@ -391,13 +391,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.Vcloud.Models.Base.ResponseError Error = 6;</code>
    */
-  @Override
-  public ResponseErrorOrBuilder getErrorOrBuilder() {
+  @java.lang.Override
+  public com.bytedanceapi.model.common.ResponseErrorOrBuilder getErrorOrBuilder() {
     return getError();
   }
 
   private byte memoizedIsInitialized = -1;
-  @Override
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -407,7 +407,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @Override
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getRequestIdBytes().isEmpty()) {
@@ -431,7 +431,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @Override
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -461,15 +461,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @Override
-  public boolean equals(final Object obj) {
+  @java.lang.Override
+  public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof ResponseMetadata)) {
+    if (!(obj instanceof com.bytedanceapi.model.common.ResponseMetadata)) {
       return super.equals(obj);
     }
-    ResponseMetadata other = (ResponseMetadata) obj;
+    com.bytedanceapi.model.common.ResponseMetadata other = (com.bytedanceapi.model.common.ResponseMetadata) obj;
 
     if (!getRequestId()
         .equals(other.getRequestId())) return false;
@@ -490,7 +490,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @Override
+  @java.lang.Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -516,69 +516,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static ResponseMetadata parseFrom(
+  public static com.bytedanceapi.model.common.ResponseMetadata parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ResponseMetadata parseFrom(
+  public static com.bytedanceapi.model.common.ResponseMetadata parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ResponseMetadata parseFrom(
+  public static com.bytedanceapi.model.common.ResponseMetadata parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ResponseMetadata parseFrom(
+  public static com.bytedanceapi.model.common.ResponseMetadata parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ResponseMetadata parseFrom(byte[] data)
+  public static com.bytedanceapi.model.common.ResponseMetadata parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ResponseMetadata parseFrom(
+  public static com.bytedanceapi.model.common.ResponseMetadata parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ResponseMetadata parseFrom(java.io.InputStream input)
+  public static com.bytedanceapi.model.common.ResponseMetadata parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static ResponseMetadata parseFrom(
+  public static com.bytedanceapi.model.common.ResponseMetadata parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static ResponseMetadata parseDelimitedFrom(java.io.InputStream input)
+  public static com.bytedanceapi.model.common.ResponseMetadata parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static ResponseMetadata parseDelimitedFrom(
+  public static com.bytedanceapi.model.common.ResponseMetadata parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static ResponseMetadata parseFrom(
+  public static com.bytedanceapi.model.common.ResponseMetadata parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static ResponseMetadata parseFrom(
+  public static com.bytedanceapi.model.common.ResponseMetadata parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -586,23 +586,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @Override
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(ResponseMetadata prototype) {
+  public static Builder newBuilder(com.bytedanceapi.model.common.ResponseMetadata prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @Override
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @Override
+  @java.lang.Override
   protected Builder newBuilderForType(
-      BuilderParent parent) {
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -612,18 +612,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:Vcloud.Models.Base.ResponseMetadata)
-      ResponseMetadataOrBuilder {
+      com.bytedanceapi.model.common.ResponseMetadataOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return Base.internal_static_Vcloud_Models_Base_ResponseMetadata_descriptor;
+      return com.bytedanceapi.model.common.Base.internal_static_Vcloud_Models_Base_ResponseMetadata_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return Base.internal_static_Vcloud_Models_Base_ResponseMetadata_fieldAccessorTable
+      return com.bytedanceapi.model.common.Base.internal_static_Vcloud_Models_Base_ResponseMetadata_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              ResponseMetadata.class, Builder.class);
+              com.bytedanceapi.model.common.ResponseMetadata.class, com.bytedanceapi.model.common.ResponseMetadata.Builder.class);
     }
 
     // Construct using com.bytedanceapi.model.common.ResponseMetadata.newBuilder()
@@ -632,7 +632,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -641,7 +641,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @Override
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       requestId_ = "";
@@ -663,29 +663,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return Base.internal_static_Vcloud_Models_Base_ResponseMetadata_descriptor;
+      return com.bytedanceapi.model.common.Base.internal_static_Vcloud_Models_Base_ResponseMetadata_descriptor;
     }
 
-    @Override
-    public ResponseMetadata getDefaultInstanceForType() {
-      return ResponseMetadata.getDefaultInstance();
+    @java.lang.Override
+    public com.bytedanceapi.model.common.ResponseMetadata getDefaultInstanceForType() {
+      return com.bytedanceapi.model.common.ResponseMetadata.getDefaultInstance();
     }
 
-    @Override
-    public ResponseMetadata build() {
-      ResponseMetadata result = buildPartial();
+    @java.lang.Override
+    public com.bytedanceapi.model.common.ResponseMetadata build() {
+      com.bytedanceapi.model.common.ResponseMetadata result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @Override
-    public ResponseMetadata buildPartial() {
-      ResponseMetadata result = new ResponseMetadata(this);
+    @java.lang.Override
+    public com.bytedanceapi.model.common.ResponseMetadata buildPartial() {
+      com.bytedanceapi.model.common.ResponseMetadata result = new com.bytedanceapi.model.common.ResponseMetadata(this);
       result.requestId_ = requestId_;
       result.action_ = action_;
       result.version_ = version_;
@@ -700,50 +700,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public Builder clone() {
       return super.clone();
     }
-    @Override
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-    @Override
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @Override
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @Override
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @Override
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-    @Override
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof ResponseMetadata) {
-        return mergeFrom((ResponseMetadata)other);
+      if (other instanceof com.bytedanceapi.model.common.ResponseMetadata) {
+        return mergeFrom((com.bytedanceapi.model.common.ResponseMetadata)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(ResponseMetadata other) {
-      if (other == ResponseMetadata.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.bytedanceapi.model.common.ResponseMetadata other) {
+      if (other == com.bytedanceapi.model.common.ResponseMetadata.getDefaultInstance()) return this;
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
         onChanged();
@@ -772,21 +772,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      ResponseMetadata parsedMessage = null;
+      com.bytedanceapi.model.common.ResponseMetadata parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (ResponseMetadata) e.getUnfinishedMessage();
+        parsedMessage = (com.bytedanceapi.model.common.ResponseMetadata) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -796,7 +796,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private Object requestId_ = "";
+    private java.lang.Object requestId_ = "";
     /**
      * <pre>
      * 请求ID
@@ -805,16 +805,16 @@ private static final long serialVersionUID = 0L;
      * <code>string RequestId = 1;</code>
      * @return The requestId.
      */
-    public String getRequestId() {
-      Object ref = requestId_;
-      if (!(ref instanceof String)) {
+    public java.lang.String getRequestId() {
+      java.lang.Object ref = requestId_;
+      if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         requestId_ = s;
         return s;
       } else {
-        return (String) ref;
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -827,11 +827,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getRequestIdBytes() {
-      Object ref = requestId_;
+      java.lang.Object ref = requestId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         requestId_ = b;
         return b;
       } else {
@@ -848,7 +848,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setRequestId(
-        String value) {
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -892,7 +892,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private Object action_ = "";
+    private java.lang.Object action_ = "";
     /**
      * <pre>
      * 请求接口
@@ -901,16 +901,16 @@ private static final long serialVersionUID = 0L;
      * <code>string Action = 2;</code>
      * @return The action.
      */
-    public String getAction() {
-      Object ref = action_;
-      if (!(ref instanceof String)) {
+    public java.lang.String getAction() {
+      java.lang.Object ref = action_;
+      if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         action_ = s;
         return s;
       } else {
-        return (String) ref;
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -923,11 +923,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getActionBytes() {
-      Object ref = action_;
+      java.lang.Object ref = action_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         action_ = b;
         return b;
       } else {
@@ -944,7 +944,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setAction(
-        String value) {
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -988,7 +988,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private Object version_ = "";
+    private java.lang.Object version_ = "";
     /**
      * <pre>
      * 版本
@@ -997,16 +997,16 @@ private static final long serialVersionUID = 0L;
      * <code>string Version = 3;</code>
      * @return The version.
      */
-    public String getVersion() {
-      Object ref = version_;
-      if (!(ref instanceof String)) {
+    public java.lang.String getVersion() {
+      java.lang.Object ref = version_;
+      if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         version_ = s;
         return s;
       } else {
-        return (String) ref;
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -1019,11 +1019,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getVersionBytes() {
-      Object ref = version_;
+      java.lang.Object ref = version_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         version_ = b;
         return b;
       } else {
@@ -1040,7 +1040,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setVersion(
-        String value) {
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1084,7 +1084,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private Object service_ = "";
+    private java.lang.Object service_ = "";
     /**
      * <pre>
      * 服务
@@ -1093,16 +1093,16 @@ private static final long serialVersionUID = 0L;
      * <code>string Service = 4;</code>
      * @return The service.
      */
-    public String getService() {
-      Object ref = service_;
-      if (!(ref instanceof String)) {
+    public java.lang.String getService() {
+      java.lang.Object ref = service_;
+      if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         service_ = s;
         return s;
       } else {
-        return (String) ref;
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -1115,11 +1115,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getServiceBytes() {
-      Object ref = service_;
+      java.lang.Object ref = service_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         service_ = b;
         return b;
       } else {
@@ -1136,7 +1136,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setService(
-        String value) {
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1180,7 +1180,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private Object region_ = "";
+    private java.lang.Object region_ = "";
     /**
      * <pre>
      * 区域
@@ -1189,16 +1189,16 @@ private static final long serialVersionUID = 0L;
      * <code>string Region = 5;</code>
      * @return The region.
      */
-    public String getRegion() {
-      Object ref = region_;
-      if (!(ref instanceof String)) {
+    public java.lang.String getRegion() {
+      java.lang.Object ref = region_;
+      if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         region_ = s;
         return s;
       } else {
-        return (String) ref;
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -1211,11 +1211,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getRegionBytes() {
-      Object ref = region_;
+      java.lang.Object ref = region_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         region_ = b;
         return b;
       } else {
@@ -1232,7 +1232,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setRegion(
-        String value) {
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -1276,9 +1276,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private ResponseError error_;
+    private com.bytedanceapi.model.common.ResponseError error_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        ResponseError, ResponseError.Builder, ResponseErrorOrBuilder> errorBuilder_;
+        com.bytedanceapi.model.common.ResponseError, com.bytedanceapi.model.common.ResponseError.Builder, com.bytedanceapi.model.common.ResponseErrorOrBuilder> errorBuilder_;
     /**
      * <pre>
      * 异常信息
@@ -1298,9 +1298,9 @@ private static final long serialVersionUID = 0L;
      * <code>.Vcloud.Models.Base.ResponseError Error = 6;</code>
      * @return The error.
      */
-    public ResponseError getError() {
+    public com.bytedanceapi.model.common.ResponseError getError() {
       if (errorBuilder_ == null) {
-        return error_ == null ? ResponseError.getDefaultInstance() : error_;
+        return error_ == null ? com.bytedanceapi.model.common.ResponseError.getDefaultInstance() : error_;
       } else {
         return errorBuilder_.getMessage();
       }
@@ -1312,7 +1312,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.Vcloud.Models.Base.ResponseError Error = 6;</code>
      */
-    public Builder setError(ResponseError value) {
+    public Builder setError(com.bytedanceapi.model.common.ResponseError value) {
       if (errorBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1333,7 +1333,7 @@ private static final long serialVersionUID = 0L;
      * <code>.Vcloud.Models.Base.ResponseError Error = 6;</code>
      */
     public Builder setError(
-        ResponseError.Builder builderForValue) {
+        com.bytedanceapi.model.common.ResponseError.Builder builderForValue) {
       if (errorBuilder_ == null) {
         error_ = builderForValue.build();
         onChanged();
@@ -1350,11 +1350,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.Vcloud.Models.Base.ResponseError Error = 6;</code>
      */
-    public Builder mergeError(ResponseError value) {
+    public Builder mergeError(com.bytedanceapi.model.common.ResponseError value) {
       if (errorBuilder_ == null) {
         if (error_ != null) {
           error_ =
-            ResponseError.newBuilder(error_).mergeFrom(value).buildPartial();
+            com.bytedanceapi.model.common.ResponseError.newBuilder(error_).mergeFrom(value).buildPartial();
         } else {
           error_ = value;
         }
@@ -1390,7 +1390,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.Vcloud.Models.Base.ResponseError Error = 6;</code>
      */
-    public ResponseError.Builder getErrorBuilder() {
+    public com.bytedanceapi.model.common.ResponseError.Builder getErrorBuilder() {
       
       onChanged();
       return getErrorFieldBuilder().getBuilder();
@@ -1402,12 +1402,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.Vcloud.Models.Base.ResponseError Error = 6;</code>
      */
-    public ResponseErrorOrBuilder getErrorOrBuilder() {
+    public com.bytedanceapi.model.common.ResponseErrorOrBuilder getErrorOrBuilder() {
       if (errorBuilder_ != null) {
         return errorBuilder_.getMessageOrBuilder();
       } else {
         return error_ == null ?
-            ResponseError.getDefaultInstance() : error_;
+            com.bytedanceapi.model.common.ResponseError.getDefaultInstance() : error_;
       }
     }
     /**
@@ -1418,11 +1418,11 @@ private static final long serialVersionUID = 0L;
      * <code>.Vcloud.Models.Base.ResponseError Error = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        ResponseError, ResponseError.Builder, ResponseErrorOrBuilder>
+        com.bytedanceapi.model.common.ResponseError, com.bytedanceapi.model.common.ResponseError.Builder, com.bytedanceapi.model.common.ResponseErrorOrBuilder> 
         getErrorFieldBuilder() {
       if (errorBuilder_ == null) {
         errorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            ResponseError, ResponseError.Builder, ResponseErrorOrBuilder>(
+            com.bytedanceapi.model.common.ResponseError, com.bytedanceapi.model.common.ResponseError.Builder, com.bytedanceapi.model.common.ResponseErrorOrBuilder>(
                 getError(),
                 getParentForChildren(),
                 isClean());
@@ -1430,13 +1430,13 @@ private static final long serialVersionUID = 0L;
       }
       return errorBuilder_;
     }
-    @Override
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @Override
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -1447,18 +1447,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:Vcloud.Models.Base.ResponseMetadata)
-  private static final ResponseMetadata DEFAULT_INSTANCE;
+  private static final com.bytedanceapi.model.common.ResponseMetadata DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new ResponseMetadata();
+    DEFAULT_INSTANCE = new com.bytedanceapi.model.common.ResponseMetadata();
   }
 
-  public static ResponseMetadata getDefaultInstance() {
+  public static com.bytedanceapi.model.common.ResponseMetadata getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<ResponseMetadata>
       PARSER = new com.google.protobuf.AbstractParser<ResponseMetadata>() {
-    @Override
+    @java.lang.Override
     public ResponseMetadata parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1471,13 +1471,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @Override
+  @java.lang.Override
   public com.google.protobuf.Parser<ResponseMetadata> getParserForType() {
     return PARSER;
   }
 
-  @Override
-  public ResponseMetadata getDefaultInstanceForType() {
+  @java.lang.Override
+  public com.bytedanceapi.model.common.ResponseMetadata getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

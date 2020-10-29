@@ -15,7 +15,7 @@ public interface AudioStreamMetaOrBuilder extends
    * <code>string Codec = 1;</code>
    * @return The codec.
    */
-  String getCodec();
+  java.lang.String getCodec();
   /**
    * <pre>
    *音频编码格式

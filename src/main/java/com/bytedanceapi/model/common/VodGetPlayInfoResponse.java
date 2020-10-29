@@ -18,14 +18,14 @@ private static final long serialVersionUID = 0L;
   private VodGetPlayInfoResponse() {
   }
 
-  @Override
+  @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected Object newInstance(
+  protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
     return new VodGetPlayInfoResponse();
   }
 
-  @Override
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +36,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new NullPointerException();
+      throw new java.lang.NullPointerException();
     }
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -49,11 +49,11 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            ResponseMetadata.Builder subBuilder = null;
+            com.bytedanceapi.model.common.ResponseMetadata.Builder subBuilder = null;
             if (responseMetadata_ != null) {
               subBuilder = responseMetadata_.toBuilder();
             }
-            responseMetadata_ = input.readMessage(ResponseMetadata.parser(), extensionRegistry);
+            responseMetadata_ = input.readMessage(com.bytedanceapi.model.common.ResponseMetadata.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(responseMetadata_);
               responseMetadata_ = subBuilder.buildPartial();
@@ -62,11 +62,11 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            VodGetPlayInfoResult.Builder subBuilder = null;
+            com.bytedanceapi.model.common.VodGetPlayInfoResult.Builder subBuilder = null;
             if (result_ != null) {
               subBuilder = result_.toBuilder();
             }
-            result_ = input.readMessage(VodGetPlayInfoResult.parser(), extensionRegistry);
+            result_ = input.readMessage(com.bytedanceapi.model.common.VodGetPlayInfoResult.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(result_);
               result_ = subBuilder.buildPartial();
@@ -95,19 +95,19 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return VodPlay.internal_static_Vcloud_Models_Vod_VodGetPlayInfoResponse_descriptor;
+    return com.bytedanceapi.model.common.VodPlay.internal_static_Vcloud_Models_Vod_VodGetPlayInfoResponse_descriptor;
   }
 
-  @Override
-  protected FieldAccessorTable
+  @java.lang.Override
+  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return VodPlay.internal_static_Vcloud_Models_Vod_VodGetPlayInfoResponse_fieldAccessorTable
+    return com.bytedanceapi.model.common.VodPlay.internal_static_Vcloud_Models_Vod_VodGetPlayInfoResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            VodGetPlayInfoResponse.class, Builder.class);
+            com.bytedanceapi.model.common.VodGetPlayInfoResponse.class, com.bytedanceapi.model.common.VodGetPlayInfoResponse.Builder.class);
   }
 
   public static final int RESPONSEMETADATA_FIELD_NUMBER = 1;
-  private ResponseMetadata responseMetadata_;
+  private com.bytedanceapi.model.common.ResponseMetadata responseMetadata_;
   /**
    * <pre>
    * 响应通用信息
@@ -116,7 +116,7 @@ private static final long serialVersionUID = 0L;
    * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
    * @return Whether the responseMetadata field is set.
    */
-  @Override
+  @java.lang.Override
   public boolean hasResponseMetadata() {
     return responseMetadata_ != null;
   }
@@ -128,9 +128,9 @@ private static final long serialVersionUID = 0L;
    * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
    * @return The responseMetadata.
    */
-  @Override
-  public ResponseMetadata getResponseMetadata() {
-    return responseMetadata_ == null ? ResponseMetadata.getDefaultInstance() : responseMetadata_;
+  @java.lang.Override
+  public com.bytedanceapi.model.common.ResponseMetadata getResponseMetadata() {
+    return responseMetadata_ == null ? com.bytedanceapi.model.common.ResponseMetadata.getDefaultInstance() : responseMetadata_;
   }
   /**
    * <pre>
@@ -139,13 +139,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
    */
-  @Override
-  public ResponseMetadataOrBuilder getResponseMetadataOrBuilder() {
+  @java.lang.Override
+  public com.bytedanceapi.model.common.ResponseMetadataOrBuilder getResponseMetadataOrBuilder() {
     return getResponseMetadata();
   }
 
   public static final int RESULT_FIELD_NUMBER = 2;
-  private VodGetPlayInfoResult result_;
+  private com.bytedanceapi.model.common.VodGetPlayInfoResult result_;
   /**
    * <pre>
    * 响应结果
@@ -154,7 +154,7 @@ private static final long serialVersionUID = 0L;
    * <code>.Vcloud.Models.Vod.VodGetPlayInfoResult Result = 2;</code>
    * @return Whether the result field is set.
    */
-  @Override
+  @java.lang.Override
   public boolean hasResult() {
     return result_ != null;
   }
@@ -166,9 +166,9 @@ private static final long serialVersionUID = 0L;
    * <code>.Vcloud.Models.Vod.VodGetPlayInfoResult Result = 2;</code>
    * @return The result.
    */
-  @Override
-  public VodGetPlayInfoResult getResult() {
-    return result_ == null ? VodGetPlayInfoResult.getDefaultInstance() : result_;
+  @java.lang.Override
+  public com.bytedanceapi.model.common.VodGetPlayInfoResult getResult() {
+    return result_ == null ? com.bytedanceapi.model.common.VodGetPlayInfoResult.getDefaultInstance() : result_;
   }
   /**
    * <pre>
@@ -177,13 +177,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.Vcloud.Models.Vod.VodGetPlayInfoResult Result = 2;</code>
    */
-  @Override
-  public VodGetPlayInfoResultOrBuilder getResultOrBuilder() {
+  @java.lang.Override
+  public com.bytedanceapi.model.common.VodGetPlayInfoResultOrBuilder getResultOrBuilder() {
     return getResult();
   }
 
   private byte memoizedIsInitialized = -1;
-  @Override
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -193,7 +193,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @Override
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (responseMetadata_ != null) {
@@ -205,7 +205,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @Override
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -224,15 +224,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @Override
-  public boolean equals(final Object obj) {
+  @java.lang.Override
+  public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof VodGetPlayInfoResponse)) {
+    if (!(obj instanceof com.bytedanceapi.model.common.VodGetPlayInfoResponse)) {
       return super.equals(obj);
     }
-    VodGetPlayInfoResponse other = (VodGetPlayInfoResponse) obj;
+    com.bytedanceapi.model.common.VodGetPlayInfoResponse other = (com.bytedanceapi.model.common.VodGetPlayInfoResponse) obj;
 
     if (hasResponseMetadata() != other.hasResponseMetadata()) return false;
     if (hasResponseMetadata()) {
@@ -248,7 +248,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @Override
+  @java.lang.Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -268,69 +268,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static VodGetPlayInfoResponse parseFrom(
+  public static com.bytedanceapi.model.common.VodGetPlayInfoResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static VodGetPlayInfoResponse parseFrom(
+  public static com.bytedanceapi.model.common.VodGetPlayInfoResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static VodGetPlayInfoResponse parseFrom(
+  public static com.bytedanceapi.model.common.VodGetPlayInfoResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static VodGetPlayInfoResponse parseFrom(
+  public static com.bytedanceapi.model.common.VodGetPlayInfoResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static VodGetPlayInfoResponse parseFrom(byte[] data)
+  public static com.bytedanceapi.model.common.VodGetPlayInfoResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static VodGetPlayInfoResponse parseFrom(
+  public static com.bytedanceapi.model.common.VodGetPlayInfoResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static VodGetPlayInfoResponse parseFrom(java.io.InputStream input)
+  public static com.bytedanceapi.model.common.VodGetPlayInfoResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static VodGetPlayInfoResponse parseFrom(
+  public static com.bytedanceapi.model.common.VodGetPlayInfoResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static VodGetPlayInfoResponse parseDelimitedFrom(java.io.InputStream input)
+  public static com.bytedanceapi.model.common.VodGetPlayInfoResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static VodGetPlayInfoResponse parseDelimitedFrom(
+  public static com.bytedanceapi.model.common.VodGetPlayInfoResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static VodGetPlayInfoResponse parseFrom(
+  public static com.bytedanceapi.model.common.VodGetPlayInfoResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static VodGetPlayInfoResponse parseFrom(
+  public static com.bytedanceapi.model.common.VodGetPlayInfoResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -338,23 +338,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @Override
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(VodGetPlayInfoResponse prototype) {
+  public static Builder newBuilder(com.bytedanceapi.model.common.VodGetPlayInfoResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @Override
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @Override
+  @java.lang.Override
   protected Builder newBuilderForType(
-      BuilderParent parent) {
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -364,18 +364,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:Vcloud.Models.Vod.VodGetPlayInfoResponse)
-      VodGetPlayInfoResponseOrBuilder {
+      com.bytedanceapi.model.common.VodGetPlayInfoResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return VodPlay.internal_static_Vcloud_Models_Vod_VodGetPlayInfoResponse_descriptor;
+      return com.bytedanceapi.model.common.VodPlay.internal_static_Vcloud_Models_Vod_VodGetPlayInfoResponse_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return VodPlay.internal_static_Vcloud_Models_Vod_VodGetPlayInfoResponse_fieldAccessorTable
+      return com.bytedanceapi.model.common.VodPlay.internal_static_Vcloud_Models_Vod_VodGetPlayInfoResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              VodGetPlayInfoResponse.class, Builder.class);
+              com.bytedanceapi.model.common.VodGetPlayInfoResponse.class, com.bytedanceapi.model.common.VodGetPlayInfoResponse.Builder.class);
     }
 
     // Construct using com.bytedanceapi.model.common.VodGetPlayInfoResponse.newBuilder()
@@ -384,7 +384,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -393,7 +393,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @Override
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (responseMetadataBuilder_ == null) {
@@ -411,29 +411,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return VodPlay.internal_static_Vcloud_Models_Vod_VodGetPlayInfoResponse_descriptor;
+      return com.bytedanceapi.model.common.VodPlay.internal_static_Vcloud_Models_Vod_VodGetPlayInfoResponse_descriptor;
     }
 
-    @Override
-    public VodGetPlayInfoResponse getDefaultInstanceForType() {
-      return VodGetPlayInfoResponse.getDefaultInstance();
+    @java.lang.Override
+    public com.bytedanceapi.model.common.VodGetPlayInfoResponse getDefaultInstanceForType() {
+      return com.bytedanceapi.model.common.VodGetPlayInfoResponse.getDefaultInstance();
     }
 
-    @Override
-    public VodGetPlayInfoResponse build() {
-      VodGetPlayInfoResponse result = buildPartial();
+    @java.lang.Override
+    public com.bytedanceapi.model.common.VodGetPlayInfoResponse build() {
+      com.bytedanceapi.model.common.VodGetPlayInfoResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @Override
-    public VodGetPlayInfoResponse buildPartial() {
-      VodGetPlayInfoResponse result = new VodGetPlayInfoResponse(this);
+    @java.lang.Override
+    public com.bytedanceapi.model.common.VodGetPlayInfoResponse buildPartial() {
+      com.bytedanceapi.model.common.VodGetPlayInfoResponse result = new com.bytedanceapi.model.common.VodGetPlayInfoResponse(this);
       if (responseMetadataBuilder_ == null) {
         result.responseMetadata_ = responseMetadata_;
       } else {
@@ -448,50 +448,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public Builder clone() {
       return super.clone();
     }
-    @Override
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-    @Override
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @Override
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @Override
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @Override
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-    @Override
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof VodGetPlayInfoResponse) {
-        return mergeFrom((VodGetPlayInfoResponse)other);
+      if (other instanceof com.bytedanceapi.model.common.VodGetPlayInfoResponse) {
+        return mergeFrom((com.bytedanceapi.model.common.VodGetPlayInfoResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(VodGetPlayInfoResponse other) {
-      if (other == VodGetPlayInfoResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.bytedanceapi.model.common.VodGetPlayInfoResponse other) {
+      if (other == com.bytedanceapi.model.common.VodGetPlayInfoResponse.getDefaultInstance()) return this;
       if (other.hasResponseMetadata()) {
         mergeResponseMetadata(other.getResponseMetadata());
       }
@@ -503,21 +503,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      VodGetPlayInfoResponse parsedMessage = null;
+      com.bytedanceapi.model.common.VodGetPlayInfoResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (VodGetPlayInfoResponse) e.getUnfinishedMessage();
+        parsedMessage = (com.bytedanceapi.model.common.VodGetPlayInfoResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -527,9 +527,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private ResponseMetadata responseMetadata_;
+    private com.bytedanceapi.model.common.ResponseMetadata responseMetadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        ResponseMetadata, ResponseMetadata.Builder, ResponseMetadataOrBuilder> responseMetadataBuilder_;
+        com.bytedanceapi.model.common.ResponseMetadata, com.bytedanceapi.model.common.ResponseMetadata.Builder, com.bytedanceapi.model.common.ResponseMetadataOrBuilder> responseMetadataBuilder_;
     /**
      * <pre>
      * 响应通用信息
@@ -549,9 +549,9 @@ private static final long serialVersionUID = 0L;
      * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      * @return The responseMetadata.
      */
-    public ResponseMetadata getResponseMetadata() {
+    public com.bytedanceapi.model.common.ResponseMetadata getResponseMetadata() {
       if (responseMetadataBuilder_ == null) {
-        return responseMetadata_ == null ? ResponseMetadata.getDefaultInstance() : responseMetadata_;
+        return responseMetadata_ == null ? com.bytedanceapi.model.common.ResponseMetadata.getDefaultInstance() : responseMetadata_;
       } else {
         return responseMetadataBuilder_.getMessage();
       }
@@ -563,7 +563,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
-    public Builder setResponseMetadata(ResponseMetadata value) {
+    public Builder setResponseMetadata(com.bytedanceapi.model.common.ResponseMetadata value) {
       if (responseMetadataBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -584,7 +584,7 @@ private static final long serialVersionUID = 0L;
      * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
     public Builder setResponseMetadata(
-        ResponseMetadata.Builder builderForValue) {
+        com.bytedanceapi.model.common.ResponseMetadata.Builder builderForValue) {
       if (responseMetadataBuilder_ == null) {
         responseMetadata_ = builderForValue.build();
         onChanged();
@@ -601,11 +601,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
-    public Builder mergeResponseMetadata(ResponseMetadata value) {
+    public Builder mergeResponseMetadata(com.bytedanceapi.model.common.ResponseMetadata value) {
       if (responseMetadataBuilder_ == null) {
         if (responseMetadata_ != null) {
           responseMetadata_ =
-            ResponseMetadata.newBuilder(responseMetadata_).mergeFrom(value).buildPartial();
+            com.bytedanceapi.model.common.ResponseMetadata.newBuilder(responseMetadata_).mergeFrom(value).buildPartial();
         } else {
           responseMetadata_ = value;
         }
@@ -641,7 +641,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
-    public ResponseMetadata.Builder getResponseMetadataBuilder() {
+    public com.bytedanceapi.model.common.ResponseMetadata.Builder getResponseMetadataBuilder() {
       
       onChanged();
       return getResponseMetadataFieldBuilder().getBuilder();
@@ -653,12 +653,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
-    public ResponseMetadataOrBuilder getResponseMetadataOrBuilder() {
+    public com.bytedanceapi.model.common.ResponseMetadataOrBuilder getResponseMetadataOrBuilder() {
       if (responseMetadataBuilder_ != null) {
         return responseMetadataBuilder_.getMessageOrBuilder();
       } else {
         return responseMetadata_ == null ?
-            ResponseMetadata.getDefaultInstance() : responseMetadata_;
+            com.bytedanceapi.model.common.ResponseMetadata.getDefaultInstance() : responseMetadata_;
       }
     }
     /**
@@ -669,11 +669,11 @@ private static final long serialVersionUID = 0L;
      * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        ResponseMetadata, ResponseMetadata.Builder, ResponseMetadataOrBuilder>
+        com.bytedanceapi.model.common.ResponseMetadata, com.bytedanceapi.model.common.ResponseMetadata.Builder, com.bytedanceapi.model.common.ResponseMetadataOrBuilder> 
         getResponseMetadataFieldBuilder() {
       if (responseMetadataBuilder_ == null) {
         responseMetadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            ResponseMetadata, ResponseMetadata.Builder, ResponseMetadataOrBuilder>(
+            com.bytedanceapi.model.common.ResponseMetadata, com.bytedanceapi.model.common.ResponseMetadata.Builder, com.bytedanceapi.model.common.ResponseMetadataOrBuilder>(
                 getResponseMetadata(),
                 getParentForChildren(),
                 isClean());
@@ -682,9 +682,9 @@ private static final long serialVersionUID = 0L;
       return responseMetadataBuilder_;
     }
 
-    private VodGetPlayInfoResult result_;
+    private com.bytedanceapi.model.common.VodGetPlayInfoResult result_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        VodGetPlayInfoResult, VodGetPlayInfoResult.Builder, VodGetPlayInfoResultOrBuilder> resultBuilder_;
+        com.bytedanceapi.model.common.VodGetPlayInfoResult, com.bytedanceapi.model.common.VodGetPlayInfoResult.Builder, com.bytedanceapi.model.common.VodGetPlayInfoResultOrBuilder> resultBuilder_;
     /**
      * <pre>
      * 响应结果
@@ -704,9 +704,9 @@ private static final long serialVersionUID = 0L;
      * <code>.Vcloud.Models.Vod.VodGetPlayInfoResult Result = 2;</code>
      * @return The result.
      */
-    public VodGetPlayInfoResult getResult() {
+    public com.bytedanceapi.model.common.VodGetPlayInfoResult getResult() {
       if (resultBuilder_ == null) {
-        return result_ == null ? VodGetPlayInfoResult.getDefaultInstance() : result_;
+        return result_ == null ? com.bytedanceapi.model.common.VodGetPlayInfoResult.getDefaultInstance() : result_;
       } else {
         return resultBuilder_.getMessage();
       }
@@ -718,7 +718,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.Vcloud.Models.Vod.VodGetPlayInfoResult Result = 2;</code>
      */
-    public Builder setResult(VodGetPlayInfoResult value) {
+    public Builder setResult(com.bytedanceapi.model.common.VodGetPlayInfoResult value) {
       if (resultBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -739,7 +739,7 @@ private static final long serialVersionUID = 0L;
      * <code>.Vcloud.Models.Vod.VodGetPlayInfoResult Result = 2;</code>
      */
     public Builder setResult(
-        VodGetPlayInfoResult.Builder builderForValue) {
+        com.bytedanceapi.model.common.VodGetPlayInfoResult.Builder builderForValue) {
       if (resultBuilder_ == null) {
         result_ = builderForValue.build();
         onChanged();
@@ -756,11 +756,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.Vcloud.Models.Vod.VodGetPlayInfoResult Result = 2;</code>
      */
-    public Builder mergeResult(VodGetPlayInfoResult value) {
+    public Builder mergeResult(com.bytedanceapi.model.common.VodGetPlayInfoResult value) {
       if (resultBuilder_ == null) {
         if (result_ != null) {
           result_ =
-            VodGetPlayInfoResult.newBuilder(result_).mergeFrom(value).buildPartial();
+            com.bytedanceapi.model.common.VodGetPlayInfoResult.newBuilder(result_).mergeFrom(value).buildPartial();
         } else {
           result_ = value;
         }
@@ -796,7 +796,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.Vcloud.Models.Vod.VodGetPlayInfoResult Result = 2;</code>
      */
-    public VodGetPlayInfoResult.Builder getResultBuilder() {
+    public com.bytedanceapi.model.common.VodGetPlayInfoResult.Builder getResultBuilder() {
       
       onChanged();
       return getResultFieldBuilder().getBuilder();
@@ -808,12 +808,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.Vcloud.Models.Vod.VodGetPlayInfoResult Result = 2;</code>
      */
-    public VodGetPlayInfoResultOrBuilder getResultOrBuilder() {
+    public com.bytedanceapi.model.common.VodGetPlayInfoResultOrBuilder getResultOrBuilder() {
       if (resultBuilder_ != null) {
         return resultBuilder_.getMessageOrBuilder();
       } else {
         return result_ == null ?
-            VodGetPlayInfoResult.getDefaultInstance() : result_;
+            com.bytedanceapi.model.common.VodGetPlayInfoResult.getDefaultInstance() : result_;
       }
     }
     /**
@@ -824,11 +824,11 @@ private static final long serialVersionUID = 0L;
      * <code>.Vcloud.Models.Vod.VodGetPlayInfoResult Result = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        VodGetPlayInfoResult, VodGetPlayInfoResult.Builder, VodGetPlayInfoResultOrBuilder>
+        com.bytedanceapi.model.common.VodGetPlayInfoResult, com.bytedanceapi.model.common.VodGetPlayInfoResult.Builder, com.bytedanceapi.model.common.VodGetPlayInfoResultOrBuilder> 
         getResultFieldBuilder() {
       if (resultBuilder_ == null) {
         resultBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            VodGetPlayInfoResult, VodGetPlayInfoResult.Builder, VodGetPlayInfoResultOrBuilder>(
+            com.bytedanceapi.model.common.VodGetPlayInfoResult, com.bytedanceapi.model.common.VodGetPlayInfoResult.Builder, com.bytedanceapi.model.common.VodGetPlayInfoResultOrBuilder>(
                 getResult(),
                 getParentForChildren(),
                 isClean());
@@ -836,13 +836,13 @@ private static final long serialVersionUID = 0L;
       }
       return resultBuilder_;
     }
-    @Override
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @Override
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -853,18 +853,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:Vcloud.Models.Vod.VodGetPlayInfoResponse)
-  private static final VodGetPlayInfoResponse DEFAULT_INSTANCE;
+  private static final com.bytedanceapi.model.common.VodGetPlayInfoResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new VodGetPlayInfoResponse();
+    DEFAULT_INSTANCE = new com.bytedanceapi.model.common.VodGetPlayInfoResponse();
   }
 
-  public static VodGetPlayInfoResponse getDefaultInstance() {
+  public static com.bytedanceapi.model.common.VodGetPlayInfoResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<VodGetPlayInfoResponse>
       PARSER = new com.google.protobuf.AbstractParser<VodGetPlayInfoResponse>() {
-    @Override
+    @java.lang.Override
     public VodGetPlayInfoResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -877,13 +877,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @Override
+  @java.lang.Override
   public com.google.protobuf.Parser<VodGetPlayInfoResponse> getParserForType() {
     return PARSER;
   }
 
-  @Override
-  public VodGetPlayInfoResponse getDefaultInstanceForType() {
+  @java.lang.Override
+  public com.bytedanceapi.model.common.VodGetPlayInfoResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

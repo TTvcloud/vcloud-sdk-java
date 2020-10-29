@@ -19,14 +19,14 @@ private static final long serialVersionUID = 0L;
     transcodeInfos_ = java.util.Collections.emptyList();
   }
 
-  @Override
+  @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected Object newInstance(
+  protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
     return new VideoInfo();
   }
 
-  @Override
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +37,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new NullPointerException();
+      throw new java.lang.NullPointerException();
     }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -51,11 +51,11 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            BasicInfo.Builder subBuilder = null;
+            com.bytedanceapi.model.common.BasicInfo.Builder subBuilder = null;
             if (basicInfo_ != null) {
               subBuilder = basicInfo_.toBuilder();
             }
-            basicInfo_ = input.readMessage(BasicInfo.parser(), extensionRegistry);
+            basicInfo_ = input.readMessage(com.bytedanceapi.model.common.BasicInfo.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(basicInfo_);
               basicInfo_ = subBuilder.buildPartial();
@@ -64,11 +64,11 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            SourceInfo.Builder subBuilder = null;
+            com.bytedanceapi.model.common.SourceInfo.Builder subBuilder = null;
             if (sourceInfo_ != null) {
               subBuilder = sourceInfo_.toBuilder();
             }
-            sourceInfo_ = input.readMessage(SourceInfo.parser(), extensionRegistry);
+            sourceInfo_ = input.readMessage(com.bytedanceapi.model.common.SourceInfo.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(sourceInfo_);
               sourceInfo_ = subBuilder.buildPartial();
@@ -78,11 +78,11 @@ private static final long serialVersionUID = 0L;
           }
           case 26: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              transcodeInfos_ = new java.util.ArrayList<TranscodeInfo>();
+              transcodeInfos_ = new java.util.ArrayList<com.bytedanceapi.model.common.TranscodeInfo>();
               mutable_bitField0_ |= 0x00000001;
             }
             transcodeInfos_.add(
-                input.readMessage(TranscodeInfo.parser(), extensionRegistry));
+                input.readMessage(com.bytedanceapi.model.common.TranscodeInfo.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -109,19 +109,19 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return VodMedia.internal_static_Vcloud_Models_Vod_VideoInfo_descriptor;
+    return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_VideoInfo_descriptor;
   }
 
-  @Override
-  protected FieldAccessorTable
+  @java.lang.Override
+  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return VodMedia.internal_static_Vcloud_Models_Vod_VideoInfo_fieldAccessorTable
+    return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_VideoInfo_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            VideoInfo.class, Builder.class);
+            com.bytedanceapi.model.common.VideoInfo.class, com.bytedanceapi.model.common.VideoInfo.Builder.class);
   }
 
   public static final int BASICINFO_FIELD_NUMBER = 1;
-  private BasicInfo basicInfo_;
+  private com.bytedanceapi.model.common.BasicInfo basicInfo_;
   /**
    * <pre>
    *视频基础信息
@@ -130,7 +130,7 @@ private static final long serialVersionUID = 0L;
    * <code>.Vcloud.Models.Vod.BasicInfo BasicInfo = 1;</code>
    * @return Whether the basicInfo field is set.
    */
-  @Override
+  @java.lang.Override
   public boolean hasBasicInfo() {
     return basicInfo_ != null;
   }
@@ -142,9 +142,9 @@ private static final long serialVersionUID = 0L;
    * <code>.Vcloud.Models.Vod.BasicInfo BasicInfo = 1;</code>
    * @return The basicInfo.
    */
-  @Override
-  public BasicInfo getBasicInfo() {
-    return basicInfo_ == null ? BasicInfo.getDefaultInstance() : basicInfo_;
+  @java.lang.Override
+  public com.bytedanceapi.model.common.BasicInfo getBasicInfo() {
+    return basicInfo_ == null ? com.bytedanceapi.model.common.BasicInfo.getDefaultInstance() : basicInfo_;
   }
   /**
    * <pre>
@@ -153,13 +153,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.Vcloud.Models.Vod.BasicInfo BasicInfo = 1;</code>
    */
-  @Override
-  public BasicInfoOrBuilder getBasicInfoOrBuilder() {
+  @java.lang.Override
+  public com.bytedanceapi.model.common.BasicInfoOrBuilder getBasicInfoOrBuilder() {
     return getBasicInfo();
   }
 
   public static final int SOURCEINFO_FIELD_NUMBER = 2;
-  private SourceInfo sourceInfo_;
+  private com.bytedanceapi.model.common.SourceInfo sourceInfo_;
   /**
    * <pre>
    *原视频信息
@@ -168,7 +168,7 @@ private static final long serialVersionUID = 0L;
    * <code>.Vcloud.Models.Vod.SourceInfo SourceInfo = 2;</code>
    * @return Whether the sourceInfo field is set.
    */
-  @Override
+  @java.lang.Override
   public boolean hasSourceInfo() {
     return sourceInfo_ != null;
   }
@@ -180,9 +180,9 @@ private static final long serialVersionUID = 0L;
    * <code>.Vcloud.Models.Vod.SourceInfo SourceInfo = 2;</code>
    * @return The sourceInfo.
    */
-  @Override
-  public SourceInfo getSourceInfo() {
-    return sourceInfo_ == null ? SourceInfo.getDefaultInstance() : sourceInfo_;
+  @java.lang.Override
+  public com.bytedanceapi.model.common.SourceInfo getSourceInfo() {
+    return sourceInfo_ == null ? com.bytedanceapi.model.common.SourceInfo.getDefaultInstance() : sourceInfo_;
   }
   /**
    * <pre>
@@ -191,13 +191,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.Vcloud.Models.Vod.SourceInfo SourceInfo = 2;</code>
    */
-  @Override
-  public SourceInfoOrBuilder getSourceInfoOrBuilder() {
+  @java.lang.Override
+  public com.bytedanceapi.model.common.SourceInfoOrBuilder getSourceInfoOrBuilder() {
     return getSourceInfo();
   }
 
   public static final int TRANSCODEINFOS_FIELD_NUMBER = 3;
-  private java.util.List<TranscodeInfo> transcodeInfos_;
+  private java.util.List<com.bytedanceapi.model.common.TranscodeInfo> transcodeInfos_;
   /**
    * <pre>
    *转码视频信息列表
@@ -205,8 +205,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .Vcloud.Models.Vod.TranscodeInfo TranscodeInfos = 3;</code>
    */
-  @Override
-  public java.util.List<TranscodeInfo> getTranscodeInfosList() {
+  @java.lang.Override
+  public java.util.List<com.bytedanceapi.model.common.TranscodeInfo> getTranscodeInfosList() {
     return transcodeInfos_;
   }
   /**
@@ -216,8 +216,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .Vcloud.Models.Vod.TranscodeInfo TranscodeInfos = 3;</code>
    */
-  @Override
-  public java.util.List<? extends TranscodeInfoOrBuilder>
+  @java.lang.Override
+  public java.util.List<? extends com.bytedanceapi.model.common.TranscodeInfoOrBuilder> 
       getTranscodeInfosOrBuilderList() {
     return transcodeInfos_;
   }
@@ -228,7 +228,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .Vcloud.Models.Vod.TranscodeInfo TranscodeInfos = 3;</code>
    */
-  @Override
+  @java.lang.Override
   public int getTranscodeInfosCount() {
     return transcodeInfos_.size();
   }
@@ -239,8 +239,8 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .Vcloud.Models.Vod.TranscodeInfo TranscodeInfos = 3;</code>
    */
-  @Override
-  public TranscodeInfo getTranscodeInfos(int index) {
+  @java.lang.Override
+  public com.bytedanceapi.model.common.TranscodeInfo getTranscodeInfos(int index) {
     return transcodeInfos_.get(index);
   }
   /**
@@ -250,14 +250,14 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .Vcloud.Models.Vod.TranscodeInfo TranscodeInfos = 3;</code>
    */
-  @Override
-  public TranscodeInfoOrBuilder getTranscodeInfosOrBuilder(
+  @java.lang.Override
+  public com.bytedanceapi.model.common.TranscodeInfoOrBuilder getTranscodeInfosOrBuilder(
       int index) {
     return transcodeInfos_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
-  @Override
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -267,7 +267,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @Override
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (basicInfo_ != null) {
@@ -282,7 +282,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @Override
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -305,15 +305,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @Override
-  public boolean equals(final Object obj) {
+  @java.lang.Override
+  public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof VideoInfo)) {
+    if (!(obj instanceof com.bytedanceapi.model.common.VideoInfo)) {
       return super.equals(obj);
     }
-    VideoInfo other = (VideoInfo) obj;
+    com.bytedanceapi.model.common.VideoInfo other = (com.bytedanceapi.model.common.VideoInfo) obj;
 
     if (hasBasicInfo() != other.hasBasicInfo()) return false;
     if (hasBasicInfo()) {
@@ -331,7 +331,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @Override
+  @java.lang.Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -355,69 +355,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static VideoInfo parseFrom(
+  public static com.bytedanceapi.model.common.VideoInfo parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static VideoInfo parseFrom(
+  public static com.bytedanceapi.model.common.VideoInfo parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static VideoInfo parseFrom(
+  public static com.bytedanceapi.model.common.VideoInfo parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static VideoInfo parseFrom(
+  public static com.bytedanceapi.model.common.VideoInfo parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static VideoInfo parseFrom(byte[] data)
+  public static com.bytedanceapi.model.common.VideoInfo parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static VideoInfo parseFrom(
+  public static com.bytedanceapi.model.common.VideoInfo parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static VideoInfo parseFrom(java.io.InputStream input)
+  public static com.bytedanceapi.model.common.VideoInfo parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static VideoInfo parseFrom(
+  public static com.bytedanceapi.model.common.VideoInfo parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static VideoInfo parseDelimitedFrom(java.io.InputStream input)
+  public static com.bytedanceapi.model.common.VideoInfo parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static VideoInfo parseDelimitedFrom(
+  public static com.bytedanceapi.model.common.VideoInfo parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static VideoInfo parseFrom(
+  public static com.bytedanceapi.model.common.VideoInfo parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static VideoInfo parseFrom(
+  public static com.bytedanceapi.model.common.VideoInfo parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -425,23 +425,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @Override
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(VideoInfo prototype) {
+  public static Builder newBuilder(com.bytedanceapi.model.common.VideoInfo prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @Override
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @Override
+  @java.lang.Override
   protected Builder newBuilderForType(
-      BuilderParent parent) {
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -451,18 +451,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:Vcloud.Models.Vod.VideoInfo)
-      VideoInfoOrBuilder {
+      com.bytedanceapi.model.common.VideoInfoOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return VodMedia.internal_static_Vcloud_Models_Vod_VideoInfo_descriptor;
+      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_VideoInfo_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return VodMedia.internal_static_Vcloud_Models_Vod_VideoInfo_fieldAccessorTable
+      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_VideoInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              VideoInfo.class, Builder.class);
+              com.bytedanceapi.model.common.VideoInfo.class, com.bytedanceapi.model.common.VideoInfo.Builder.class);
     }
 
     // Construct using com.bytedanceapi.model.common.VideoInfo.newBuilder()
@@ -471,7 +471,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -481,7 +481,7 @@ private static final long serialVersionUID = 0L;
         getTranscodeInfosFieldBuilder();
       }
     }
-    @Override
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (basicInfoBuilder_ == null) {
@@ -505,29 +505,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return VodMedia.internal_static_Vcloud_Models_Vod_VideoInfo_descriptor;
+      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_VideoInfo_descriptor;
     }
 
-    @Override
-    public VideoInfo getDefaultInstanceForType() {
-      return VideoInfo.getDefaultInstance();
+    @java.lang.Override
+    public com.bytedanceapi.model.common.VideoInfo getDefaultInstanceForType() {
+      return com.bytedanceapi.model.common.VideoInfo.getDefaultInstance();
     }
 
-    @Override
-    public VideoInfo build() {
-      VideoInfo result = buildPartial();
+    @java.lang.Override
+    public com.bytedanceapi.model.common.VideoInfo build() {
+      com.bytedanceapi.model.common.VideoInfo result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @Override
-    public VideoInfo buildPartial() {
-      VideoInfo result = new VideoInfo(this);
+    @java.lang.Override
+    public com.bytedanceapi.model.common.VideoInfo buildPartial() {
+      com.bytedanceapi.model.common.VideoInfo result = new com.bytedanceapi.model.common.VideoInfo(this);
       int from_bitField0_ = bitField0_;
       if (basicInfoBuilder_ == null) {
         result.basicInfo_ = basicInfo_;
@@ -552,50 +552,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public Builder clone() {
       return super.clone();
     }
-    @Override
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-    @Override
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @Override
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @Override
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @Override
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-    @Override
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof VideoInfo) {
-        return mergeFrom((VideoInfo)other);
+      if (other instanceof com.bytedanceapi.model.common.VideoInfo) {
+        return mergeFrom((com.bytedanceapi.model.common.VideoInfo)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(VideoInfo other) {
-      if (other == VideoInfo.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.bytedanceapi.model.common.VideoInfo other) {
+      if (other == com.bytedanceapi.model.common.VideoInfo.getDefaultInstance()) return this;
       if (other.hasBasicInfo()) {
         mergeBasicInfo(other.getBasicInfo());
       }
@@ -633,21 +633,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      VideoInfo parsedMessage = null;
+      com.bytedanceapi.model.common.VideoInfo parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (VideoInfo) e.getUnfinishedMessage();
+        parsedMessage = (com.bytedanceapi.model.common.VideoInfo) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -658,9 +658,9 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private BasicInfo basicInfo_;
+    private com.bytedanceapi.model.common.BasicInfo basicInfo_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        BasicInfo, BasicInfo.Builder, BasicInfoOrBuilder> basicInfoBuilder_;
+        com.bytedanceapi.model.common.BasicInfo, com.bytedanceapi.model.common.BasicInfo.Builder, com.bytedanceapi.model.common.BasicInfoOrBuilder> basicInfoBuilder_;
     /**
      * <pre>
      *视频基础信息
@@ -680,9 +680,9 @@ private static final long serialVersionUID = 0L;
      * <code>.Vcloud.Models.Vod.BasicInfo BasicInfo = 1;</code>
      * @return The basicInfo.
      */
-    public BasicInfo getBasicInfo() {
+    public com.bytedanceapi.model.common.BasicInfo getBasicInfo() {
       if (basicInfoBuilder_ == null) {
-        return basicInfo_ == null ? BasicInfo.getDefaultInstance() : basicInfo_;
+        return basicInfo_ == null ? com.bytedanceapi.model.common.BasicInfo.getDefaultInstance() : basicInfo_;
       } else {
         return basicInfoBuilder_.getMessage();
       }
@@ -694,7 +694,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.Vcloud.Models.Vod.BasicInfo BasicInfo = 1;</code>
      */
-    public Builder setBasicInfo(BasicInfo value) {
+    public Builder setBasicInfo(com.bytedanceapi.model.common.BasicInfo value) {
       if (basicInfoBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -715,7 +715,7 @@ private static final long serialVersionUID = 0L;
      * <code>.Vcloud.Models.Vod.BasicInfo BasicInfo = 1;</code>
      */
     public Builder setBasicInfo(
-        BasicInfo.Builder builderForValue) {
+        com.bytedanceapi.model.common.BasicInfo.Builder builderForValue) {
       if (basicInfoBuilder_ == null) {
         basicInfo_ = builderForValue.build();
         onChanged();
@@ -732,11 +732,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.Vcloud.Models.Vod.BasicInfo BasicInfo = 1;</code>
      */
-    public Builder mergeBasicInfo(BasicInfo value) {
+    public Builder mergeBasicInfo(com.bytedanceapi.model.common.BasicInfo value) {
       if (basicInfoBuilder_ == null) {
         if (basicInfo_ != null) {
           basicInfo_ =
-            BasicInfo.newBuilder(basicInfo_).mergeFrom(value).buildPartial();
+            com.bytedanceapi.model.common.BasicInfo.newBuilder(basicInfo_).mergeFrom(value).buildPartial();
         } else {
           basicInfo_ = value;
         }
@@ -772,7 +772,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.Vcloud.Models.Vod.BasicInfo BasicInfo = 1;</code>
      */
-    public BasicInfo.Builder getBasicInfoBuilder() {
+    public com.bytedanceapi.model.common.BasicInfo.Builder getBasicInfoBuilder() {
       
       onChanged();
       return getBasicInfoFieldBuilder().getBuilder();
@@ -784,12 +784,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.Vcloud.Models.Vod.BasicInfo BasicInfo = 1;</code>
      */
-    public BasicInfoOrBuilder getBasicInfoOrBuilder() {
+    public com.bytedanceapi.model.common.BasicInfoOrBuilder getBasicInfoOrBuilder() {
       if (basicInfoBuilder_ != null) {
         return basicInfoBuilder_.getMessageOrBuilder();
       } else {
         return basicInfo_ == null ?
-            BasicInfo.getDefaultInstance() : basicInfo_;
+            com.bytedanceapi.model.common.BasicInfo.getDefaultInstance() : basicInfo_;
       }
     }
     /**
@@ -800,11 +800,11 @@ private static final long serialVersionUID = 0L;
      * <code>.Vcloud.Models.Vod.BasicInfo BasicInfo = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        BasicInfo, BasicInfo.Builder, BasicInfoOrBuilder>
+        com.bytedanceapi.model.common.BasicInfo, com.bytedanceapi.model.common.BasicInfo.Builder, com.bytedanceapi.model.common.BasicInfoOrBuilder> 
         getBasicInfoFieldBuilder() {
       if (basicInfoBuilder_ == null) {
         basicInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            BasicInfo, BasicInfo.Builder, BasicInfoOrBuilder>(
+            com.bytedanceapi.model.common.BasicInfo, com.bytedanceapi.model.common.BasicInfo.Builder, com.bytedanceapi.model.common.BasicInfoOrBuilder>(
                 getBasicInfo(),
                 getParentForChildren(),
                 isClean());
@@ -813,9 +813,9 @@ private static final long serialVersionUID = 0L;
       return basicInfoBuilder_;
     }
 
-    private SourceInfo sourceInfo_;
+    private com.bytedanceapi.model.common.SourceInfo sourceInfo_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        SourceInfo, SourceInfo.Builder, SourceInfoOrBuilder> sourceInfoBuilder_;
+        com.bytedanceapi.model.common.SourceInfo, com.bytedanceapi.model.common.SourceInfo.Builder, com.bytedanceapi.model.common.SourceInfoOrBuilder> sourceInfoBuilder_;
     /**
      * <pre>
      *原视频信息
@@ -835,9 +835,9 @@ private static final long serialVersionUID = 0L;
      * <code>.Vcloud.Models.Vod.SourceInfo SourceInfo = 2;</code>
      * @return The sourceInfo.
      */
-    public SourceInfo getSourceInfo() {
+    public com.bytedanceapi.model.common.SourceInfo getSourceInfo() {
       if (sourceInfoBuilder_ == null) {
-        return sourceInfo_ == null ? SourceInfo.getDefaultInstance() : sourceInfo_;
+        return sourceInfo_ == null ? com.bytedanceapi.model.common.SourceInfo.getDefaultInstance() : sourceInfo_;
       } else {
         return sourceInfoBuilder_.getMessage();
       }
@@ -849,7 +849,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.Vcloud.Models.Vod.SourceInfo SourceInfo = 2;</code>
      */
-    public Builder setSourceInfo(SourceInfo value) {
+    public Builder setSourceInfo(com.bytedanceapi.model.common.SourceInfo value) {
       if (sourceInfoBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -870,7 +870,7 @@ private static final long serialVersionUID = 0L;
      * <code>.Vcloud.Models.Vod.SourceInfo SourceInfo = 2;</code>
      */
     public Builder setSourceInfo(
-        SourceInfo.Builder builderForValue) {
+        com.bytedanceapi.model.common.SourceInfo.Builder builderForValue) {
       if (sourceInfoBuilder_ == null) {
         sourceInfo_ = builderForValue.build();
         onChanged();
@@ -887,11 +887,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.Vcloud.Models.Vod.SourceInfo SourceInfo = 2;</code>
      */
-    public Builder mergeSourceInfo(SourceInfo value) {
+    public Builder mergeSourceInfo(com.bytedanceapi.model.common.SourceInfo value) {
       if (sourceInfoBuilder_ == null) {
         if (sourceInfo_ != null) {
           sourceInfo_ =
-            SourceInfo.newBuilder(sourceInfo_).mergeFrom(value).buildPartial();
+            com.bytedanceapi.model.common.SourceInfo.newBuilder(sourceInfo_).mergeFrom(value).buildPartial();
         } else {
           sourceInfo_ = value;
         }
@@ -927,7 +927,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.Vcloud.Models.Vod.SourceInfo SourceInfo = 2;</code>
      */
-    public SourceInfo.Builder getSourceInfoBuilder() {
+    public com.bytedanceapi.model.common.SourceInfo.Builder getSourceInfoBuilder() {
       
       onChanged();
       return getSourceInfoFieldBuilder().getBuilder();
@@ -939,12 +939,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.Vcloud.Models.Vod.SourceInfo SourceInfo = 2;</code>
      */
-    public SourceInfoOrBuilder getSourceInfoOrBuilder() {
+    public com.bytedanceapi.model.common.SourceInfoOrBuilder getSourceInfoOrBuilder() {
       if (sourceInfoBuilder_ != null) {
         return sourceInfoBuilder_.getMessageOrBuilder();
       } else {
         return sourceInfo_ == null ?
-            SourceInfo.getDefaultInstance() : sourceInfo_;
+            com.bytedanceapi.model.common.SourceInfo.getDefaultInstance() : sourceInfo_;
       }
     }
     /**
@@ -955,11 +955,11 @@ private static final long serialVersionUID = 0L;
      * <code>.Vcloud.Models.Vod.SourceInfo SourceInfo = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        SourceInfo, SourceInfo.Builder, SourceInfoOrBuilder>
+        com.bytedanceapi.model.common.SourceInfo, com.bytedanceapi.model.common.SourceInfo.Builder, com.bytedanceapi.model.common.SourceInfoOrBuilder> 
         getSourceInfoFieldBuilder() {
       if (sourceInfoBuilder_ == null) {
         sourceInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            SourceInfo, SourceInfo.Builder, SourceInfoOrBuilder>(
+            com.bytedanceapi.model.common.SourceInfo, com.bytedanceapi.model.common.SourceInfo.Builder, com.bytedanceapi.model.common.SourceInfoOrBuilder>(
                 getSourceInfo(),
                 getParentForChildren(),
                 isClean());
@@ -968,17 +968,17 @@ private static final long serialVersionUID = 0L;
       return sourceInfoBuilder_;
     }
 
-    private java.util.List<TranscodeInfo> transcodeInfos_ =
+    private java.util.List<com.bytedanceapi.model.common.TranscodeInfo> transcodeInfos_ =
       java.util.Collections.emptyList();
     private void ensureTranscodeInfosIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        transcodeInfos_ = new java.util.ArrayList<TranscodeInfo>(transcodeInfos_);
+        transcodeInfos_ = new java.util.ArrayList<com.bytedanceapi.model.common.TranscodeInfo>(transcodeInfos_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        TranscodeInfo, TranscodeInfo.Builder, TranscodeInfoOrBuilder> transcodeInfosBuilder_;
+        com.bytedanceapi.model.common.TranscodeInfo, com.bytedanceapi.model.common.TranscodeInfo.Builder, com.bytedanceapi.model.common.TranscodeInfoOrBuilder> transcodeInfosBuilder_;
 
     /**
      * <pre>
@@ -987,7 +987,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.TranscodeInfo TranscodeInfos = 3;</code>
      */
-    public java.util.List<TranscodeInfo> getTranscodeInfosList() {
+    public java.util.List<com.bytedanceapi.model.common.TranscodeInfo> getTranscodeInfosList() {
       if (transcodeInfosBuilder_ == null) {
         return java.util.Collections.unmodifiableList(transcodeInfos_);
       } else {
@@ -1015,7 +1015,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.TranscodeInfo TranscodeInfos = 3;</code>
      */
-    public TranscodeInfo getTranscodeInfos(int index) {
+    public com.bytedanceapi.model.common.TranscodeInfo getTranscodeInfos(int index) {
       if (transcodeInfosBuilder_ == null) {
         return transcodeInfos_.get(index);
       } else {
@@ -1030,7 +1030,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .Vcloud.Models.Vod.TranscodeInfo TranscodeInfos = 3;</code>
      */
     public Builder setTranscodeInfos(
-        int index, TranscodeInfo value) {
+        int index, com.bytedanceapi.model.common.TranscodeInfo value) {
       if (transcodeInfosBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1051,7 +1051,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .Vcloud.Models.Vod.TranscodeInfo TranscodeInfos = 3;</code>
      */
     public Builder setTranscodeInfos(
-        int index, TranscodeInfo.Builder builderForValue) {
+        int index, com.bytedanceapi.model.common.TranscodeInfo.Builder builderForValue) {
       if (transcodeInfosBuilder_ == null) {
         ensureTranscodeInfosIsMutable();
         transcodeInfos_.set(index, builderForValue.build());
@@ -1068,7 +1068,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.TranscodeInfo TranscodeInfos = 3;</code>
      */
-    public Builder addTranscodeInfos(TranscodeInfo value) {
+    public Builder addTranscodeInfos(com.bytedanceapi.model.common.TranscodeInfo value) {
       if (transcodeInfosBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1089,7 +1089,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .Vcloud.Models.Vod.TranscodeInfo TranscodeInfos = 3;</code>
      */
     public Builder addTranscodeInfos(
-        int index, TranscodeInfo value) {
+        int index, com.bytedanceapi.model.common.TranscodeInfo value) {
       if (transcodeInfosBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1110,7 +1110,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .Vcloud.Models.Vod.TranscodeInfo TranscodeInfos = 3;</code>
      */
     public Builder addTranscodeInfos(
-        TranscodeInfo.Builder builderForValue) {
+        com.bytedanceapi.model.common.TranscodeInfo.Builder builderForValue) {
       if (transcodeInfosBuilder_ == null) {
         ensureTranscodeInfosIsMutable();
         transcodeInfos_.add(builderForValue.build());
@@ -1128,7 +1128,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .Vcloud.Models.Vod.TranscodeInfo TranscodeInfos = 3;</code>
      */
     public Builder addTranscodeInfos(
-        int index, TranscodeInfo.Builder builderForValue) {
+        int index, com.bytedanceapi.model.common.TranscodeInfo.Builder builderForValue) {
       if (transcodeInfosBuilder_ == null) {
         ensureTranscodeInfosIsMutable();
         transcodeInfos_.add(index, builderForValue.build());
@@ -1146,7 +1146,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .Vcloud.Models.Vod.TranscodeInfo TranscodeInfos = 3;</code>
      */
     public Builder addAllTranscodeInfos(
-        Iterable<? extends TranscodeInfo> values) {
+        java.lang.Iterable<? extends com.bytedanceapi.model.common.TranscodeInfo> values) {
       if (transcodeInfosBuilder_ == null) {
         ensureTranscodeInfosIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -1198,7 +1198,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.TranscodeInfo TranscodeInfos = 3;</code>
      */
-    public TranscodeInfo.Builder getTranscodeInfosBuilder(
+    public com.bytedanceapi.model.common.TranscodeInfo.Builder getTranscodeInfosBuilder(
         int index) {
       return getTranscodeInfosFieldBuilder().getBuilder(index);
     }
@@ -1209,7 +1209,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.TranscodeInfo TranscodeInfos = 3;</code>
      */
-    public TranscodeInfoOrBuilder getTranscodeInfosOrBuilder(
+    public com.bytedanceapi.model.common.TranscodeInfoOrBuilder getTranscodeInfosOrBuilder(
         int index) {
       if (transcodeInfosBuilder_ == null) {
         return transcodeInfos_.get(index);  } else {
@@ -1223,7 +1223,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.TranscodeInfo TranscodeInfos = 3;</code>
      */
-    public java.util.List<? extends TranscodeInfoOrBuilder>
+    public java.util.List<? extends com.bytedanceapi.model.common.TranscodeInfoOrBuilder> 
          getTranscodeInfosOrBuilderList() {
       if (transcodeInfosBuilder_ != null) {
         return transcodeInfosBuilder_.getMessageOrBuilderList();
@@ -1238,9 +1238,9 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.TranscodeInfo TranscodeInfos = 3;</code>
      */
-    public TranscodeInfo.Builder addTranscodeInfosBuilder() {
+    public com.bytedanceapi.model.common.TranscodeInfo.Builder addTranscodeInfosBuilder() {
       return getTranscodeInfosFieldBuilder().addBuilder(
-          TranscodeInfo.getDefaultInstance());
+          com.bytedanceapi.model.common.TranscodeInfo.getDefaultInstance());
     }
     /**
      * <pre>
@@ -1249,10 +1249,10 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.TranscodeInfo TranscodeInfos = 3;</code>
      */
-    public TranscodeInfo.Builder addTranscodeInfosBuilder(
+    public com.bytedanceapi.model.common.TranscodeInfo.Builder addTranscodeInfosBuilder(
         int index) {
       return getTranscodeInfosFieldBuilder().addBuilder(
-          index, TranscodeInfo.getDefaultInstance());
+          index, com.bytedanceapi.model.common.TranscodeInfo.getDefaultInstance());
     }
     /**
      * <pre>
@@ -1261,16 +1261,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.TranscodeInfo TranscodeInfos = 3;</code>
      */
-    public java.util.List<TranscodeInfo.Builder>
+    public java.util.List<com.bytedanceapi.model.common.TranscodeInfo.Builder> 
          getTranscodeInfosBuilderList() {
       return getTranscodeInfosFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        TranscodeInfo, TranscodeInfo.Builder, TranscodeInfoOrBuilder>
+        com.bytedanceapi.model.common.TranscodeInfo, com.bytedanceapi.model.common.TranscodeInfo.Builder, com.bytedanceapi.model.common.TranscodeInfoOrBuilder> 
         getTranscodeInfosFieldBuilder() {
       if (transcodeInfosBuilder_ == null) {
         transcodeInfosBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            TranscodeInfo, TranscodeInfo.Builder, TranscodeInfoOrBuilder>(
+            com.bytedanceapi.model.common.TranscodeInfo, com.bytedanceapi.model.common.TranscodeInfo.Builder, com.bytedanceapi.model.common.TranscodeInfoOrBuilder>(
                 transcodeInfos_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
@@ -1279,13 +1279,13 @@ private static final long serialVersionUID = 0L;
       }
       return transcodeInfosBuilder_;
     }
-    @Override
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @Override
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -1296,18 +1296,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:Vcloud.Models.Vod.VideoInfo)
-  private static final VideoInfo DEFAULT_INSTANCE;
+  private static final com.bytedanceapi.model.common.VideoInfo DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new VideoInfo();
+    DEFAULT_INSTANCE = new com.bytedanceapi.model.common.VideoInfo();
   }
 
-  public static VideoInfo getDefaultInstance() {
+  public static com.bytedanceapi.model.common.VideoInfo getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<VideoInfo>
       PARSER = new com.google.protobuf.AbstractParser<VideoInfo>() {
-    @Override
+    @java.lang.Override
     public VideoInfo parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1320,13 +1320,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @Override
+  @java.lang.Override
   public com.google.protobuf.Parser<VideoInfo> getParserForType() {
     return PARSER;
   }
 
-  @Override
-  public VideoInfo getDefaultInstanceForType() {
+  @java.lang.Override
+  public com.bytedanceapi.model.common.VideoInfo getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

@@ -107,7 +107,7 @@ public final class VodMedia {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    String[] descriptorData = {
+    java.lang.String[] descriptorData = {
       "\n\017vod_media.proto\022\021Vcloud.Models.Vod\032\nba" +
       "se.proto\032\036google/protobuf/wrappers.proto" +
       "\032\034google/api/annotations.proto\">\n\037Update" +
@@ -178,7 +178,7 @@ public final class VodMedia {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          Base.getDescriptor(),
+          com.bytedanceapi.model.common.Base.getDescriptor(),
           com.google.protobuf.WrappersProto.getDescriptor(),
           com.google.api.AnnotationsProto.getDescriptor(),
         });
@@ -187,109 +187,109 @@ public final class VodMedia {
     internal_static_Vcloud_Models_Vod_UpdateVideoPublishStatusRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_UpdateVideoPublishStatusRequest_descriptor,
-        new String[] { "Vid", "Status", });
+        new java.lang.String[] { "Vid", "Status", });
     internal_static_Vcloud_Models_Vod_UpdateVideoPublishStatusResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_Vcloud_Models_Vod_UpdateVideoPublishStatusResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_UpdateVideoPublishStatusResponse_descriptor,
-        new String[] { "ResponseMetadata", });
+        new java.lang.String[] { "ResponseMetadata", });
     internal_static_Vcloud_Models_Vod_UpdateVideoInfoRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_Vcloud_Models_Vod_UpdateVideoInfoRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_UpdateVideoInfoRequest_descriptor,
-        new String[] { "Vid", "PosterUri", "Title", "Description", "Tags", });
+        new java.lang.String[] { "Vid", "PosterUri", "Title", "Description", "Tags", });
     internal_static_Vcloud_Models_Vod_UpdateVideoInfoResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_Vcloud_Models_Vod_UpdateVideoInfoResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_UpdateVideoInfoResponse_descriptor,
-        new String[] { "ResponseMetadata", });
+        new java.lang.String[] { "ResponseMetadata", });
     internal_static_Vcloud_Models_Vod_GetVideoInfosRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_Vcloud_Models_Vod_GetVideoInfosRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_GetVideoInfosRequest_descriptor,
-        new String[] { "Vids", });
+        new java.lang.String[] { "Vids", });
     internal_static_Vcloud_Models_Vod_AudioStreamMeta_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_Vcloud_Models_Vod_AudioStreamMeta_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_AudioStreamMeta_descriptor,
-        new String[] { "Codec", "Duration", "SampleRate", "Bitrate", });
+        new java.lang.String[] { "Codec", "Duration", "SampleRate", "Bitrate", });
     internal_static_Vcloud_Models_Vod_VideoStreamMeta_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_Vcloud_Models_Vod_VideoStreamMeta_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_VideoStreamMeta_descriptor,
-        new String[] { "Codec", "Height", "Width", "Duration", "Definition", "Bitrate", "Fps", });
+        new java.lang.String[] { "Codec", "Height", "Width", "Duration", "Definition", "Bitrate", "Fps", });
     internal_static_Vcloud_Models_Vod_TranscodeInfo_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_Vcloud_Models_Vod_TranscodeInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_TranscodeInfo_descriptor,
-        new String[] { "FileId", "Md5", "FileType", "LogoType", "Encrypt", "Format", "Duration", "Size", "StoreUri", "VideoStreamMeta", "AudioStreamMeta", "CreateTime", });
+        new java.lang.String[] { "FileId", "Md5", "FileType", "LogoType", "Encrypt", "Format", "Duration", "Size", "StoreUri", "VideoStreamMeta", "AudioStreamMeta", "CreateTime", });
     internal_static_Vcloud_Models_Vod_SourceInfo_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_Vcloud_Models_Vod_SourceInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_SourceInfo_descriptor,
-        new String[] { "FileId", "Md5", "FileType", "Codec", "Height", "Width", "Format", "Duration", "Size", "StoreUri", "Definition", "Bitrate", "Fps", "CreateTime", });
+        new java.lang.String[] { "FileId", "Md5", "FileType", "Codec", "Height", "Width", "Format", "Duration", "Size", "StoreUri", "Definition", "Bitrate", "Fps", "CreateTime", });
     internal_static_Vcloud_Models_Vod_BasicInfo_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_Vcloud_Models_Vod_BasicInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_BasicInfo_descriptor,
-        new String[] { "SpaceName", "Vid", "Title", "Description", "PosterUri", "PublishStatus", "AuditStatus", "Tags", "CreateTime", });
+        new java.lang.String[] { "SpaceName", "Vid", "Title", "Description", "PosterUri", "PublishStatus", "AuditStatus", "Tags", "CreateTime", });
     internal_static_Vcloud_Models_Vod_VideoInfo_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_Vcloud_Models_Vod_VideoInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_VideoInfo_descriptor,
-        new String[] { "BasicInfo", "SourceInfo", "TranscodeInfos", });
+        new java.lang.String[] { "BasicInfo", "SourceInfo", "TranscodeInfos", });
     internal_static_Vcloud_Models_Vod_GetVideoInfosData_descriptor =
       getDescriptor().getMessageTypes().get(11);
     internal_static_Vcloud_Models_Vod_GetVideoInfosData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_GetVideoInfosData_descriptor,
-        new String[] { "VideoInfoList", "NotExistVids", });
+        new java.lang.String[] { "VideoInfoList", "NotExistVids", });
     internal_static_Vcloud_Models_Vod_GetVideoInfosResponse_descriptor =
       getDescriptor().getMessageTypes().get(12);
     internal_static_Vcloud_Models_Vod_GetVideoInfosResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_GetVideoInfosResponse_descriptor,
-        new String[] { "ResponseMetadata", "Result", });
+        new java.lang.String[] { "ResponseMetadata", "Result", });
     internal_static_Vcloud_Models_Vod_GetRecommendedPostersRequest_descriptor =
       getDescriptor().getMessageTypes().get(13);
     internal_static_Vcloud_Models_Vod_GetRecommendedPostersRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_GetRecommendedPostersRequest_descriptor,
-        new String[] { "Vids", });
+        new java.lang.String[] { "Vids", });
     internal_static_Vcloud_Models_Vod_StoreUriGroup_descriptor =
       getDescriptor().getMessageTypes().get(14);
     internal_static_Vcloud_Models_Vod_StoreUriGroup_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_StoreUriGroup_descriptor,
-        new String[] { "Vid", "StoreUris", });
+        new java.lang.String[] { "Vid", "StoreUris", });
     internal_static_Vcloud_Models_Vod_GetRecPostersData_descriptor =
       getDescriptor().getMessageTypes().get(15);
     internal_static_Vcloud_Models_Vod_GetRecPostersData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_GetRecPostersData_descriptor,
-        new String[] { "StoreUriGroups", "NotExistVids", });
+        new java.lang.String[] { "StoreUriGroups", "NotExistVids", });
     internal_static_Vcloud_Models_Vod_GetRecPostersResponse_descriptor =
       getDescriptor().getMessageTypes().get(16);
     internal_static_Vcloud_Models_Vod_GetRecPostersResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_GetRecPostersResponse_descriptor,
-        new String[] { "ResponseMetadata", "Result", });
+        new java.lang.String[] { "ResponseMetadata", "Result", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    Base.getDescriptor();
+    com.bytedanceapi.model.common.Base.getDescriptor();
     com.google.protobuf.WrappersProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
   }

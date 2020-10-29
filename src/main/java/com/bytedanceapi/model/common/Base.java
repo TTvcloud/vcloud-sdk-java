@@ -32,7 +32,7 @@ public final class Base {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    String[] descriptorData = {
+    java.lang.String[] descriptorData = {
       "\n\nbase.proto\022\022Vcloud.Models.Base\"\231\001\n\020Res" +
       "ponseMetadata\022\021\n\tRequestId\030\001 \001(\t\022\016\n\006Acti" +
       "on\030\002 \001(\t\022\017\n\007Version\030\003 \001(\t\022\017\n\007Service\030\004 \001" +
@@ -52,13 +52,13 @@ public final class Base {
     internal_static_Vcloud_Models_Base_ResponseMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Base_ResponseMetadata_descriptor,
-        new String[] { "RequestId", "Action", "Version", "Service", "Region", "Error", });
+        new java.lang.String[] { "RequestId", "Action", "Version", "Service", "Region", "Error", });
     internal_static_Vcloud_Models_Base_ResponseError_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_Vcloud_Models_Base_ResponseError_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Base_ResponseError_descriptor,
-        new String[] { "Code", "Message", });
+        new java.lang.String[] { "Code", "Message", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

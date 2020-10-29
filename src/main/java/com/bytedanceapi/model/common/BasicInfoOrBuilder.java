@@ -15,7 +15,7 @@ public interface BasicInfoOrBuilder extends
    * <code>string SpaceName = 1;</code>
    * @return The spaceName.
    */
-  String getSpaceName();
+  java.lang.String getSpaceName();
   /**
    * <pre>
    *空间名
@@ -35,7 +35,7 @@ public interface BasicInfoOrBuilder extends
    * <code>string Vid = 2;</code>
    * @return The vid.
    */
-  String getVid();
+  java.lang.String getVid();
   /**
    * <pre>
    *视频ID
@@ -55,7 +55,7 @@ public interface BasicInfoOrBuilder extends
    * <code>string Title = 3;</code>
    * @return The title.
    */
-  String getTitle();
+  java.lang.String getTitle();
   /**
    * <pre>
    *视频名称
@@ -75,7 +75,7 @@ public interface BasicInfoOrBuilder extends
    * <code>string Description = 4;</code>
    * @return The description.
    */
-  String getDescription();
+  java.lang.String getDescription();
   /**
    * <pre>
    *视频描述
@@ -95,7 +95,7 @@ public interface BasicInfoOrBuilder extends
    * <code>string PosterUri = 5;</code>
    * @return The posterUri.
    */
-  String getPosterUri();
+  java.lang.String getPosterUri();
   /**
    * <pre>
    *封面图对象地址
@@ -115,7 +115,7 @@ public interface BasicInfoOrBuilder extends
    * <code>string PublishStatus = 6;</code>
    * @return The publishStatus.
    */
-  String getPublishStatus();
+  java.lang.String getPublishStatus();
   /**
    * <pre>
    *发布状态
@@ -145,7 +145,7 @@ public interface BasicInfoOrBuilder extends
    * <code>repeated string Tags = 8;</code>
    * @return A list containing the tags.
    */
-  java.util.List<String>
+  java.util.List<java.lang.String>
       getTagsList();
   /**
    * <pre>
@@ -165,7 +165,7 @@ public interface BasicInfoOrBuilder extends
    * @param index The index of the element to return.
    * @return The tags at the given index.
    */
-  String getTags(int index);
+  java.lang.String getTags(int index);
   /**
    * <pre>
    *标签列表
@@ -186,7 +186,7 @@ public interface BasicInfoOrBuilder extends
    * <code>string CreateTime = 9;</code>
    * @return The createTime.
    */
-  String getCreateTime();
+  java.lang.String getCreateTime();
   /**
    * <pre>
    *创建时间

@@ -15,7 +15,7 @@ public interface StoreUriGroupOrBuilder extends
    * <code>string Vid = 1;</code>
    * @return The vid.
    */
-  String getVid();
+  java.lang.String getVid();
   /**
    * <pre>
    *视频ID
@@ -35,7 +35,7 @@ public interface StoreUriGroupOrBuilder extends
    * <code>repeated string StoreUris = 2;</code>
    * @return A list containing the storeUris.
    */
-  java.util.List<String>
+  java.util.List<java.lang.String>
       getStoreUrisList();
   /**
    * <pre>
@@ -55,7 +55,7 @@ public interface StoreUriGroupOrBuilder extends
    * @param index The index of the element to return.
    * @return The storeUris at the given index.
    */
-  String getStoreUris(int index);
+  java.lang.String getStoreUris(int index);
   /**
    * <pre>
    *封面图对象地址列表

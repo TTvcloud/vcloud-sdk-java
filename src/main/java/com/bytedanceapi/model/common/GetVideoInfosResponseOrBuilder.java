@@ -16,11 +16,11 @@ public interface GetVideoInfosResponseOrBuilder extends
    * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
    * @return The responseMetadata.
    */
-  ResponseMetadata getResponseMetadata();
+  com.bytedanceapi.model.common.ResponseMetadata getResponseMetadata();
   /**
    * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
    */
-  ResponseMetadataOrBuilder getResponseMetadataOrBuilder();
+  com.bytedanceapi.model.common.ResponseMetadataOrBuilder getResponseMetadataOrBuilder();
 
   /**
    * <code>.Vcloud.Models.Vod.GetVideoInfosData Result = 2;</code>
@@ -31,9 +31,9 @@ public interface GetVideoInfosResponseOrBuilder extends
    * <code>.Vcloud.Models.Vod.GetVideoInfosData Result = 2;</code>
    * @return The result.
    */
-  GetVideoInfosData getResult();
+  com.bytedanceapi.model.common.GetVideoInfosData getResult();
   /**
    * <code>.Vcloud.Models.Vod.GetVideoInfosData Result = 2;</code>
    */
-  GetVideoInfosDataOrBuilder getResultOrBuilder();
+  com.bytedanceapi.model.common.GetVideoInfosDataOrBuilder getResultOrBuilder();
 }

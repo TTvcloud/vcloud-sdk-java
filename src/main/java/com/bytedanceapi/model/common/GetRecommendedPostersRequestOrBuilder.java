@@ -15,7 +15,7 @@ public interface GetRecommendedPostersRequestOrBuilder extends
    * <code>repeated string Vids = 1;</code>
    * @return A list containing the vids.
    */
-  java.util.List<String>
+  java.util.List<java.lang.String>
       getVidsList();
   /**
    * <pre>
@@ -35,7 +35,7 @@ public interface GetRecommendedPostersRequestOrBuilder extends
    * @param index The index of the element to return.
    * @return The vids at the given index.
    */
-  String getVids(int index);
+  java.lang.String getVids(int index);
   /**
    * <pre>
    *视频ID列表

@@ -16,11 +16,11 @@ public interface GetRecPostersResponseOrBuilder extends
    * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
    * @return The responseMetadata.
    */
-  ResponseMetadata getResponseMetadata();
+  com.bytedanceapi.model.common.ResponseMetadata getResponseMetadata();
   /**
    * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
    */
-  ResponseMetadataOrBuilder getResponseMetadataOrBuilder();
+  com.bytedanceapi.model.common.ResponseMetadataOrBuilder getResponseMetadataOrBuilder();
 
   /**
    * <code>.Vcloud.Models.Vod.GetRecPostersData Result = 2;</code>
@@ -31,9 +31,9 @@ public interface GetRecPostersResponseOrBuilder extends
    * <code>.Vcloud.Models.Vod.GetRecPostersData Result = 2;</code>
    * @return The result.
    */
-  GetRecPostersData getResult();
+  com.bytedanceapi.model.common.GetRecPostersData getResult();
   /**
    * <code>.Vcloud.Models.Vod.GetRecPostersData Result = 2;</code>
    */
-  GetRecPostersDataOrBuilder getResultOrBuilder();
+  com.bytedanceapi.model.common.GetRecPostersDataOrBuilder getResultOrBuilder();
 }

@@ -15,7 +15,7 @@ public interface VideoStreamMetaOrBuilder extends
    * <code>string Codec = 1;</code>
    * @return The codec.
    */
-  String getCodec();
+  java.lang.String getCodec();
   /**
    * <pre>
    *视频编码格式
@@ -65,7 +65,7 @@ public interface VideoStreamMetaOrBuilder extends
    * <code>string Definition = 5;</code>
    * @return The definition.
    */
-  String getDefinition();
+  java.lang.String getDefinition();
   /**
    * <pre>
    *视频清晰度

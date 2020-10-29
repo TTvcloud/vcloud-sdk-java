@@ -15,7 +15,7 @@ public interface VodGetOriginalPlayInfoResultOrBuilder extends
    * <code>string FileType = 1;</code>
    * @return The fileType.
    */
-  String getFileType();
+  java.lang.String getFileType();
   /**
    * <pre>
    *返回的媒体类型(video/audio)
@@ -75,7 +75,7 @@ public interface VodGetOriginalPlayInfoResultOrBuilder extends
    * <code>string Format = 6;</code>
    * @return The format.
    */
-  String getFormat();
+  java.lang.String getFormat();
   /**
    * <pre>
    *视频格式
@@ -95,7 +95,7 @@ public interface VodGetOriginalPlayInfoResultOrBuilder extends
    * <code>string Codec = 7;</code>
    * @return The codec.
    */
-  String getCodec();
+  java.lang.String getCodec();
   /**
    * <pre>
    *编码类型
@@ -125,7 +125,7 @@ public interface VodGetOriginalPlayInfoResultOrBuilder extends
    * <code>string Md5 = 9;</code>
    * @return The md5.
    */
-  String getMd5();
+  java.lang.String getMd5();
   /**
    * <pre>
    * hash值
@@ -145,7 +145,7 @@ public interface VodGetOriginalPlayInfoResultOrBuilder extends
    * <code>string MainPlayUrl = 10;</code>
    * @return The mainPlayUrl.
    */
-  String getMainPlayUrl();
+  java.lang.String getMainPlayUrl();
   /**
    * <pre>
    *主播放地址
@@ -165,7 +165,7 @@ public interface VodGetOriginalPlayInfoResultOrBuilder extends
    * <code>string BackupPlayUrl = 11;</code>
    * @return The backupPlayUrl.
    */
-  String getBackupPlayUrl();
+  java.lang.String getBackupPlayUrl();
   /**
    * <pre>
    *备用播放地址

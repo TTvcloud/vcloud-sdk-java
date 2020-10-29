@@ -14,7 +14,7 @@ public interface GetVideoInfosDataOrBuilder extends
    *
    * <code>repeated .Vcloud.Models.Vod.VideoInfo VideoInfoList = 1;</code>
    */
-  java.util.List<VideoInfo>
+  java.util.List<com.bytedanceapi.model.common.VideoInfo> 
       getVideoInfoListList();
   /**
    * <pre>
@@ -23,7 +23,7 @@ public interface GetVideoInfosDataOrBuilder extends
    *
    * <code>repeated .Vcloud.Models.Vod.VideoInfo VideoInfoList = 1;</code>
    */
-  VideoInfo getVideoInfoList(int index);
+  com.bytedanceapi.model.common.VideoInfo getVideoInfoList(int index);
   /**
    * <pre>
    *视频信息列表
@@ -39,7 +39,7 @@ public interface GetVideoInfosDataOrBuilder extends
    *
    * <code>repeated .Vcloud.Models.Vod.VideoInfo VideoInfoList = 1;</code>
    */
-  java.util.List<? extends VideoInfoOrBuilder>
+  java.util.List<? extends com.bytedanceapi.model.common.VideoInfoOrBuilder> 
       getVideoInfoListOrBuilderList();
   /**
    * <pre>
@@ -48,7 +48,7 @@ public interface GetVideoInfosDataOrBuilder extends
    *
    * <code>repeated .Vcloud.Models.Vod.VideoInfo VideoInfoList = 1;</code>
    */
-  VideoInfoOrBuilder getVideoInfoListOrBuilder(
+  com.bytedanceapi.model.common.VideoInfoOrBuilder getVideoInfoListOrBuilder(
       int index);
 
   /**
@@ -59,7 +59,7 @@ public interface GetVideoInfosDataOrBuilder extends
    * <code>repeated string NotExistVids = 2;</code>
    * @return A list containing the notExistVids.
    */
-  java.util.List<String>
+  java.util.List<java.lang.String>
       getNotExistVidsList();
   /**
    * <pre>
@@ -79,7 +79,7 @@ public interface GetVideoInfosDataOrBuilder extends
    * @param index The index of the element to return.
    * @return The notExistVids at the given index.
    */
-  String getNotExistVids(int index);
+  java.lang.String getNotExistVids(int index);
   /**
    * <pre>
    *不存在的视频VID列表

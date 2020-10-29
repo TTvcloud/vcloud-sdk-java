@@ -15,7 +15,7 @@ public interface TranscodeInfoOrBuilder extends
    * <code>string FileId = 1;</code>
    * @return The fileId.
    */
-  String getFileId();
+  java.lang.String getFileId();
   /**
    * <pre>
    *文件ID
@@ -35,7 +35,7 @@ public interface TranscodeInfoOrBuilder extends
    * <code>string Md5 = 2;</code>
    * @return The md5.
    */
-  String getMd5();
+  java.lang.String getMd5();
   /**
    * <pre>
    * hash值
@@ -55,7 +55,7 @@ public interface TranscodeInfoOrBuilder extends
    * <code>string FileType = 3;</code>
    * @return The fileType.
    */
-  String getFileType();
+  java.lang.String getFileType();
   /**
    * <pre>
    *文件类型 video/audio
@@ -75,7 +75,7 @@ public interface TranscodeInfoOrBuilder extends
    * <code>string LogoType = 4;</code>
    * @return The logoType.
    */
-  String getLogoType();
+  java.lang.String getLogoType();
   /**
    * <pre>
    * logo类型
@@ -105,7 +105,7 @@ public interface TranscodeInfoOrBuilder extends
    * <code>string Format = 6;</code>
    * @return The format.
    */
-  String getFormat();
+  java.lang.String getFormat();
   /**
    * <pre>
    *文件格式
@@ -145,7 +145,7 @@ public interface TranscodeInfoOrBuilder extends
    * <code>string StoreUri = 9;</code>
    * @return The storeUri.
    */
-  String getStoreUri();
+  java.lang.String getStoreUri();
   /**
    * <pre>
    *对象地址
@@ -174,7 +174,7 @@ public interface TranscodeInfoOrBuilder extends
    * <code>.Vcloud.Models.Vod.VideoStreamMeta VideoStreamMeta = 10;</code>
    * @return The videoStreamMeta.
    */
-  VideoStreamMeta getVideoStreamMeta();
+  com.bytedanceapi.model.common.VideoStreamMeta getVideoStreamMeta();
   /**
    * <pre>
    *视频流信息
@@ -182,7 +182,7 @@ public interface TranscodeInfoOrBuilder extends
    *
    * <code>.Vcloud.Models.Vod.VideoStreamMeta VideoStreamMeta = 10;</code>
    */
-  VideoStreamMetaOrBuilder getVideoStreamMetaOrBuilder();
+  com.bytedanceapi.model.common.VideoStreamMetaOrBuilder getVideoStreamMetaOrBuilder();
 
   /**
    * <pre>
@@ -201,7 +201,7 @@ public interface TranscodeInfoOrBuilder extends
    * <code>.Vcloud.Models.Vod.AudioStreamMeta AudioStreamMeta = 11;</code>
    * @return The audioStreamMeta.
    */
-  AudioStreamMeta getAudioStreamMeta();
+  com.bytedanceapi.model.common.AudioStreamMeta getAudioStreamMeta();
   /**
    * <pre>
    *音频流信息
@@ -209,7 +209,7 @@ public interface TranscodeInfoOrBuilder extends
    *
    * <code>.Vcloud.Models.Vod.AudioStreamMeta AudioStreamMeta = 11;</code>
    */
-  AudioStreamMetaOrBuilder getAudioStreamMetaOrBuilder();
+  com.bytedanceapi.model.common.AudioStreamMetaOrBuilder getAudioStreamMetaOrBuilder();
 
   /**
    * <pre>
@@ -219,7 +219,7 @@ public interface TranscodeInfoOrBuilder extends
    * <code>string CreateTime = 12;</code>
    * @return The createTime.
    */
-  String getCreateTime();
+  java.lang.String getCreateTime();
   /**
    * <pre>
    *创建时间

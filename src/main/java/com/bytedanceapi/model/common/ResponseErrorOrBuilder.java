@@ -15,7 +15,7 @@ public interface ResponseErrorOrBuilder extends
    * <code>string Code = 1;</code>
    * @return The code.
    */
-  String getCode();
+  java.lang.String getCode();
   /**
    * <pre>
    * 错误码
@@ -35,7 +35,7 @@ public interface ResponseErrorOrBuilder extends
    * <code>string Message = 2;</code>
    * @return The message.
    */
-  String getMessage();
+  java.lang.String getMessage();
   /**
    * <pre>
    * 详细错误信息

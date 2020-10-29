@@ -15,7 +15,7 @@ public interface UpdateVideoInfoRequestOrBuilder extends
    * <code>string Vid = 1;</code>
    * @return The vid.
    */
-  String getVid();
+  java.lang.String getVid();
   /**
    * <pre>
    *视频ID

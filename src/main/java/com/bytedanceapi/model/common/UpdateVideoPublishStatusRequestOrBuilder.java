@@ -15,7 +15,7 @@ public interface UpdateVideoPublishStatusRequestOrBuilder extends
    * <code>string Vid = 1;</code>
    * @return The vid.
    */
-  String getVid();
+  java.lang.String getVid();
   /**
    * <pre>
    *视频ID
@@ -35,7 +35,7 @@ public interface UpdateVideoPublishStatusRequestOrBuilder extends
    * <code>string Status = 2;</code>
    * @return The status.
    */
-  String getStatus();
+  java.lang.String getStatus();
   /**
    * <pre>
    *视频发布状态

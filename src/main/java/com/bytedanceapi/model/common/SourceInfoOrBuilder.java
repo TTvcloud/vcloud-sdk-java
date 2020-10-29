@@ -15,7 +15,7 @@ public interface SourceInfoOrBuilder extends
    * <code>string FileId = 1;</code>
    * @return The fileId.
    */
-  String getFileId();
+  java.lang.String getFileId();
   /**
    * <pre>
    *文件ID
@@ -35,7 +35,7 @@ public interface SourceInfoOrBuilder extends
    * <code>string Md5 = 2;</code>
    * @return The md5.
    */
-  String getMd5();
+  java.lang.String getMd5();
   /**
    * <pre>
    * hash值
@@ -55,7 +55,7 @@ public interface SourceInfoOrBuilder extends
    * <code>string FileType = 3;</code>
    * @return The fileType.
    */
-  String getFileType();
+  java.lang.String getFileType();
   /**
    * <pre>
    *文件类型 video/audio
@@ -75,7 +75,7 @@ public interface SourceInfoOrBuilder extends
    * <code>string Codec = 4;</code>
    * @return The codec.
    */
-  String getCodec();
+  java.lang.String getCodec();
   /**
    * <pre>
    *编码格式
@@ -115,7 +115,7 @@ public interface SourceInfoOrBuilder extends
    * <code>string Format = 7;</code>
    * @return The format.
    */
-  String getFormat();
+  java.lang.String getFormat();
   /**
    * <pre>
    *文件格式
@@ -155,7 +155,7 @@ public interface SourceInfoOrBuilder extends
    * <code>string StoreUri = 10;</code>
    * @return The storeUri.
    */
-  String getStoreUri();
+  java.lang.String getStoreUri();
   /**
    * <pre>
    *对象地址
@@ -175,7 +175,7 @@ public interface SourceInfoOrBuilder extends
    * <code>string Definition = 11;</code>
    * @return The definition.
    */
-  String getDefinition();
+  java.lang.String getDefinition();
   /**
    * <pre>
    *视频分辨率
@@ -215,7 +215,7 @@ public interface SourceInfoOrBuilder extends
    * <code>string CreateTime = 14;</code>
    * @return The createTime.
    */
-  String getCreateTime();
+  java.lang.String getCreateTime();
   /**
    * <pre>
    *创建时间

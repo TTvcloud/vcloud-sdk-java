@@ -18,14 +18,14 @@ private static final long serialVersionUID = 0L;
   private UpdateVideoPublishStatusResponse() {
   }
 
-  @Override
+  @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected Object newInstance(
+  protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
     return new UpdateVideoPublishStatusResponse();
   }
 
-  @Override
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -36,7 +36,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new NullPointerException();
+      throw new java.lang.NullPointerException();
     }
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -49,11 +49,11 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            ResponseMetadata.Builder subBuilder = null;
+            com.bytedanceapi.model.common.ResponseMetadata.Builder subBuilder = null;
             if (responseMetadata_ != null) {
               subBuilder = responseMetadata_.toBuilder();
             }
-            responseMetadata_ = input.readMessage(ResponseMetadata.parser(), extensionRegistry);
+            responseMetadata_ = input.readMessage(com.bytedanceapi.model.common.ResponseMetadata.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(responseMetadata_);
               responseMetadata_ = subBuilder.buildPartial();
@@ -82,24 +82,24 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return VodMedia.internal_static_Vcloud_Models_Vod_UpdateVideoPublishStatusResponse_descriptor;
+    return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_UpdateVideoPublishStatusResponse_descriptor;
   }
 
-  @Override
-  protected FieldAccessorTable
+  @java.lang.Override
+  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return VodMedia.internal_static_Vcloud_Models_Vod_UpdateVideoPublishStatusResponse_fieldAccessorTable
+    return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_UpdateVideoPublishStatusResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            UpdateVideoPublishStatusResponse.class, Builder.class);
+            com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse.class, com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse.Builder.class);
   }
 
   public static final int RESPONSEMETADATA_FIELD_NUMBER = 1;
-  private ResponseMetadata responseMetadata_;
+  private com.bytedanceapi.model.common.ResponseMetadata responseMetadata_;
   /**
    * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
    * @return Whether the responseMetadata field is set.
    */
-  @Override
+  @java.lang.Override
   public boolean hasResponseMetadata() {
     return responseMetadata_ != null;
   }
@@ -107,20 +107,20 @@ private static final long serialVersionUID = 0L;
    * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
    * @return The responseMetadata.
    */
-  @Override
-  public ResponseMetadata getResponseMetadata() {
-    return responseMetadata_ == null ? ResponseMetadata.getDefaultInstance() : responseMetadata_;
+  @java.lang.Override
+  public com.bytedanceapi.model.common.ResponseMetadata getResponseMetadata() {
+    return responseMetadata_ == null ? com.bytedanceapi.model.common.ResponseMetadata.getDefaultInstance() : responseMetadata_;
   }
   /**
    * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
    */
-  @Override
-  public ResponseMetadataOrBuilder getResponseMetadataOrBuilder() {
+  @java.lang.Override
+  public com.bytedanceapi.model.common.ResponseMetadataOrBuilder getResponseMetadataOrBuilder() {
     return getResponseMetadata();
   }
 
   private byte memoizedIsInitialized = -1;
-  @Override
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -130,7 +130,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @Override
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (responseMetadata_ != null) {
@@ -139,7 +139,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
-  @Override
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -154,15 +154,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @Override
-  public boolean equals(final Object obj) {
+  @java.lang.Override
+  public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof UpdateVideoPublishStatusResponse)) {
+    if (!(obj instanceof com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse)) {
       return super.equals(obj);
     }
-    UpdateVideoPublishStatusResponse other = (UpdateVideoPublishStatusResponse) obj;
+    com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse other = (com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse) obj;
 
     if (hasResponseMetadata() != other.hasResponseMetadata()) return false;
     if (hasResponseMetadata()) {
@@ -173,7 +173,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @Override
+  @java.lang.Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -189,69 +189,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static UpdateVideoPublishStatusResponse parseFrom(
+  public static com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static UpdateVideoPublishStatusResponse parseFrom(
+  public static com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static UpdateVideoPublishStatusResponse parseFrom(
+  public static com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static UpdateVideoPublishStatusResponse parseFrom(
+  public static com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static UpdateVideoPublishStatusResponse parseFrom(byte[] data)
+  public static com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static UpdateVideoPublishStatusResponse parseFrom(
+  public static com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static UpdateVideoPublishStatusResponse parseFrom(java.io.InputStream input)
+  public static com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static UpdateVideoPublishStatusResponse parseFrom(
+  public static com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static UpdateVideoPublishStatusResponse parseDelimitedFrom(java.io.InputStream input)
+  public static com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static UpdateVideoPublishStatusResponse parseDelimitedFrom(
+  public static com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static UpdateVideoPublishStatusResponse parseFrom(
+  public static com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static UpdateVideoPublishStatusResponse parseFrom(
+  public static com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -259,23 +259,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @Override
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(UpdateVideoPublishStatusResponse prototype) {
+  public static Builder newBuilder(com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @Override
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @Override
+  @java.lang.Override
   protected Builder newBuilderForType(
-      BuilderParent parent) {
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -285,18 +285,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:Vcloud.Models.Vod.UpdateVideoPublishStatusResponse)
-      UpdateVideoPublishStatusResponseOrBuilder {
+      com.bytedanceapi.model.common.UpdateVideoPublishStatusResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return VodMedia.internal_static_Vcloud_Models_Vod_UpdateVideoPublishStatusResponse_descriptor;
+      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_UpdateVideoPublishStatusResponse_descriptor;
     }
 
-    @Override
-    protected FieldAccessorTable
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return VodMedia.internal_static_Vcloud_Models_Vod_UpdateVideoPublishStatusResponse_fieldAccessorTable
+      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_UpdateVideoPublishStatusResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              UpdateVideoPublishStatusResponse.class, Builder.class);
+              com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse.class, com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse.Builder.class);
     }
 
     // Construct using com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse.newBuilder()
@@ -305,7 +305,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -314,7 +314,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @Override
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (responseMetadataBuilder_ == null) {
@@ -326,29 +326,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return VodMedia.internal_static_Vcloud_Models_Vod_UpdateVideoPublishStatusResponse_descriptor;
+      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_UpdateVideoPublishStatusResponse_descriptor;
     }
 
-    @Override
-    public UpdateVideoPublishStatusResponse getDefaultInstanceForType() {
-      return UpdateVideoPublishStatusResponse.getDefaultInstance();
+    @java.lang.Override
+    public com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse getDefaultInstanceForType() {
+      return com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse.getDefaultInstance();
     }
 
-    @Override
-    public UpdateVideoPublishStatusResponse build() {
-      UpdateVideoPublishStatusResponse result = buildPartial();
+    @java.lang.Override
+    public com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse build() {
+      com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @Override
-    public UpdateVideoPublishStatusResponse buildPartial() {
-      UpdateVideoPublishStatusResponse result = new UpdateVideoPublishStatusResponse(this);
+    @java.lang.Override
+    public com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse buildPartial() {
+      com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse result = new com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse(this);
       if (responseMetadataBuilder_ == null) {
         result.responseMetadata_ = responseMetadata_;
       } else {
@@ -358,50 +358,50 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public Builder clone() {
       return super.clone();
     }
-    @Override
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-    @Override
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @Override
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @Override
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @Override
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-    @Override
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof UpdateVideoPublishStatusResponse) {
-        return mergeFrom((UpdateVideoPublishStatusResponse)other);
+      if (other instanceof com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse) {
+        return mergeFrom((com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(UpdateVideoPublishStatusResponse other) {
-      if (other == UpdateVideoPublishStatusResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse other) {
+      if (other == com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse.getDefaultInstance()) return this;
       if (other.hasResponseMetadata()) {
         mergeResponseMetadata(other.getResponseMetadata());
       }
@@ -410,21 +410,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @Override
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @Override
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      UpdateVideoPublishStatusResponse parsedMessage = null;
+      com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (UpdateVideoPublishStatusResponse) e.getUnfinishedMessage();
+        parsedMessage = (com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -434,9 +434,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private ResponseMetadata responseMetadata_;
+    private com.bytedanceapi.model.common.ResponseMetadata responseMetadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        ResponseMetadata, ResponseMetadata.Builder, ResponseMetadataOrBuilder> responseMetadataBuilder_;
+        com.bytedanceapi.model.common.ResponseMetadata, com.bytedanceapi.model.common.ResponseMetadata.Builder, com.bytedanceapi.model.common.ResponseMetadataOrBuilder> responseMetadataBuilder_;
     /**
      * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      * @return Whether the responseMetadata field is set.
@@ -448,9 +448,9 @@ private static final long serialVersionUID = 0L;
      * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      * @return The responseMetadata.
      */
-    public ResponseMetadata getResponseMetadata() {
+    public com.bytedanceapi.model.common.ResponseMetadata getResponseMetadata() {
       if (responseMetadataBuilder_ == null) {
-        return responseMetadata_ == null ? ResponseMetadata.getDefaultInstance() : responseMetadata_;
+        return responseMetadata_ == null ? com.bytedanceapi.model.common.ResponseMetadata.getDefaultInstance() : responseMetadata_;
       } else {
         return responseMetadataBuilder_.getMessage();
       }
@@ -458,7 +458,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
-    public Builder setResponseMetadata(ResponseMetadata value) {
+    public Builder setResponseMetadata(com.bytedanceapi.model.common.ResponseMetadata value) {
       if (responseMetadataBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -475,7 +475,7 @@ private static final long serialVersionUID = 0L;
      * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
     public Builder setResponseMetadata(
-        ResponseMetadata.Builder builderForValue) {
+        com.bytedanceapi.model.common.ResponseMetadata.Builder builderForValue) {
       if (responseMetadataBuilder_ == null) {
         responseMetadata_ = builderForValue.build();
         onChanged();
@@ -488,11 +488,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
-    public Builder mergeResponseMetadata(ResponseMetadata value) {
+    public Builder mergeResponseMetadata(com.bytedanceapi.model.common.ResponseMetadata value) {
       if (responseMetadataBuilder_ == null) {
         if (responseMetadata_ != null) {
           responseMetadata_ =
-            ResponseMetadata.newBuilder(responseMetadata_).mergeFrom(value).buildPartial();
+            com.bytedanceapi.model.common.ResponseMetadata.newBuilder(responseMetadata_).mergeFrom(value).buildPartial();
         } else {
           responseMetadata_ = value;
         }
@@ -520,7 +520,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
-    public ResponseMetadata.Builder getResponseMetadataBuilder() {
+    public com.bytedanceapi.model.common.ResponseMetadata.Builder getResponseMetadataBuilder() {
       
       onChanged();
       return getResponseMetadataFieldBuilder().getBuilder();
@@ -528,23 +528,23 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
-    public ResponseMetadataOrBuilder getResponseMetadataOrBuilder() {
+    public com.bytedanceapi.model.common.ResponseMetadataOrBuilder getResponseMetadataOrBuilder() {
       if (responseMetadataBuilder_ != null) {
         return responseMetadataBuilder_.getMessageOrBuilder();
       } else {
         return responseMetadata_ == null ?
-            ResponseMetadata.getDefaultInstance() : responseMetadata_;
+            com.bytedanceapi.model.common.ResponseMetadata.getDefaultInstance() : responseMetadata_;
       }
     }
     /**
      * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        ResponseMetadata, ResponseMetadata.Builder, ResponseMetadataOrBuilder>
+        com.bytedanceapi.model.common.ResponseMetadata, com.bytedanceapi.model.common.ResponseMetadata.Builder, com.bytedanceapi.model.common.ResponseMetadataOrBuilder> 
         getResponseMetadataFieldBuilder() {
       if (responseMetadataBuilder_ == null) {
         responseMetadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            ResponseMetadata, ResponseMetadata.Builder, ResponseMetadataOrBuilder>(
+            com.bytedanceapi.model.common.ResponseMetadata, com.bytedanceapi.model.common.ResponseMetadata.Builder, com.bytedanceapi.model.common.ResponseMetadataOrBuilder>(
                 getResponseMetadata(),
                 getParentForChildren(),
                 isClean());
@@ -552,13 +552,13 @@ private static final long serialVersionUID = 0L;
       }
       return responseMetadataBuilder_;
     }
-    @Override
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @Override
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -569,18 +569,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:Vcloud.Models.Vod.UpdateVideoPublishStatusResponse)
-  private static final UpdateVideoPublishStatusResponse DEFAULT_INSTANCE;
+  private static final com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new UpdateVideoPublishStatusResponse();
+    DEFAULT_INSTANCE = new com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse();
   }
 
-  public static UpdateVideoPublishStatusResponse getDefaultInstance() {
+  public static com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<UpdateVideoPublishStatusResponse>
       PARSER = new com.google.protobuf.AbstractParser<UpdateVideoPublishStatusResponse>() {
-    @Override
+    @java.lang.Override
     public UpdateVideoPublishStatusResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -593,13 +593,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @Override
+  @java.lang.Override
   public com.google.protobuf.Parser<UpdateVideoPublishStatusResponse> getParserForType() {
     return PARSER;
   }
 
-  @Override
-  public UpdateVideoPublishStatusResponse getDefaultInstanceForType() {
+  @java.lang.Override
+  public com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

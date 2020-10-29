@@ -15,7 +15,7 @@ public interface VodGetPlayInfoRequestOrBuilder extends
    * <code>string Vid = 1;</code>
    * @return The vid.
    */
-  String getVid();
+  java.lang.String getVid();
   /**
    * <pre>
    * 视频ID
@@ -35,7 +35,7 @@ public interface VodGetPlayInfoRequestOrBuilder extends
    * <code>string Format = 2;</code>
    * @return The format.
    */
-  String getFormat();
+  java.lang.String getFormat();
   /**
    * <pre>
    *封装格式，支持mp4,dash,hls，默认mp4 Format
@@ -55,7 +55,7 @@ public interface VodGetPlayInfoRequestOrBuilder extends
    * <code>string Codec = 3;</code>
    * @return The codec.
    */
-  String getCodec();
+  java.lang.String getCodec();
   /**
    * <pre>
    *编码类型，默认h264，可选值为h264,h265等 Codec
@@ -75,7 +75,7 @@ public interface VodGetPlayInfoRequestOrBuilder extends
    * <code>string Definition = 4;</code>
    * @return The definition.
    */
-  String getDefinition();
+  java.lang.String getDefinition();
   /**
    * <pre>
    *视频流清晰度，默认返回全部，支持：240p，360p，480p，540p，720p，1080p
@@ -95,7 +95,7 @@ public interface VodGetPlayInfoRequestOrBuilder extends
    * <code>string FileType = 5;</code>
    * @return The fileType.
    */
-  String getFileType();
+  java.lang.String getFileType();
   /**
    * <pre>
    *流文件类型，默认video，支持：加密视频流evideo，加密音频流传eaudio，非加密视频流video，普通音频音频流audio
@@ -115,7 +115,7 @@ public interface VodGetPlayInfoRequestOrBuilder extends
    * <code>string LogoType = 6;</code>
    * @return The logoType.
    */
-  String getLogoType();
+  java.lang.String getLogoType();
   /**
    * <pre>
    * 水印贴片标签
@@ -135,7 +135,7 @@ public interface VodGetPlayInfoRequestOrBuilder extends
    * <code>string Base64 = 7;</code>
    * @return The base64.
    */
-  String getBase64();
+  java.lang.String getBase64();
   /**
    * <pre>
    *播放地址是否base64编码，默认否，支持设置： 0-否，1-是
@@ -155,7 +155,7 @@ public interface VodGetPlayInfoRequestOrBuilder extends
    * <code>string Ssl = 8;</code>
    * @return The ssl.
    */
-  String getSsl();
+  java.lang.String getSsl();
   /**
    * <pre>
    *返回https播放地址，默认否, 1-是；0-否

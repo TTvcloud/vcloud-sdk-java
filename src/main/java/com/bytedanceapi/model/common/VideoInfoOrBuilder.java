@@ -24,7 +24,7 @@ public interface VideoInfoOrBuilder extends
    * <code>.Vcloud.Models.Vod.BasicInfo BasicInfo = 1;</code>
    * @return The basicInfo.
    */
-  BasicInfo getBasicInfo();
+  com.bytedanceapi.model.common.BasicInfo getBasicInfo();
   /**
    * <pre>
    *视频基础信息
@@ -32,7 +32,7 @@ public interface VideoInfoOrBuilder extends
    *
    * <code>.Vcloud.Models.Vod.BasicInfo BasicInfo = 1;</code>
    */
-  BasicInfoOrBuilder getBasicInfoOrBuilder();
+  com.bytedanceapi.model.common.BasicInfoOrBuilder getBasicInfoOrBuilder();
 
   /**
    * <pre>
@@ -51,7 +51,7 @@ public interface VideoInfoOrBuilder extends
    * <code>.Vcloud.Models.Vod.SourceInfo SourceInfo = 2;</code>
    * @return The sourceInfo.
    */
-  SourceInfo getSourceInfo();
+  com.bytedanceapi.model.common.SourceInfo getSourceInfo();
   /**
    * <pre>
    *原视频信息
@@ -59,7 +59,7 @@ public interface VideoInfoOrBuilder extends
    *
    * <code>.Vcloud.Models.Vod.SourceInfo SourceInfo = 2;</code>
    */
-  SourceInfoOrBuilder getSourceInfoOrBuilder();
+  com.bytedanceapi.model.common.SourceInfoOrBuilder getSourceInfoOrBuilder();
 
   /**
    * <pre>
@@ -68,7 +68,7 @@ public interface VideoInfoOrBuilder extends
    *
    * <code>repeated .Vcloud.Models.Vod.TranscodeInfo TranscodeInfos = 3;</code>
    */
-  java.util.List<TranscodeInfo>
+  java.util.List<com.bytedanceapi.model.common.TranscodeInfo> 
       getTranscodeInfosList();
   /**
    * <pre>
@@ -77,7 +77,7 @@ public interface VideoInfoOrBuilder extends
    *
    * <code>repeated .Vcloud.Models.Vod.TranscodeInfo TranscodeInfos = 3;</code>
    */
-  TranscodeInfo getTranscodeInfos(int index);
+  com.bytedanceapi.model.common.TranscodeInfo getTranscodeInfos(int index);
   /**
    * <pre>
    *转码视频信息列表
@@ -93,7 +93,7 @@ public interface VideoInfoOrBuilder extends
    *
    * <code>repeated .Vcloud.Models.Vod.TranscodeInfo TranscodeInfos = 3;</code>
    */
-  java.util.List<? extends TranscodeInfoOrBuilder>
+  java.util.List<? extends com.bytedanceapi.model.common.TranscodeInfoOrBuilder> 
       getTranscodeInfosOrBuilderList();
   /**
    * <pre>
@@ -102,6 +102,6 @@ public interface VideoInfoOrBuilder extends
    *
    * <code>repeated .Vcloud.Models.Vod.TranscodeInfo TranscodeInfos = 3;</code>
    */
-  TranscodeInfoOrBuilder getTranscodeInfosOrBuilder(
+  com.bytedanceapi.model.common.TranscodeInfoOrBuilder getTranscodeInfosOrBuilder(
       int index);
 }

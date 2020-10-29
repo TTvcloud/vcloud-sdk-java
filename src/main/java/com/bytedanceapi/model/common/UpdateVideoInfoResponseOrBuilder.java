@@ -16,9 +16,9 @@ public interface UpdateVideoInfoResponseOrBuilder extends
    * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
    * @return The responseMetadata.
    */
-  ResponseMetadata getResponseMetadata();
+  com.bytedanceapi.model.common.ResponseMetadata getResponseMetadata();
   /**
    * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
    */
-  ResponseMetadataOrBuilder getResponseMetadataOrBuilder();
+  com.bytedanceapi.model.common.ResponseMetadataOrBuilder getResponseMetadataOrBuilder();
 }

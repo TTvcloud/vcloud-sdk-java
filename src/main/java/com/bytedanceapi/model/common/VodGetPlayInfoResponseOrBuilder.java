@@ -24,7 +24,7 @@ public interface VodGetPlayInfoResponseOrBuilder extends
    * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
    * @return The responseMetadata.
    */
-  ResponseMetadata getResponseMetadata();
+  com.bytedanceapi.model.common.ResponseMetadata getResponseMetadata();
   /**
    * <pre>
    * 响应通用信息
@@ -32,7 +32,7 @@ public interface VodGetPlayInfoResponseOrBuilder extends
    *
    * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
    */
-  ResponseMetadataOrBuilder getResponseMetadataOrBuilder();
+  com.bytedanceapi.model.common.ResponseMetadataOrBuilder getResponseMetadataOrBuilder();
 
   /**
    * <pre>
@@ -51,7 +51,7 @@ public interface VodGetPlayInfoResponseOrBuilder extends
    * <code>.Vcloud.Models.Vod.VodGetPlayInfoResult Result = 2;</code>
    * @return The result.
    */
-  VodGetPlayInfoResult getResult();
+  com.bytedanceapi.model.common.VodGetPlayInfoResult getResult();
   /**
    * <pre>
    * 响应结果
@@ -59,5 +59,5 @@ public interface VodGetPlayInfoResponseOrBuilder extends
    *
    * <code>.Vcloud.Models.Vod.VodGetPlayInfoResult Result = 2;</code>
    */
-  VodGetPlayInfoResultOrBuilder getResultOrBuilder();
+  com.bytedanceapi.model.common.VodGetPlayInfoResultOrBuilder getResultOrBuilder();
 }

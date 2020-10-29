@@ -62,7 +62,7 @@ public final class VodPlay {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    String[] descriptorData = {
+    java.lang.String[] descriptorData = {
       "\n\016vod_play.proto\022\021Vcloud.Models.Vod\032\nbas" +
       "e.proto\032\034google/api/annotations.proto\"\230\001" +
       "\n\025VodGetPlayInfoRequest\022\013\n\003Vid\030\001 \001(\t\022\016\n\006" +
@@ -121,7 +121,7 @@ public final class VodPlay {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          Base.getDescriptor(),
+          com.bytedanceapi.model.common.Base.getDescriptor(),
           com.google.api.AnnotationsProto.getDescriptor(),
         });
     internal_static_Vcloud_Models_Vod_VodGetPlayInfoRequest_descriptor =
@@ -129,55 +129,55 @@ public final class VodPlay {
     internal_static_Vcloud_Models_Vod_VodGetPlayInfoRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_VodGetPlayInfoRequest_descriptor,
-        new String[] { "Vid", "Format", "Codec", "Definition", "FileType", "LogoType", "Base64", "Ssl", });
+        new java.lang.String[] { "Vid", "Format", "Codec", "Definition", "FileType", "LogoType", "Base64", "Ssl", });
     internal_static_Vcloud_Models_Vod_VodGetPlayInfoResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_Vcloud_Models_Vod_VodGetPlayInfoResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_VodGetPlayInfoResponse_descriptor,
-        new String[] { "ResponseMetadata", "Result", });
+        new java.lang.String[] { "ResponseMetadata", "Result", });
     internal_static_Vcloud_Models_Vod_VodGetPlayInfoResult_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_Vcloud_Models_Vod_VodGetPlayInfoResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_VodGetPlayInfoResult_descriptor,
-        new String[] { "Vid", "Status", "PosterUrl", "Duration", "FileType", "EnableAdaptive", "TotalCount", "AdaptiveInfo", "PlayInfoList", });
+        new java.lang.String[] { "Vid", "Status", "PosterUrl", "Duration", "FileType", "EnableAdaptive", "TotalCount", "AdaptiveInfo", "PlayInfoList", });
     internal_static_Vcloud_Models_Vod_VodAdaptiveInfo_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_Vcloud_Models_Vod_VodAdaptiveInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_VodAdaptiveInfo_descriptor,
-        new String[] { "MainPlayUrl", "BackupPlayUrl", "AdaptiveType", });
+        new java.lang.String[] { "MainPlayUrl", "BackupPlayUrl", "AdaptiveType", });
     internal_static_Vcloud_Models_Vod_VodPlayInfo_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_Vcloud_Models_Vod_VodPlayInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_VodPlayInfo_descriptor,
-        new String[] { "FileId", "Md5", "FileType", "Format", "Codec", "Definition", "MainPlayUrl", "BackupPlayUrl", "Bitrate", "Width", "Height", "Size", "CheckInfo", "IndexRange", "InitRange", "PreloadSize", "PreloadMinStep", "PreloadMaxStep", "PreloadInterval", "P2PVerifyUrl", "PlayAuth", "PlayAuthId", "LogoType", "Quality", });
+        new java.lang.String[] { "FileId", "Md5", "FileType", "Format", "Codec", "Definition", "MainPlayUrl", "BackupPlayUrl", "Bitrate", "Width", "Height", "Size", "CheckInfo", "IndexRange", "InitRange", "PreloadSize", "PreloadMinStep", "PreloadMaxStep", "PreloadInterval", "P2PVerifyUrl", "PlayAuth", "PlayAuthId", "LogoType", "Quality", });
     internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoRequest_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoRequest_descriptor,
-        new String[] { "Vid", "Base64", "Ssl", });
+        new java.lang.String[] { "Vid", "Base64", "Ssl", });
     internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoResponse_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoResponse_descriptor,
-        new String[] { "ResponseMetadata", "Result", });
+        new java.lang.String[] { "ResponseMetadata", "Result", });
     internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoResult_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoResult_descriptor,
-        new String[] { "FileType", "Duration", "Size", "Height", "Width", "Format", "Codec", "Bitrate", "Md5", "MainPlayUrl", "BackupPlayUrl", });
+        new java.lang.String[] { "FileType", "Duration", "Size", "Height", "Width", "Format", "Codec", "Bitrate", "Md5", "MainPlayUrl", "BackupPlayUrl", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    Base.getDescriptor();
+    com.bytedanceapi.model.common.Base.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
   }
 

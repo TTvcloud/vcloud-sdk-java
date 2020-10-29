@@ -15,7 +15,7 @@ public interface VodPlayInfoOrBuilder extends
    * <code>string FileId = 1;</code>
    * @return The fileId.
    */
-  String getFileId();
+  java.lang.String getFileId();
   /**
    * <pre>
    *文件ID
@@ -35,7 +35,7 @@ public interface VodPlayInfoOrBuilder extends
    * <code>string Md5 = 2;</code>
    * @return The md5.
    */
-  String getMd5();
+  java.lang.String getMd5();
   /**
    * <pre>
    * hash值
@@ -55,7 +55,7 @@ public interface VodPlayInfoOrBuilder extends
    * <code>string FileType = 3;</code>
    * @return The fileType.
    */
-  String getFileType();
+  java.lang.String getFileType();
   /**
    * <pre>
    * 文件类型 video/audio
@@ -75,7 +75,7 @@ public interface VodPlayInfoOrBuilder extends
    * <code>string Format = 4;</code>
    * @return The format.
    */
-  String getFormat();
+  java.lang.String getFormat();
   /**
    * <pre>
    *视频格式
@@ -95,7 +95,7 @@ public interface VodPlayInfoOrBuilder extends
    * <code>string Codec = 5;</code>
    * @return The codec.
    */
-  String getCodec();
+  java.lang.String getCodec();
   /**
    * <pre>
    *编码类型
@@ -115,7 +115,7 @@ public interface VodPlayInfoOrBuilder extends
    * <code>string Definition = 6;</code>
    * @return The definition.
    */
-  String getDefinition();
+  java.lang.String getDefinition();
   /**
    * <pre>
    *视频分辨率
@@ -135,7 +135,7 @@ public interface VodPlayInfoOrBuilder extends
    * <code>string MainPlayUrl = 7;</code>
    * @return The mainPlayUrl.
    */
-  String getMainPlayUrl();
+  java.lang.String getMainPlayUrl();
   /**
    * <pre>
    *主播放地址
@@ -155,7 +155,7 @@ public interface VodPlayInfoOrBuilder extends
    * <code>string BackupPlayUrl = 8;</code>
    * @return The backupPlayUrl.
    */
-  String getBackupPlayUrl();
+  java.lang.String getBackupPlayUrl();
   /**
    * <pre>
    *备用播放地址
@@ -215,7 +215,7 @@ public interface VodPlayInfoOrBuilder extends
    * <code>string CheckInfo = 13;</code>
    * @return The checkInfo.
    */
-  String getCheckInfo();
+  java.lang.String getCheckInfo();
   /**
    * <pre>
    *劫持校验信息
@@ -235,7 +235,7 @@ public interface VodPlayInfoOrBuilder extends
    * <code>string IndexRange = 14;</code>
    * @return The indexRange.
    */
-  String getIndexRange();
+  java.lang.String getIndexRange();
   /**
    * <pre>
    * dash segment_base 分片信息
@@ -255,7 +255,7 @@ public interface VodPlayInfoOrBuilder extends
    * <code>string InitRange = 15;</code>
    * @return The initRange.
    */
-  String getInitRange();
+  java.lang.String getInitRange();
   /**
    * <pre>
    * dash segment_base 分片信息
@@ -315,7 +315,7 @@ public interface VodPlayInfoOrBuilder extends
    * <code>string P2pVerifyUrl = 20;</code>
    * @return The p2pVerifyUrl.
    */
-  String getP2PVerifyUrl();
+  java.lang.String getP2PVerifyUrl();
   /**
    * <pre>
    * p2p点播时，校验文件地址
@@ -335,7 +335,7 @@ public interface VodPlayInfoOrBuilder extends
    * <code>string PlayAuth = 21;</code>
    * @return The playAuth.
    */
-  String getPlayAuth();
+  java.lang.String getPlayAuth();
   /**
    * <pre>
    *加密过的秘钥
@@ -355,7 +355,7 @@ public interface VodPlayInfoOrBuilder extends
    * <code>string PlayAuthId = 22;</code>
    * @return The playAuthId.
    */
-  String getPlayAuthId();
+  java.lang.String getPlayAuthId();
   /**
    * <pre>
    *密钥keyID
@@ -375,7 +375,7 @@ public interface VodPlayInfoOrBuilder extends
    * <code>string LogoType = 23;</code>
    * @return The logoType.
    */
-  String getLogoType();
+  java.lang.String getLogoType();
   /**
    * <pre>
    *水印类型
@@ -395,7 +395,7 @@ public interface VodPlayInfoOrBuilder extends
    * <code>string Quality = 24;</code>
    * @return The quality.
    */
-  String getQuality();
+  java.lang.String getQuality();
   /**
    * <pre>
    *音频质量

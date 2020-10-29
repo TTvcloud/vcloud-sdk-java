@@ -15,7 +15,7 @@ public interface VodGetOriginalPlayInfoRequestOrBuilder extends
    * <code>string Vid = 1;</code>
    * @return The vid.
    */
-  String getVid();
+  java.lang.String getVid();
   /**
    * <pre>
    *视频ID
@@ -35,7 +35,7 @@ public interface VodGetOriginalPlayInfoRequestOrBuilder extends
    * <code>string Base64 = 2;</code>
    * @return The base64.
    */
-  String getBase64();
+  java.lang.String getBase64();
   /**
    * <pre>
    *播放地址是否base64编码,默认否，0-否，1-是
@@ -55,7 +55,7 @@ public interface VodGetOriginalPlayInfoRequestOrBuilder extends
    * <code>string Ssl = 3;</code>
    * @return The ssl.
    */
-  String getSsl();
+  java.lang.String getSsl();
   /**
    * <pre>
    *返回https播放地址,默认否, 0-否，1-是

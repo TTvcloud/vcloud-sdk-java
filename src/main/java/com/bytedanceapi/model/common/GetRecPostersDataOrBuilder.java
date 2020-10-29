@@ -14,7 +14,7 @@ public interface GetRecPostersDataOrBuilder extends
    *
    * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
    */
-  java.util.List<StoreUriGroup>
+  java.util.List<com.bytedanceapi.model.common.StoreUriGroup> 
       getStoreUriGroupsList();
   /**
    * <pre>
@@ -23,7 +23,7 @@ public interface GetRecPostersDataOrBuilder extends
    *
    * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
    */
-  StoreUriGroup getStoreUriGroups(int index);
+  com.bytedanceapi.model.common.StoreUriGroup getStoreUriGroups(int index);
   /**
    * <pre>
    *封面图信息
@@ -39,7 +39,7 @@ public interface GetRecPostersDataOrBuilder extends
    *
    * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
    */
-  java.util.List<? extends StoreUriGroupOrBuilder>
+  java.util.List<? extends com.bytedanceapi.model.common.StoreUriGroupOrBuilder> 
       getStoreUriGroupsOrBuilderList();
   /**
    * <pre>
@@ -48,7 +48,7 @@ public interface GetRecPostersDataOrBuilder extends
    *
    * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
    */
-  StoreUriGroupOrBuilder getStoreUriGroupsOrBuilder(
+  com.bytedanceapi.model.common.StoreUriGroupOrBuilder getStoreUriGroupsOrBuilder(
       int index);
 
   /**
@@ -59,7 +59,7 @@ public interface GetRecPostersDataOrBuilder extends
    * <code>repeated string NotExistVids = 2;</code>
    * @return A list containing the notExistVids.
    */
-  java.util.List<String>
+  java.util.List<java.lang.String>
       getNotExistVidsList();
   /**
    * <pre>
@@ -79,7 +79,7 @@ public interface GetRecPostersDataOrBuilder extends
    * @param index The index of the element to return.
    * @return The notExistVids at the given index.
    */
-  String getNotExistVids(int index);
+  java.lang.String getNotExistVids(int index);
   /**
    * <pre>
    *不存在的视频VID列表

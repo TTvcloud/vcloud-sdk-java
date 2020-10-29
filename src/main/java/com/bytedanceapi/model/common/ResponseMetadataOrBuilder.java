@@ -15,7 +15,7 @@ public interface ResponseMetadataOrBuilder extends
    * <code>string RequestId = 1;</code>
    * @return The requestId.
    */
-  String getRequestId();
+  java.lang.String getRequestId();
   /**
    * <pre>
    * 请求ID
@@ -35,7 +35,7 @@ public interface ResponseMetadataOrBuilder extends
    * <code>string Action = 2;</code>
    * @return The action.
    */
-  String getAction();
+  java.lang.String getAction();
   /**
    * <pre>
    * 请求接口
@@ -55,7 +55,7 @@ public interface ResponseMetadataOrBuilder extends
    * <code>string Version = 3;</code>
    * @return The version.
    */
-  String getVersion();
+  java.lang.String getVersion();
   /**
    * <pre>
    * 版本
@@ -75,7 +75,7 @@ public interface ResponseMetadataOrBuilder extends
    * <code>string Service = 4;</code>
    * @return The service.
    */
-  String getService();
+  java.lang.String getService();
   /**
    * <pre>
    * 服务
@@ -95,7 +95,7 @@ public interface ResponseMetadataOrBuilder extends
    * <code>string Region = 5;</code>
    * @return The region.
    */
-  String getRegion();
+  java.lang.String getRegion();
   /**
    * <pre>
    * 区域
@@ -124,7 +124,7 @@ public interface ResponseMetadataOrBuilder extends
    * <code>.Vcloud.Models.Base.ResponseError Error = 6;</code>
    * @return The error.
    */
-  ResponseError getError();
+  com.bytedanceapi.model.common.ResponseError getError();
   /**
    * <pre>
    * 异常信息
@@ -132,5 +132,5 @@ public interface ResponseMetadataOrBuilder extends
    *
    * <code>.Vcloud.Models.Base.ResponseError Error = 6;</code>
    */
-  ResponseErrorOrBuilder getErrorOrBuilder();
+  com.bytedanceapi.model.common.ResponseErrorOrBuilder getErrorOrBuilder();
 }
