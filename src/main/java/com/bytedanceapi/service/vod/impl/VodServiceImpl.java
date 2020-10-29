@@ -367,7 +367,7 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
     @Override
     public GetVideoInfosResponse getVideoInfos(GetVideoInfosRequest req) throws Exception {
         Map<String, String> params = new HashMap<>();
-        params.put(Const.Vids, String.join(",", req.getVidsList()));
+        params.put(Const.Vids, req.getVids());
         RawResponse response = query(Const.GetVideoInfos, Utils.mapToPairList(params));
         if (response.getCode() != SdkError.SUCCESS.getNumber()) {
             throw response.getException();
@@ -381,7 +381,7 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
     @Override
     public GetRecPostersResponse getRecommendedPosters(GetRecommendedPostersRequest req) throws Exception {
         Map<String, String> params = new HashMap<>();
-        params.put(Const.Vids, String.join(",", req.getVidsList()));
+        params.put(Const.Vids, req.getVids());
         RawResponse response = query(Const.GetRecommendedPoster, Utils.mapToPairList(params));
         if (response.getCode() != SdkError.SUCCESS.getNumber()) {
             throw response.getException();

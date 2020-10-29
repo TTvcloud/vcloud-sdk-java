@@ -12,39 +12,18 @@ public interface GetRecommendedPostersRequestOrBuilder extends
    *视频ID列表
    * </pre>
    *
-   * <code>repeated string Vids = 1;</code>
-   * @return A list containing the vids.
+   * <code>string Vids = 1;</code>
+   * @return The vids.
    */
-  java.util.List<java.lang.String>
-      getVidsList();
+  String getVids();
   /**
    * <pre>
    *视频ID列表
    * </pre>
    *
-   * <code>repeated string Vids = 1;</code>
-   * @return The count of vids.
-   */
-  int getVidsCount();
-  /**
-   * <pre>
-   *视频ID列表
-   * </pre>
-   *
-   * <code>repeated string Vids = 1;</code>
-   * @param index The index of the element to return.
-   * @return The vids at the given index.
-   */
-  java.lang.String getVids(int index);
-  /**
-   * <pre>
-   *视频ID列表
-   * </pre>
-   *
-   * <code>repeated string Vids = 1;</code>
-   * @param index The index of the value to return.
-   * @return The bytes of the vids at the given index.
+   * <code>string Vids = 1;</code>
+   * @return The bytes for vids.
    */
   com.google.protobuf.ByteString
-      getVidsBytes(int index);
+      getVidsBytes();
 }

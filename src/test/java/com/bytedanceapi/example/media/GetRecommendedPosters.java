@@ -17,10 +17,8 @@ public class GetRecommendedPosters {
         // vodService.setAccessKey("your ak");
         // vodService.setSecretKey("your sk");
 
-        String[] vids = new String[]{"vid1", "vid2", "vid3"};
         GetRecommendedPostersRequest.Builder req = GetRecommendedPostersRequest.newBuilder();
-        List<String> vidList = Arrays.asList(vids);
-        req.addAllVids(vidList);
+        req.setVids("vid1,vid2");
 
         try {
             GetRecPostersResponse resp = vodService.getRecommendedPosters(req.build());
