@@ -159,13 +159,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_TranscodeInfo_descriptor;
+    return VodMedia.internal_static_Vcloud_Models_Vod_TranscodeInfo_descriptor;
   }
 
   @Override
   protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_TranscodeInfo_fieldAccessorTable
+    return VodMedia.internal_static_Vcloud_Models_Vod_TranscodeInfo_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             TranscodeInfo.class, Builder.class);
   }
@@ -220,7 +220,7 @@ private static final long serialVersionUID = 0L;
   private volatile Object md5_;
   /**
    * <pre>
-   *hash值
+   * hash值
    * </pre>
    *
    * <code>string Md5 = 2;</code>
@@ -241,7 +241,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *hash值
+   * hash值
    * </pre>
    *
    * <code>string Md5 = 2;</code>
@@ -312,7 +312,7 @@ private static final long serialVersionUID = 0L;
   private volatile Object logoType_;
   /**
    * <pre>
-   *logo类型
+   * logo类型
    * </pre>
    *
    * <code>string LogoType = 4;</code>
@@ -333,7 +333,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *logo类型
+   * logo类型
    * </pre>
    *
    * <code>string LogoType = 4;</code>
@@ -905,13 +905,13 @@ private static final long serialVersionUID = 0L;
       TranscodeInfoOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_TranscodeInfo_descriptor;
+      return VodMedia.internal_static_Vcloud_Models_Vod_TranscodeInfo_descriptor;
     }
 
     @Override
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_TranscodeInfo_fieldAccessorTable
+      return VodMedia.internal_static_Vcloud_Models_Vod_TranscodeInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               TranscodeInfo.class, Builder.class);
     }
@@ -972,7 +972,7 @@ private static final long serialVersionUID = 0L;
     @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_TranscodeInfo_descriptor;
+      return VodMedia.internal_static_Vcloud_Models_Vod_TranscodeInfo_descriptor;
     }
 
     @Override
@@ -1231,7 +1231,7 @@ private static final long serialVersionUID = 0L;
     private Object md5_ = "";
     /**
      * <pre>
-     *hash值
+     * hash值
      * </pre>
      *
      * <code>string Md5 = 2;</code>
@@ -1251,7 +1251,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *hash值
+     * hash值
      * </pre>
      *
      * <code>string Md5 = 2;</code>
@@ -1272,7 +1272,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *hash值
+     * hash值
      * </pre>
      *
      * <code>string Md5 = 2;</code>
@@ -1291,7 +1291,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *hash值
+     * hash值
      * </pre>
      *
      * <code>string Md5 = 2;</code>
@@ -1305,7 +1305,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *hash值
+     * hash值
      * </pre>
      *
      * <code>string Md5 = 2;</code>
@@ -1423,7 +1423,7 @@ private static final long serialVersionUID = 0L;
     private Object logoType_ = "";
     /**
      * <pre>
-     *logo类型
+     * logo类型
      * </pre>
      *
      * <code>string LogoType = 4;</code>
@@ -1443,7 +1443,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *logo类型
+     * logo类型
      * </pre>
      *
      * <code>string LogoType = 4;</code>
@@ -1464,7 +1464,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *logo类型
+     * logo类型
      * </pre>
      *
      * <code>string LogoType = 4;</code>
@@ -1483,7 +1483,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *logo类型
+     * logo类型
      * </pre>
      *
      * <code>string LogoType = 4;</code>
@@ -1497,7 +1497,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *logo类型
+     * logo类型
      * </pre>
      *
      * <code>string LogoType = 4;</code>

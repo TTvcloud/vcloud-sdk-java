@@ -14,7 +14,7 @@ public interface GetRecPostersDataOrBuilder extends
    *
    * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
    */
-  java.util.List<com.bytedanceapi.model.common.StoreUriGroup> 
+  java.util.List<StoreUriGroup>
       getStoreUriGroupsList();
   /**
    * <pre>
@@ -23,7 +23,7 @@ public interface GetRecPostersDataOrBuilder extends
    *
    * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
    */
-  com.bytedanceapi.model.common.StoreUriGroup getStoreUriGroups(int index);
+  StoreUriGroup getStoreUriGroups(int index);
   /**
    * <pre>
    *封面图信息
@@ -39,7 +39,7 @@ public interface GetRecPostersDataOrBuilder extends
    *
    * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
    */
-  java.util.List<? extends com.bytedanceapi.model.common.StoreUriGroupOrBuilder> 
+  java.util.List<? extends StoreUriGroupOrBuilder>
       getStoreUriGroupsOrBuilderList();
   /**
    * <pre>
@@ -48,7 +48,7 @@ public interface GetRecPostersDataOrBuilder extends
    *
    * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
    */
-  com.bytedanceapi.model.common.StoreUriGroupOrBuilder getStoreUriGroupsOrBuilder(
+  StoreUriGroupOrBuilder getStoreUriGroupsOrBuilder(
       int index);
 
   /**

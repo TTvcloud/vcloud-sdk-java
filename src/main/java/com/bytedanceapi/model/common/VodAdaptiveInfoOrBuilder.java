@@ -15,7 +15,7 @@ public interface VodAdaptiveInfoOrBuilder extends
    * <code>string MainPlayUrl = 1;</code>
    * @return The mainPlayUrl.
    */
-  java.lang.String getMainPlayUrl();
+  String getMainPlayUrl();
   /**
    * <pre>
    * mpd主链接
@@ -35,7 +35,7 @@ public interface VodAdaptiveInfoOrBuilder extends
    * <code>string BackupPlayUrl = 2;</code>
    * @return The backupPlayUrl.
    */
-  java.lang.String getBackupPlayUrl();
+  String getBackupPlayUrl();
   /**
    * <pre>
    * mpd备用链接
@@ -55,7 +55,7 @@ public interface VodAdaptiveInfoOrBuilder extends
    * <code>string AdaptiveType = 3;</code>
    * @return The adaptiveType.
    */
-  java.lang.String getAdaptiveType();
+  String getAdaptiveType();
   /**
    * <pre>
    * 动态类型segment_base-mpd,segment_template-dash

@@ -15,7 +15,7 @@ public interface VodGetPlayInfoRequestOrBuilder extends
    * <code>string Vid = 1;</code>
    * @return The vid.
    */
-  java.lang.String getVid();
+  String getVid();
   /**
    * <pre>
    * 视频ID
@@ -35,7 +35,7 @@ public interface VodGetPlayInfoRequestOrBuilder extends
    * <code>string Format = 2;</code>
    * @return The format.
    */
-  java.lang.String getFormat();
+  String getFormat();
   /**
    * <pre>
    *封装格式，支持mp4,dash,hls，默认mp4 Format
@@ -55,7 +55,7 @@ public interface VodGetPlayInfoRequestOrBuilder extends
    * <code>string Codec = 3;</code>
    * @return The codec.
    */
-  java.lang.String getCodec();
+  String getCodec();
   /**
    * <pre>
    *编码类型，默认h264，可选值为h264,h265等 Codec
@@ -75,7 +75,7 @@ public interface VodGetPlayInfoRequestOrBuilder extends
    * <code>string Definition = 4;</code>
    * @return The definition.
    */
-  java.lang.String getDefinition();
+  String getDefinition();
   /**
    * <pre>
    *视频流清晰度，默认返回全部，支持：240p，360p，480p，540p，720p，1080p
@@ -95,7 +95,7 @@ public interface VodGetPlayInfoRequestOrBuilder extends
    * <code>string FileType = 5;</code>
    * @return The fileType.
    */
-  java.lang.String getFileType();
+  String getFileType();
   /**
    * <pre>
    *流文件类型，默认video，支持：加密视频流evideo，加密音频流传eaudio，非加密视频流video，普通音频音频流audio
@@ -115,7 +115,7 @@ public interface VodGetPlayInfoRequestOrBuilder extends
    * <code>string LogoType = 6;</code>
    * @return The logoType.
    */
-  java.lang.String getLogoType();
+  String getLogoType();
   /**
    * <pre>
    * 水印贴片标签
@@ -132,18 +132,38 @@ public interface VodGetPlayInfoRequestOrBuilder extends
    *播放地址是否base64编码，默认否，支持设置： 0-否，1-是
    * </pre>
    *
-   * <code>int64 Base64 = 7;</code>
+   * <code>string Base64 = 7;</code>
    * @return The base64.
    */
-  long getBase64();
+  String getBase64();
+  /**
+   * <pre>
+   *播放地址是否base64编码，默认否，支持设置： 0-否，1-是
+   * </pre>
+   *
+   * <code>string Base64 = 7;</code>
+   * @return The bytes for base64.
+   */
+  com.google.protobuf.ByteString
+      getBase64Bytes();
 
   /**
    * <pre>
    *返回https播放地址，默认否, 1-是；0-否
    * </pre>
    *
-   * <code>int64 Ssl = 8;</code>
+   * <code>string Ssl = 8;</code>
    * @return The ssl.
    */
-  long getSsl();
+  String getSsl();
+  /**
+   * <pre>
+   *返回https播放地址，默认否, 1-是；0-否
+   * </pre>
+   *
+   * <code>string Ssl = 8;</code>
+   * @return The bytes for ssl.
+   */
+  com.google.protobuf.ByteString
+      getSslBytes();
 }

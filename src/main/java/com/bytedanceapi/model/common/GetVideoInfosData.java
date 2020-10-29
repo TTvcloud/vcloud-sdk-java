@@ -53,11 +53,11 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              videoInfoList_ = new java.util.ArrayList<com.bytedanceapi.model.common.VideoInfo>();
+              videoInfoList_ = new java.util.ArrayList<VideoInfo>();
               mutable_bitField0_ |= 0x00000001;
             }
             videoInfoList_.add(
-                input.readMessage(com.bytedanceapi.model.common.VideoInfo.parser(), extensionRegistry));
+                input.readMessage(VideoInfo.parser(), extensionRegistry));
             break;
           }
           case 18: {
@@ -96,19 +96,19 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_GetVideoInfosData_descriptor;
+    return VodMedia.internal_static_Vcloud_Models_Vod_GetVideoInfosData_descriptor;
   }
 
   @Override
   protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_GetVideoInfosData_fieldAccessorTable
+    return VodMedia.internal_static_Vcloud_Models_Vod_GetVideoInfosData_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             GetVideoInfosData.class, Builder.class);
   }
 
   public static final int VIDEOINFOLIST_FIELD_NUMBER = 1;
-  private java.util.List<com.bytedanceapi.model.common.VideoInfo> videoInfoList_;
+  private java.util.List<VideoInfo> videoInfoList_;
   /**
    * <pre>
    *视频信息列表
@@ -117,7 +117,7 @@ private static final long serialVersionUID = 0L;
    * <code>repeated .Vcloud.Models.Vod.VideoInfo VideoInfoList = 1;</code>
    */
   @Override
-  public java.util.List<com.bytedanceapi.model.common.VideoInfo> getVideoInfoListList() {
+  public java.util.List<VideoInfo> getVideoInfoListList() {
     return videoInfoList_;
   }
   /**
@@ -128,7 +128,7 @@ private static final long serialVersionUID = 0L;
    * <code>repeated .Vcloud.Models.Vod.VideoInfo VideoInfoList = 1;</code>
    */
   @Override
-  public java.util.List<? extends com.bytedanceapi.model.common.VideoInfoOrBuilder> 
+  public java.util.List<? extends VideoInfoOrBuilder>
       getVideoInfoListOrBuilderList() {
     return videoInfoList_;
   }
@@ -151,7 +151,7 @@ private static final long serialVersionUID = 0L;
    * <code>repeated .Vcloud.Models.Vod.VideoInfo VideoInfoList = 1;</code>
    */
   @Override
-  public com.bytedanceapi.model.common.VideoInfo getVideoInfoList(int index) {
+  public VideoInfo getVideoInfoList(int index) {
     return videoInfoList_.get(index);
   }
   /**
@@ -162,7 +162,7 @@ private static final long serialVersionUID = 0L;
    * <code>repeated .Vcloud.Models.Vod.VideoInfo VideoInfoList = 1;</code>
    */
   @Override
-  public com.bytedanceapi.model.common.VideoInfoOrBuilder getVideoInfoListOrBuilder(
+  public VideoInfoOrBuilder getVideoInfoListOrBuilder(
       int index) {
     return videoInfoList_.get(index);
   }
@@ -401,13 +401,13 @@ private static final long serialVersionUID = 0L;
       GetVideoInfosDataOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_GetVideoInfosData_descriptor;
+      return VodMedia.internal_static_Vcloud_Models_Vod_GetVideoInfosData_descriptor;
     }
 
     @Override
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_GetVideoInfosData_fieldAccessorTable
+      return VodMedia.internal_static_Vcloud_Models_Vod_GetVideoInfosData_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               GetVideoInfosData.class, Builder.class);
     }
@@ -445,7 +445,7 @@ private static final long serialVersionUID = 0L;
     @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_GetVideoInfosData_descriptor;
+      return VodMedia.internal_static_Vcloud_Models_Vod_GetVideoInfosData_descriptor;
     }
 
     @Override
@@ -594,17 +594,17 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.util.List<com.bytedanceapi.model.common.VideoInfo> videoInfoList_ =
+    private java.util.List<VideoInfo> videoInfoList_ =
       java.util.Collections.emptyList();
     private void ensureVideoInfoListIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        videoInfoList_ = new java.util.ArrayList<com.bytedanceapi.model.common.VideoInfo>(videoInfoList_);
+        videoInfoList_ = new java.util.ArrayList<VideoInfo>(videoInfoList_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.bytedanceapi.model.common.VideoInfo, com.bytedanceapi.model.common.VideoInfo.Builder, com.bytedanceapi.model.common.VideoInfoOrBuilder> videoInfoListBuilder_;
+        VideoInfo, VideoInfo.Builder, VideoInfoOrBuilder> videoInfoListBuilder_;
 
     /**
      * <pre>
@@ -613,7 +613,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.VideoInfo VideoInfoList = 1;</code>
      */
-    public java.util.List<com.bytedanceapi.model.common.VideoInfo> getVideoInfoListList() {
+    public java.util.List<VideoInfo> getVideoInfoListList() {
       if (videoInfoListBuilder_ == null) {
         return java.util.Collections.unmodifiableList(videoInfoList_);
       } else {
@@ -641,7 +641,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.VideoInfo VideoInfoList = 1;</code>
      */
-    public com.bytedanceapi.model.common.VideoInfo getVideoInfoList(int index) {
+    public VideoInfo getVideoInfoList(int index) {
       if (videoInfoListBuilder_ == null) {
         return videoInfoList_.get(index);
       } else {
@@ -656,7 +656,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .Vcloud.Models.Vod.VideoInfo VideoInfoList = 1;</code>
      */
     public Builder setVideoInfoList(
-        int index, com.bytedanceapi.model.common.VideoInfo value) {
+        int index, VideoInfo value) {
       if (videoInfoListBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -677,7 +677,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .Vcloud.Models.Vod.VideoInfo VideoInfoList = 1;</code>
      */
     public Builder setVideoInfoList(
-        int index, com.bytedanceapi.model.common.VideoInfo.Builder builderForValue) {
+        int index, VideoInfo.Builder builderForValue) {
       if (videoInfoListBuilder_ == null) {
         ensureVideoInfoListIsMutable();
         videoInfoList_.set(index, builderForValue.build());
@@ -694,7 +694,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.VideoInfo VideoInfoList = 1;</code>
      */
-    public Builder addVideoInfoList(com.bytedanceapi.model.common.VideoInfo value) {
+    public Builder addVideoInfoList(VideoInfo value) {
       if (videoInfoListBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -715,7 +715,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .Vcloud.Models.Vod.VideoInfo VideoInfoList = 1;</code>
      */
     public Builder addVideoInfoList(
-        int index, com.bytedanceapi.model.common.VideoInfo value) {
+        int index, VideoInfo value) {
       if (videoInfoListBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -736,7 +736,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .Vcloud.Models.Vod.VideoInfo VideoInfoList = 1;</code>
      */
     public Builder addVideoInfoList(
-        com.bytedanceapi.model.common.VideoInfo.Builder builderForValue) {
+        VideoInfo.Builder builderForValue) {
       if (videoInfoListBuilder_ == null) {
         ensureVideoInfoListIsMutable();
         videoInfoList_.add(builderForValue.build());
@@ -754,7 +754,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .Vcloud.Models.Vod.VideoInfo VideoInfoList = 1;</code>
      */
     public Builder addVideoInfoList(
-        int index, com.bytedanceapi.model.common.VideoInfo.Builder builderForValue) {
+        int index, VideoInfo.Builder builderForValue) {
       if (videoInfoListBuilder_ == null) {
         ensureVideoInfoListIsMutable();
         videoInfoList_.add(index, builderForValue.build());
@@ -772,7 +772,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .Vcloud.Models.Vod.VideoInfo VideoInfoList = 1;</code>
      */
     public Builder addAllVideoInfoList(
-        Iterable<? extends com.bytedanceapi.model.common.VideoInfo> values) {
+        Iterable<? extends VideoInfo> values) {
       if (videoInfoListBuilder_ == null) {
         ensureVideoInfoListIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -824,7 +824,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.VideoInfo VideoInfoList = 1;</code>
      */
-    public com.bytedanceapi.model.common.VideoInfo.Builder getVideoInfoListBuilder(
+    public VideoInfo.Builder getVideoInfoListBuilder(
         int index) {
       return getVideoInfoListFieldBuilder().getBuilder(index);
     }
@@ -835,7 +835,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.VideoInfo VideoInfoList = 1;</code>
      */
-    public com.bytedanceapi.model.common.VideoInfoOrBuilder getVideoInfoListOrBuilder(
+    public VideoInfoOrBuilder getVideoInfoListOrBuilder(
         int index) {
       if (videoInfoListBuilder_ == null) {
         return videoInfoList_.get(index);  } else {
@@ -849,7 +849,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.VideoInfo VideoInfoList = 1;</code>
      */
-    public java.util.List<? extends com.bytedanceapi.model.common.VideoInfoOrBuilder> 
+    public java.util.List<? extends VideoInfoOrBuilder>
          getVideoInfoListOrBuilderList() {
       if (videoInfoListBuilder_ != null) {
         return videoInfoListBuilder_.getMessageOrBuilderList();
@@ -864,9 +864,9 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.VideoInfo VideoInfoList = 1;</code>
      */
-    public com.bytedanceapi.model.common.VideoInfo.Builder addVideoInfoListBuilder() {
+    public VideoInfo.Builder addVideoInfoListBuilder() {
       return getVideoInfoListFieldBuilder().addBuilder(
-          com.bytedanceapi.model.common.VideoInfo.getDefaultInstance());
+          VideoInfo.getDefaultInstance());
     }
     /**
      * <pre>
@@ -875,10 +875,10 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.VideoInfo VideoInfoList = 1;</code>
      */
-    public com.bytedanceapi.model.common.VideoInfo.Builder addVideoInfoListBuilder(
+    public VideoInfo.Builder addVideoInfoListBuilder(
         int index) {
       return getVideoInfoListFieldBuilder().addBuilder(
-          index, com.bytedanceapi.model.common.VideoInfo.getDefaultInstance());
+          index, VideoInfo.getDefaultInstance());
     }
     /**
      * <pre>
@@ -887,16 +887,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.VideoInfo VideoInfoList = 1;</code>
      */
-    public java.util.List<com.bytedanceapi.model.common.VideoInfo.Builder> 
+    public java.util.List<VideoInfo.Builder>
          getVideoInfoListBuilderList() {
       return getVideoInfoListFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.bytedanceapi.model.common.VideoInfo, com.bytedanceapi.model.common.VideoInfo.Builder, com.bytedanceapi.model.common.VideoInfoOrBuilder> 
+        VideoInfo, VideoInfo.Builder, VideoInfoOrBuilder>
         getVideoInfoListFieldBuilder() {
       if (videoInfoListBuilder_ == null) {
         videoInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.bytedanceapi.model.common.VideoInfo, com.bytedanceapi.model.common.VideoInfo.Builder, com.bytedanceapi.model.common.VideoInfoOrBuilder>(
+            VideoInfo, VideoInfo.Builder, VideoInfoOrBuilder>(
                 videoInfoList_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),

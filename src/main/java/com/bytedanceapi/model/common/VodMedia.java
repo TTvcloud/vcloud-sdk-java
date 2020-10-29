@@ -110,71 +110,77 @@ public final class VodMedia {
     String[] descriptorData = {
       "\n\017vod_media.proto\022\021Vcloud.Models.Vod\032\nba" +
       "se.proto\032\036google/protobuf/wrappers.proto" +
-      "\">\n\037UpdateVideoPublishStatusRequest\022\013\n\003V" +
-      "id\030\001 \001(\t\022\016\n\006Status\030\002 \001(\t\"b\n UpdateVideoP" +
-      "ublishStatusResponse\022>\n\020ResponseMetadata" +
+      "\032\034google/api/annotations.proto\">\n\037Update" +
+      "VideoPublishStatusRequest\022\013\n\003Vid\030\001 \001(\t\022\016" +
+      "\n\006Status\030\002 \001(\t\"b\n UpdateVideoPublishStat" +
+      "usResponse\022>\n\020ResponseMetadata\030\001 \001(\0132$.V" +
+      "cloud.Models.Base.ResponseMetadata\"\342\001\n\026U" +
+      "pdateVideoInfoRequest\022\013\n\003Vid\030\001 \001(\t\022/\n\tPo" +
+      "sterUri\030\002 \001(\0132\034.google.protobuf.StringVa" +
+      "lue\022+\n\005Title\030\003 \001(\0132\034.google.protobuf.Str" +
+      "ingValue\0221\n\013Description\030\004 \001(\0132\034.google.p" +
+      "rotobuf.StringValue\022*\n\004Tags\030\005 \001(\0132\034.goog" +
+      "le.protobuf.StringValue\"Y\n\027UpdateVideoIn" +
+      "foResponse\022>\n\020ResponseMetadata\030\001 \001(\0132$.V" +
+      "cloud.Models.Base.ResponseMetadata\"$\n\024Ge" +
+      "tVideoInfosRequest\022\014\n\004Vids\030\001 \003(\t\"W\n\017Audi" +
+      "oStreamMeta\022\r\n\005Codec\030\001 \001(\t\022\020\n\010Duration\030\002" +
+      " \001(\002\022\022\n\nSampleRate\030\003 \001(\003\022\017\n\007Bitrate\030\004 \001(" +
+      "\003\"\203\001\n\017VideoStreamMeta\022\r\n\005Codec\030\001 \001(\t\022\016\n\006" +
+      "Height\030\002 \001(\003\022\r\n\005Width\030\003 \001(\003\022\020\n\010Duration\030" +
+      "\004 \001(\002\022\022\n\nDefinition\030\005 \001(\t\022\017\n\007Bitrate\030\006 \001" +
+      "(\003\022\013\n\003Fps\030\007 \001(\002\"\261\002\n\rTranscodeInfo\022\016\n\006Fil" +
+      "eId\030\001 \001(\t\022\013\n\003Md5\030\002 \001(\t\022\020\n\010FileType\030\003 \001(\t" +
+      "\022\020\n\010LogoType\030\004 \001(\t\022\017\n\007Encrypt\030\005 \001(\010\022\016\n\006F" +
+      "ormat\030\006 \001(\t\022\020\n\010Duration\030\007 \001(\002\022\014\n\004Size\030\010 " +
+      "\001(\003\022\020\n\010StoreUri\030\t \001(\t\022;\n\017VideoStreamMeta" +
+      "\030\n \001(\0132\".Vcloud.Models.Vod.VideoStreamMe" +
+      "ta\022;\n\017AudioStreamMeta\030\013 \001(\0132\".Vcloud.Mod" +
+      "els.Vod.AudioStreamMeta\022\022\n\nCreateTime\030\014 " +
+      "\001(\t\"\361\001\n\nSourceInfo\022\016\n\006FileId\030\001 \001(\t\022\013\n\003Md" +
+      "5\030\002 \001(\t\022\020\n\010FileType\030\003 \001(\t\022\r\n\005Codec\030\004 \001(\t" +
+      "\022\016\n\006Height\030\005 \001(\003\022\r\n\005Width\030\006 \001(\003\022\016\n\006Forma" +
+      "t\030\007 \001(\t\022\020\n\010Duration\030\010 \001(\002\022\014\n\004Size\030\t \001(\003\022" +
+      "\020\n\010StoreUri\030\n \001(\t\022\022\n\nDefinition\030\013 \001(\t\022\017\n" +
+      "\007Bitrate\030\014 \001(\003\022\013\n\003Fps\030\r \001(\002\022\022\n\nCreateTim" +
+      "e\030\016 \001(\t\"\260\001\n\tBasicInfo\022\021\n\tSpaceName\030\001 \001(\t" +
+      "\022\013\n\003Vid\030\002 \001(\t\022\r\n\005Title\030\003 \001(\t\022\023\n\013Descript" +
+      "ion\030\004 \001(\t\022\021\n\tPosterUri\030\005 \001(\t\022\025\n\rPublishS" +
+      "tatus\030\006 \001(\t\022\023\n\013AuditStatus\030\007 \001(\003\022\014\n\004Tags" +
+      "\030\010 \003(\t\022\022\n\nCreateTime\030\t \001(\t\"\251\001\n\tVideoInfo" +
+      "\022/\n\tBasicInfo\030\001 \001(\0132\034.Vcloud.Models.Vod." +
+      "BasicInfo\0221\n\nSourceInfo\030\002 \001(\0132\035.Vcloud.M" +
+      "odels.Vod.SourceInfo\0228\n\016TranscodeInfos\030\003" +
+      " \003(\0132 .Vcloud.Models.Vod.TranscodeInfo\"^" +
+      "\n\021GetVideoInfosData\0223\n\rVideoInfoList\030\001 \003" +
+      "(\0132\034.Vcloud.Models.Vod.VideoInfo\022\024\n\014NotE" +
+      "xistVids\030\002 \003(\t\"\215\001\n\025GetVideoInfosResponse" +
+      "\022>\n\020ResponseMetadata\030\001 \001(\0132$.Vcloud.Mode" +
+      "ls.Base.ResponseMetadata\0224\n\006Result\030\002 \001(\013" +
+      "2$.Vcloud.Models.Vod.GetVideoInfosData\"," +
+      "\n\034GetRecommendedPostersRequest\022\014\n\004Vids\030\001" +
+      " \003(\t\"/\n\rStoreUriGroup\022\013\n\003Vid\030\001 \001(\t\022\021\n\tSt" +
+      "oreUris\030\002 \003(\t\"c\n\021GetRecPostersData\0228\n\016St" +
+      "oreUriGroups\030\001 \003(\0132 .Vcloud.Models.Vod.S" +
+      "toreUriGroup\022\024\n\014NotExistVids\030\002 \003(\t\"\215\001\n\025G" +
+      "etRecPostersResponse\022>\n\020ResponseMetadata" +
       "\030\001 \001(\0132$.Vcloud.Models.Base.ResponseMeta" +
-      "data\"\342\001\n\026UpdateVideoInfoRequest\022\013\n\003Vid\030\001" +
-      " \001(\t\022/\n\tPosterUri\030\002 \001(\0132\034.google.protobu" +
-      "f.StringValue\022+\n\005Title\030\003 \001(\0132\034.google.pr" +
-      "otobuf.StringValue\0221\n\013Description\030\004 \001(\0132" +
-      "\034.google.protobuf.StringValue\022*\n\004Tags\030\005 " +
-      "\001(\0132\034.google.protobuf.StringValue\"Y\n\027Upd" +
-      "ateVideoInfoResponse\022>\n\020ResponseMetadata" +
-      "\030\001 \001(\0132$.Vcloud.Models.Base.ResponseMeta" +
-      "data\"$\n\024GetVideoInfosRequest\022\014\n\004Vids\030\001 \003" +
-      "(\t\"W\n\017AudioStreamMeta\022\r\n\005Codec\030\001 \001(\t\022\020\n\010" +
-      "Duration\030\002 \001(\002\022\022\n\nSampleRate\030\003 \001(\003\022\017\n\007Bi" +
-      "trate\030\004 \001(\003\"\203\001\n\017VideoStreamMeta\022\r\n\005Codec" +
-      "\030\001 \001(\t\022\016\n\006Height\030\002 \001(\003\022\r\n\005Width\030\003 \001(\003\022\020\n" +
-      "\010Duration\030\004 \001(\002\022\022\n\nDefinition\030\005 \001(\t\022\017\n\007B" +
-      "itrate\030\006 \001(\003\022\013\n\003Fps\030\007 \001(\002\"\261\002\n\rTranscodeI" +
-      "nfo\022\016\n\006FileId\030\001 \001(\t\022\013\n\003Md5\030\002 \001(\t\022\020\n\010File" +
-      "Type\030\003 \001(\t\022\020\n\010LogoType\030\004 \001(\t\022\017\n\007Encrypt\030" +
-      "\005 \001(\010\022\016\n\006Format\030\006 \001(\t\022\020\n\010Duration\030\007 \001(\002\022" +
-      "\014\n\004Size\030\010 \001(\003\022\020\n\010StoreUri\030\t \001(\t\022;\n\017Video" +
-      "StreamMeta\030\n \001(\0132\".Vcloud.Models.Vod.Vid" +
-      "eoStreamMeta\022;\n\017AudioStreamMeta\030\013 \001(\0132\"." +
-      "Vcloud.Models.Vod.AudioStreamMeta\022\022\n\nCre" +
-      "ateTime\030\014 \001(\t\"\361\001\n\nSourceInfo\022\016\n\006FileId\030\001" +
-      " \001(\t\022\013\n\003Md5\030\002 \001(\t\022\020\n\010FileType\030\003 \001(\t\022\r\n\005C" +
-      "odec\030\004 \001(\t\022\016\n\006Height\030\005 \001(\003\022\r\n\005Width\030\006 \001(" +
-      "\003\022\016\n\006Format\030\007 \001(\t\022\020\n\010Duration\030\010 \001(\002\022\014\n\004S" +
-      "ize\030\t \001(\003\022\020\n\010StoreUri\030\n \001(\t\022\022\n\nDefinitio" +
-      "n\030\013 \001(\t\022\017\n\007Bitrate\030\014 \001(\003\022\013\n\003Fps\030\r \001(\002\022\022\n" +
-      "\nCreateTime\030\016 \001(\t\"\260\001\n\tBasicInfo\022\021\n\tSpace" +
-      "Name\030\001 \001(\t\022\013\n\003Vid\030\002 \001(\t\022\r\n\005Title\030\003 \001(\t\022\023" +
-      "\n\013Description\030\004 \001(\t\022\021\n\tPosterUri\030\005 \001(\t\022\025" +
-      "\n\rPublishStatus\030\006 \001(\t\022\023\n\013AuditStatus\030\007 \001" +
-      "(\003\022\014\n\004Tags\030\010 \003(\t\022\022\n\nCreateTime\030\t \001(\t\"\251\001\n" +
-      "\tVideoInfo\022/\n\tBasicInfo\030\001 \001(\0132\034.Vcloud.M" +
-      "odels.Vod.BasicInfo\0221\n\nSourceInfo\030\002 \001(\0132" +
-      "\035.Vcloud.Models.Vod.SourceInfo\0228\n\016Transc" +
-      "odeInfos\030\003 \003(\0132 .Vcloud.Models.Vod.Trans" +
-      "codeInfo\"^\n\021GetVideoInfosData\0223\n\rVideoIn" +
-      "foList\030\001 \003(\0132\034.Vcloud.Models.Vod.VideoIn" +
-      "fo\022\024\n\014NotExistVids\030\002 \003(\t\"\215\001\n\025GetVideoInf" +
-      "osResponse\022>\n\020ResponseMetadata\030\001 \001(\0132$.V" +
-      "cloud.Models.Base.ResponseMetadata\0224\n\006Re" +
-      "sult\030\002 \001(\0132$.Vcloud.Models.Vod.GetVideoI" +
-      "nfosData\",\n\034GetRecommendedPostersRequest" +
-      "\022\014\n\004Vids\030\001 \003(\t\"/\n\rStoreUriGroup\022\013\n\003Vid\030\001" +
-      " \001(\t\022\021\n\tStoreUris\030\002 \003(\t\"c\n\021GetRecPosters" +
-      "Data\0228\n\016StoreUriGroups\030\001 \003(\0132 .Vcloud.Mo" +
-      "dels.Vod.StoreUriGroup\022\024\n\014NotExistVids\030\002" +
-      " \003(\t\"\215\001\n\025GetRecPostersResponse\022>\n\020Respon" +
-      "seMetadata\030\001 \001(\0132$.Vcloud.Models.Base.Re" +
-      "sponseMetadata\0224\n\006Result\030\002 \001(\0132$.Vcloud." +
-      "Models.Vod.GetRecPostersDataBn\n\035com.byte" +
-      "danceapi.model.commonB\010VodMediaP\001Z\010.;mod" +
-      "els\240\001\001\330\001\001\302\002\000\312\002\021Vcloud\\Models\\Vod\342\002\031Vclou" +
-      "d\\Models\\GPBMetadatab\006proto3"
+      "data\0224\n\006Result\030\002 \001(\0132$.Vcloud.Models.Vod" +
+      ".GetRecPostersData2\255\001\n\017VodMediaService\022\231" +
+      "\001\n\017updateVideoInfo\022).Vcloud.Models.Vod.U" +
+      "pdateVideoInfoRequest\032*.Vcloud.Models.Vo" +
+      "d.UpdateVideoInfoResponse\"/\202\323\344\223\002)\022\020/Upda" +
+      "teVideoInfoZ\025\"\020/UpdateVideoInfo:\001*Bn\n\035co" +
+      "m.bytedanceapi.model.commonB\010VodMediaP\001Z" +
+      "\010.;models\240\001\001\330\001\001\302\002\000\312\002\021Vcloud\\Models\\Vod\342\002" +
+      "\031Vcloud\\Models\\GPBMetadatab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           Base.getDescriptor(),
           com.google.protobuf.WrappersProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
         });
     internal_static_Vcloud_Models_Vod_UpdateVideoPublishStatusRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -278,8 +284,14 @@ public final class VodMedia {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_GetRecPostersResponse_descriptor,
         new String[] { "ResponseMetadata", "Result", });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.AnnotationsProto.http);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
     Base.getDescriptor();
     com.google.protobuf.WrappersProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

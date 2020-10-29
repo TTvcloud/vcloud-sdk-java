@@ -15,7 +15,7 @@ public interface VodGetPlayInfoResultOrBuilder extends
    * <code>string Vid = 1;</code>
    * @return The vid.
    */
-  java.lang.String getVid();
+  String getVid();
   /**
    * <pre>
    * 唯一ID
@@ -45,7 +45,7 @@ public interface VodGetPlayInfoResultOrBuilder extends
    * <code>string PosterUrl = 3;</code>
    * @return The posterUrl.
    */
-  java.lang.String getPosterUrl();
+  String getPosterUrl();
   /**
    * <pre>
    *封面地址
@@ -75,7 +75,7 @@ public interface VodGetPlayInfoResultOrBuilder extends
    * <code>string FileType = 5;</code>
    * @return The fileType.
    */
-  java.lang.String getFileType();
+  String getFileType();
   /**
    * <pre>
    * 媒体类型
@@ -124,7 +124,7 @@ public interface VodGetPlayInfoResultOrBuilder extends
    * <code>.Vcloud.Models.Vod.VodAdaptiveInfo AdaptiveInfo = 8;</code>
    * @return The adaptiveInfo.
    */
-  com.bytedanceapi.model.common.VodAdaptiveInfo getAdaptiveInfo();
+  VodAdaptiveInfo getAdaptiveInfo();
   /**
    * <pre>
    * dash播放信息
@@ -132,7 +132,7 @@ public interface VodGetPlayInfoResultOrBuilder extends
    *
    * <code>.Vcloud.Models.Vod.VodAdaptiveInfo AdaptiveInfo = 8;</code>
    */
-  com.bytedanceapi.model.common.VodAdaptiveInfoOrBuilder getAdaptiveInfoOrBuilder();
+  VodAdaptiveInfoOrBuilder getAdaptiveInfoOrBuilder();
 
   /**
    * <pre>
@@ -141,7 +141,7 @@ public interface VodGetPlayInfoResultOrBuilder extends
    *
    * <code>repeated .Vcloud.Models.Vod.VodPlayInfo PlayInfoList = 9;</code>
    */
-  java.util.List<com.bytedanceapi.model.common.VodPlayInfo> 
+  java.util.List<VodPlayInfo>
       getPlayInfoListList();
   /**
    * <pre>
@@ -150,7 +150,7 @@ public interface VodGetPlayInfoResultOrBuilder extends
    *
    * <code>repeated .Vcloud.Models.Vod.VodPlayInfo PlayInfoList = 9;</code>
    */
-  com.bytedanceapi.model.common.VodPlayInfo getPlayInfoList(int index);
+  VodPlayInfo getPlayInfoList(int index);
   /**
    * <pre>
    *播放列表
@@ -166,7 +166,7 @@ public interface VodGetPlayInfoResultOrBuilder extends
    *
    * <code>repeated .Vcloud.Models.Vod.VodPlayInfo PlayInfoList = 9;</code>
    */
-  java.util.List<? extends com.bytedanceapi.model.common.VodPlayInfoOrBuilder> 
+  java.util.List<? extends VodPlayInfoOrBuilder>
       getPlayInfoListOrBuilderList();
   /**
    * <pre>
@@ -175,6 +175,6 @@ public interface VodGetPlayInfoResultOrBuilder extends
    *
    * <code>repeated .Vcloud.Models.Vod.VodPlayInfo PlayInfoList = 9;</code>
    */
-  com.bytedanceapi.model.common.VodPlayInfoOrBuilder getPlayInfoListOrBuilder(
+  VodPlayInfoOrBuilder getPlayInfoListOrBuilder(
       int index);
 }

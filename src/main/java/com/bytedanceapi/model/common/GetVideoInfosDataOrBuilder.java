@@ -14,7 +14,7 @@ public interface GetVideoInfosDataOrBuilder extends
    *
    * <code>repeated .Vcloud.Models.Vod.VideoInfo VideoInfoList = 1;</code>
    */
-  java.util.List<com.bytedanceapi.model.common.VideoInfo> 
+  java.util.List<VideoInfo>
       getVideoInfoListList();
   /**
    * <pre>
@@ -23,7 +23,7 @@ public interface GetVideoInfosDataOrBuilder extends
    *
    * <code>repeated .Vcloud.Models.Vod.VideoInfo VideoInfoList = 1;</code>
    */
-  com.bytedanceapi.model.common.VideoInfo getVideoInfoList(int index);
+  VideoInfo getVideoInfoList(int index);
   /**
    * <pre>
    *视频信息列表
@@ -39,7 +39,7 @@ public interface GetVideoInfosDataOrBuilder extends
    *
    * <code>repeated .Vcloud.Models.Vod.VideoInfo VideoInfoList = 1;</code>
    */
-  java.util.List<? extends com.bytedanceapi.model.common.VideoInfoOrBuilder> 
+  java.util.List<? extends VideoInfoOrBuilder>
       getVideoInfoListOrBuilderList();
   /**
    * <pre>
@@ -48,7 +48,7 @@ public interface GetVideoInfosDataOrBuilder extends
    *
    * <code>repeated .Vcloud.Models.Vod.VideoInfo VideoInfoList = 1;</code>
    */
-  com.bytedanceapi.model.common.VideoInfoOrBuilder getVideoInfoListOrBuilder(
+  VideoInfoOrBuilder getVideoInfoListOrBuilder(
       int index);
 
   /**

@@ -29,7 +29,7 @@ public interface TranscodeInfoOrBuilder extends
 
   /**
    * <pre>
-   *hash值
+   * hash值
    * </pre>
    *
    * <code>string Md5 = 2;</code>
@@ -38,7 +38,7 @@ public interface TranscodeInfoOrBuilder extends
   String getMd5();
   /**
    * <pre>
-   *hash值
+   * hash值
    * </pre>
    *
    * <code>string Md5 = 2;</code>
@@ -69,7 +69,7 @@ public interface TranscodeInfoOrBuilder extends
 
   /**
    * <pre>
-   *logo类型
+   * logo类型
    * </pre>
    *
    * <code>string LogoType = 4;</code>
@@ -78,7 +78,7 @@ public interface TranscodeInfoOrBuilder extends
   String getLogoType();
   /**
    * <pre>
-   *logo类型
+   * logo类型
    * </pre>
    *
    * <code>string LogoType = 4;</code>

@@ -137,13 +137,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_BasicInfo_descriptor;
+    return VodMedia.internal_static_Vcloud_Models_Vod_BasicInfo_descriptor;
   }
 
   @Override
   protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_BasicInfo_fieldAccessorTable
+    return VodMedia.internal_static_Vcloud_Models_Vod_BasicInfo_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             BasicInfo.class, Builder.class);
   }
@@ -788,13 +788,13 @@ private static final long serialVersionUID = 0L;
       BasicInfoOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_BasicInfo_descriptor;
+      return VodMedia.internal_static_Vcloud_Models_Vod_BasicInfo_descriptor;
     }
 
     @Override
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_BasicInfo_fieldAccessorTable
+      return VodMedia.internal_static_Vcloud_Models_Vod_BasicInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               BasicInfo.class, Builder.class);
     }
@@ -841,7 +841,7 @@ private static final long serialVersionUID = 0L;
     @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_BasicInfo_descriptor;
+      return VodMedia.internal_static_Vcloud_Models_Vod_BasicInfo_descriptor;
     }
 
     @Override

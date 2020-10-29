@@ -62,13 +62,13 @@ public final class VodPlay {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n\016vod_play.proto\022\021Vcloud.Models.Vod\032\nbas" +
       "e.proto\032\034google/api/annotations.proto\"\230\001" +
       "\n\025VodGetPlayInfoRequest\022\013\n\003Vid\030\001 \001(\t\022\016\n\006" +
       "Format\030\002 \001(\t\022\r\n\005Codec\030\003 \001(\t\022\022\n\nDefinitio" +
       "n\030\004 \001(\t\022\020\n\010FileType\030\005 \001(\t\022\020\n\010LogoType\030\006 " +
-      "\001(\t\022\016\n\006Base64\030\007 \001(\003\022\013\n\003Ssl\030\010 \001(\003\"\221\001\n\026Vod" +
+      "\001(\t\022\016\n\006Base64\030\007 \001(\t\022\013\n\003Ssl\030\010 \001(\t\"\221\001\n\026Vod" +
       "GetPlayInfoResponse\022>\n\020ResponseMetadata\030" +
       "\001 \001(\0132$.Vcloud.Models.Base.ResponseMetad" +
       "ata\0227\n\006Result\030\002 \001(\0132\'.Vcloud.Models.Vod." +
@@ -94,7 +94,7 @@ public final class VodPlay {
       " \001(\t\022\020\n\010PlayAuth\030\025 \001(\t\022\022\n\nPlayAuthId\030\026 \001" +
       "(\t\022\020\n\010LogoType\030\027 \001(\t\022\017\n\007Quality\030\030 \001(\t\"I\n" +
       "\035VodGetOriginalPlayInfoRequest\022\013\n\003Vid\030\001 " +
-      "\001(\t\022\016\n\006Base64\030\002 \001(\003\022\013\n\003Ssl\030\003 \001(\003\"\241\001\n\036Vod" +
+      "\001(\t\022\016\n\006Base64\030\002 \001(\t\022\013\n\003Ssl\030\003 \001(\t\"\241\001\n\036Vod" +
       "GetOriginalPlayInfoResponse\022>\n\020ResponseM" +
       "etadata\030\001 \001(\0132$.Vcloud.Models.Base.Respo" +
       "nseMetadata\022?\n\006Result\030\002 \001(\0132/.Vcloud.Mod" +
@@ -104,28 +104,24 @@ public final class VodPlay {
       "\016\n\006Height\030\004 \001(\003\022\r\n\005Width\030\005 \001(\003\022\016\n\006Format" +
       "\030\006 \001(\t\022\r\n\005Codec\030\007 \001(\t\022\017\n\007Bitrate\030\010 \001(\002\022\013" +
       "\n\003Md5\030\t \001(\t\022\023\n\013MainPlayUrl\030\n \001(\t\022\025\n\rBack" +
-      "upPlayUrl\030\013 \001(\t2\236\004\n\016VodPlayService\022\356\001\n\013G" +
+      "upPlayUrl\030\013 \001(\t2\344\002\n\016VodPlayService\022\233\001\n\013g" +
       "etPlayInfo\022(.Vcloud.Models.Vod.VodGetPla" +
       "yInfoRequest\032).Vcloud.Models.Vod.VodGetP" +
-      "layInfoResponse\"\211\001\202\323\344\223\002\202\001\022\'/?Action=GetP" +
-      "layInfo&Version=2020-08-01:\025VodGetPlayIn" +
-      "foRequestZ@\"\'/?Action=GetPlayInfo&Versio" +
-      "n=2020-08-01:\025VodGetPlayInfoRequest\022\232\002\n\023" +
-      "GetOriginalPlayInfo\0220.Vcloud.Models.Vod." +
-      "VodGetOriginalPlayInfoRequest\0321.Vcloud.M" +
-      "odels.Vod.VodGetOriginalPlayInfoResponse" +
-      "\"\235\001\202\323\344\223\002\226\001\022)/video/atlas/top/vod/v2/GetO" +
-      "riginPlayInfo:\035VodGetOriginalPlayInfoReq" +
-      "uestZJ\")/video/atlas/top/vod/v2/GetOrigi" +
-      "nPlayInfo:\035VodGetOriginalPlayInfoRequest" +
-      "Bm\n\035com.bytedanceapi.model.commonB\007VodPl" +
-      "ayP\001Z\010.;models\240\001\001\330\001\001\302\002\000\312\002\021Vcloud\\Models\\" +
-      "Vod\342\002\031Vcloud\\Models\\GPBMetadatab\006proto3"
+      "layInfoResponse\"7\202\323\344\223\0021\022\024/GetOriginalPla" +
+      "yInfoZ\031\"\024/GetOriginalPlayInfo:\001*\022\263\001\n\023get" +
+      "OriginalPlayInfo\0220.Vcloud.Models.Vod.Vod" +
+      "GetOriginalPlayInfoRequest\0321.Vcloud.Mode" +
+      "ls.Vod.VodGetOriginalPlayInfoResponse\"7\202" +
+      "\323\344\223\0021\022\024/GetOriginalPlayInfoZ\031\"\024/GetOrigi" +
+      "nalPlayInfo:\001*Bp\n\035com.bytedanceapi.model" +
+      ".commonB\007VodPlayP\001Z\010.;models\240\001\001\330\001\001\370\001\001\302\002\000" +
+      "\312\002\021Vcloud\\Models\\Vod\342\002\031Vcloud\\Models\\GPB" +
+      "Metadatab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.bytedanceapi.model.common.Base.getDescriptor(),
+          Base.getDescriptor(),
           com.google.api.AnnotationsProto.getDescriptor(),
         });
     internal_static_Vcloud_Models_Vod_VodGetPlayInfoRequest_descriptor =
@@ -133,55 +129,55 @@ public final class VodPlay {
     internal_static_Vcloud_Models_Vod_VodGetPlayInfoRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_VodGetPlayInfoRequest_descriptor,
-        new java.lang.String[] { "Vid", "Format", "Codec", "Definition", "FileType", "LogoType", "Base64", "Ssl", });
+        new String[] { "Vid", "Format", "Codec", "Definition", "FileType", "LogoType", "Base64", "Ssl", });
     internal_static_Vcloud_Models_Vod_VodGetPlayInfoResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_Vcloud_Models_Vod_VodGetPlayInfoResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_VodGetPlayInfoResponse_descriptor,
-        new java.lang.String[] { "ResponseMetadata", "Result", });
+        new String[] { "ResponseMetadata", "Result", });
     internal_static_Vcloud_Models_Vod_VodGetPlayInfoResult_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_Vcloud_Models_Vod_VodGetPlayInfoResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_VodGetPlayInfoResult_descriptor,
-        new java.lang.String[] { "Vid", "Status", "PosterUrl", "Duration", "FileType", "EnableAdaptive", "TotalCount", "AdaptiveInfo", "PlayInfoList", });
+        new String[] { "Vid", "Status", "PosterUrl", "Duration", "FileType", "EnableAdaptive", "TotalCount", "AdaptiveInfo", "PlayInfoList", });
     internal_static_Vcloud_Models_Vod_VodAdaptiveInfo_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_Vcloud_Models_Vod_VodAdaptiveInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_VodAdaptiveInfo_descriptor,
-        new java.lang.String[] { "MainPlayUrl", "BackupPlayUrl", "AdaptiveType", });
+        new String[] { "MainPlayUrl", "BackupPlayUrl", "AdaptiveType", });
     internal_static_Vcloud_Models_Vod_VodPlayInfo_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_Vcloud_Models_Vod_VodPlayInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_VodPlayInfo_descriptor,
-        new java.lang.String[] { "FileId", "Md5", "FileType", "Format", "Codec", "Definition", "MainPlayUrl", "BackupPlayUrl", "Bitrate", "Width", "Height", "Size", "CheckInfo", "IndexRange", "InitRange", "PreloadSize", "PreloadMinStep", "PreloadMaxStep", "PreloadInterval", "P2PVerifyUrl", "PlayAuth", "PlayAuthId", "LogoType", "Quality", });
+        new String[] { "FileId", "Md5", "FileType", "Format", "Codec", "Definition", "MainPlayUrl", "BackupPlayUrl", "Bitrate", "Width", "Height", "Size", "CheckInfo", "IndexRange", "InitRange", "PreloadSize", "PreloadMinStep", "PreloadMaxStep", "PreloadInterval", "P2PVerifyUrl", "PlayAuth", "PlayAuthId", "LogoType", "Quality", });
     internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoRequest_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoRequest_descriptor,
-        new java.lang.String[] { "Vid", "Base64", "Ssl", });
+        new String[] { "Vid", "Base64", "Ssl", });
     internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoResponse_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoResponse_descriptor,
-        new java.lang.String[] { "ResponseMetadata", "Result", });
+        new String[] { "ResponseMetadata", "Result", });
     internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoResult_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoResult_descriptor,
-        new java.lang.String[] { "FileType", "Duration", "Size", "Height", "Width", "Format", "Codec", "Bitrate", "Md5", "MainPlayUrl", "BackupPlayUrl", });
+        new String[] { "FileType", "Duration", "Size", "Height", "Width", "Format", "Codec", "Bitrate", "Md5", "MainPlayUrl", "BackupPlayUrl", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.bytedanceapi.model.common.Base.getDescriptor();
+    Base.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
   }
 

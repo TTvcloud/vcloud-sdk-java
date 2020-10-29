@@ -8,11 +8,19 @@ public interface ResponseMetadataOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * 请求ID
+   * </pre>
+   *
    * <code>string RequestId = 1;</code>
    * @return The requestId.
    */
-  java.lang.String getRequestId();
+  String getRequestId();
   /**
+   * <pre>
+   * 请求ID
+   * </pre>
+   *
    * <code>string RequestId = 1;</code>
    * @return The bytes for requestId.
    */
@@ -20,11 +28,19 @@ public interface ResponseMetadataOrBuilder extends
       getRequestIdBytes();
 
   /**
+   * <pre>
+   * 请求接口
+   * </pre>
+   *
    * <code>string Action = 2;</code>
    * @return The action.
    */
-  java.lang.String getAction();
+  String getAction();
   /**
+   * <pre>
+   * 请求接口
+   * </pre>
+   *
    * <code>string Action = 2;</code>
    * @return The bytes for action.
    */
@@ -32,11 +48,19 @@ public interface ResponseMetadataOrBuilder extends
       getActionBytes();
 
   /**
+   * <pre>
+   * 版本
+   * </pre>
+   *
    * <code>string Version = 3;</code>
    * @return The version.
    */
-  java.lang.String getVersion();
+  String getVersion();
   /**
+   * <pre>
+   * 版本
+   * </pre>
+   *
    * <code>string Version = 3;</code>
    * @return The bytes for version.
    */
@@ -44,11 +68,19 @@ public interface ResponseMetadataOrBuilder extends
       getVersionBytes();
 
   /**
+   * <pre>
+   * 服务
+   * </pre>
+   *
    * <code>string Service = 4;</code>
    * @return The service.
    */
-  java.lang.String getService();
+  String getService();
   /**
+   * <pre>
+   * 服务
+   * </pre>
+   *
    * <code>string Service = 4;</code>
    * @return The bytes for service.
    */
@@ -56,11 +88,19 @@ public interface ResponseMetadataOrBuilder extends
       getServiceBytes();
 
   /**
+   * <pre>
+   * 区域
+   * </pre>
+   *
    * <code>string Region = 5;</code>
    * @return The region.
    */
-  java.lang.String getRegion();
+  String getRegion();
   /**
+   * <pre>
+   * 区域
+   * </pre>
+   *
    * <code>string Region = 5;</code>
    * @return The bytes for region.
    */
@@ -68,17 +108,29 @@ public interface ResponseMetadataOrBuilder extends
       getRegionBytes();
 
   /**
+   * <pre>
+   * 异常信息
+   * </pre>
+   *
    * <code>.Vcloud.Models.Base.ResponseError Error = 6;</code>
    * @return Whether the error field is set.
    */
   boolean hasError();
   /**
+   * <pre>
+   * 异常信息
+   * </pre>
+   *
    * <code>.Vcloud.Models.Base.ResponseError Error = 6;</code>
    * @return The error.
    */
-  com.bytedanceapi.model.common.ResponseError getError();
+  ResponseError getError();
   /**
+   * <pre>
+   * 异常信息
+   * </pre>
+   *
    * <code>.Vcloud.Models.Base.ResponseError Error = 6;</code>
    */
-  com.bytedanceapi.model.common.ResponseErrorOrBuilder getErrorOrBuilder();
+  ResponseErrorOrBuilder getErrorOrBuilder();
 }

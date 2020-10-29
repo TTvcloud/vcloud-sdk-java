@@ -95,13 +95,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_GetVideoInfosResponse_descriptor;
+    return VodMedia.internal_static_Vcloud_Models_Vod_GetVideoInfosResponse_descriptor;
   }
 
   @Override
   protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_GetVideoInfosResponse_fieldAccessorTable
+    return VodMedia.internal_static_Vcloud_Models_Vod_GetVideoInfosResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             GetVideoInfosResponse.class, Builder.class);
   }
@@ -343,13 +343,13 @@ private static final long serialVersionUID = 0L;
       GetVideoInfosResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_GetVideoInfosResponse_descriptor;
+      return VodMedia.internal_static_Vcloud_Models_Vod_GetVideoInfosResponse_descriptor;
     }
 
     @Override
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_GetVideoInfosResponse_fieldAccessorTable
+      return VodMedia.internal_static_Vcloud_Models_Vod_GetVideoInfosResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               GetVideoInfosResponse.class, Builder.class);
     }
@@ -390,7 +390,7 @@ private static final long serialVersionUID = 0L;
     @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_GetVideoInfosResponse_descriptor;
+      return VodMedia.internal_static_Vcloud_Models_Vod_GetVideoInfosResponse_descriptor;
     }
 
     @Override

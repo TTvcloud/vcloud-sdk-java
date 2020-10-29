@@ -29,7 +29,7 @@ public interface SourceInfoOrBuilder extends
 
   /**
    * <pre>
-   *hash值
+   * hash值
    * </pre>
    *
    * <code>string Md5 = 2;</code>
@@ -38,7 +38,7 @@ public interface SourceInfoOrBuilder extends
   String getMd5();
   /**
    * <pre>
-   *hash值
+   * hash值
    * </pre>
    *
    * <code>string Md5 = 2;</code>

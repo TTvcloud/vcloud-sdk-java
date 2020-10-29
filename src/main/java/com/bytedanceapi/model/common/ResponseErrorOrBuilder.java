@@ -8,11 +8,19 @@ public interface ResponseErrorOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * 错误码
+   * </pre>
+   *
    * <code>string Code = 1;</code>
    * @return The code.
    */
-  java.lang.String getCode();
+  String getCode();
   /**
+   * <pre>
+   * 错误码
+   * </pre>
+   *
    * <code>string Code = 1;</code>
    * @return The bytes for code.
    */
@@ -20,11 +28,19 @@ public interface ResponseErrorOrBuilder extends
       getCodeBytes();
 
   /**
+   * <pre>
+   * 详细错误信息
+   * </pre>
+   *
    * <code>string Message = 2;</code>
    * @return The message.
    */
-  java.lang.String getMessage();
+  String getMessage();
   /**
+   * <pre>
+   * 详细错误信息
+   * </pre>
+   *
    * <code>string Message = 2;</code>
    * @return The bytes for message.
    */

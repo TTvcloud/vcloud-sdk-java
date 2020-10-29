@@ -17,16 +17,18 @@ private static final long serialVersionUID = 0L;
   }
   private VodGetOriginalPlayInfoRequest() {
     vid_ = "";
+    base64_ = "";
+    ssl_ = "";
   }
 
-  @java.lang.Override
+  @Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
+  protected Object newInstance(
       UnusedPrivateParameter unused) {
     return new VodGetOriginalPlayInfoRequest();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -37,7 +39,7 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException();
     }
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -50,19 +52,21 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             vid_ = s;
             break;
           }
-          case 16: {
+          case 18: {
+            String s = input.readStringRequireUtf8();
 
-            base64_ = input.readInt64();
+            base64_ = s;
             break;
           }
-          case 24: {
+          case 26: {
+            String s = input.readStringRequireUtf8();
 
-            ssl_ = input.readInt64();
+            ssl_ = s;
             break;
           }
           default: {
@@ -86,19 +90,19 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.bytedanceapi.model.common.VodPlay.internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoRequest_descriptor;
+    return VodPlay.internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoRequest_descriptor;
   }
 
-  @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  @Override
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.bytedanceapi.model.common.VodPlay.internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoRequest_fieldAccessorTable
+    return VodPlay.internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest.class, com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest.Builder.class);
+            VodGetOriginalPlayInfoRequest.class, Builder.class);
   }
 
   public static final int VID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object vid_;
+  private volatile Object vid_;
   /**
    * <pre>
    *视频ID
@@ -107,15 +111,15 @@ private static final long serialVersionUID = 0L;
    * <code>string Vid = 1;</code>
    * @return The vid.
    */
-  @java.lang.Override
-  public java.lang.String getVid() {
-    java.lang.Object ref = vid_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  @Override
+  public String getVid() {
+    Object ref = vid_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       vid_ = s;
       return s;
     }
@@ -128,14 +132,14 @@ private static final long serialVersionUID = 0L;
    * <code>string Vid = 1;</code>
    * @return The bytes for vid.
    */
-  @java.lang.Override
+  @Override
   public com.google.protobuf.ByteString
       getVidBytes() {
-    java.lang.Object ref = vid_;
-    if (ref instanceof java.lang.String) {
+    Object ref = vid_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       vid_ = b;
       return b;
     } else {
@@ -144,37 +148,99 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int BASE64_FIELD_NUMBER = 2;
-  private long base64_;
+  private volatile Object base64_;
   /**
    * <pre>
    *播放地址是否base64编码,默认否，0-否，1-是
    * </pre>
    *
-   * <code>int64 Base64 = 2;</code>
+   * <code>string Base64 = 2;</code>
    * @return The base64.
    */
-  @java.lang.Override
-  public long getBase64() {
-    return base64_;
+  @Override
+  public String getBase64() {
+    Object ref = base64_;
+    if (ref instanceof String) {
+      return (String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      String s = bs.toStringUtf8();
+      base64_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   *播放地址是否base64编码,默认否，0-否，1-是
+   * </pre>
+   *
+   * <code>string Base64 = 2;</code>
+   * @return The bytes for base64.
+   */
+  @Override
+  public com.google.protobuf.ByteString
+      getBase64Bytes() {
+    Object ref = base64_;
+    if (ref instanceof String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (String) ref);
+      base64_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int SSL_FIELD_NUMBER = 3;
-  private long ssl_;
+  private volatile Object ssl_;
   /**
    * <pre>
    *返回https播放地址,默认否, 0-否，1-是
    * </pre>
    *
-   * <code>int64 Ssl = 3;</code>
+   * <code>string Ssl = 3;</code>
    * @return The ssl.
    */
-  @java.lang.Override
-  public long getSsl() {
-    return ssl_;
+  @Override
+  public String getSsl() {
+    Object ref = ssl_;
+    if (ref instanceof String) {
+      return (String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      String s = bs.toStringUtf8();
+      ssl_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   *返回https播放地址,默认否, 0-否，1-是
+   * </pre>
+   *
+   * <code>string Ssl = 3;</code>
+   * @return The bytes for ssl.
+   */
+  @Override
+  public com.google.protobuf.ByteString
+      getSslBytes() {
+    Object ref = ssl_;
+    if (ref instanceof String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (String) ref);
+      ssl_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
+  @Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -184,22 +250,22 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getVidBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, vid_);
     }
-    if (base64_ != 0L) {
-      output.writeInt64(2, base64_);
+    if (!getBase64Bytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, base64_);
     }
-    if (ssl_ != 0L) {
-      output.writeInt64(3, ssl_);
+    if (!getSslBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, ssl_);
     }
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
+  @Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -208,40 +274,38 @@ private static final long serialVersionUID = 0L;
     if (!getVidBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, vid_);
     }
-    if (base64_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, base64_);
+    if (!getBase64Bytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, base64_);
     }
-    if (ssl_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, ssl_);
+    if (!getSslBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, ssl_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest)) {
+    if (!(obj instanceof VodGetOriginalPlayInfoRequest)) {
       return super.equals(obj);
     }
-    com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest other = (com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest) obj;
+    VodGetOriginalPlayInfoRequest other = (VodGetOriginalPlayInfoRequest) obj;
 
     if (!getVid()
         .equals(other.getVid())) return false;
-    if (getBase64()
-        != other.getBase64()) return false;
-    if (getSsl()
-        != other.getSsl()) return false;
+    if (!getBase64()
+        .equals(other.getBase64())) return false;
+    if (!getSsl()
+        .equals(other.getSsl())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -251,79 +315,77 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + VID_FIELD_NUMBER;
     hash = (53 * hash) + getVid().hashCode();
     hash = (37 * hash) + BASE64_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getBase64());
+    hash = (53 * hash) + getBase64().hashCode();
     hash = (37 * hash) + SSL_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getSsl());
+    hash = (53 * hash) + getSsl().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest parseFrom(
+  public static VodGetOriginalPlayInfoRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest parseFrom(
+  public static VodGetOriginalPlayInfoRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest parseFrom(
+  public static VodGetOriginalPlayInfoRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest parseFrom(
+  public static VodGetOriginalPlayInfoRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest parseFrom(byte[] data)
+  public static VodGetOriginalPlayInfoRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest parseFrom(
+  public static VodGetOriginalPlayInfoRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest parseFrom(java.io.InputStream input)
+  public static VodGetOriginalPlayInfoRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest parseFrom(
+  public static VodGetOriginalPlayInfoRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest parseDelimitedFrom(java.io.InputStream input)
+  public static VodGetOriginalPlayInfoRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest parseDelimitedFrom(
+  public static VodGetOriginalPlayInfoRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest parseFrom(
+  public static VodGetOriginalPlayInfoRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest parseFrom(
+  public static VodGetOriginalPlayInfoRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -331,23 +393,23 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
+  @Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest prototype) {
+  public static Builder newBuilder(VodGetOriginalPlayInfoRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
+  @Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -357,18 +419,18 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:Vcloud.Models.Vod.VodGetOriginalPlayInfoRequest)
-      com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequestOrBuilder {
+      VodGetOriginalPlayInfoRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.bytedanceapi.model.common.VodPlay.internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoRequest_descriptor;
+      return VodPlay.internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoRequest_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.bytedanceapi.model.common.VodPlay.internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoRequest_fieldAccessorTable
+      return VodPlay.internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest.class, com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest.Builder.class);
+              VodGetOriginalPlayInfoRequest.class, Builder.class);
     }
 
     // Construct using com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest.newBuilder()
@@ -377,7 +439,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -386,41 +448,41 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
+    @Override
     public Builder clear() {
       super.clear();
       vid_ = "";
 
-      base64_ = 0L;
+      base64_ = "";
 
-      ssl_ = 0L;
+      ssl_ = "";
 
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.bytedanceapi.model.common.VodPlay.internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoRequest_descriptor;
+      return VodPlay.internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoRequest_descriptor;
     }
 
-    @java.lang.Override
-    public com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest getDefaultInstanceForType() {
-      return com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest.getDefaultInstance();
+    @Override
+    public VodGetOriginalPlayInfoRequest getDefaultInstanceForType() {
+      return VodGetOriginalPlayInfoRequest.getDefaultInstance();
     }
 
-    @java.lang.Override
-    public com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest build() {
-      com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest result = buildPartial();
+    @Override
+    public VodGetOriginalPlayInfoRequest build() {
+      VodGetOriginalPlayInfoRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    @java.lang.Override
-    public com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest buildPartial() {
-      com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest result = new com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest(this);
+    @Override
+    public VodGetOriginalPlayInfoRequest buildPartial() {
+      VodGetOriginalPlayInfoRequest result = new VodGetOriginalPlayInfoRequest(this);
       result.vid_ = vid_;
       result.base64_ = base64_;
       result.ssl_ = ssl_;
@@ -428,80 +490,82 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public Builder clone() {
       return super.clone();
     }
-    @java.lang.Override
+    @Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.setField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-    @java.lang.Override
+    @Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-    @java.lang.Override
+    @Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
+    @Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return super.addRepeatedField(field, value);
     }
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest) {
-        return mergeFrom((com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest)other);
+      if (other instanceof VodGetOriginalPlayInfoRequest) {
+        return mergeFrom((VodGetOriginalPlayInfoRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest other) {
-      if (other == com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(VodGetOriginalPlayInfoRequest other) {
+      if (other == VodGetOriginalPlayInfoRequest.getDefaultInstance()) return this;
       if (!other.getVid().isEmpty()) {
         vid_ = other.vid_;
         onChanged();
       }
-      if (other.getBase64() != 0L) {
-        setBase64(other.getBase64());
+      if (!other.getBase64().isEmpty()) {
+        base64_ = other.base64_;
+        onChanged();
       }
-      if (other.getSsl() != 0L) {
-        setSsl(other.getSsl());
+      if (!other.getSsl().isEmpty()) {
+        ssl_ = other.ssl_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest parsedMessage = null;
+      VodGetOriginalPlayInfoRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest) e.getUnfinishedMessage();
+        parsedMessage = (VodGetOriginalPlayInfoRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -511,7 +575,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object vid_ = "";
+    private Object vid_ = "";
     /**
      * <pre>
      *视频ID
@@ -520,16 +584,16 @@ private static final long serialVersionUID = 0L;
      * <code>string Vid = 1;</code>
      * @return The vid.
      */
-    public java.lang.String getVid() {
-      java.lang.Object ref = vid_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getVid() {
+      Object ref = vid_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         vid_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -542,11 +606,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getVidBytes() {
-      java.lang.Object ref = vid_;
+      Object ref = vid_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         vid_ = b;
         return b;
       } else {
@@ -563,7 +627,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setVid(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -607,30 +671,63 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long base64_ ;
+    private Object base64_ = "";
     /**
      * <pre>
      *播放地址是否base64编码,默认否，0-否，1-是
      * </pre>
      *
-     * <code>int64 Base64 = 2;</code>
+     * <code>string Base64 = 2;</code>
      * @return The base64.
      */
-    @java.lang.Override
-    public long getBase64() {
-      return base64_;
+    public String getBase64() {
+      Object ref = base64_;
+      if (!(ref instanceof String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        base64_ = s;
+        return s;
+      } else {
+        return (String) ref;
+      }
     }
     /**
      * <pre>
      *播放地址是否base64编码,默认否，0-否，1-是
      * </pre>
      *
-     * <code>int64 Base64 = 2;</code>
+     * <code>string Base64 = 2;</code>
+     * @return The bytes for base64.
+     */
+    public com.google.protobuf.ByteString
+        getBase64Bytes() {
+      Object ref = base64_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        base64_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     *播放地址是否base64编码,默认否，0-否，1-是
+     * </pre>
+     *
+     * <code>string Base64 = 2;</code>
      * @param value The base64 to set.
      * @return This builder for chaining.
      */
-    public Builder setBase64(long value) {
-      
+    public Builder setBase64(
+        String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
       base64_ = value;
       onChanged();
       return this;
@@ -640,40 +737,93 @@ private static final long serialVersionUID = 0L;
      *播放地址是否base64编码,默认否，0-否，1-是
      * </pre>
      *
-     * <code>int64 Base64 = 2;</code>
+     * <code>string Base64 = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearBase64() {
       
-      base64_ = 0L;
+      base64_ = getDefaultInstance().getBase64();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *播放地址是否base64编码,默认否，0-否，1-是
+     * </pre>
+     *
+     * <code>string Base64 = 2;</code>
+     * @param value The bytes for base64 to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBase64Bytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      base64_ = value;
       onChanged();
       return this;
     }
 
-    private long ssl_ ;
+    private Object ssl_ = "";
     /**
      * <pre>
      *返回https播放地址,默认否, 0-否，1-是
      * </pre>
      *
-     * <code>int64 Ssl = 3;</code>
+     * <code>string Ssl = 3;</code>
      * @return The ssl.
      */
-    @java.lang.Override
-    public long getSsl() {
-      return ssl_;
+    public String getSsl() {
+      Object ref = ssl_;
+      if (!(ref instanceof String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        ssl_ = s;
+        return s;
+      } else {
+        return (String) ref;
+      }
     }
     /**
      * <pre>
      *返回https播放地址,默认否, 0-否，1-是
      * </pre>
      *
-     * <code>int64 Ssl = 3;</code>
+     * <code>string Ssl = 3;</code>
+     * @return The bytes for ssl.
+     */
+    public com.google.protobuf.ByteString
+        getSslBytes() {
+      Object ref = ssl_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        ssl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     *返回https播放地址,默认否, 0-否，1-是
+     * </pre>
+     *
+     * <code>string Ssl = 3;</code>
      * @param value The ssl to set.
      * @return This builder for chaining.
      */
-    public Builder setSsl(long value) {
-      
+    public Builder setSsl(
+        String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
       ssl_ = value;
       onChanged();
       return this;
@@ -683,22 +833,42 @@ private static final long serialVersionUID = 0L;
      *返回https播放地址,默认否, 0-否，1-是
      * </pre>
      *
-     * <code>int64 Ssl = 3;</code>
+     * <code>string Ssl = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearSsl() {
       
-      ssl_ = 0L;
+      ssl_ = getDefaultInstance().getSsl();
       onChanged();
       return this;
     }
-    @java.lang.Override
+    /**
+     * <pre>
+     *返回https播放地址,默认否, 0-否，1-是
+     * </pre>
+     *
+     * <code>string Ssl = 3;</code>
+     * @param value The bytes for ssl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSslBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      ssl_ = value;
+      onChanged();
+      return this;
+    }
+    @Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
-    @java.lang.Override
+    @Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -709,18 +879,18 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:Vcloud.Models.Vod.VodGetOriginalPlayInfoRequest)
-  private static final com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest DEFAULT_INSTANCE;
+  private static final VodGetOriginalPlayInfoRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest();
+    DEFAULT_INSTANCE = new VodGetOriginalPlayInfoRequest();
   }
 
-  public static com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest getDefaultInstance() {
+  public static VodGetOriginalPlayInfoRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<VodGetOriginalPlayInfoRequest>
       PARSER = new com.google.protobuf.AbstractParser<VodGetOriginalPlayInfoRequest>() {
-    @java.lang.Override
+    @Override
     public VodGetOriginalPlayInfoRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -733,13 +903,13 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<VodGetOriginalPlayInfoRequest> getParserForType() {
     return PARSER;
   }
 
-  @java.lang.Override
-  public com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest getDefaultInstanceForType() {
+  @Override
+  public VodGetOriginalPlayInfoRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

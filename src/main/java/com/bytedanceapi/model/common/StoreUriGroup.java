@@ -90,13 +90,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_StoreUriGroup_descriptor;
+    return VodMedia.internal_static_Vcloud_Models_Vod_StoreUriGroup_descriptor;
   }
 
   @Override
   protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_StoreUriGroup_fieldAccessorTable
+    return VodMedia.internal_static_Vcloud_Models_Vod_StoreUriGroup_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             StoreUriGroup.class, Builder.class);
   }
@@ -378,13 +378,13 @@ private static final long serialVersionUID = 0L;
       StoreUriGroupOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_StoreUriGroup_descriptor;
+      return VodMedia.internal_static_Vcloud_Models_Vod_StoreUriGroup_descriptor;
     }
 
     @Override
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_StoreUriGroup_fieldAccessorTable
+      return VodMedia.internal_static_Vcloud_Models_Vod_StoreUriGroup_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               StoreUriGroup.class, Builder.class);
     }
@@ -417,7 +417,7 @@ private static final long serialVersionUID = 0L;
     @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_StoreUriGroup_descriptor;
+      return VodMedia.internal_static_Vcloud_Models_Vod_StoreUriGroup_descriptor;
     }
 
     @Override

@@ -155,13 +155,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_SourceInfo_descriptor;
+    return VodMedia.internal_static_Vcloud_Models_Vod_SourceInfo_descriptor;
   }
 
   @Override
   protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_SourceInfo_fieldAccessorTable
+    return VodMedia.internal_static_Vcloud_Models_Vod_SourceInfo_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             SourceInfo.class, Builder.class);
   }
@@ -216,7 +216,7 @@ private static final long serialVersionUID = 0L;
   private volatile Object md5_;
   /**
    * <pre>
-   *hash值
+   * hash值
    * </pre>
    *
    * <code>string Md5 = 2;</code>
@@ -237,7 +237,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *hash值
+   * hash值
    * </pre>
    *
    * <code>string Md5 = 2;</code>
@@ -931,13 +931,13 @@ private static final long serialVersionUID = 0L;
       SourceInfoOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_SourceInfo_descriptor;
+      return VodMedia.internal_static_Vcloud_Models_Vod_SourceInfo_descriptor;
     }
 
     @Override
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_SourceInfo_fieldAccessorTable
+      return VodMedia.internal_static_Vcloud_Models_Vod_SourceInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               SourceInfo.class, Builder.class);
     }
@@ -994,7 +994,7 @@ private static final long serialVersionUID = 0L;
     @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_SourceInfo_descriptor;
+      return VodMedia.internal_static_Vcloud_Models_Vod_SourceInfo_descriptor;
     }
 
     @Override
@@ -1254,7 +1254,7 @@ private static final long serialVersionUID = 0L;
     private Object md5_ = "";
     /**
      * <pre>
-     *hash值
+     * hash值
      * </pre>
      *
      * <code>string Md5 = 2;</code>
@@ -1274,7 +1274,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *hash值
+     * hash值
      * </pre>
      *
      * <code>string Md5 = 2;</code>
@@ -1295,7 +1295,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *hash值
+     * hash值
      * </pre>
      *
      * <code>string Md5 = 2;</code>
@@ -1314,7 +1314,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *hash值
+     * hash值
      * </pre>
      *
      * <code>string Md5 = 2;</code>
@@ -1328,7 +1328,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *hash值
+     * hash值
      * </pre>
      *
      * <code>string Md5 = 2;</code>

@@ -53,11 +53,11 @@ private static final long serialVersionUID = 0L;
             break;
           case 10: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              storeUriGroups_ = new java.util.ArrayList<com.bytedanceapi.model.common.StoreUriGroup>();
+              storeUriGroups_ = new java.util.ArrayList<StoreUriGroup>();
               mutable_bitField0_ |= 0x00000001;
             }
             storeUriGroups_.add(
-                input.readMessage(com.bytedanceapi.model.common.StoreUriGroup.parser(), extensionRegistry));
+                input.readMessage(StoreUriGroup.parser(), extensionRegistry));
             break;
           }
           case 18: {
@@ -96,19 +96,19 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_GetRecPostersData_descriptor;
+    return VodMedia.internal_static_Vcloud_Models_Vod_GetRecPostersData_descriptor;
   }
 
   @Override
   protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_GetRecPostersData_fieldAccessorTable
+    return VodMedia.internal_static_Vcloud_Models_Vod_GetRecPostersData_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             GetRecPostersData.class, Builder.class);
   }
 
   public static final int STOREURIGROUPS_FIELD_NUMBER = 1;
-  private java.util.List<com.bytedanceapi.model.common.StoreUriGroup> storeUriGroups_;
+  private java.util.List<StoreUriGroup> storeUriGroups_;
   /**
    * <pre>
    *封面图信息
@@ -117,7 +117,7 @@ private static final long serialVersionUID = 0L;
    * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
    */
   @Override
-  public java.util.List<com.bytedanceapi.model.common.StoreUriGroup> getStoreUriGroupsList() {
+  public java.util.List<StoreUriGroup> getStoreUriGroupsList() {
     return storeUriGroups_;
   }
   /**
@@ -128,7 +128,7 @@ private static final long serialVersionUID = 0L;
    * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
    */
   @Override
-  public java.util.List<? extends com.bytedanceapi.model.common.StoreUriGroupOrBuilder> 
+  public java.util.List<? extends StoreUriGroupOrBuilder>
       getStoreUriGroupsOrBuilderList() {
     return storeUriGroups_;
   }
@@ -151,7 +151,7 @@ private static final long serialVersionUID = 0L;
    * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
    */
   @Override
-  public com.bytedanceapi.model.common.StoreUriGroup getStoreUriGroups(int index) {
+  public StoreUriGroup getStoreUriGroups(int index) {
     return storeUriGroups_.get(index);
   }
   /**
@@ -162,7 +162,7 @@ private static final long serialVersionUID = 0L;
    * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
    */
   @Override
-  public com.bytedanceapi.model.common.StoreUriGroupOrBuilder getStoreUriGroupsOrBuilder(
+  public StoreUriGroupOrBuilder getStoreUriGroupsOrBuilder(
       int index) {
     return storeUriGroups_.get(index);
   }
@@ -401,13 +401,13 @@ private static final long serialVersionUID = 0L;
       GetRecPostersDataOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_GetRecPostersData_descriptor;
+      return VodMedia.internal_static_Vcloud_Models_Vod_GetRecPostersData_descriptor;
     }
 
     @Override
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_GetRecPostersData_fieldAccessorTable
+      return VodMedia.internal_static_Vcloud_Models_Vod_GetRecPostersData_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               GetRecPostersData.class, Builder.class);
     }
@@ -445,7 +445,7 @@ private static final long serialVersionUID = 0L;
     @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_GetRecPostersData_descriptor;
+      return VodMedia.internal_static_Vcloud_Models_Vod_GetRecPostersData_descriptor;
     }
 
     @Override
@@ -594,17 +594,17 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.util.List<com.bytedanceapi.model.common.StoreUriGroup> storeUriGroups_ =
+    private java.util.List<StoreUriGroup> storeUriGroups_ =
       java.util.Collections.emptyList();
     private void ensureStoreUriGroupsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
-        storeUriGroups_ = new java.util.ArrayList<com.bytedanceapi.model.common.StoreUriGroup>(storeUriGroups_);
+        storeUriGroups_ = new java.util.ArrayList<StoreUriGroup>(storeUriGroups_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.bytedanceapi.model.common.StoreUriGroup, com.bytedanceapi.model.common.StoreUriGroup.Builder, com.bytedanceapi.model.common.StoreUriGroupOrBuilder> storeUriGroupsBuilder_;
+        StoreUriGroup, StoreUriGroup.Builder, StoreUriGroupOrBuilder> storeUriGroupsBuilder_;
 
     /**
      * <pre>
@@ -613,7 +613,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
      */
-    public java.util.List<com.bytedanceapi.model.common.StoreUriGroup> getStoreUriGroupsList() {
+    public java.util.List<StoreUriGroup> getStoreUriGroupsList() {
       if (storeUriGroupsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(storeUriGroups_);
       } else {
@@ -641,7 +641,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
      */
-    public com.bytedanceapi.model.common.StoreUriGroup getStoreUriGroups(int index) {
+    public StoreUriGroup getStoreUriGroups(int index) {
       if (storeUriGroupsBuilder_ == null) {
         return storeUriGroups_.get(index);
       } else {
@@ -656,7 +656,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
      */
     public Builder setStoreUriGroups(
-        int index, com.bytedanceapi.model.common.StoreUriGroup value) {
+        int index, StoreUriGroup value) {
       if (storeUriGroupsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -677,7 +677,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
      */
     public Builder setStoreUriGroups(
-        int index, com.bytedanceapi.model.common.StoreUriGroup.Builder builderForValue) {
+        int index, StoreUriGroup.Builder builderForValue) {
       if (storeUriGroupsBuilder_ == null) {
         ensureStoreUriGroupsIsMutable();
         storeUriGroups_.set(index, builderForValue.build());
@@ -694,7 +694,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
      */
-    public Builder addStoreUriGroups(com.bytedanceapi.model.common.StoreUriGroup value) {
+    public Builder addStoreUriGroups(StoreUriGroup value) {
       if (storeUriGroupsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -715,7 +715,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
      */
     public Builder addStoreUriGroups(
-        int index, com.bytedanceapi.model.common.StoreUriGroup value) {
+        int index, StoreUriGroup value) {
       if (storeUriGroupsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -736,7 +736,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
      */
     public Builder addStoreUriGroups(
-        com.bytedanceapi.model.common.StoreUriGroup.Builder builderForValue) {
+        StoreUriGroup.Builder builderForValue) {
       if (storeUriGroupsBuilder_ == null) {
         ensureStoreUriGroupsIsMutable();
         storeUriGroups_.add(builderForValue.build());
@@ -754,7 +754,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
      */
     public Builder addStoreUriGroups(
-        int index, com.bytedanceapi.model.common.StoreUriGroup.Builder builderForValue) {
+        int index, StoreUriGroup.Builder builderForValue) {
       if (storeUriGroupsBuilder_ == null) {
         ensureStoreUriGroupsIsMutable();
         storeUriGroups_.add(index, builderForValue.build());
@@ -772,7 +772,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
      */
     public Builder addAllStoreUriGroups(
-        Iterable<? extends com.bytedanceapi.model.common.StoreUriGroup> values) {
+        Iterable<? extends StoreUriGroup> values) {
       if (storeUriGroupsBuilder_ == null) {
         ensureStoreUriGroupsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -824,7 +824,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
      */
-    public com.bytedanceapi.model.common.StoreUriGroup.Builder getStoreUriGroupsBuilder(
+    public StoreUriGroup.Builder getStoreUriGroupsBuilder(
         int index) {
       return getStoreUriGroupsFieldBuilder().getBuilder(index);
     }
@@ -835,7 +835,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
      */
-    public com.bytedanceapi.model.common.StoreUriGroupOrBuilder getStoreUriGroupsOrBuilder(
+    public StoreUriGroupOrBuilder getStoreUriGroupsOrBuilder(
         int index) {
       if (storeUriGroupsBuilder_ == null) {
         return storeUriGroups_.get(index);  } else {
@@ -849,7 +849,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
      */
-    public java.util.List<? extends com.bytedanceapi.model.common.StoreUriGroupOrBuilder> 
+    public java.util.List<? extends StoreUriGroupOrBuilder>
          getStoreUriGroupsOrBuilderList() {
       if (storeUriGroupsBuilder_ != null) {
         return storeUriGroupsBuilder_.getMessageOrBuilderList();
@@ -864,9 +864,9 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
      */
-    public com.bytedanceapi.model.common.StoreUriGroup.Builder addStoreUriGroupsBuilder() {
+    public StoreUriGroup.Builder addStoreUriGroupsBuilder() {
       return getStoreUriGroupsFieldBuilder().addBuilder(
-          com.bytedanceapi.model.common.StoreUriGroup.getDefaultInstance());
+          StoreUriGroup.getDefaultInstance());
     }
     /**
      * <pre>
@@ -875,10 +875,10 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
      */
-    public com.bytedanceapi.model.common.StoreUriGroup.Builder addStoreUriGroupsBuilder(
+    public StoreUriGroup.Builder addStoreUriGroupsBuilder(
         int index) {
       return getStoreUriGroupsFieldBuilder().addBuilder(
-          index, com.bytedanceapi.model.common.StoreUriGroup.getDefaultInstance());
+          index, StoreUriGroup.getDefaultInstance());
     }
     /**
      * <pre>
@@ -887,16 +887,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .Vcloud.Models.Vod.StoreUriGroup StoreUriGroups = 1;</code>
      */
-    public java.util.List<com.bytedanceapi.model.common.StoreUriGroup.Builder> 
+    public java.util.List<StoreUriGroup.Builder>
          getStoreUriGroupsBuilderList() {
       return getStoreUriGroupsFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.bytedanceapi.model.common.StoreUriGroup, com.bytedanceapi.model.common.StoreUriGroup.Builder, com.bytedanceapi.model.common.StoreUriGroupOrBuilder> 
+        StoreUriGroup, StoreUriGroup.Builder, StoreUriGroupOrBuilder>
         getStoreUriGroupsFieldBuilder() {
       if (storeUriGroupsBuilder_ == null) {
         storeUriGroupsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.bytedanceapi.model.common.StoreUriGroup, com.bytedanceapi.model.common.StoreUriGroup.Builder, com.bytedanceapi.model.common.StoreUriGroupOrBuilder>(
+            StoreUriGroup, StoreUriGroup.Builder, StoreUriGroupOrBuilder>(
                 storeUriGroups_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),

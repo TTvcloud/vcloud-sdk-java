@@ -128,13 +128,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_UpdateVideoInfoRequest_descriptor;
+    return VodMedia.internal_static_Vcloud_Models_Vod_UpdateVideoInfoRequest_descriptor;
   }
 
   @Override
   protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_UpdateVideoInfoRequest_fieldAccessorTable
+    return VodMedia.internal_static_Vcloud_Models_Vod_UpdateVideoInfoRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             UpdateVideoInfoRequest.class, Builder.class);
   }
@@ -558,19 +558,19 @@ private static final long serialVersionUID = 0L;
   /**
    * Protobuf type {@code Vcloud.Models.Vod.UpdateVideoInfoRequest}
    */
-  public static class Builder extends
+  public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:Vcloud.Models.Vod.UpdateVideoInfoRequest)
       UpdateVideoInfoRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_UpdateVideoInfoRequest_descriptor;
+      return VodMedia.internal_static_Vcloud_Models_Vod_UpdateVideoInfoRequest_descriptor;
     }
 
     @Override
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_UpdateVideoInfoRequest_fieldAccessorTable
+      return VodMedia.internal_static_Vcloud_Models_Vod_UpdateVideoInfoRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               UpdateVideoInfoRequest.class, Builder.class);
     }
@@ -625,7 +625,7 @@ private static final long serialVersionUID = 0L;
     @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_UpdateVideoInfoRequest_descriptor;
+      return VodMedia.internal_static_Vcloud_Models_Vod_UpdateVideoInfoRequest_descriptor;
     }
 
     @Override

@@ -108,13 +108,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_VideoStreamMeta_descriptor;
+    return VodMedia.internal_static_Vcloud_Models_Vod_VideoStreamMeta_descriptor;
   }
 
   @Override
   protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_VideoStreamMeta_fieldAccessorTable
+    return VodMedia.internal_static_Vcloud_Models_Vod_VideoStreamMeta_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             VideoStreamMeta.class, Builder.class);
   }
@@ -521,13 +521,13 @@ private static final long serialVersionUID = 0L;
       VideoStreamMetaOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_VideoStreamMeta_descriptor;
+      return VodMedia.internal_static_Vcloud_Models_Vod_VideoStreamMeta_descriptor;
     }
 
     @Override
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_VideoStreamMeta_fieldAccessorTable
+      return VodMedia.internal_static_Vcloud_Models_Vod_VideoStreamMeta_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               VideoStreamMeta.class, Builder.class);
     }
@@ -570,7 +570,7 @@ private static final long serialVersionUID = 0L;
     @Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.bytedanceapi.model.common.VodMedia.internal_static_Vcloud_Models_Vod_VideoStreamMeta_descriptor;
+      return VodMedia.internal_static_Vcloud_Models_Vod_VideoStreamMeta_descriptor;
     }
 
     @Override
