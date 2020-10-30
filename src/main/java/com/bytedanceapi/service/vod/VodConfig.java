@@ -241,7 +241,7 @@ public class VodConfig {
                             put(Const.Query, new ArrayList<NameValuePair>() {
                                 {
                                     add(new BasicNameValuePair("Action", Const.GetOriginalPlayInfo));
-                                    add(new BasicNameValuePair("Version", "2018-08-01"));
+                                    add(new BasicNameValuePair("Version", "2020-08-01"));
                                 }
                             });
                         }
@@ -255,7 +255,7 @@ public class VodConfig {
                             put(Const.Query, new ArrayList<NameValuePair>() {
                                 {
                                     add(new BasicNameValuePair("Action", Const.RedirectPlay));
-                                    add(new BasicNameValuePair("Version", "2018-01-01"));
+                                    add(new BasicNameValuePair("Version", "2020-08-01"));
                                 }
                             });
                         }
