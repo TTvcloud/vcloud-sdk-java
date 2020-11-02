@@ -56,7 +56,7 @@ public class Const {
     public static final String SetVideoPublishStatus = "SetVideoPublishStatus";
     public static final String GetCdnDomainWeights = "GetCdnDomainWeights";
     public static final String RedirectPlay = "RedirectPlay";
-    public static final String GetOriginalPlayInfo = "GetOriginVideoPlayInfo";
+    public static final String GetOriginalPlayInfo = "GetOriginalPlayInfo";
     public static final String ModifyVideoInfo = "ModifyVideoInfo";
 
     // iam
