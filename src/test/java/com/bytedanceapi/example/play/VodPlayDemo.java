@@ -1,10 +1,11 @@
 package com.bytedanceapi.example.play;
 
-import com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest;
-import com.bytedanceapi.model.common.VodGetOriginalPlayInfoResponse;
-import com.bytedanceapi.model.common.VodGetPlayInfoRequest;
-import com.bytedanceapi.model.common.VodGetPlayInfoResponse;
+
 import com.bytedanceapi.model.request.GetRedirectPlayRequest;
+import com.bytedanceapi.model.vod.request.VodGetOriginalPlayInfoRequest;
+import com.bytedanceapi.model.vod.request.VodGetPlayInfoRequest;
+import com.bytedanceapi.model.vod.response.VodGetOriginalPlayInfoResponse;
+import com.bytedanceapi.model.vod.response.VodGetPlayInfoResponse;
 import com.bytedanceapi.service.vod.IVodService;
 import com.bytedanceapi.service.vod.impl.VodServiceImpl;
 

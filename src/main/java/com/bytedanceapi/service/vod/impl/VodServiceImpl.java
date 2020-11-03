@@ -7,10 +7,6 @@ import com.bytedanceapi.helper.Const;
 import com.bytedanceapi.helper.Utils;
 import com.bytedanceapi.model.ServiceInfo;
 import com.bytedanceapi.model.beans.*;
-import com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest;
-import com.bytedanceapi.model.common.VodGetOriginalPlayInfoResponse;
-import com.bytedanceapi.model.common.VodGetPlayInfoRequest;
-import com.bytedanceapi.model.common.VodGetPlayInfoResponse;
 import com.bytedanceapi.model.request.*;
 import com.bytedanceapi.model.response.*;
 import com.bytedanceapi.model.sts2.Policy;
@@ -76,17 +72,17 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
     /**
      * getPlayInfo.
      *
-     * @param input com.bytedanceapi.model.common.VodGetPlayInfoRequest
-     * @return com.bytedanceapi.model.common.VodGetPlayInfoResponse
+     * @param input com.bytedanceapi.model.vod.request.VodGetPlayInfoRequest
+     * @return com.bytedanceapi.model.vod.response.VodGetPlayInfoResponse
      * @throws Exception the exception
      */
     @Override
-    public com.bytedanceapi.model.common.VodGetPlayInfoResponse getPlayInfo(com.bytedanceapi.model.common.VodGetPlayInfoRequest input) throws Exception {
+    public com.bytedanceapi.model.vod.response.VodGetPlayInfoResponse getPlayInfo(com.bytedanceapi.model.vod.request.VodGetPlayInfoRequest input) throws Exception {
         RawResponse response = query(Const.GetPlayInfo, Utils.mapToPairList(Utils.protoBufferToMap(input)));
         if (response.getCode() != SdkError.SUCCESS.getNumber()) {
             throw response.getException();
         }
-        com.bytedanceapi.model.common.VodGetPlayInfoResponse.Builder responseBuilder = com.bytedanceapi.model.common.VodGetPlayInfoResponse.newBuilder();
+        com.bytedanceapi.model.vod.response.VodGetPlayInfoResponse.Builder responseBuilder = com.bytedanceapi.model.vod.response.VodGetPlayInfoResponse.newBuilder();
         JsonFormat.parser().ignoringUnknownFields().merge(new InputStreamReader(new ByteArrayInputStream(response.getData())), responseBuilder);
         return responseBuilder.build();
     }
@@ -95,20 +91,21 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
     /**
      * getOriginalPlayInfo.
      *
-     * @param input com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest
-     * @return com.bytedanceapi.model.common.VodGetOriginalPlayInfoResponse
+     * @param input com.bytedanceapi.model.vod.request.VodGetOriginalPlayInfoRequest
+     * @return com.bytedanceapi.model.vod.response.VodGetOriginalPlayInfoResponse
      * @throws Exception the exception
      */
     @Override
-    public com.bytedanceapi.model.common.VodGetOriginalPlayInfoResponse getOriginalPlayInfo(com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest input) throws Exception {
+    public com.bytedanceapi.model.vod.response.VodGetOriginalPlayInfoResponse getOriginalPlayInfo(com.bytedanceapi.model.vod.request.VodGetOriginalPlayInfoRequest input) throws Exception {
         RawResponse response = query(Const.GetOriginalPlayInfo, Utils.mapToPairList(Utils.protoBufferToMap(input)));
         if (response.getCode() != SdkError.SUCCESS.getNumber()) {
             throw response.getException();
         }
-        com.bytedanceapi.model.common.VodGetOriginalPlayInfoResponse.Builder responseBuilder = com.bytedanceapi.model.common.VodGetOriginalPlayInfoResponse.newBuilder();
+        com.bytedanceapi.model.vod.response.VodGetOriginalPlayInfoResponse.Builder responseBuilder = com.bytedanceapi.model.vod.response.VodGetOriginalPlayInfoResponse.newBuilder();
         JsonFormat.parser().ignoringUnknownFields().merge(new InputStreamReader(new ByteArrayInputStream(response.getData())), responseBuilder);
         return responseBuilder.build();
     }
+
 
     @Override
     public String getPlayAuthToken(Map<String, String> params) throws Exception {

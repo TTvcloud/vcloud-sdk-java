@@ -23,20 +23,20 @@ public interface IVodService extends IBaseService {
     /**
      * getPlayInfo.
      *
-     * @param input com.bytedanceapi.model.common.VodGetPlayInfoRequest
-     * @return com.bytedanceapi.model.common.VodGetPlayInfoResponse
+     * @param input com.bytedanceapi.model.vod.request.VodGetPlayInfoRequest
+     * @return com.bytedanceapi.model.vod.response.VodGetPlayInfoResponse
      * @throws Exception the exception
      */
-    com.bytedanceapi.model.common.VodGetPlayInfoResponse getPlayInfo(com.bytedanceapi.model.common.VodGetPlayInfoRequest input) throws Exception;
+    com.bytedanceapi.model.vod.response.VodGetPlayInfoResponse getPlayInfo(com.bytedanceapi.model.vod.request.VodGetPlayInfoRequest input) throws Exception;
 
     /**
      * getOriginalPlayInfo.
      *
-     * @param input com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest
-     * @return com.bytedanceapi.model.common.VodGetOriginalPlayInfoResponse
+     * @param input com.bytedanceapi.model.vod.request.VodGetOriginalPlayInfoRequest
+     * @return com.bytedanceapi.model.vod.response.VodGetOriginalPlayInfoResponse
      * @throws Exception the exception
      */
-    com.bytedanceapi.model.common.VodGetOriginalPlayInfoResponse getOriginalPlayInfo(com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest input) throws Exception;
+    com.bytedanceapi.model.vod.response.VodGetOriginalPlayInfoResponse getOriginalPlayInfo(com.bytedanceapi.model.vod.request.VodGetOriginalPlayInfoRequest input) throws Exception;
 
     /**
      * Gets play auth token.
