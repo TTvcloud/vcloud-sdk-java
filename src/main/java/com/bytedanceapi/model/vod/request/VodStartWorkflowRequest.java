@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private VodStartWorkflowRequest() {
     vid_ = "";
+    templateId_ = "";
     callbackArgs_ = "";
   }
 
@@ -57,6 +58,12 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            templateId_ = s;
+            break;
+          }
+          case 26: {
             com.bytedanceapi.model.vod.business.WorkflowParams.Builder subBuilder = null;
             if (input_ != null) {
               subBuilder = input_.toBuilder();
@@ -69,12 +76,12 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 24: {
+          case 32: {
 
             priority_ = input.readInt32();
             break;
           }
-          case 34: {
+          case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
             callbackArgs_ = s;
@@ -158,14 +165,60 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int INPUT_FIELD_NUMBER = 2;
+  public static final int TEMPLATEID_FIELD_NUMBER = 2;
+  private volatile java.lang.Object templateId_;
+  /**
+   * <pre>
+   * 工作流模板Id
+   * </pre>
+   *
+   * <code>string TemplateId = 2;</code>
+   * @return The templateId.
+   */
+  @java.lang.Override
+  public java.lang.String getTemplateId() {
+    java.lang.Object ref = templateId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      templateId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 工作流模板Id
+   * </pre>
+   *
+   * <code>string TemplateId = 2;</code>
+   * @return The bytes for templateId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTemplateIdBytes() {
+    java.lang.Object ref = templateId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      templateId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int INPUT_FIELD_NUMBER = 3;
   private com.bytedanceapi.model.vod.business.WorkflowParams input_;
   /**
    * <pre>
    * 动态参数
    * </pre>
    *
-   * <code>.Vcloud.Models.Vod.WorkflowParams Input = 2;</code>
+   * <code>.Vcloud.Models.Vod.WorkflowParams Input = 3;</code>
    * @return Whether the input field is set.
    */
   @java.lang.Override
@@ -177,7 +230,7 @@ private static final long serialVersionUID = 0L;
    * 动态参数
    * </pre>
    *
-   * <code>.Vcloud.Models.Vod.WorkflowParams Input = 2;</code>
+   * <code>.Vcloud.Models.Vod.WorkflowParams Input = 3;</code>
    * @return The input.
    */
   @java.lang.Override
@@ -189,21 +242,21 @@ private static final long serialVersionUID = 0L;
    * 动态参数
    * </pre>
    *
-   * <code>.Vcloud.Models.Vod.WorkflowParams Input = 2;</code>
+   * <code>.Vcloud.Models.Vod.WorkflowParams Input = 3;</code>
    */
   @java.lang.Override
   public com.bytedanceapi.model.vod.business.WorkflowParamsOrBuilder getInputOrBuilder() {
     return getInput();
   }
 
-  public static final int PRIORITY_FIELD_NUMBER = 3;
+  public static final int PRIORITY_FIELD_NUMBER = 4;
   private int priority_;
   /**
    * <pre>
    * 任务优先级
    * </pre>
    *
-   * <code>int32 Priority = 3;</code>
+   * <code>int32 Priority = 4;</code>
    * @return The priority.
    */
   @java.lang.Override
@@ -211,14 +264,14 @@ private static final long serialVersionUID = 0L;
     return priority_;
   }
 
-  public static final int CALLBACKARGS_FIELD_NUMBER = 4;
+  public static final int CALLBACKARGS_FIELD_NUMBER = 5;
   private volatile java.lang.Object callbackArgs_;
   /**
    * <pre>
    * 回调参数
    * </pre>
    *
-   * <code>string CallbackArgs = 4;</code>
+   * <code>string CallbackArgs = 5;</code>
    * @return The callbackArgs.
    */
   @java.lang.Override
@@ -239,7 +292,7 @@ private static final long serialVersionUID = 0L;
    * 回调参数
    * </pre>
    *
-   * <code>string CallbackArgs = 4;</code>
+   * <code>string CallbackArgs = 5;</code>
    * @return The bytes for callbackArgs.
    */
   @java.lang.Override
@@ -274,14 +327,17 @@ private static final long serialVersionUID = 0L;
     if (!getVidBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, vid_);
     }
+    if (!getTemplateIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, templateId_);
+    }
     if (input_ != null) {
-      output.writeMessage(2, getInput());
+      output.writeMessage(3, getInput());
     }
     if (priority_ != 0) {
-      output.writeInt32(3, priority_);
+      output.writeInt32(4, priority_);
     }
     if (!getCallbackArgsBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, callbackArgs_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, callbackArgs_);
     }
     unknownFields.writeTo(output);
   }
@@ -295,16 +351,19 @@ private static final long serialVersionUID = 0L;
     if (!getVidBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, vid_);
     }
+    if (!getTemplateIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, templateId_);
+    }
     if (input_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getInput());
+        .computeMessageSize(3, getInput());
     }
     if (priority_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, priority_);
+        .computeInt32Size(4, priority_);
     }
     if (!getCallbackArgsBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, callbackArgs_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, callbackArgs_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -323,6 +382,8 @@ private static final long serialVersionUID = 0L;
 
     if (!getVid()
         .equals(other.getVid())) return false;
+    if (!getTemplateId()
+        .equals(other.getTemplateId())) return false;
     if (hasInput() != other.hasInput()) return false;
     if (hasInput()) {
       if (!getInput()
@@ -345,6 +406,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + VID_FIELD_NUMBER;
     hash = (53 * hash) + getVid().hashCode();
+    hash = (37 * hash) + TEMPLATEID_FIELD_NUMBER;
+    hash = (53 * hash) + getTemplateId().hashCode();
     if (hasInput()) {
       hash = (37 * hash) + INPUT_FIELD_NUMBER;
       hash = (53 * hash) + getInput().hashCode();
@@ -488,6 +551,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       vid_ = "";
 
+      templateId_ = "";
+
       if (inputBuilder_ == null) {
         input_ = null;
       } else {
@@ -525,6 +590,7 @@ private static final long serialVersionUID = 0L;
     public com.bytedanceapi.model.vod.request.VodStartWorkflowRequest buildPartial() {
       com.bytedanceapi.model.vod.request.VodStartWorkflowRequest result = new com.bytedanceapi.model.vod.request.VodStartWorkflowRequest(this);
       result.vid_ = vid_;
+      result.templateId_ = templateId_;
       if (inputBuilder_ == null) {
         result.input_ = input_;
       } else {
@@ -582,6 +648,10 @@ private static final long serialVersionUID = 0L;
       if (other == com.bytedanceapi.model.vod.request.VodStartWorkflowRequest.getDefaultInstance()) return this;
       if (!other.getVid().isEmpty()) {
         vid_ = other.vid_;
+        onChanged();
+      }
+      if (!other.getTemplateId().isEmpty()) {
+        templateId_ = other.templateId_;
         onChanged();
       }
       if (other.hasInput()) {
@@ -719,6 +789,102 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object templateId_ = "";
+    /**
+     * <pre>
+     * 工作流模板Id
+     * </pre>
+     *
+     * <code>string TemplateId = 2;</code>
+     * @return The templateId.
+     */
+    public java.lang.String getTemplateId() {
+      java.lang.Object ref = templateId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        templateId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 工作流模板Id
+     * </pre>
+     *
+     * <code>string TemplateId = 2;</code>
+     * @return The bytes for templateId.
+     */
+    public com.google.protobuf.ByteString
+        getTemplateIdBytes() {
+      java.lang.Object ref = templateId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        templateId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 工作流模板Id
+     * </pre>
+     *
+     * <code>string TemplateId = 2;</code>
+     * @param value The templateId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTemplateId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      templateId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 工作流模板Id
+     * </pre>
+     *
+     * <code>string TemplateId = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTemplateId() {
+      
+      templateId_ = getDefaultInstance().getTemplateId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 工作流模板Id
+     * </pre>
+     *
+     * <code>string TemplateId = 2;</code>
+     * @param value The bytes for templateId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTemplateIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      templateId_ = value;
+      onChanged();
+      return this;
+    }
+
     private com.bytedanceapi.model.vod.business.WorkflowParams input_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.bytedanceapi.model.vod.business.WorkflowParams, com.bytedanceapi.model.vod.business.WorkflowParams.Builder, com.bytedanceapi.model.vod.business.WorkflowParamsOrBuilder> inputBuilder_;
@@ -727,7 +893,7 @@ private static final long serialVersionUID = 0L;
      * 动态参数
      * </pre>
      *
-     * <code>.Vcloud.Models.Vod.WorkflowParams Input = 2;</code>
+     * <code>.Vcloud.Models.Vod.WorkflowParams Input = 3;</code>
      * @return Whether the input field is set.
      */
     public boolean hasInput() {
@@ -738,7 +904,7 @@ private static final long serialVersionUID = 0L;
      * 动态参数
      * </pre>
      *
-     * <code>.Vcloud.Models.Vod.WorkflowParams Input = 2;</code>
+     * <code>.Vcloud.Models.Vod.WorkflowParams Input = 3;</code>
      * @return The input.
      */
     public com.bytedanceapi.model.vod.business.WorkflowParams getInput() {
@@ -753,7 +919,7 @@ private static final long serialVersionUID = 0L;
      * 动态参数
      * </pre>
      *
-     * <code>.Vcloud.Models.Vod.WorkflowParams Input = 2;</code>
+     * <code>.Vcloud.Models.Vod.WorkflowParams Input = 3;</code>
      */
     public Builder setInput(com.bytedanceapi.model.vod.business.WorkflowParams value) {
       if (inputBuilder_ == null) {
@@ -773,7 +939,7 @@ private static final long serialVersionUID = 0L;
      * 动态参数
      * </pre>
      *
-     * <code>.Vcloud.Models.Vod.WorkflowParams Input = 2;</code>
+     * <code>.Vcloud.Models.Vod.WorkflowParams Input = 3;</code>
      */
     public Builder setInput(
         com.bytedanceapi.model.vod.business.WorkflowParams.Builder builderForValue) {
@@ -791,7 +957,7 @@ private static final long serialVersionUID = 0L;
      * 动态参数
      * </pre>
      *
-     * <code>.Vcloud.Models.Vod.WorkflowParams Input = 2;</code>
+     * <code>.Vcloud.Models.Vod.WorkflowParams Input = 3;</code>
      */
     public Builder mergeInput(com.bytedanceapi.model.vod.business.WorkflowParams value) {
       if (inputBuilder_ == null) {
@@ -813,7 +979,7 @@ private static final long serialVersionUID = 0L;
      * 动态参数
      * </pre>
      *
-     * <code>.Vcloud.Models.Vod.WorkflowParams Input = 2;</code>
+     * <code>.Vcloud.Models.Vod.WorkflowParams Input = 3;</code>
      */
     public Builder clearInput() {
       if (inputBuilder_ == null) {
@@ -831,7 +997,7 @@ private static final long serialVersionUID = 0L;
      * 动态参数
      * </pre>
      *
-     * <code>.Vcloud.Models.Vod.WorkflowParams Input = 2;</code>
+     * <code>.Vcloud.Models.Vod.WorkflowParams Input = 3;</code>
      */
     public com.bytedanceapi.model.vod.business.WorkflowParams.Builder getInputBuilder() {
       
@@ -843,7 +1009,7 @@ private static final long serialVersionUID = 0L;
      * 动态参数
      * </pre>
      *
-     * <code>.Vcloud.Models.Vod.WorkflowParams Input = 2;</code>
+     * <code>.Vcloud.Models.Vod.WorkflowParams Input = 3;</code>
      */
     public com.bytedanceapi.model.vod.business.WorkflowParamsOrBuilder getInputOrBuilder() {
       if (inputBuilder_ != null) {
@@ -858,7 +1024,7 @@ private static final long serialVersionUID = 0L;
      * 动态参数
      * </pre>
      *
-     * <code>.Vcloud.Models.Vod.WorkflowParams Input = 2;</code>
+     * <code>.Vcloud.Models.Vod.WorkflowParams Input = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.bytedanceapi.model.vod.business.WorkflowParams, com.bytedanceapi.model.vod.business.WorkflowParams.Builder, com.bytedanceapi.model.vod.business.WorkflowParamsOrBuilder> 
@@ -880,7 +1046,7 @@ private static final long serialVersionUID = 0L;
      * 任务优先级
      * </pre>
      *
-     * <code>int32 Priority = 3;</code>
+     * <code>int32 Priority = 4;</code>
      * @return The priority.
      */
     @java.lang.Override
@@ -892,7 +1058,7 @@ private static final long serialVersionUID = 0L;
      * 任务优先级
      * </pre>
      *
-     * <code>int32 Priority = 3;</code>
+     * <code>int32 Priority = 4;</code>
      * @param value The priority to set.
      * @return This builder for chaining.
      */
@@ -907,7 +1073,7 @@ private static final long serialVersionUID = 0L;
      * 任务优先级
      * </pre>
      *
-     * <code>int32 Priority = 3;</code>
+     * <code>int32 Priority = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearPriority() {
@@ -923,7 +1089,7 @@ private static final long serialVersionUID = 0L;
      * 回调参数
      * </pre>
      *
-     * <code>string CallbackArgs = 4;</code>
+     * <code>string CallbackArgs = 5;</code>
      * @return The callbackArgs.
      */
     public java.lang.String getCallbackArgs() {
@@ -943,7 +1109,7 @@ private static final long serialVersionUID = 0L;
      * 回调参数
      * </pre>
      *
-     * <code>string CallbackArgs = 4;</code>
+     * <code>string CallbackArgs = 5;</code>
      * @return The bytes for callbackArgs.
      */
     public com.google.protobuf.ByteString
@@ -964,7 +1130,7 @@ private static final long serialVersionUID = 0L;
      * 回调参数
      * </pre>
      *
-     * <code>string CallbackArgs = 4;</code>
+     * <code>string CallbackArgs = 5;</code>
      * @param value The callbackArgs to set.
      * @return This builder for chaining.
      */
@@ -983,7 +1149,7 @@ private static final long serialVersionUID = 0L;
      * 回调参数
      * </pre>
      *
-     * <code>string CallbackArgs = 4;</code>
+     * <code>string CallbackArgs = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearCallbackArgs() {
@@ -997,7 +1163,7 @@ private static final long serialVersionUID = 0L;
      * 回调参数
      * </pre>
      *
-     * <code>string CallbackArgs = 4;</code>
+     * <code>string CallbackArgs = 5;</code>
      * @param value The bytes for callbackArgs to set.
      * @return This builder for chaining.
      */

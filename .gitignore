@@ -7,3 +7,4 @@ scripts/build.out
 .project
 .factorypath
 .classpath
+.vscode

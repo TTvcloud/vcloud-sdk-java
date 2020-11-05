@@ -59,11 +59,11 @@ public final class VodCommon {
       "tep\030\022 \001(\003\022\027\n\017PreloadInterval\030\023 \001(\003\022\024\n\014P2" +
       "pVerifyUrl\030\024 \001(\t\022\020\n\010PlayAuth\030\025 \001(\t\022\022\n\nPl" +
       "ayAuthId\030\026 \001(\t\022\020\n\010LogoType\030\027 \001(\t\022\017\n\007Qual" +
-      "ity\030\030 \001(\tB\246\001\n#com.bytedanceapi.model.vod" +
+      "ity\030\030 \001(\tB\257\001\n#com.bytedanceapi.model.vod" +
       ".businessB\tVodCommonP\001Z9github.com/TTvcl" +
       "oud/vcloud-sdk-golang/models/vod/busines" +
-      "s\240\001\001\330\001\001\302\002\000\312\002\021Vcloud\\Models\\Vod\342\002\031Vcloud\\" +
-      "Models\\GPBMetadatab\006proto3"
+      "s\240\001\001\330\001\001\302\002\000\312\002\032Vcloud\\Models\\Vod\\Business\342" +
+      "\002\031Vcloud\\Models\\GPBMetadatab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

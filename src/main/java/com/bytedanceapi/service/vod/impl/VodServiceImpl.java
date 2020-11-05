@@ -128,23 +128,23 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
 //        return String.format("%s://%s/?%s", proto, host, uri);
 //    }
 
-    @Override
-    public StartWorkflowResponse startWorkflow(StartWorkflowRequest startWorkflowRequest) throws Exception {
-        Map<String, String> params = new HashMap<>();
-        params.put("TemplateId", startWorkflowRequest.getTemplateId());
-        params.put("Vid", startWorkflowRequest.getVid());
-        params.put("Priority", Integer.toString(startWorkflowRequest.getPriority()));
-        String inputStr = JSON.toJSONString(startWorkflowRequest.getInput());
-        params.put("Input", inputStr);
-        params.put("CallbackArgs", startWorkflowRequest.getCallbackArgs());
-
-        RawResponse resp = post(Const.StartWorkflow, new ArrayList<NameValuePair>(), Utils.mapToPairList(params));
-        if (resp.getCode() != SdkError.SUCCESS.getNumber()) {
-            throw resp.getException();
+    /**
+     * StartWorkflow.
+     *
+     * @param input com.bytedanceapi.model.vod.request.VodStartWorkflowRequest
+     * @return com.bytedanceapi.model.vod.response.VodStartWorkflowResponse
+     * @throws Exception the exception
+     */
+	@Override
+	public com.bytedanceapi.model.vod.response.VodStartWorkflowResponse StartWorkflow(com.bytedanceapi.model.vod.request.VodStartWorkflowRequest input) throws Exception {
+		RawResponse response = query(Const.StartWorkflow, Utils.mapToPairList(Utils.protoBufferToMap(input)));
+        if (response.getCode() != SdkError.SUCCESS.getNumber()) {
+            throw response.getException();
         }
-
-        return JSON.parseObject(resp.getData(), StartWorkflowResponse.class);
-    }
+        com.bytedanceapi.model.vod.response.VodStartWorkflowResponse.Builder responseBuilder = com.bytedanceapi.model.vod.response.VodStartWorkflowResponse.newBuilder();
+        JsonFormat.parser().ignoringUnknownFields().merge(new InputStreamReader(new ByteArrayInputStream(response.getData())), responseBuilder);
+        return responseBuilder.build();
+	}
 
     @Override
     public SetVideoPublishStatusResponse setVideoPublishStatus(SetVideoPublishStatusRequest setVideoPublishStatusRequest) throws Exception {

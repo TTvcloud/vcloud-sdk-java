@@ -83,15 +83,15 @@ public final class VodRequest {
       ".StringValue\0221\n\013Description\030\004 \001(\0132\034.goog" +
       "le.protobuf.StringValue\022*\n\004Tags\030\005 \001(\0132\034." +
       "google.protobuf.StringValue\"$\n\024GetVideoI" +
-      "nfosRequest\022\014\n\004Vids\030\001 \001(\t\"\200\001\n\027VodStartWo" +
-      "rkflowRequest\022\013\n\003Vid\030\001 \001(\t\0220\n\005Input\030\002 \001(" +
-      "\0132!.Vcloud.Models.Vod.WorkflowParams\022\020\n\010" +
-      "Priority\030\003 \001(\005\022\024\n\014CallbackArgs\030\004 \001(\tB\250\001\n" +
-      "\"com.bytedanceapi.model.vod.requestB\nVod" +
-      "RequestP\001Z8github.com/TTvcloud/vcloud-sd" +
-      "k-golang/models/vod/request\240\001\001\330\001\001\302\002\003Vod\312" +
-      "\002\021Vcloud\\Models\\Vod\342\002\031Vcloud\\Models\\GPBM" +
-      "etadatab\006proto3"
+      "nfosRequest\022\014\n\004Vids\030\001 \001(\t\"\224\001\n\027VodStartWo" +
+      "rkflowRequest\022\013\n\003Vid\030\001 \001(\t\022\022\n\nTemplateId" +
+      "\030\002 \001(\t\0220\n\005Input\030\003 \001(\0132!.Vcloud.Models.Vo" +
+      "d.WorkflowParams\022\020\n\010Priority\030\004 \001(\005\022\024\n\014Ca" +
+      "llbackArgs\030\005 \001(\tB\252\001\n\"com.bytedanceapi.mo" +
+      "del.vod.requestB\nVodRequestP\001Z8github.co" +
+      "m/TTvcloud/vcloud-sdk-golang/models/vod/" +
+      "request\240\001\001\330\001\001\312\002\031Vcloud\\Models\\Vod\\Reques" +
+      "t\342\002\031Vcloud\\Models\\GPBMetadatab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -146,7 +146,7 @@ public final class VodRequest {
     internal_static_Vcloud_Models_Vod_VodStartWorkflowRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_VodStartWorkflowRequest_descriptor,
-        new java.lang.String[] { "Vid", "Input", "Priority", "CallbackArgs", });
+        new java.lang.String[] { "Vid", "TemplateId", "Input", "Priority", "CallbackArgs", });
     com.google.protobuf.WrappersProto.getDescriptor();
     com.bytedanceapi.model.vod.business.VodWorkflow.getDescriptor();
   }
