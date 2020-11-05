@@ -24,7 +24,7 @@ public class WorkflowDemo {
             reqBuilder.setVid(vid);
             reqBuilder.setTemplateId(templateId);
 
-            VodStartWorkflowResponse resp = vodService.StartWorkflow(reqBuilder.build());
+            VodStartWorkflowResponse resp = vodService.startWorkflow(reqBuilder.build());
             if (resp.getResponseMetadata().hasError()) {
                 System.out.println(resp.getResponseMetadata().getError());
                 System.exit(-1);

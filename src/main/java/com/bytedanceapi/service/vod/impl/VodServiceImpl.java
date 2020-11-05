@@ -136,7 +136,7 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
      * @throws Exception the exception
      */
 	@Override
-	public com.bytedanceapi.model.vod.response.VodStartWorkflowResponse StartWorkflow(com.bytedanceapi.model.vod.request.VodStartWorkflowRequest input) throws Exception {
+	public com.bytedanceapi.model.vod.response.VodStartWorkflowResponse startWorkflow(com.bytedanceapi.model.vod.request.VodStartWorkflowRequest input) throws Exception {
 		RawResponse response = query(Const.StartWorkflow, Utils.mapToPairList(Utils.protoBufferToMap(input)));
         if (response.getCode() != SdkError.SUCCESS.getNumber()) {
             throw response.getException();
