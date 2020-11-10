@@ -93,11 +93,12 @@ public final class VodMedia {
       "UriGroup\022\013\n\003Vid\030\001 \001(\t\022\021\n\tStoreUris\030\002 \003(\t" +
       "\"c\n\021GetRecPostersData\0228\n\016StoreUriGroups\030" +
       "\001 \003(\0132 .Vcloud.Models.Vod.StoreUriGroup\022" +
-      "\024\n\014NotExistVids\030\002 \003(\tB\245\001\n#com.bytedancea" +
+      "\024\n\014NotExistVids\030\002 \003(\tB\256\001\n#com.bytedancea" +
       "pi.model.vod.businessB\010VodMediaP\001Z9githu" +
       "b.com/TTvcloud/vcloud-sdk-golang/models/" +
-      "vod/business\240\001\001\330\001\001\302\002\000\312\002\021Vcloud\\Models\\Vo" +
-      "d\342\002\031Vcloud\\Models\\GPBMetadatab\006proto3"
+      "vod/business\240\001\001\330\001\001\302\002\000\312\002\032Vcloud\\Models\\Vo" +
+      "d\\Business\342\002\031Vcloud\\Models\\GPBMetadatab\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

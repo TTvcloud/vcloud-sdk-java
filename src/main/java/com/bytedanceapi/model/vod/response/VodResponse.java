@@ -103,11 +103,11 @@ public final class VodResponse {
       "wResponse\022>\n\020ResponseMetadata\030\001 \001(\0132$.Vc" +
       "loud.Models.Base.ResponseMetadata\0229\n\006Res" +
       "ult\030\002 \001(\0132).Vcloud.Models.Vod.VodStartWo" +
-      "rkflowResultB\253\001\n#com.bytedanceapi.model." +
+      "rkflowResultB\256\001\n#com.bytedanceapi.model." +
       "vod.responseB\013VodResponseP\001Z9github.com/" +
       "TTvcloud/vcloud-sdk-golang/models/vod/re" +
-      "sponse\240\001\001\330\001\001\302\002\003Vod\312\002\021Vcloud\\Models\\Vod\342\002" +
-      "\031Vcloud\\Models\\GPBMetadatab\006proto3"
+      "sponse\240\001\001\330\001\001\312\002\032Vcloud\\Models\\Vod\\Respons" +
+      "e\342\002\031Vcloud\\Models\\GPBMetadatab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

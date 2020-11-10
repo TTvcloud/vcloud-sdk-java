@@ -1,12 +1,12 @@
-package com.bytedanceapi.example.transcode;
+package com.bytedanceapi.example.workflow;
 
-import com.bytedanceapi.model.request.StartWorkflowRequest;
-import com.bytedanceapi.model.response.StartWorkflowResponse;
+import com.bytedanceapi.model.vod.request.VodStartWorkflowRequest;
+import com.bytedanceapi.model.vod.response.VodStartWorkflowResponse;
 import com.bytedanceapi.service.vod.IVodService;
 import com.bytedanceapi.service.vod.impl.VodServiceImpl;
 
 
-public class TranscodeDemo {
+public class WorkflowDemo {
 
     public static void main(String[] args) {
         IVodService vodService = VodServiceImpl.getInstance();
@@ -18,20 +18,21 @@ public class TranscodeDemo {
         String vid = "your vid";
         String templateId = "template Id";
 
-        StartWorkflowRequest req = new StartWorkflowRequest();
-        req.setVid(vid);
-        req.setTemplateId(templateId);
-        req.setPriority(0);
-
+        // 1. get play info
         try {
-            StartWorkflowResponse resp = vodService.startWorkflow(req);
-            if (resp.getResponseMetadata().getError() != null) {
+            VodStartWorkflowRequest.Builder reqBuilder = VodStartWorkflowRequest.newBuilder();
+            reqBuilder.setVid(vid);
+            reqBuilder.setTemplateId(templateId);
+
+            VodStartWorkflowResponse resp = vodService.startWorkflow(reqBuilder.build());
+            if (resp.getResponseMetadata().hasError()) {
                 System.out.println(resp.getResponseMetadata().getError());
                 System.exit(-1);
             }
-            System.out.println(resp.getResult());
+            System.out.println(resp.getResult().getRunId());
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 }

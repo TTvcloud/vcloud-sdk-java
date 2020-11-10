@@ -29,10 +29,30 @@ public interface VodStartWorkflowRequestOrBuilder extends
 
   /**
    * <pre>
+   * 工作流模板Id
+   * </pre>
+   *
+   * <code>string TemplateId = 2;</code>
+   * @return The templateId.
+   */
+  java.lang.String getTemplateId();
+  /**
+   * <pre>
+   * 工作流模板Id
+   * </pre>
+   *
+   * <code>string TemplateId = 2;</code>
+   * @return The bytes for templateId.
+   */
+  com.google.protobuf.ByteString
+      getTemplateIdBytes();
+
+  /**
+   * <pre>
    * 动态参数
    * </pre>
    *
-   * <code>.Vcloud.Models.Vod.WorkflowParams Input = 2;</code>
+   * <code>.Vcloud.Models.Vod.WorkflowParams Input = 3;</code>
    * @return Whether the input field is set.
    */
   boolean hasInput();
@@ -41,7 +61,7 @@ public interface VodStartWorkflowRequestOrBuilder extends
    * 动态参数
    * </pre>
    *
-   * <code>.Vcloud.Models.Vod.WorkflowParams Input = 2;</code>
+   * <code>.Vcloud.Models.Vod.WorkflowParams Input = 3;</code>
    * @return The input.
    */
   com.bytedanceapi.model.vod.business.WorkflowParams getInput();
@@ -50,7 +70,7 @@ public interface VodStartWorkflowRequestOrBuilder extends
    * 动态参数
    * </pre>
    *
-   * <code>.Vcloud.Models.Vod.WorkflowParams Input = 2;</code>
+   * <code>.Vcloud.Models.Vod.WorkflowParams Input = 3;</code>
    */
   com.bytedanceapi.model.vod.business.WorkflowParamsOrBuilder getInputOrBuilder();
 
@@ -59,7 +79,7 @@ public interface VodStartWorkflowRequestOrBuilder extends
    * 任务优先级
    * </pre>
    *
-   * <code>int32 Priority = 3;</code>
+   * <code>int32 Priority = 4;</code>
    * @return The priority.
    */
   int getPriority();
@@ -69,7 +89,7 @@ public interface VodStartWorkflowRequestOrBuilder extends
    * 回调参数
    * </pre>
    *
-   * <code>string CallbackArgs = 4;</code>
+   * <code>string CallbackArgs = 5;</code>
    * @return The callbackArgs.
    */
   java.lang.String getCallbackArgs();
@@ -78,7 +98,7 @@ public interface VodStartWorkflowRequestOrBuilder extends
    * 回调参数
    * </pre>
    *
-   * <code>string CallbackArgs = 4;</code>
+   * <code>string CallbackArgs = 5;</code>
    * @return The bytes for callbackArgs.
    */
   com.google.protobuf.ByteString

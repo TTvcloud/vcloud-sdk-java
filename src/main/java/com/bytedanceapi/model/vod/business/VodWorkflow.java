@@ -97,11 +97,12 @@ public final class VodWorkflow {
       "\022\n\nTemplateId\030\001 \003(\t\022%\n\004Clip\030\002 \001(\0132\027.Vclo" +
       "ud.Models.Vod.Clip\"R\n\020SnapshotOverride\022\022" +
       "\n\nTemplateId\030\001 \003(\t\022\022\n\nOffsetTime\030\002 \001(\005\022\026" +
-      "\n\016OffsetTimeList\030\003 \003(\005B\245\001\n#com.bytedance" +
+      "\n\016OffsetTimeList\030\003 \003(\005B\256\001\n#com.bytedance" +
       "api.model.vod.businessB\013VodWorkflowP\001Z9g" +
       "ithub.com/TTvcloud/vcloud-sdk-golang/mod" +
-      "els/vod/business\240\001\001\330\001\001\312\002\021Vcloud\\Models\\V" +
-      "od\342\002\031Vcloud\\Models\\GPBMetadatab\006proto3"
+      "els/vod/business\240\001\001\330\001\001\312\002\032Vcloud\\Models\\V" +
+      "od\\Business\342\002\031Vcloud\\Models\\GPBMetadatab" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

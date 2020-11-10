@@ -60,13 +60,13 @@ public interface IVodService extends IBaseService {
 
 
     /**
-     * Start workflow.
+     * StartWorkflow.
      *
-     * @param req the req
-     * @return the start workflow resp
+     * @param input com.bytedanceapi.model.vod.request.VodStartWorkflowRequest
+     * @return com.bytedanceapi.model.vod.response.VodStartWorkflowResponse
      * @throws Exception the exception
      */
-    StartWorkflowResponse startWorkflow(StartWorkflowRequest req) throws Exception;
+	com.bytedanceapi.model.vod.response.VodStartWorkflowResponse startWorkflow(com.bytedanceapi.model.vod.request.VodStartWorkflowRequest input) throws Exception;
 
     /**
      * Sets video publish status.

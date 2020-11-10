@@ -1,4 +1,4 @@
-package com.bytedanceapi.example.transcode;
+package com.bytedanceapi.example.workflow;
 
 import com.bytedanceapi.model.request.SetVideoPublishStatusRequest;
 import com.bytedanceapi.model.response.SetVideoPublishStatusResponse;
