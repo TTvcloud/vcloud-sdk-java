@@ -12,11 +12,14 @@ import com.bytedanceapi.model.response.*;
 import com.bytedanceapi.model.sts2.Policy;
 import com.bytedanceapi.model.sts2.SecurityToken2;
 import com.bytedanceapi.model.sts2.Statement;
+import com.bytedanceapi.model.vod.request.VodUpdateVideoInfoRequest;
+import com.bytedanceapi.model.vod.response.VodUpdateVideoInfoResponse;
 import com.bytedanceapi.service.BaseServiceImpl;
 import com.bytedanceapi.service.vod.IVodService;
 import com.bytedanceapi.service.vod.VodConfig;
 import com.bytedanceapi.util.Sts2Utils;
 import com.bytedanceapi.util.Time;
+import com.google.protobuf.StringValue;
 import com.google.protobuf.util.JsonFormat;
 import org.apache.http.NameValuePair;
 
@@ -145,17 +148,6 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
         JsonFormat.parser().ignoringUnknownFields().merge(new InputStreamReader(new ByteArrayInputStream(response.getData())), responseBuilder);
         return responseBuilder.build();
 	}
-
-    @Override
-    public SetVideoPublishStatusResponse setVideoPublishStatus(SetVideoPublishStatusRequest setVideoPublishStatusRequest) throws Exception {
-        Map<String, String> params = new HashMap<>();
-        RawResponse resp = json(Const.SetVideoPublishStatus, Utils.mapToPairList(params), JSON.toJSONString(setVideoPublishStatusRequest));
-        if (resp.getCode() != SdkError.SUCCESS.getNumber()) {
-            throw resp.getException();
-        }
-
-        return JSON.parseObject(resp.getData(), SetVideoPublishStatusResponse.class);
-    }
 
     @Override
     public GetDomainWeightsResponse getDomainWeights(String spaceName) {
@@ -330,16 +322,79 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
         return uploadMediaByUrlResponse;
     }
 
+    /**
+     * updateVideoInfo.
+     *
+     * @param input com.bytedanceapi.model.vod.request.VodUpdateVideoInfoRequest
+     * @return com.bytedanceapi.model.vod.response.VodUpdateVideoInfoResponse
+     * @throws Exception the exception
+     */
     @Override
-    public ModifyVideoInfoResponse modifyVideoInfo(ModifyVideoInfoRequest modifyVideoInfoRequest) throws Exception {
-        Map<String, String> params = new HashMap<>();
-        RawResponse response = json(Const.ModifyVideoInfo, Utils.mapToPairList(params), JSON.toJSONString(modifyVideoInfoRequest));
+    public com.bytedanceapi.model.vod.response.VodUpdateVideoInfoResponse updateVideoInfo(com.bytedanceapi.model.vod.request.VodUpdateVideoInfoRequest input) throws Exception {
+        RawResponse response = query(Const.UpdateVideoInfo, Utils.mapToPairList(Utils.protoBufferToMap(input)));
         if (response.getCode() != SdkError.SUCCESS.getNumber()) {
             throw response.getException();
         }
-        ModifyVideoInfoResponse modifyVideoInfoResponse = JSON.parseObject(response.getData(), ModifyVideoInfoResponse.class);
-        modifyVideoInfoResponse.getResponseMetadata().setService("vod");
-        return modifyVideoInfoResponse;
+        com.bytedanceapi.model.vod.response.VodUpdateVideoInfoResponse.Builder responseBuilder = com.bytedanceapi.model.vod.response.VodUpdateVideoInfoResponse.newBuilder();
+        JsonFormat.parser().ignoringUnknownFields().merge(new InputStreamReader(new ByteArrayInputStream(response.getData())), responseBuilder);
+        return responseBuilder.build();
+    }
+
+
+    /**
+     * updateVideoPublishStatus.
+     *
+     * @param input com.bytedanceapi.model.vod.request.VodUpdateVideoPublishStatusRequest
+     * @return com.bytedanceapi.model.vod.response.VodUpdateVideoPublishStatusResponse
+     * @throws Exception the exception
+     */
+    @Override
+    public com.bytedanceapi.model.vod.response.VodUpdateVideoPublishStatusResponse updateVideoPublishStatus(com.bytedanceapi.model.vod.request.VodUpdateVideoPublishStatusRequest input) throws Exception {
+        RawResponse response = query(Const.UpdateVideoPublishStatus, Utils.mapToPairList(Utils.protoBufferToMap(input)));
+        if (response.getCode() != SdkError.SUCCESS.getNumber()) {
+            throw response.getException();
+        }
+        com.bytedanceapi.model.vod.response.VodUpdateVideoPublishStatusResponse.Builder responseBuilder = com.bytedanceapi.model.vod.response.VodUpdateVideoPublishStatusResponse.newBuilder();
+        JsonFormat.parser().ignoringUnknownFields().merge(new InputStreamReader(new ByteArrayInputStream(response.getData())), responseBuilder);
+        return responseBuilder.build();
+    }
+
+
+    /**
+     * getVideoInfos.
+     *
+     * @param input com.bytedanceapi.model.vod.request.VodGetVideoInfosRequest
+     * @return com.bytedanceapi.model.vod.response.VodGetVideoInfosResponse
+     * @throws Exception the exception
+     */
+    @Override
+    public com.bytedanceapi.model.vod.response.VodGetVideoInfosResponse getVideoInfos(com.bytedanceapi.model.vod.request.VodGetVideoInfosRequest input) throws Exception {
+        RawResponse response = query(Const.GetVideoInfos, Utils.mapToPairList(Utils.protoBufferToMap(input)));
+        if (response.getCode() != SdkError.SUCCESS.getNumber()) {
+            throw response.getException();
+        }
+        com.bytedanceapi.model.vod.response.VodGetVideoInfosResponse.Builder responseBuilder = com.bytedanceapi.model.vod.response.VodGetVideoInfosResponse.newBuilder();
+        JsonFormat.parser().ignoringUnknownFields().merge(new InputStreamReader(new ByteArrayInputStream(response.getData())), responseBuilder);
+        return responseBuilder.build();
+    }
+
+
+    /**
+     * getRecommendedPoster.
+     *
+     * @param input com.bytedanceapi.model.vod.request.VodGetRecommendedPosterRequest
+     * @return com.bytedanceapi.model.vod.response.VodGetRecommendedPosterResponse
+     * @throws Exception the exception
+     */
+    @Override
+    public com.bytedanceapi.model.vod.response.VodGetRecommendedPosterResponse getRecommendedPoster(com.bytedanceapi.model.vod.request.VodGetRecommendedPosterRequest input) throws Exception {
+        RawResponse response = query(Const.GetRecommendedPoster, Utils.mapToPairList(Utils.protoBufferToMap(input)));
+        if (response.getCode() != SdkError.SUCCESS.getNumber()) {
+            throw response.getException();
+        }
+        com.bytedanceapi.model.vod.response.VodGetRecommendedPosterResponse.Builder responseBuilder = com.bytedanceapi.model.vod.response.VodGetRecommendedPosterResponse.newBuilder();
+        JsonFormat.parser().ignoringUnknownFields().merge(new InputStreamReader(new ByteArrayInputStream(response.getData())), responseBuilder);
+        return responseBuilder.build();
     }
 
     private UploadCompleteInfo upload(String spaceName, String filePath, String fileType) throws Exception {
@@ -419,19 +474,13 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
         UploadCompleteInfo uploadCompleteInfo = upload(spaceName, filePath, fileType);
         String oid = uploadCompleteInfo.getOid();
 
-        ModifyVideoInfoRequest modifyVideoInfoRequest = new ModifyVideoInfoRequest();
-        modifyVideoInfoRequest.setSpaceName(spaceName);
-        modifyVideoInfoRequest.setVid(vid);
-        ModifyVideoInfoRequest.UserMetaInfo userMetaInfo = new ModifyVideoInfoRequest.UserMetaInfo();
-        userMetaInfo.setPosterUri(oid);
-        modifyVideoInfoRequest.setInfo(userMetaInfo);
+        VodUpdateVideoInfoRequest.Builder req = VodUpdateVideoInfoRequest.newBuilder();
+        req.setVid(vid);
+        req.setPosterUri(StringValue.of(oid));
 
-        ModifyVideoInfoResponse modifyVideoInfoResponse = modifyVideoInfo(modifyVideoInfoRequest);
-        if (modifyVideoInfoResponse.getResponseMetadata().getError() != null) {
-            throw new Exception(modifyVideoInfoResponse.getResponseMetadata().getError().getMessage());
-        }
-        if (modifyVideoInfoResponse.getResult() == null || modifyVideoInfoResponse.getResult().getBaseResp() == null || modifyVideoInfoResponse.getResult().getBaseResp().getStatusCode() != 0) {
-            throw new Exception("modify poster error" + modifyVideoInfoResponse.getResult().getBaseResp().getStatusMessage());
+        VodUpdateVideoInfoResponse updateVideoInfoResponse = updateVideoInfo(req.build());
+        if (updateVideoInfoResponse.getResponseMetadata().getError() != null) {
+            throw new Exception(updateVideoInfoResponse.getResponseMetadata().getError().getMessage());
         }
         return oid;
     }

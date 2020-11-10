@@ -6,6 +6,14 @@ import com.bytedanceapi.model.beans.ImgUrl;
 import com.bytedanceapi.model.beans.ImgUrlOption;
 import com.bytedanceapi.model.request.*;
 import com.bytedanceapi.model.response.*;
+import com.bytedanceapi.model.vod.request.VodGetRecommendedPosterRequest;
+import com.bytedanceapi.model.vod.request.VodGetVideoInfosRequest;
+import com.bytedanceapi.model.vod.request.VodUpdateVideoInfoRequest;
+import com.bytedanceapi.model.vod.request.VodUpdateVideoPublishStatusRequest;
+import com.bytedanceapi.model.vod.response.VodGetRecommendedPosterResponse;
+import com.bytedanceapi.model.vod.response.VodGetVideoInfosResponse;
+import com.bytedanceapi.model.vod.response.VodUpdateVideoInfoResponse;
+import com.bytedanceapi.model.vod.response.VodUpdateVideoPublishStatusResponse;
 import com.bytedanceapi.service.IBaseService;
 
 import java.util.List;
@@ -67,15 +75,6 @@ public interface IVodService extends IBaseService {
      * @throws Exception the exception
      */
 	com.bytedanceapi.model.vod.response.VodStartWorkflowResponse startWorkflow(com.bytedanceapi.model.vod.request.VodStartWorkflowRequest input) throws Exception;
-
-    /**
-     * Sets video publish status.
-     *
-     * @param setVideoPublishStatusRequest the set video publish status request
-     * @return the video publish status
-     * @throws Exception the exception
-     */
-    SetVideoPublishStatusResponse setVideoPublishStatus(SetVideoPublishStatusRequest setVideoPublishStatusRequest) throws Exception;
 
     /**
      * Gets domain weights.
@@ -177,11 +176,40 @@ public interface IVodService extends IBaseService {
     UploadMediaByUrlResponse uploadMediaByUrl(UploadMediaByUrlRequest uploadMediaByUrlRequest) throws Exception;
 
     /**
-     * Modify video info modify video info response.
+     * update video publish status.
      *
-     * @param modifyVideoInfoRequest the modify video info request
+     * @param updateVideoPublishStatusRequest the update video publish status request
+     * @return the video publish status
+     * @throws Exception the exception
+     */
+    VodUpdateVideoPublishStatusResponse updateVideoPublishStatus(VodUpdateVideoPublishStatusRequest updateVideoPublishStatusRequest) throws Exception;
+
+    /**
+     * update video info modify video info response.
+     *
+     * @param updateVideoInfoRequest the modify video info request
      * @return the modify video info response
      * @throws Exception the exception
      */
-    ModifyVideoInfoResponse modifyVideoInfo(ModifyVideoInfoRequest modifyVideoInfoRequest) throws Exception;
+    VodUpdateVideoInfoResponse updateVideoInfo(VodUpdateVideoInfoRequest updateVideoInfoRequest) throws Exception;
+
+
+    /**
+     * get video infos
+     *
+     * @param getVideoInfosRequest the get video infos request
+     * @return the get video info response
+     * @throws Exception the exception
+     */
+    VodGetVideoInfosResponse getVideoInfos(VodGetVideoInfosRequest getVideoInfosRequest) throws Exception;
+
+
+    /**
+     * get recommended poster response.
+     *
+     * @param getRecommendedPosterRequest the get video recommended poster request
+     * @return the get recommended poster response
+     * @throws Exception the exception
+     */
+    VodGetRecommendedPosterResponse getRecommendedPoster(VodGetRecommendedPosterRequest getRecommendedPosterRequest) throws Exception;
 }
