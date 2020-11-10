@@ -1,7 +1,6 @@
 package com.bytedanceapi.example.transcode;
 
-import com.bytedanceapi.model.common.UpdateVideoPublishStatusRequest;
-import com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse;
+import com.bytedanceapi.model.vod.request.VodUpdateVideoPublishStatusRequest;
 import com.bytedanceapi.service.vod.IVodService;
 import com.bytedanceapi.service.vod.impl.VodServiceImpl;
 
@@ -20,7 +19,7 @@ public class UpdateVideoPublishStatusDemo {
 
         try {
             // publish
-            UpdateVideoPublishStatusRequest.Builder publishReq = UpdateVideoPublishStatusRequest.newBuilder();
+            VodUpdateVideoPublishStatusRequest.Builder publishReq = VodUpdateVideoPublishStatusRequest.newBuilder();
             publishReq.setVid(vid);
             publishReq.setStatus(statusPublished);
             vodService.updateVideoPublishStatus(publishReq.build());
@@ -28,7 +27,7 @@ public class UpdateVideoPublishStatusDemo {
 
             Thread.sleep(20000);
 
-            UpdateVideoPublishStatusRequest.Builder unpublishReq = UpdateVideoPublishStatusRequest.newBuilder();
+            VodUpdateVideoPublishStatusRequest.Builder unpublishReq = VodUpdateVideoPublishStatusRequest.newBuilder();
             unpublishReq.setVid(vid);
             unpublishReq.setStatus(statusUnpublished);
             vodService.updateVideoPublishStatus(unpublishReq.build());

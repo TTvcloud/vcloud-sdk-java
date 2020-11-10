@@ -1,7 +1,7 @@
 package com.bytedanceapi.example.media;
 
-import com.bytedanceapi.model.common.UpdateVideoPublishStatusRequest;
-import com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse;
+import com.bytedanceapi.model.vod.request.VodUpdateVideoPublishStatusRequest;
+import com.bytedanceapi.model.vod.response.VodUpdateVideoPublishStatusResponse;
 import com.bytedanceapi.service.vod.IVodService;
 import com.bytedanceapi.service.vod.impl.VodServiceImpl;
 
@@ -19,23 +19,23 @@ public class UpdateVideoPublishStatusDemo {
 
         try {
             // publish
-//            UpdateVideoPublishStatusRequest.Builder publishReq = UpdateVideoPublishStatusRequest.newBuilder();
-//            publishReq.setVid(vid);
-//            publishReq.setStatus(statusPublished);
-//            UpdateVideoPublishStatusResponse resp = vodService.updateVideoPublishStatus(publishReq.build());
-//            if(resp.getResponseMetadata().hasError()){
-//                System.out.println("update video publish status error: " + resp.getResponseMetadata().getError().getMessage());
-//                return;
-//            }
-//            System.out.println(resp.toString());
-//            System.out.println("update video publish status to publish success");
-//
-//            Thread.sleep(2000);
+            VodUpdateVideoPublishStatusRequest.Builder publishReq = VodUpdateVideoPublishStatusRequest.newBuilder();
+            publishReq.setVid(vid);
+            publishReq.setStatus(statusPublished);
+            VodUpdateVideoPublishStatusResponse resp = vodService.updateVideoPublishStatus(publishReq.build());
+            if(resp.getResponseMetadata().hasError()){
+                System.out.println("update video publish status error: " + resp.getResponseMetadata().getError().getMessage());
+                return;
+            }
+            System.out.println(resp.toString());
+            System.out.println("update video publish status to publish success");
 
-            UpdateVideoPublishStatusRequest.Builder unpublishReq = UpdateVideoPublishStatusRequest.newBuilder();
+            Thread.sleep(500);
+
+            VodUpdateVideoPublishStatusRequest.Builder unpublishReq = VodUpdateVideoPublishStatusRequest.newBuilder();
             unpublishReq.setVid(vid);
             unpublishReq.setStatus(statusUnpublished);
-            UpdateVideoPublishStatusResponse resp1 = vodService.updateVideoPublishStatus(unpublishReq.build());
+            VodUpdateVideoPublishStatusResponse resp1 = vodService.updateVideoPublishStatus(unpublishReq.build());
             if(resp1.getResponseMetadata().hasError()){
                 System.out.println("update video publish status error: " + resp1.getResponseMetadata().getError().getMessage());
                 return;

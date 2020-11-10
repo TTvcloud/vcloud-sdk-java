@@ -1,7 +1,7 @@
 package com.bytedanceapi.example.media;
 
-import com.bytedanceapi.model.common.GetVideoInfosRequest;
-import com.bytedanceapi.model.common.GetVideoInfosResponse;
+import com.bytedanceapi.model.vod.request.VodGetVideoInfosRequest;
+import com.bytedanceapi.model.vod.response.VodGetVideoInfosResponse;
 import com.bytedanceapi.service.vod.IVodService;
 import com.bytedanceapi.service.vod.impl.VodServiceImpl;
 
@@ -17,11 +17,11 @@ public class GetVideoInfosDemo {
         // vodService.setAccessKey("your ak");
         // vodService.setSecretKey("your sk");
 
-        GetVideoInfosRequest.Builder req = GetVideoInfosRequest.newBuilder();
-        req.setVids("vid1,vid2");
+        VodGetVideoInfosRequest.Builder req = VodGetVideoInfosRequest.newBuilder();
+        req.setVids("vid1,vid2,vid3");
 
         try {
-            GetVideoInfosResponse resp = vodService.getVideoInfos(req.build());
+            VodGetVideoInfosResponse resp = vodService.getVideoInfos(req.build());
             if(resp.getResponseMetadata().hasError()){
                 System.out.println("get video infos error: " + resp.getResponseMetadata().getError().getMessage());
                 return;

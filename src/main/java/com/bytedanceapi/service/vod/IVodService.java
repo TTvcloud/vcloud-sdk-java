@@ -4,20 +4,16 @@ import com.bytedanceapi.model.beans.DomainInfo;
 import com.bytedanceapi.model.beans.Functions;
 import com.bytedanceapi.model.beans.ImgUrl;
 import com.bytedanceapi.model.beans.ImgUrlOption;
-import com.bytedanceapi.model.common.GetVideoInfosResponse;
-import com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest;
-import com.bytedanceapi.model.common.VodGetOriginalPlayInfoResponse;
-import com.bytedanceapi.model.common.VodGetPlayInfoRequest;
-import com.bytedanceapi.model.common.VodGetPlayInfoResponse;
-import com.bytedanceapi.model.common.UpdateVideoInfoRequest;
-import com.bytedanceapi.model.common.UpdateVideoInfoResponse;
-import com.bytedanceapi.model.common.GetVideoInfosRequest;
-import com.bytedanceapi.model.common.UpdateVideoPublishStatusRequest;
-import com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse;
-import com.bytedanceapi.model.common.GetRecommendedPostersRequest;
-import com.bytedanceapi.model.common.GetRecPostersResponse;
 import com.bytedanceapi.model.request.*;
 import com.bytedanceapi.model.response.*;
+import com.bytedanceapi.model.vod.request.VodGetRecommendedPosterRequest;
+import com.bytedanceapi.model.vod.request.VodGetVideoInfosRequest;
+import com.bytedanceapi.model.vod.request.VodUpdateVideoInfoRequest;
+import com.bytedanceapi.model.vod.request.VodUpdateVideoPublishStatusRequest;
+import com.bytedanceapi.model.vod.response.VodGetRecommendedPosterResponse;
+import com.bytedanceapi.model.vod.response.VodGetVideoInfosResponse;
+import com.bytedanceapi.model.vod.response.VodUpdateVideoInfoResponse;
+import com.bytedanceapi.model.vod.response.VodUpdateVideoPublishStatusResponse;
 import com.bytedanceapi.service.IBaseService;
 
 import java.util.List;
@@ -35,20 +31,20 @@ public interface IVodService extends IBaseService {
     /**
      * getPlayInfo.
      *
-     * @param input com.bytedanceapi.model.common.VodGetPlayInfoRequest
-     * @return com.bytedanceapi.model.common.VodGetPlayInfoResponse
+     * @param input com.bytedanceapi.model.vod.request.VodGetPlayInfoRequest
+     * @return com.bytedanceapi.model.vod.response.VodGetPlayInfoResponse
      * @throws Exception the exception
      */
-    com.bytedanceapi.model.common.VodGetPlayInfoResponse getPlayInfo(com.bytedanceapi.model.common.VodGetPlayInfoRequest input) throws Exception;
+    com.bytedanceapi.model.vod.response.VodGetPlayInfoResponse getPlayInfo(com.bytedanceapi.model.vod.request.VodGetPlayInfoRequest input) throws Exception;
 
     /**
      * getOriginalPlayInfo.
      *
-     * @param input com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest
-     * @return com.bytedanceapi.model.common.VodGetOriginalPlayInfoResponse
+     * @param input com.bytedanceapi.model.vod.request.VodGetOriginalPlayInfoRequest
+     * @return com.bytedanceapi.model.vod.response.VodGetOriginalPlayInfoResponse
      * @throws Exception the exception
      */
-    com.bytedanceapi.model.common.VodGetOriginalPlayInfoResponse getOriginalPlayInfo(com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest input) throws Exception;
+    com.bytedanceapi.model.vod.response.VodGetOriginalPlayInfoResponse getOriginalPlayInfo(com.bytedanceapi.model.vod.request.VodGetOriginalPlayInfoRequest input) throws Exception;
 
     /**
      * Gets play auth token.
@@ -79,15 +75,6 @@ public interface IVodService extends IBaseService {
      * @throws Exception the exception
      */
     StartWorkflowResponse startWorkflow(StartWorkflowRequest req) throws Exception;
-
-    /**
-     * Sets video publish status.
-     *
-     * @param req the updateVideoPublistStatus request
-     * @return the video publish status
-     * @throws Exception the exception
-     */
-    UpdateVideoPublishStatusResponse updateVideoPublishStatus(UpdateVideoPublishStatusRequest req) throws Exception;
 
     /**
      * Gets domain weights.
@@ -203,7 +190,16 @@ public interface IVodService extends IBaseService {
      * @return com.bytedanceapi.model.common.UpdateVideoInfoResponse
      * @throws Exception the exception
      */
-    UpdateVideoInfoResponse updateVideoInfo(UpdateVideoInfoRequest input) throws Exception;
+    VodUpdateVideoInfoResponse updateVideoInfo(VodUpdateVideoInfoRequest input) throws Exception;
+
+    /**
+     * Sets video publish status.
+     *
+     * @param req the updateVideoPublistStatus request
+     * @return the video publish status
+     * @throws Exception the exception
+     */
+    VodUpdateVideoPublishStatusResponse updateVideoPublishStatus(VodUpdateVideoPublishStatusRequest req) throws Exception;
 
     /**
      * Update video info modify video info response.
@@ -212,7 +208,7 @@ public interface IVodService extends IBaseService {
      * @return the video info list response
      * @throws Exception the exception
      */
-    GetVideoInfosResponse getVideoInfos(GetVideoInfosRequest req) throws Exception;
+    VodGetVideoInfosResponse getVideoInfos(VodGetVideoInfosRequest req) throws Exception;
 
     /**
      * Update video info modify video info response.
@@ -221,5 +217,5 @@ public interface IVodService extends IBaseService {
      * @return the video poster uri list response
      * @throws Exception the exception
      */
-    GetRecPostersResponse getRecommendedPosters(GetRecommendedPostersRequest req) throws Exception;
+    VodGetRecommendedPosterResponse getRecommendedPoster(VodGetRecommendedPosterRequest req) throws Exception;
 }

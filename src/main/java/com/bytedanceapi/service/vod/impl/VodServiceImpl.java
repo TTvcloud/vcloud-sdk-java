@@ -8,20 +8,13 @@ import com.bytedanceapi.helper.Const;
 import com.bytedanceapi.helper.Utils;
 import com.bytedanceapi.model.ServiceInfo;
 import com.bytedanceapi.model.beans.*;
-import com.bytedanceapi.model.common.*;
-import com.bytedanceapi.model.common.GetRecommendedPostersRequest;
-import com.bytedanceapi.model.common.GetRecPostersResponse;
-import com.bytedanceapi.model.common.GetVideoInfosRequest;
-import com.bytedanceapi.model.common.GetVideoInfosResponse;
-import com.bytedanceapi.model.common.UpdateVideoInfoRequest;
-import com.bytedanceapi.model.common.UpdateVideoInfoResponse;
-import com.bytedanceapi.model.common.UpdateVideoPublishStatusRequest;
-import com.bytedanceapi.model.common.UpdateVideoPublishStatusResponse;
 import com.bytedanceapi.model.request.*;
 import com.bytedanceapi.model.response.*;
 import com.bytedanceapi.model.sts2.Policy;
 import com.bytedanceapi.model.sts2.SecurityToken2;
 import com.bytedanceapi.model.sts2.Statement;
+import com.bytedanceapi.model.vod.request.VodUpdateVideoInfoRequest;
+import com.bytedanceapi.model.vod.response.VodUpdateVideoInfoResponse;
 import com.bytedanceapi.service.BaseServiceImpl;
 import com.bytedanceapi.service.vod.IVodService;
 import com.bytedanceapi.service.vod.VodConfig;
@@ -85,17 +78,17 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
     /**
      * getPlayInfo.
      *
-     * @param input com.bytedanceapi.model.common.VodGetPlayInfoRequest
-     * @return com.bytedanceapi.model.common.VodGetPlayInfoResponse
+     * @param input com.bytedanceapi.model.vod.request.VodGetPlayInfoRequest
+     * @return com.bytedanceapi.model.vod.response.VodGetPlayInfoResponse
      * @throws Exception the exception
      */
     @Override
-    public com.bytedanceapi.model.common.VodGetPlayInfoResponse getPlayInfo(com.bytedanceapi.model.common.VodGetPlayInfoRequest input) throws Exception {
+    public com.bytedanceapi.model.vod.response.VodGetPlayInfoResponse getPlayInfo(com.bytedanceapi.model.vod.request.VodGetPlayInfoRequest input) throws Exception {
         RawResponse response = query(Const.GetPlayInfo, Utils.mapToPairList(Utils.protoBufferToMap(input)));
         if (response.getCode() != SdkError.SUCCESS.getNumber()) {
             throw response.getException();
         }
-        com.bytedanceapi.model.common.VodGetPlayInfoResponse.Builder responseBuilder = com.bytedanceapi.model.common.VodGetPlayInfoResponse.newBuilder();
+        com.bytedanceapi.model.vod.response.VodGetPlayInfoResponse.Builder responseBuilder = com.bytedanceapi.model.vod.response.VodGetPlayInfoResponse.newBuilder();
         JsonFormat.parser().ignoringUnknownFields().merge(new InputStreamReader(new ByteArrayInputStream(response.getData())), responseBuilder);
         return responseBuilder.build();
     }
@@ -104,20 +97,21 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
     /**
      * getOriginalPlayInfo.
      *
-     * @param input com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest
-     * @return com.bytedanceapi.model.common.VodGetOriginalPlayInfoResponse
+     * @param input com.bytedanceapi.model.vod.request.VodGetOriginalPlayInfoRequest
+     * @return com.bytedanceapi.model.vod.response.VodGetOriginalPlayInfoResponse
      * @throws Exception the exception
      */
     @Override
-    public com.bytedanceapi.model.common.VodGetOriginalPlayInfoResponse getOriginalPlayInfo(com.bytedanceapi.model.common.VodGetOriginalPlayInfoRequest input) throws Exception {
+    public com.bytedanceapi.model.vod.response.VodGetOriginalPlayInfoResponse getOriginalPlayInfo(com.bytedanceapi.model.vod.request.VodGetOriginalPlayInfoRequest input) throws Exception {
         RawResponse response = query(Const.GetOriginalPlayInfo, Utils.mapToPairList(Utils.protoBufferToMap(input)));
         if (response.getCode() != SdkError.SUCCESS.getNumber()) {
             throw response.getException();
         }
-        com.bytedanceapi.model.common.VodGetOriginalPlayInfoResponse.Builder responseBuilder = com.bytedanceapi.model.common.VodGetOriginalPlayInfoResponse.newBuilder();
+        com.bytedanceapi.model.vod.response.VodGetOriginalPlayInfoResponse.Builder responseBuilder = com.bytedanceapi.model.vod.response.VodGetOriginalPlayInfoResponse.newBuilder();
         JsonFormat.parser().ignoringUnknownFields().merge(new InputStreamReader(new ByteArrayInputStream(response.getData())), responseBuilder);
         return responseBuilder.build();
     }
+
 
     @Override
     public String getPlayAuthToken(Map<String, String> params) throws Exception {
@@ -156,21 +150,6 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
         }
 
         return JSON.parseObject(resp.getData(), StartWorkflowResponse.class);
-    }
-
-    @Override
-    public UpdateVideoPublishStatusResponse updateVideoPublishStatus(UpdateVideoPublishStatusRequest req) throws Exception {
-        Map<String, String> params = new HashMap<>();
-        params.put(Const.Vid, req.getVid());
-        params.put(Const.Status, req.getStatus());
-        RawResponse response = query(Const.UpdateVideoPublishStatus, Utils.mapToPairList(params));
-        if (response.getCode() != SdkError.SUCCESS.getNumber()) {
-            throw response.getException();
-        }
-
-        UpdateVideoPublishStatusResponse.Builder responseBuilder = UpdateVideoPublishStatusResponse.newBuilder();
-        JsonFormat.parser().ignoringUnknownFields().merge(new InputStreamReader(new ByteArrayInputStream(response.getData())), responseBuilder);
-        return responseBuilder.build();
     }
 
     @Override
@@ -346,48 +325,46 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
         return uploadMediaByUrlResponse;
     }
 
-    /**
-     * updateVideoInfo.
-     *
-     * @param input com.bytedanceapi.model.common.UpdateVideoInfoRequest
-     * @return com.bytedanceapi.model.common.UpdateVideoInfoResponse
-     * @throws Exception the exception
-     */
     @Override
-    public UpdateVideoInfoResponse updateVideoInfo(UpdateVideoInfoRequest input) throws Exception {
-        RawResponse response = query(Const.UpdateVideoInfo, Utils.mapToPairList(Utils.protoBufferToMap(input.toBuilder())));
+    public com.bytedanceapi.model.vod.response.VodUpdateVideoInfoResponse updateVideoInfo(com.bytedanceapi.model.vod.request.VodUpdateVideoInfoRequest input) throws Exception {
+        RawResponse response = query(Const.UpdateVideoInfo, Utils.mapToPairList(Utils.protoBufferToMap(input)));
         if (response.getCode() != SdkError.SUCCESS.getNumber()) {
             throw response.getException();
         }
-        UpdateVideoInfoResponse.Builder responseBuilder = UpdateVideoInfoResponse.newBuilder();
+        com.bytedanceapi.model.vod.response.VodUpdateVideoInfoResponse.Builder responseBuilder = com.bytedanceapi.model.vod.response.VodUpdateVideoInfoResponse.newBuilder();
         JsonFormat.parser().ignoringUnknownFields().merge(new InputStreamReader(new ByteArrayInputStream(response.getData())), responseBuilder);
         return responseBuilder.build();
     }
 
     @Override
-    public GetVideoInfosResponse getVideoInfos(GetVideoInfosRequest req) throws Exception {
-        Map<String, String> params = new HashMap<>();
-        params.put(Const.Vids, req.getVids());
-        RawResponse response = query(Const.GetVideoInfos, Utils.mapToPairList(params));
+    public com.bytedanceapi.model.vod.response.VodUpdateVideoPublishStatusResponse updateVideoPublishStatus(com.bytedanceapi.model.vod.request.VodUpdateVideoPublishStatusRequest input) throws Exception {
+        RawResponse response = query(Const.UpdateVideoPublishStatus, Utils.mapToPairList(Utils.protoBufferToMap(input)));
         if (response.getCode() != SdkError.SUCCESS.getNumber()) {
             throw response.getException();
         }
-
-        GetVideoInfosResponse.Builder responseBuilder = GetVideoInfosResponse.newBuilder();
+        com.bytedanceapi.model.vod.response.VodUpdateVideoPublishStatusResponse.Builder responseBuilder = com.bytedanceapi.model.vod.response.VodUpdateVideoPublishStatusResponse.newBuilder();
         JsonFormat.parser().ignoringUnknownFields().merge(new InputStreamReader(new ByteArrayInputStream(response.getData())), responseBuilder);
         return responseBuilder.build();
     }
 
     @Override
-    public GetRecPostersResponse getRecommendedPosters(GetRecommendedPostersRequest req) throws Exception {
-        Map<String, String> params = new HashMap<>();
-        params.put(Const.Vids, req.getVids());
-        RawResponse response = query(Const.GetRecommendedPoster, Utils.mapToPairList(params));
+    public com.bytedanceapi.model.vod.response.VodGetVideoInfosResponse getVideoInfos(com.bytedanceapi.model.vod.request.VodGetVideoInfosRequest input) throws Exception {
+        RawResponse response = query(Const.GetVideoInfos, Utils.mapToPairList(Utils.protoBufferToMap(input)));
         if (response.getCode() != SdkError.SUCCESS.getNumber()) {
             throw response.getException();
         }
+        com.bytedanceapi.model.vod.response.VodGetVideoInfosResponse.Builder responseBuilder = com.bytedanceapi.model.vod.response.VodGetVideoInfosResponse.newBuilder();
+        JsonFormat.parser().ignoringUnknownFields().merge(new InputStreamReader(new ByteArrayInputStream(response.getData())), responseBuilder);
+        return responseBuilder.build();
+    }
 
-        GetRecPostersResponse.Builder responseBuilder = GetRecPostersResponse.newBuilder();
+    @Override
+    public com.bytedanceapi.model.vod.response.VodGetRecommendedPosterResponse getRecommendedPoster(com.bytedanceapi.model.vod.request.VodGetRecommendedPosterRequest input) throws Exception {
+        RawResponse response = query(Const.GetRecommendedPoster, Utils.mapToPairList(Utils.protoBufferToMap(input)));
+        if (response.getCode() != SdkError.SUCCESS.getNumber()) {
+            throw response.getException();
+        }
+        com.bytedanceapi.model.vod.response.VodGetRecommendedPosterResponse.Builder responseBuilder = com.bytedanceapi.model.vod.response.VodGetRecommendedPosterResponse.newBuilder();
         JsonFormat.parser().ignoringUnknownFields().merge(new InputStreamReader(new ByteArrayInputStream(response.getData())), responseBuilder);
         return responseBuilder.build();
     }
@@ -469,11 +446,11 @@ public class VodServiceImpl extends BaseServiceImpl implements IVodService {
         UploadCompleteInfo uploadCompleteInfo = upload(spaceName, filePath, fileType);
         String oid = uploadCompleteInfo.getOid();
 
-        UpdateVideoInfoRequest.Builder req = UpdateVideoInfoRequest.newBuilder();
+        VodUpdateVideoInfoRequest.Builder req = VodUpdateVideoInfoRequest.newBuilder();
         req.setVid(vid);
         req.setPosterUri(StringValue.of(oid));
 
-        UpdateVideoInfoResponse resp = updateVideoInfo(req.build());
+        VodUpdateVideoInfoResponse resp = updateVideoInfo(req.build());
         if(resp.getResponseMetadata().hasError()) {
             throw new Exception("update poster error" + resp.getResponseMetadata().getError().getMessage());
         }
