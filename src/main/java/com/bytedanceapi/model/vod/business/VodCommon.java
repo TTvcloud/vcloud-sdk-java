@@ -20,6 +20,21 @@ public final class VodCommon {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Vcloud_Models_Vod_VodSourceInfo_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Vcloud_Models_Vod_VodAudioStreamMeta_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Vcloud_Models_Vod_VodAudioStreamMeta_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Vcloud_Models_Vod_VodVideoStreamMeta_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Vcloud_Models_Vod_VodVideoStreamMeta_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Vcloud_Models_Vod_VodTranscodeInfo_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Vcloud_Models_Vod_VodTranscodeInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Vcloud_Models_Vod_VodAdaptiveInfo_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -45,25 +60,39 @@ public final class VodCommon {
       "\003\022\016\n\006Format\030\007 \001(\t\022\020\n\010Duration\030\010 \001(\002\022\014\n\004S" +
       "ize\030\t \001(\003\022\020\n\010StoreUri\030\n \001(\t\022\022\n\nDefinitio" +
       "n\030\013 \001(\t\022\017\n\007Bitrate\030\014 \001(\003\022\013\n\003Fps\030\r \001(\002\022\022\n" +
-      "\nCreateTime\030\016 \001(\t\"S\n\017VodAdaptiveInfo\022\023\n\013" +
-      "MainPlayUrl\030\001 \001(\t\022\025\n\rBackupPlayUrl\030\002 \001(\t" +
-      "\022\024\n\014AdaptiveType\030\003 \001(\t\"\320\003\n\013VodPlayInfo\022\016" +
-      "\n\006FileId\030\001 \001(\t\022\013\n\003Md5\030\002 \001(\t\022\020\n\010FileType\030" +
-      "\003 \001(\t\022\016\n\006Format\030\004 \001(\t\022\r\n\005Codec\030\005 \001(\t\022\022\n\n" +
-      "Definition\030\006 \001(\t\022\023\n\013MainPlayUrl\030\007 \001(\t\022\025\n" +
-      "\rBackupPlayUrl\030\010 \001(\t\022\017\n\007Bitrate\030\t \001(\002\022\r\n" +
-      "\005Width\030\n \001(\003\022\016\n\006Height\030\013 \001(\003\022\014\n\004Size\030\014 \001" +
-      "(\003\022\021\n\tCheckInfo\030\r \001(\t\022\022\n\nIndexRange\030\016 \001(" +
-      "\t\022\021\n\tInitRange\030\017 \001(\t\022\023\n\013PreloadSize\030\020 \001(" +
-      "\003\022\026\n\016PreloadMinStep\030\021 \001(\003\022\026\n\016PreloadMaxS" +
-      "tep\030\022 \001(\003\022\027\n\017PreloadInterval\030\023 \001(\003\022\024\n\014P2" +
-      "pVerifyUrl\030\024 \001(\t\022\020\n\010PlayAuth\030\025 \001(\t\022\022\n\nPl" +
-      "ayAuthId\030\026 \001(\t\022\020\n\010LogoType\030\027 \001(\t\022\017\n\007Qual" +
-      "ity\030\030 \001(\tB\257\001\n#com.bytedanceapi.model.vod" +
-      ".businessB\tVodCommonP\001Z9github.com/TTvcl" +
-      "oud/vcloud-sdk-golang/models/vod/busines" +
-      "s\240\001\001\330\001\001\302\002\000\312\002\032Vcloud\\Models\\Vod\\Business\342" +
-      "\002\031Vcloud\\Models\\GPBMetadatab\006proto3"
+      "\nCreateTime\030\016 \001(\t\"Z\n\022VodAudioStreamMeta\022" +
+      "\r\n\005Codec\030\001 \001(\t\022\020\n\010Duration\030\002 \001(\002\022\022\n\nSamp" +
+      "leRate\030\003 \001(\003\022\017\n\007Bitrate\030\004 \001(\003\"\206\001\n\022VodVid" +
+      "eoStreamMeta\022\r\n\005Codec\030\001 \001(\t\022\016\n\006Height\030\002 " +
+      "\001(\003\022\r\n\005Width\030\003 \001(\003\022\020\n\010Duration\030\004 \001(\002\022\022\n\n" +
+      "Definition\030\005 \001(\t\022\017\n\007Bitrate\030\006 \001(\003\022\013\n\003Fps" +
+      "\030\007 \001(\002\"\272\002\n\020VodTranscodeInfo\022\016\n\006FileId\030\001 " +
+      "\001(\t\022\013\n\003Md5\030\002 \001(\t\022\020\n\010FileType\030\003 \001(\t\022\020\n\010Lo" +
+      "goType\030\004 \001(\t\022\017\n\007Encrypt\030\005 \001(\010\022\016\n\006Format\030" +
+      "\006 \001(\t\022\020\n\010Duration\030\007 \001(\002\022\014\n\004Size\030\010 \001(\003\022\020\n" +
+      "\010StoreUri\030\t \001(\t\022>\n\017VideoStreamMeta\030\n \001(\013" +
+      "2%.Vcloud.Models.Vod.VodVideoStreamMeta\022" +
+      ">\n\017AudioStreamMeta\030\013 \001(\0132%.Vcloud.Models" +
+      ".Vod.VodAudioStreamMeta\022\022\n\nCreateTime\030\014 " +
+      "\001(\t\"S\n\017VodAdaptiveInfo\022\023\n\013MainPlayUrl\030\001 " +
+      "\001(\t\022\025\n\rBackupPlayUrl\030\002 \001(\t\022\024\n\014AdaptiveTy" +
+      "pe\030\003 \001(\t\"\320\003\n\013VodPlayInfo\022\016\n\006FileId\030\001 \001(\t" +
+      "\022\013\n\003Md5\030\002 \001(\t\022\020\n\010FileType\030\003 \001(\t\022\016\n\006Forma" +
+      "t\030\004 \001(\t\022\r\n\005Codec\030\005 \001(\t\022\022\n\nDefinition\030\006 \001" +
+      "(\t\022\023\n\013MainPlayUrl\030\007 \001(\t\022\025\n\rBackupPlayUrl" +
+      "\030\010 \001(\t\022\017\n\007Bitrate\030\t \001(\002\022\r\n\005Width\030\n \001(\003\022\016" +
+      "\n\006Height\030\013 \001(\003\022\014\n\004Size\030\014 \001(\003\022\021\n\tCheckInf" +
+      "o\030\r \001(\t\022\022\n\nIndexRange\030\016 \001(\t\022\021\n\tInitRange" +
+      "\030\017 \001(\t\022\023\n\013PreloadSize\030\020 \001(\003\022\026\n\016PreloadMi" +
+      "nStep\030\021 \001(\003\022\026\n\016PreloadMaxStep\030\022 \001(\003\022\027\n\017P" +
+      "reloadInterval\030\023 \001(\003\022\024\n\014P2pVerifyUrl\030\024 \001" +
+      "(\t\022\020\n\010PlayAuth\030\025 \001(\t\022\022\n\nPlayAuthId\030\026 \001(\t" +
+      "\022\020\n\010LogoType\030\027 \001(\t\022\017\n\007Quality\030\030 \001(\tB\257\001\n#" +
+      "com.bytedanceapi.model.vod.businessB\tVod" +
+      "CommonP\001Z9github.com/volcengine/volc-sdk" +
+      "-golang/models/vod/business\240\001\001\330\001\001\302\002\000\312\002\032V" +
+      "cloud\\Models\\Vod\\Business\342\002\031Vcloud\\Model" +
+      "s\\GPBMetadatab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -75,14 +104,32 @@ public final class VodCommon {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_VodSourceInfo_descriptor,
         new java.lang.String[] { "FileId", "Md5", "FileType", "Codec", "Height", "Width", "Format", "Duration", "Size", "StoreUri", "Definition", "Bitrate", "Fps", "CreateTime", });
-    internal_static_Vcloud_Models_Vod_VodAdaptiveInfo_descriptor =
+    internal_static_Vcloud_Models_Vod_VodAudioStreamMeta_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_Vcloud_Models_Vod_VodAudioStreamMeta_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Vcloud_Models_Vod_VodAudioStreamMeta_descriptor,
+        new java.lang.String[] { "Codec", "Duration", "SampleRate", "Bitrate", });
+    internal_static_Vcloud_Models_Vod_VodVideoStreamMeta_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_Vcloud_Models_Vod_VodVideoStreamMeta_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Vcloud_Models_Vod_VodVideoStreamMeta_descriptor,
+        new java.lang.String[] { "Codec", "Height", "Width", "Duration", "Definition", "Bitrate", "Fps", });
+    internal_static_Vcloud_Models_Vod_VodTranscodeInfo_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_Vcloud_Models_Vod_VodTranscodeInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Vcloud_Models_Vod_VodTranscodeInfo_descriptor,
+        new java.lang.String[] { "FileId", "Md5", "FileType", "LogoType", "Encrypt", "Format", "Duration", "Size", "StoreUri", "VideoStreamMeta", "AudioStreamMeta", "CreateTime", });
+    internal_static_Vcloud_Models_Vod_VodAdaptiveInfo_descriptor =
+      getDescriptor().getMessageTypes().get(4);
     internal_static_Vcloud_Models_Vod_VodAdaptiveInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_VodAdaptiveInfo_descriptor,
         new java.lang.String[] { "MainPlayUrl", "BackupPlayUrl", "AdaptiveType", });
     internal_static_Vcloud_Models_Vod_VodPlayInfo_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_Vcloud_Models_Vod_VodPlayInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_VodPlayInfo_descriptor,

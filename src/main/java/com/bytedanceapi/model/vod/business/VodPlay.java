@@ -48,8 +48,8 @@ public final class VodPlay {
       "dec\030\007 \001(\t\022\017\n\007Bitrate\030\010 \001(\002\022\013\n\003Md5\030\t \001(\t\022" +
       "\023\n\013MainPlayUrl\030\n \001(\t\022\025\n\rBackupPlayUrl\030\013 " +
       "\001(\tB\255\001\n#com.bytedanceapi.model.vod.busin" +
-      "essB\007VodPlayP\001Z9github.com/TTvcloud/vclo" +
-      "ud-sdk-golang/models/vod/business\240\001\001\330\001\001\302" +
+      "essB\007VodPlayP\001Z9github.com/volcengine/vo" +
+      "lc-sdk-golang/models/vod/business\240\001\001\330\001\001\302" +
       "\002\000\312\002\032Vcloud\\Models\\Vod\\Business\342\002\031Vcloud" +
       "\\Models\\GPBMetadatab\006proto3"
     };

@@ -95,8 +95,8 @@ public final class VodUpload {
       "ceName\030\006 \001(\t\022\021\n\tAccountId\030\007 \001(\t\0224\n\nSourc" +
       "eInfo\030\010 \001(\0132 .Vcloud.Models.Vod.VodSourc" +
       "eInfoB\257\001\n#com.bytedanceapi.model.vod.bus" +
-      "inessB\tVodUploadP\001Z9github.com/TTvcloud/" +
-      "vcloud-sdk-golang/models/vod/business\240\001\001" +
+      "inessB\tVodUploadP\001Z9github.com/volcengin" +
+      "e/volc-sdk-golang/models/vod/business\240\001\001" +
       "\330\001\001\302\002\000\312\002\032Vcloud\\Models\\Vod\\Business\342\002\031Vc" +
       "loud\\Models\\GPBMetadatab\006proto3"
     };

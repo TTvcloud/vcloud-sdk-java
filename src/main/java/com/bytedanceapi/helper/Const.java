@@ -53,11 +53,13 @@ public class Const {
     public static final String UploadMediaByUrl = "UploadMediaByUrl";
     public static final String ApplyUpload = "ApplyUpload";
     public static final String CommitUpload = "CommitUpload";
-    public static final String SetVideoPublishStatus = "SetVideoPublishStatus";
     public static final String GetCdnDomainWeights = "GetCdnDomainWeights";
     public static final String RedirectPlay = "RedirectPlay";
     public static final String GetOriginalPlayInfo = "GetOriginalPlayInfo";
-    public static final String ModifyVideoInfo = "ModifyVideoInfo";
+    public static final String UpdateVideoPublishStatus = "UpdateVideoPublishStatus";
+    public static final String UpdateVideoInfo = "UpdateVideoInfo";
+    public static final String GetVideoInfos = "GetVideoInfos";
+    public static final String GetRecommendedPoster = "GetRecommendedPoster";
 
     // iam
     public static final String CreateUser = "CreateUser";

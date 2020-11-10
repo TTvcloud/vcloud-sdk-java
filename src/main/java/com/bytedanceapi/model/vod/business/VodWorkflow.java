@@ -99,7 +99,7 @@ public final class VodWorkflow {
       "\n\nTemplateId\030\001 \003(\t\022\022\n\nOffsetTime\030\002 \001(\005\022\026" +
       "\n\016OffsetTimeList\030\003 \003(\005B\256\001\n#com.bytedance" +
       "api.model.vod.businessB\013VodWorkflowP\001Z9g" +
-      "ithub.com/TTvcloud/vcloud-sdk-golang/mod" +
+      "ithub.com/volcengine/volc-sdk-golang/mod" +
       "els/vod/business\240\001\001\330\001\001\312\002\032Vcloud\\Models\\V" +
       "od\\Business\342\002\031Vcloud\\Models\\GPBMetadatab" +
       "\006proto3"
