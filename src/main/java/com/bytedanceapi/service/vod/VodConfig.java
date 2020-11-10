@@ -122,48 +122,50 @@ public class VodConfig {
                         }
                     }
             ));
-            put(Const.ApplyUpload, new ApiInfo(
+            put(Const.ApplyUploadInfo, new ApiInfo(
                     new HashMap<String, Object>() {
                         {
                             put(Const.Method, "GET");
                             put(Const.Path, "/");
                             put(Const.Query, new ArrayList<NameValuePair>() {
                                 {
-                                    add(new BasicNameValuePair("Action", Const.ApplyUpload));
-                                    add(new BasicNameValuePair("Version", "2018-01-01"));
+                                    add(new BasicNameValuePair("Action", Const.ApplyUploadInfo));
+                                    add(new BasicNameValuePair("Version", "2020-08-01"));
                                 }
                             });
                         }
                     }
             ));
-            put(Const.CommitUpload, new ApiInfo(
+            put(Const.CommitUploadInfo, new ApiInfo(
                     new HashMap<String, Object>() {
                         {
                             put(Const.Method, "POST");
                             put(Const.Path, "/");
                             put(Const.Query, new ArrayList<NameValuePair>() {
                                 {
-                                    add(new BasicNameValuePair("Action", Const.CommitUpload));
-                                    add(new BasicNameValuePair("Version", "2018-01-01"));
+                                    add(new BasicNameValuePair("Action", Const.CommitUploadInfo));
+                                    add(new BasicNameValuePair("Version", "2020-08-01"));
                                 }
                             });
                         }
                     }
             ));
-            put(Const.GetCdnDomainWeights, new ApiInfo(
+            put(Const.QueryUploadTaskInfo, new ApiInfo(
                     new HashMap<String, Object>() {
                         {
                             put(Const.Method, "GET");
                             put(Const.Path, "/");
                             put(Const.Query, new ArrayList<NameValuePair>() {
                                 {
-                                    add(new BasicNameValuePair("Action", Const.GetCdnDomainWeights));
-                                    add(new BasicNameValuePair("Version", "2019-07-01"));
+                                    add(new BasicNameValuePair("Action", Const.QueryUploadTaskInfo));
+                                    add(new BasicNameValuePair("Version", "2020-08-01"));
                                 }
                             });
                         }
                     }
             ));
+
+
             put(Const.GetOriginalPlayInfo, new ApiInfo(
                     new HashMap<String, Object>() {
                         {
@@ -178,20 +180,7 @@ public class VodConfig {
                         }
                     }
             ));
-            put(Const.RedirectPlay, new ApiInfo(
-                    new HashMap<String, Object>() {
-                        {
-                            put(Const.Method, "GET");
-                            put(Const.Path, "/");
-                            put(Const.Query, new ArrayList<NameValuePair>() {
-                                {
-                                    add(new BasicNameValuePair("Action", Const.RedirectPlay));
-                                    add(new BasicNameValuePair("Version", "2020-08-01"));
-                                }
-                            });
-                        }
-                    }
-            ));
+
             put(Const.UpdateVideoPublishStatus, new ApiInfo(
                     new HashMap<String, Object>() {
                         {
@@ -243,20 +232,6 @@ public class VodConfig {
                                 {
                                     add(new BasicNameValuePair("Action", Const.GetRecommendedPoster));
                                     add(new BasicNameValuePair("Version", "2020-08-01"));
-                                }
-                            });
-                        }
-                    }
-            ));
-            put(Const.GetSpace, new ApiInfo(
-                    new HashMap<String, Object>() {
-                        {
-                            put(Const.Method, "GET");
-                            put(Const.Path, "/");
-                            put(Const.Query, new ArrayList<NameValuePair>() {
-                                {
-                                    add(new BasicNameValuePair("Action", Const.GetSpace));
-                                    add(new BasicNameValuePair("Version", "2018-12-01"));
                                 }
                             });
                         }

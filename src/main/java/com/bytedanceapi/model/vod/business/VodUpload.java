@@ -15,50 +15,80 @@ public final class VodUpload {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Vcloud_Models_Vod_AbstractVodUrlUploadRequest_descriptor;
+    internal_static_Vcloud_Models_Vod_VodUrlUploadURLSet_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Vcloud_Models_Vod_AbstractVodUrlUploadRequest_fieldAccessorTable;
+      internal_static_Vcloud_Models_Vod_VodUrlUploadURLSet_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Vcloud_Models_Vod_AbstractURLSet_descriptor;
+    internal_static_Vcloud_Models_Vod_VodUrlResponseData_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Vcloud_Models_Vod_AbstractURLSet_fieldAccessorTable;
+      internal_static_Vcloud_Models_Vod_VodUrlResponseData_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Vcloud_Models_Vod_ValuePair_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Vcloud_Models_Vod_ValuePair_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Vcloud_Models_Vod_QueryData_descriptor;
+    internal_static_Vcloud_Models_Vod_VodQueryData_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Vcloud_Models_Vod_QueryData_fieldAccessorTable;
+      internal_static_Vcloud_Models_Vod_VodQueryData_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Vcloud_Models_Vod_QueryUploadResult_descriptor;
+    internal_static_Vcloud_Models_Vod_VodQueryUploadResult_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Vcloud_Models_Vod_QueryUploadResult_fieldAccessorTable;
+      internal_static_Vcloud_Models_Vod_VodQueryUploadResult_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Vcloud_Models_Vod_CommitData_descriptor;
+    internal_static_Vcloud_Models_Vod_VodCommitData_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Vcloud_Models_Vod_CommitData_fieldAccessorTable;
+      internal_static_Vcloud_Models_Vod_VodCommitData_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Vcloud_Models_Vod_CommitUploadInfoResponse_descriptor;
+    internal_static_Vcloud_Models_Vod_VodCommitUploadInfoResponseData_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Vcloud_Models_Vod_CommitUploadInfoResponse_fieldAccessorTable;
+      internal_static_Vcloud_Models_Vod_VodCommitUploadInfoResponseData_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Vcloud_Models_Vod_Encryption_descriptor;
+    internal_static_Vcloud_Models_Vod_VodURLSet_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Vcloud_Models_Vod_Encryption_fieldAccessorTable;
+      internal_static_Vcloud_Models_Vod_VodURLSet_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Vcloud_Models_Vod_URLSet_descriptor;
+    internal_static_Vcloud_Models_Vod_VodApplyUploadInfoResult_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Vcloud_Models_Vod_URLSet_fieldAccessorTable;
+      internal_static_Vcloud_Models_Vod_VodApplyUploadInfoResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Vcloud_Models_Vod_VodApplyUploadInfoData_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Vcloud_Models_Vod_VodApplyUploadInfoData_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Vcloud_Models_Vod_VodUploadAddress_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Vcloud_Models_Vod_VodUploadAddress_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Vcloud_Models_Vod_VodStoreInfo_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Vcloud_Models_Vod_VodStoreInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Vcloud_Models_Vod_VodHeaderPair_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Vcloud_Models_Vod_VodHeaderPair_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Vcloud_Models_Vod_VodCommitUploadInfoResult_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Vcloud_Models_Vod_VodCommitUploadInfoResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Vcloud_Models_Vod_VodCommitUploadInfoData_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Vcloud_Models_Vod_VodCommitUploadInfoData_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -70,95 +100,145 @@ public final class VodUpload {
     java.lang.String[] descriptorData = {
       "\n\035vod/business/vod_upload.proto\022\021Vcloud." +
       "Models.Vod\032\035vod/business/vod_common.prot" +
-      "o\"0\n\033AbstractVodUrlUploadRequest\022\021\n\tSpac" +
-      "eName\030\001 \001(\t\"\236\001\n\016AbstractURLSet\022\021\n\tSource" +
-      "Url\030\001 \001(\t\022\024\n\014CallbackArgs\030\002 \001(\t\022\013\n\003Md5\030\003" +
-      " \001(\t\022\022\n\nTemplateId\030\004 \001(\t\022\r\n\005Title\030\005 \001(\t\022" +
-      "\023\n\013Description\030\006 \001(\t\022\014\n\004Tags\030\007 \001(\t\022\020\n\010Ca" +
-      "tegory\030\010 \001(\t\"-\n\tValuePair\022\r\n\005JobId\030\001 \001(\t" +
-      "\022\021\n\tSourceUrl\030\002 \001(\t\"?\n\tQueryData\0222\n\004Data" +
-      "\030\001 \001(\0132$.Vcloud.Models.Vod.QueryUploadRe" +
-      "sult\"]\n\021QueryUploadResult\0220\n\rVideoInfoLi" +
-      "st\030\001 \003(\0132\031.Vcloud.Models.Vod.URLSet\022\026\n\016N" +
-      "otExistJobIds\030\002 \003(\t\"G\n\nCommitData\0229\n\004Dat" +
-      "a\030\001 \001(\0132+.Vcloud.Models.Vod.CommitUpload" +
-      "InfoResponse\"\271\001\n\030CommitUploadInfoRespons" +
-      "e\022\013\n\003Vid\030\001 \001(\t\0224\n\nSourceInfo\030\002 \001(\0132 .Vcl" +
-      "oud.Models.Vod.VodSourceInfo\022\021\n\tPosterUr" +
-      "i\030\003 \001(\t\022\024\n\014CallbackArgs\030\004 \001(\t\0221\n\nEncrypt" +
-      "ion\030\005 \001(\0132\035.Vcloud.Models.Vod.Encryption" +
-      "\"c\n\nEncryption\022\013\n\003Uri\030\001 \001(\t\022\021\n\tSecretKey" +
-      "\030\002 \001(\t\022\021\n\tAlgorithm\030\003 \001(\t\022\017\n\007Version\030\004 \001" +
-      "(\t\022\021\n\tSourceMD5\030\005 \001(\t\"\265\001\n\006URLSet\022\021\n\tRequ" +
-      "estId\030\001 \001(\t\022\r\n\005JobId\030\002 \001(\t\022\021\n\tSourceUrl\030" +
-      "\003 \001(\t\022\r\n\005State\030\004 \001(\t\022\013\n\003Vid\030\005 \001(\t\022\021\n\tSpa" +
-      "ceName\030\006 \001(\t\022\021\n\tAccountId\030\007 \001(\t\0224\n\nSourc" +
-      "eInfo\030\010 \001(\0132 .Vcloud.Models.Vod.VodSourc" +
-      "eInfoB\257\001\n#com.bytedanceapi.model.vod.bus" +
-      "inessB\tVodUploadP\001Z9github.com/volcengin" +
-      "e/volc-sdk-golang/models/vod/business\240\001\001" +
-      "\330\001\001\302\002\000\312\002\032Vcloud\\Models\\Vod\\Business\342\002\031Vc" +
-      "loud\\Models\\GPBMetadatab\006proto3"
+      "o\"\242\001\n\022VodUrlUploadURLSet\022\021\n\tSourceUrl\030\001 " +
+      "\001(\t\022\024\n\014CallbackArgs\030\002 \001(\t\022\013\n\003Md5\030\003 \001(\t\022\022" +
+      "\n\nTemplateId\030\004 \001(\t\022\r\n\005Title\030\005 \001(\t\022\023\n\013Des" +
+      "cription\030\006 \001(\t\022\014\n\004Tags\030\007 \001(\t\022\020\n\010Category" +
+      "\030\010 \001(\t\"@\n\022VodUrlResponseData\022*\n\004Data\030\001 \003" +
+      "(\0132\034.Vcloud.Models.Vod.ValuePair\"-\n\tValu" +
+      "ePair\022\r\n\005JobId\030\001 \001(\t\022\021\n\tSourceUrl\030\002 \001(\t\"" +
+      "E\n\014VodQueryData\0225\n\004Data\030\001 \001(\0132\'.Vcloud.M" +
+      "odels.Vod.VodQueryUploadResult\"c\n\024VodQue" +
+      "ryUploadResult\0223\n\rVideoInfoList\030\001 \003(\0132\034." +
+      "Vcloud.Models.Vod.VodURLSet\022\026\n\016NotExistJ" +
+      "obIds\030\002 \003(\t\"Q\n\rVodCommitData\022@\n\004Data\030\001 \001" +
+      "(\01322.Vcloud.Models.Vod.VodCommitUploadIn" +
+      "foResponseData\"\215\001\n\037VodCommitUploadInfoRe" +
+      "sponseData\022\013\n\003Vid\030\001 \001(\t\0224\n\nSourceInfo\030\002 " +
+      "\001(\0132 .Vcloud.Models.Vod.VodSourceInfo\022\021\n" +
+      "\tPosterUri\030\003 \001(\t\022\024\n\014CallbackArgs\030\004 \001(\t\"\270" +
+      "\001\n\tVodURLSet\022\021\n\tRequestId\030\001 \001(\t\022\r\n\005JobId" +
+      "\030\002 \001(\t\022\021\n\tSourceUrl\030\003 \001(\t\022\r\n\005State\030\004 \001(\t" +
+      "\022\013\n\003Vid\030\005 \001(\t\022\021\n\tSpaceName\030\006 \001(\t\022\021\n\tAcco" +
+      "untId\030\007 \001(\t\0224\n\nSourceInfo\030\010 \001(\0132 .Vcloud" +
+      ".Models.Vod.VodSourceInfo\"S\n\030VodApplyUpl" +
+      "oadInfoResult\0227\n\004Data\030\001 \001(\0132).Vcloud.Mod" +
+      "els.Vod.VodApplyUploadInfoData\"T\n\026VodApp" +
+      "lyUploadInfoData\022:\n\rUploadAddress\030\001 \001(\0132" +
+      "#.Vcloud.Models.Vod.VodUploadAddress\"\250\001\n" +
+      "\020VodUploadAddress\0223\n\nStoreInfos\030\001 \003(\0132\037." +
+      "Vcloud.Models.Vod.VodStoreInfo\022\023\n\013Upload" +
+      "Hosts\030\002 \003(\t\0226\n\014UploadHeader\030\003 \003(\0132 .Vclo" +
+      "ud.Models.Vod.VodHeaderPair\022\022\n\nSessionKe" +
+      "y\030\004 \001(\t\".\n\014VodStoreInfo\022\020\n\010StoreUri\030\001 \001(" +
+      "\t\022\014\n\004Auth\030\002 \001(\t\"+\n\rVodHeaderPair\022\013\n\003Key\030" +
+      "\001 \001(\t\022\r\n\005Value\030\002 \001(\t\"U\n\031VodCommitUploadI" +
+      "nfoResult\0228\n\004Data\030\001 \001(\0132*.Vcloud.Models." +
+      "Vod.VodCommitUploadInfoData\"o\n\027VodCommit" +
+      "UploadInfoData\022\013\n\003Vid\030\001 \001(\t\022\021\n\tPosterUri" +
+      "\030\002 \001(\t\0224\n\nSourceInfo\030\003 \001(\0132 .Vcloud.Mode" +
+      "ls.Vod.VodSourceInfoB\257\001\n#com.bytedanceap" +
+      "i.model.vod.businessB\tVodUploadP\001Z9githu" +
+      "b.com/volcengine/volc-sdk-golang/models/" +
+      "vod/business\240\001\001\330\001\001\302\002\000\312\002\032Vcloud\\Models\\Vo" +
+      "d\\Business\342\002\031Vcloud\\Models\\GPBMetadatab\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.bytedanceapi.model.vod.business.VodCommon.getDescriptor(),
         });
-    internal_static_Vcloud_Models_Vod_AbstractVodUrlUploadRequest_descriptor =
+    internal_static_Vcloud_Models_Vod_VodUrlUploadURLSet_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_Vcloud_Models_Vod_AbstractVodUrlUploadRequest_fieldAccessorTable = new
+    internal_static_Vcloud_Models_Vod_VodUrlUploadURLSet_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Vcloud_Models_Vod_AbstractVodUrlUploadRequest_descriptor,
-        new java.lang.String[] { "SpaceName", });
-    internal_static_Vcloud_Models_Vod_AbstractURLSet_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_Vcloud_Models_Vod_AbstractURLSet_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Vcloud_Models_Vod_AbstractURLSet_descriptor,
+        internal_static_Vcloud_Models_Vod_VodUrlUploadURLSet_descriptor,
         new java.lang.String[] { "SourceUrl", "CallbackArgs", "Md5", "TemplateId", "Title", "Description", "Tags", "Category", });
+    internal_static_Vcloud_Models_Vod_VodUrlResponseData_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_Vcloud_Models_Vod_VodUrlResponseData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Vcloud_Models_Vod_VodUrlResponseData_descriptor,
+        new java.lang.String[] { "Data", });
     internal_static_Vcloud_Models_Vod_ValuePair_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_Vcloud_Models_Vod_ValuePair_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_ValuePair_descriptor,
         new java.lang.String[] { "JobId", "SourceUrl", });
-    internal_static_Vcloud_Models_Vod_QueryData_descriptor =
+    internal_static_Vcloud_Models_Vod_VodQueryData_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_Vcloud_Models_Vod_QueryData_fieldAccessorTable = new
+    internal_static_Vcloud_Models_Vod_VodQueryData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Vcloud_Models_Vod_QueryData_descriptor,
+        internal_static_Vcloud_Models_Vod_VodQueryData_descriptor,
         new java.lang.String[] { "Data", });
-    internal_static_Vcloud_Models_Vod_QueryUploadResult_descriptor =
+    internal_static_Vcloud_Models_Vod_VodQueryUploadResult_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_Vcloud_Models_Vod_QueryUploadResult_fieldAccessorTable = new
+    internal_static_Vcloud_Models_Vod_VodQueryUploadResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Vcloud_Models_Vod_QueryUploadResult_descriptor,
+        internal_static_Vcloud_Models_Vod_VodQueryUploadResult_descriptor,
         new java.lang.String[] { "VideoInfoList", "NotExistJobIds", });
-    internal_static_Vcloud_Models_Vod_CommitData_descriptor =
+    internal_static_Vcloud_Models_Vod_VodCommitData_descriptor =
       getDescriptor().getMessageTypes().get(5);
-    internal_static_Vcloud_Models_Vod_CommitData_fieldAccessorTable = new
+    internal_static_Vcloud_Models_Vod_VodCommitData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Vcloud_Models_Vod_CommitData_descriptor,
+        internal_static_Vcloud_Models_Vod_VodCommitData_descriptor,
         new java.lang.String[] { "Data", });
-    internal_static_Vcloud_Models_Vod_CommitUploadInfoResponse_descriptor =
+    internal_static_Vcloud_Models_Vod_VodCommitUploadInfoResponseData_descriptor =
       getDescriptor().getMessageTypes().get(6);
-    internal_static_Vcloud_Models_Vod_CommitUploadInfoResponse_fieldAccessorTable = new
+    internal_static_Vcloud_Models_Vod_VodCommitUploadInfoResponseData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Vcloud_Models_Vod_CommitUploadInfoResponse_descriptor,
-        new java.lang.String[] { "Vid", "SourceInfo", "PosterUri", "CallbackArgs", "Encryption", });
-    internal_static_Vcloud_Models_Vod_Encryption_descriptor =
+        internal_static_Vcloud_Models_Vod_VodCommitUploadInfoResponseData_descriptor,
+        new java.lang.String[] { "Vid", "SourceInfo", "PosterUri", "CallbackArgs", });
+    internal_static_Vcloud_Models_Vod_VodURLSet_descriptor =
       getDescriptor().getMessageTypes().get(7);
-    internal_static_Vcloud_Models_Vod_Encryption_fieldAccessorTable = new
+    internal_static_Vcloud_Models_Vod_VodURLSet_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Vcloud_Models_Vod_Encryption_descriptor,
-        new java.lang.String[] { "Uri", "SecretKey", "Algorithm", "Version", "SourceMD5", });
-    internal_static_Vcloud_Models_Vod_URLSet_descriptor =
-      getDescriptor().getMessageTypes().get(8);
-    internal_static_Vcloud_Models_Vod_URLSet_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Vcloud_Models_Vod_URLSet_descriptor,
+        internal_static_Vcloud_Models_Vod_VodURLSet_descriptor,
         new java.lang.String[] { "RequestId", "JobId", "SourceUrl", "State", "Vid", "SpaceName", "AccountId", "SourceInfo", });
+    internal_static_Vcloud_Models_Vod_VodApplyUploadInfoResult_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_Vcloud_Models_Vod_VodApplyUploadInfoResult_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Vcloud_Models_Vod_VodApplyUploadInfoResult_descriptor,
+        new java.lang.String[] { "Data", });
+    internal_static_Vcloud_Models_Vod_VodApplyUploadInfoData_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_Vcloud_Models_Vod_VodApplyUploadInfoData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Vcloud_Models_Vod_VodApplyUploadInfoData_descriptor,
+        new java.lang.String[] { "UploadAddress", });
+    internal_static_Vcloud_Models_Vod_VodUploadAddress_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_Vcloud_Models_Vod_VodUploadAddress_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Vcloud_Models_Vod_VodUploadAddress_descriptor,
+        new java.lang.String[] { "StoreInfos", "UploadHosts", "UploadHeader", "SessionKey", });
+    internal_static_Vcloud_Models_Vod_VodStoreInfo_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_Vcloud_Models_Vod_VodStoreInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Vcloud_Models_Vod_VodStoreInfo_descriptor,
+        new java.lang.String[] { "StoreUri", "Auth", });
+    internal_static_Vcloud_Models_Vod_VodHeaderPair_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_Vcloud_Models_Vod_VodHeaderPair_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Vcloud_Models_Vod_VodHeaderPair_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_Vcloud_Models_Vod_VodCommitUploadInfoResult_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_Vcloud_Models_Vod_VodCommitUploadInfoResult_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Vcloud_Models_Vod_VodCommitUploadInfoResult_descriptor,
+        new java.lang.String[] { "Data", });
+    internal_static_Vcloud_Models_Vod_VodCommitUploadInfoData_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_Vcloud_Models_Vod_VodCommitUploadInfoData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Vcloud_Models_Vod_VodCommitUploadInfoData_descriptor,
+        new java.lang.String[] { "Vid", "PosterUri", "SourceInfo", });
     com.bytedanceapi.model.vod.business.VodCommon.getDescriptor();
   }
 

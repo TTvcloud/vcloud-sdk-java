@@ -16,11 +16,11 @@ public interface VodStartWorkflowResponseOrBuilder extends
    * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
    * @return The responseMetadata.
    */
-  com.bytedanceapi.model.common.ResponseMetadata getResponseMetadata();
+  com.bytedanceapi.model.base.ResponseMetadata getResponseMetadata();
   /**
    * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
    */
-  com.bytedanceapi.model.common.ResponseMetadataOrBuilder getResponseMetadataOrBuilder();
+  com.bytedanceapi.model.base.ResponseMetadataOrBuilder getResponseMetadataOrBuilder();
 
   /**
    * <code>.Vcloud.Models.Vod.VodStartWorkflowResult Result = 2;</code>

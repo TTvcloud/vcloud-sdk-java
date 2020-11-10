@@ -29,7 +29,7 @@ public interface ValuePairOrBuilder extends
 
   /**
    * <pre>
-   *上传的Url
+   * 上传的Url
    * </pre>
    *
    * <code>string SourceUrl = 2;</code>
@@ -38,7 +38,7 @@ public interface ValuePairOrBuilder extends
   java.lang.String getSourceUrl();
   /**
    * <pre>
-   *上传的Url
+   * 上传的Url
    * </pre>
    *
    * <code>string SourceUrl = 2;</code>

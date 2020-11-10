@@ -49,11 +49,11 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            com.bytedanceapi.model.common.ResponseMetadata.Builder subBuilder = null;
+            com.bytedanceapi.model.base.ResponseMetadata.Builder subBuilder = null;
             if (responseMetadata_ != null) {
               subBuilder = responseMetadata_.toBuilder();
             }
-            responseMetadata_ = input.readMessage(com.bytedanceapi.model.common.ResponseMetadata.parser(), extensionRegistry);
+            responseMetadata_ = input.readMessage(com.bytedanceapi.model.base.ResponseMetadata.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(responseMetadata_);
               responseMetadata_ = subBuilder.buildPartial();
@@ -107,7 +107,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int RESPONSEMETADATA_FIELD_NUMBER = 1;
-  private com.bytedanceapi.model.common.ResponseMetadata responseMetadata_;
+  private com.bytedanceapi.model.base.ResponseMetadata responseMetadata_;
   /**
    * <pre>
    * 响应通用信息
@@ -129,8 +129,8 @@ private static final long serialVersionUID = 0L;
    * @return The responseMetadata.
    */
   @java.lang.Override
-  public com.bytedanceapi.model.common.ResponseMetadata getResponseMetadata() {
-    return responseMetadata_ == null ? com.bytedanceapi.model.common.ResponseMetadata.getDefaultInstance() : responseMetadata_;
+  public com.bytedanceapi.model.base.ResponseMetadata getResponseMetadata() {
+    return responseMetadata_ == null ? com.bytedanceapi.model.base.ResponseMetadata.getDefaultInstance() : responseMetadata_;
   }
   /**
    * <pre>
@@ -140,7 +140,7 @@ private static final long serialVersionUID = 0L;
    * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
    */
   @java.lang.Override
-  public com.bytedanceapi.model.common.ResponseMetadataOrBuilder getResponseMetadataOrBuilder() {
+  public com.bytedanceapi.model.base.ResponseMetadataOrBuilder getResponseMetadataOrBuilder() {
     return getResponseMetadata();
   }
 
@@ -527,9 +527,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.bytedanceapi.model.common.ResponseMetadata responseMetadata_;
+    private com.bytedanceapi.model.base.ResponseMetadata responseMetadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.bytedanceapi.model.common.ResponseMetadata, com.bytedanceapi.model.common.ResponseMetadata.Builder, com.bytedanceapi.model.common.ResponseMetadataOrBuilder> responseMetadataBuilder_;
+        com.bytedanceapi.model.base.ResponseMetadata, com.bytedanceapi.model.base.ResponseMetadata.Builder, com.bytedanceapi.model.base.ResponseMetadataOrBuilder> responseMetadataBuilder_;
     /**
      * <pre>
      * 响应通用信息
@@ -549,9 +549,9 @@ private static final long serialVersionUID = 0L;
      * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      * @return The responseMetadata.
      */
-    public com.bytedanceapi.model.common.ResponseMetadata getResponseMetadata() {
+    public com.bytedanceapi.model.base.ResponseMetadata getResponseMetadata() {
       if (responseMetadataBuilder_ == null) {
-        return responseMetadata_ == null ? com.bytedanceapi.model.common.ResponseMetadata.getDefaultInstance() : responseMetadata_;
+        return responseMetadata_ == null ? com.bytedanceapi.model.base.ResponseMetadata.getDefaultInstance() : responseMetadata_;
       } else {
         return responseMetadataBuilder_.getMessage();
       }
@@ -563,7 +563,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
-    public Builder setResponseMetadata(com.bytedanceapi.model.common.ResponseMetadata value) {
+    public Builder setResponseMetadata(com.bytedanceapi.model.base.ResponseMetadata value) {
       if (responseMetadataBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -584,7 +584,7 @@ private static final long serialVersionUID = 0L;
      * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
     public Builder setResponseMetadata(
-        com.bytedanceapi.model.common.ResponseMetadata.Builder builderForValue) {
+        com.bytedanceapi.model.base.ResponseMetadata.Builder builderForValue) {
       if (responseMetadataBuilder_ == null) {
         responseMetadata_ = builderForValue.build();
         onChanged();
@@ -601,11 +601,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
-    public Builder mergeResponseMetadata(com.bytedanceapi.model.common.ResponseMetadata value) {
+    public Builder mergeResponseMetadata(com.bytedanceapi.model.base.ResponseMetadata value) {
       if (responseMetadataBuilder_ == null) {
         if (responseMetadata_ != null) {
           responseMetadata_ =
-            com.bytedanceapi.model.common.ResponseMetadata.newBuilder(responseMetadata_).mergeFrom(value).buildPartial();
+            com.bytedanceapi.model.base.ResponseMetadata.newBuilder(responseMetadata_).mergeFrom(value).buildPartial();
         } else {
           responseMetadata_ = value;
         }
@@ -641,7 +641,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
-    public com.bytedanceapi.model.common.ResponseMetadata.Builder getResponseMetadataBuilder() {
+    public com.bytedanceapi.model.base.ResponseMetadata.Builder getResponseMetadataBuilder() {
       
       onChanged();
       return getResponseMetadataFieldBuilder().getBuilder();
@@ -653,12 +653,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
-    public com.bytedanceapi.model.common.ResponseMetadataOrBuilder getResponseMetadataOrBuilder() {
+    public com.bytedanceapi.model.base.ResponseMetadataOrBuilder getResponseMetadataOrBuilder() {
       if (responseMetadataBuilder_ != null) {
         return responseMetadataBuilder_.getMessageOrBuilder();
       } else {
         return responseMetadata_ == null ?
-            com.bytedanceapi.model.common.ResponseMetadata.getDefaultInstance() : responseMetadata_;
+            com.bytedanceapi.model.base.ResponseMetadata.getDefaultInstance() : responseMetadata_;
       }
     }
     /**
@@ -669,11 +669,11 @@ private static final long serialVersionUID = 0L;
      * <code>.Vcloud.Models.Base.ResponseMetadata ResponseMetadata = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.bytedanceapi.model.common.ResponseMetadata, com.bytedanceapi.model.common.ResponseMetadata.Builder, com.bytedanceapi.model.common.ResponseMetadataOrBuilder> 
+        com.bytedanceapi.model.base.ResponseMetadata, com.bytedanceapi.model.base.ResponseMetadata.Builder, com.bytedanceapi.model.base.ResponseMetadataOrBuilder> 
         getResponseMetadataFieldBuilder() {
       if (responseMetadataBuilder_ == null) {
         responseMetadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.bytedanceapi.model.common.ResponseMetadata, com.bytedanceapi.model.common.ResponseMetadata.Builder, com.bytedanceapi.model.common.ResponseMetadataOrBuilder>(
+            com.bytedanceapi.model.base.ResponseMetadata, com.bytedanceapi.model.base.ResponseMetadata.Builder, com.bytedanceapi.model.base.ResponseMetadataOrBuilder>(
                 getResponseMetadata(),
                 getParentForChildren(),
                 isClean());
