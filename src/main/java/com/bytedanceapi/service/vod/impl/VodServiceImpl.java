@@ -199,7 +199,7 @@ public class VodServiceImpl extends com.bytedanceapi.service.BaseServiceImpl imp
      */
 	@Override
 	public com.bytedanceapi.model.vod.response.VodUrlUploadResponse uploadMediaByUrl(com.bytedanceapi.model.vod.request.VodUrlUploadRequest input) throws Exception {
-		com.bytedanceapi.model.response.RawResponse response = query(com.bytedanceapi.helper.Const.UploadMediaByUrl, com.bytedanceapi.helper.Utils.mapToPairList(com.bytedanceapi.helper.Utils.protoBufferToMap(input)));
+        com.bytedanceapi.model.response.RawResponse response = query(com.bytedanceapi.helper.Const.UploadMediaByUrl, com.bytedanceapi.helper.Utils.mapToPairList(com.bytedanceapi.helper.Utils.protoBufferToMap(input)));
         if (response.getCode() != com.bytedanceapi.error.SdkError.SUCCESS.getNumber()) {
             throw response.getException();
         }
