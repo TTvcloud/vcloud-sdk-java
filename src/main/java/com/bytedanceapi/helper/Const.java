@@ -47,14 +47,12 @@ public class Const {
 
     public static final String SpaceName = "SpaceName";
     // vod
-    public static final String GetSpace = "GetSpace";
     public static final String GetPlayInfo = "GetPlayInfo";
     public static final String StartWorkflow = "StartWorkflow";
     public static final String UploadMediaByUrl = "UploadMediaByUrl";
-    public static final String ApplyUpload = "ApplyUpload";
-    public static final String CommitUpload = "CommitUpload";
-    public static final String GetCdnDomainWeights = "GetCdnDomainWeights";
-    public static final String RedirectPlay = "RedirectPlay";
+    public static final String ApplyUploadInfo = "ApplyUploadInfo";
+    public static final String CommitUploadInfo = "CommitUploadInfo";
+    public static final String QueryUploadTaskInfo = "QueryUploadTaskInfo";
     public static final String GetOriginalPlayInfo = "GetOriginalPlayInfo";
     public static final String UpdateVideoPublishStatus = "UpdateVideoPublishStatus";
     public static final String UpdateVideoInfo = "UpdateVideoInfo";

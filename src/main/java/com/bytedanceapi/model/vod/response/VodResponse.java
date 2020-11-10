@@ -25,15 +25,30 @@ public final class VodResponse {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Vcloud_Models_Vod_UploadVideoResponse_descriptor;
+    internal_static_Vcloud_Models_Vod_VodUploadVideoResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Vcloud_Models_Vod_UploadVideoResponse_fieldAccessorTable;
+      internal_static_Vcloud_Models_Vod_VodUploadVideoResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Vcloud_Models_Vod_QueryUploadTaskInfoResponse_descriptor;
+    internal_static_Vcloud_Models_Vod_VodQueryUploadTaskInfoResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Vcloud_Models_Vod_QueryUploadTaskInfoResponse_fieldAccessorTable;
+      internal_static_Vcloud_Models_Vod_VodQueryUploadTaskInfoResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Vcloud_Models_Vod_VodUrlUploadResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Vcloud_Models_Vod_VodUrlUploadResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Vcloud_Models_Vod_VodApplyUploadInfoResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Vcloud_Models_Vod_VodApplyUploadInfoResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Vcloud_Models_Vod_VodCommitUploadInfoResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Vcloud_Models_Vod_VodCommitUploadInfoResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Vcloud_Models_Vod_VodGetVideoInfosResponse_descriptor;
   static final 
@@ -80,40 +95,52 @@ public final class VodResponse {
       "layInfoResponse\022>\n\020ResponseMetadata\030\001 \001(" +
       "\0132$.Vcloud.Models.Base.ResponseMetadata\022" +
       "?\n\006Result\030\002 \001(\0132/.Vcloud.Models.Vod.VodG" +
-      "etOriginalPlayInfoResult\"\204\001\n\023UploadVideo" +
+      "etOriginalPlayInfoResult\"\212\001\n\026VodUploadVi" +
+      "deoResponse\022>\n\020ResponseMetadata\030\001 \001(\0132$." +
+      "Vcloud.Models.Base.ResponseMetadata\0220\n\006R" +
+      "esult\030\002 \001(\0132 .Vcloud.Models.Vod.VodCommi" +
+      "tData\"\221\001\n\036VodQueryUploadTaskInfoResponse" +
+      "\022>\n\020ResponseMetadata\030\001 \001(\0132$.Vcloud.Mode" +
+      "ls.Base.ResponseMetadata\022/\n\006Result\030\002 \001(\013" +
+      "2\037.Vcloud.Models.Vod.VodQueryData\"\215\001\n\024Vo" +
+      "dUrlUploadResponse\022>\n\020ResponseMetadata\030\001" +
+      " \001(\0132$.Vcloud.Models.Base.ResponseMetada" +
+      "ta\0225\n\006Result\030\002 \001(\0132%.Vcloud.Models.Vod.V" +
+      "odUrlResponseData\"\231\001\n\032VodApplyUploadInfo" +
       "Response\022>\n\020ResponseMetadata\030\001 \001(\0132$.Vcl" +
-      "oud.Models.Base.ResponseMetadata\022-\n\006Resu" +
-      "lt\030\002 \001(\0132\035.Vcloud.Models.Vod.CommitData\"" +
-      "\213\001\n\033QueryUploadTaskInfoResponse\022>\n\020Respo" +
+      "oud.Models.Base.ResponseMetadata\022;\n\006Resu" +
+      "lt\030\002 \001(\0132+.Vcloud.Models.Vod.VodApplyUpl" +
+      "oadInfoResult\"\233\001\n\033VodCommitUploadInfoRes" +
+      "ponse\022>\n\020ResponseMetadata\030\001 \001(\0132$.Vcloud" +
+      ".Models.Base.ResponseMetadata\022<\n\006Result\030" +
+      "\002 \001(\0132,.Vcloud.Models.Vod.VodCommitUploa" +
+      "dInfoResult\"\223\001\n\030VodGetVideoInfosResponse" +
+      "\022>\n\020ResponseMetadata\030\001 \001(\0132$.Vcloud.Mode" +
+      "ls.Base.ResponseMetadata\0227\n\006Result\030\002 \001(\013" +
+      "2\'.Vcloud.Models.Vod.VodGetVideoInfosDat" +
+      "a\"\\\n\032VodUpdateVideoInfoResponse\022>\n\020Respo" +
       "nseMetadata\030\001 \001(\0132$.Vcloud.Models.Base.R" +
-      "esponseMetadata\022,\n\006Result\030\002 \001(\0132\034.Vcloud" +
-      ".Models.Vod.QueryData\"\223\001\n\030VodGetVideoInf" +
-      "osResponse\022>\n\020ResponseMetadata\030\001 \001(\0132$.V" +
-      "cloud.Models.Base.ResponseMetadata\0227\n\006Re" +
-      "sult\030\002 \001(\0132\'.Vcloud.Models.Vod.VodGetVid" +
-      "eoInfosData\"\\\n\032VodUpdateVideoInfoRespons" +
-      "e\022>\n\020ResponseMetadata\030\001 \001(\0132$.Vcloud.Mod" +
-      "els.Base.ResponseMetadata\"\231\001\n\037VodGetReco" +
-      "mmendedPosterResponse\022>\n\020ResponseMetadat" +
-      "a\030\001 \001(\0132$.Vcloud.Models.Base.ResponseMet" +
-      "adata\0226\n\006Result\030\002 \001(\0132&.Vcloud.Models.Vo" +
-      "d.VodGetRecPosterData\"e\n#VodUpdateVideoP" +
-      "ublishStatusResponse\022>\n\020ResponseMetadata" +
-      "\030\001 \001(\0132$.Vcloud.Models.Base.ResponseMeta" +
-      "data\"\225\001\n\030VodStartWorkflowResponse\022>\n\020Res" +
-      "ponseMetadata\030\001 \001(\0132$.Vcloud.Models.Base" +
-      ".ResponseMetadata\0229\n\006Result\030\002 \001(\0132).Vclo" +
-      "ud.Models.Vod.VodStartWorkflowResultB\256\001\n" +
-      "#com.bytedanceapi.model.vod.responseB\013Vo" +
-      "dResponseP\001Z9github.com/volcengine/volc-" +
-      "sdk-golang/models/vod/response\240\001\001\330\001\001\312\002\032V" +
-      "cloud\\Models\\Vod\\Response\342\002\031Vcloud\\Model" +
-      "s\\GPBMetadatab\006proto3"
+      "esponseMetadata\"\231\001\n\037VodGetRecommendedPos" +
+      "terResponse\022>\n\020ResponseMetadata\030\001 \001(\0132$." +
+      "Vcloud.Models.Base.ResponseMetadata\0226\n\006R" +
+      "esult\030\002 \001(\0132&.Vcloud.Models.Vod.VodGetRe" +
+      "cPosterData\"e\n#VodUpdateVideoPublishStat" +
+      "usResponse\022>\n\020ResponseMetadata\030\001 \001(\0132$.V" +
+      "cloud.Models.Base.ResponseMetadata\"\225\001\n\030V" +
+      "odStartWorkflowResponse\022>\n\020ResponseMetad" +
+      "ata\030\001 \001(\0132$.Vcloud.Models.Base.ResponseM" +
+      "etadata\0229\n\006Result\030\002 \001(\0132).Vcloud.Models." +
+      "Vod.VodStartWorkflowResultB\256\001\n#com.byted" +
+      "anceapi.model.vod.responseB\013VodResponseP" +
+      "\001Z9github.com/volcengine/volc-sdk-golang" +
+      "/models/vod/response\240\001\001\330\001\001\312\002\032Vcloud\\Mode" +
+      "ls\\Vod\\Response\342\002\031Vcloud\\Models\\GPBMetad" +
+      "atab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.bytedanceapi.model.common.Base.getDescriptor(),
+          com.bytedanceapi.model.base.Base.getDescriptor(),
           com.bytedanceapi.model.vod.business.VodPlay.getDescriptor(),
           com.bytedanceapi.model.vod.business.VodMedia.getDescriptor(),
           com.bytedanceapi.model.vod.business.VodUpload.getDescriptor(),
@@ -131,49 +158,67 @@ public final class VodResponse {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_VodGetOriginalPlayInfoResponse_descriptor,
         new java.lang.String[] { "ResponseMetadata", "Result", });
-    internal_static_Vcloud_Models_Vod_UploadVideoResponse_descriptor =
+    internal_static_Vcloud_Models_Vod_VodUploadVideoResponse_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_Vcloud_Models_Vod_UploadVideoResponse_fieldAccessorTable = new
+    internal_static_Vcloud_Models_Vod_VodUploadVideoResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Vcloud_Models_Vod_UploadVideoResponse_descriptor,
+        internal_static_Vcloud_Models_Vod_VodUploadVideoResponse_descriptor,
         new java.lang.String[] { "ResponseMetadata", "Result", });
-    internal_static_Vcloud_Models_Vod_QueryUploadTaskInfoResponse_descriptor =
+    internal_static_Vcloud_Models_Vod_VodQueryUploadTaskInfoResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_Vcloud_Models_Vod_QueryUploadTaskInfoResponse_fieldAccessorTable = new
+    internal_static_Vcloud_Models_Vod_VodQueryUploadTaskInfoResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Vcloud_Models_Vod_QueryUploadTaskInfoResponse_descriptor,
+        internal_static_Vcloud_Models_Vod_VodQueryUploadTaskInfoResponse_descriptor,
+        new java.lang.String[] { "ResponseMetadata", "Result", });
+    internal_static_Vcloud_Models_Vod_VodUrlUploadResponse_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_Vcloud_Models_Vod_VodUrlUploadResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Vcloud_Models_Vod_VodUrlUploadResponse_descriptor,
+        new java.lang.String[] { "ResponseMetadata", "Result", });
+    internal_static_Vcloud_Models_Vod_VodApplyUploadInfoResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_Vcloud_Models_Vod_VodApplyUploadInfoResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Vcloud_Models_Vod_VodApplyUploadInfoResponse_descriptor,
+        new java.lang.String[] { "ResponseMetadata", "Result", });
+    internal_static_Vcloud_Models_Vod_VodCommitUploadInfoResponse_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_Vcloud_Models_Vod_VodCommitUploadInfoResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Vcloud_Models_Vod_VodCommitUploadInfoResponse_descriptor,
         new java.lang.String[] { "ResponseMetadata", "Result", });
     internal_static_Vcloud_Models_Vod_VodGetVideoInfosResponse_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_Vcloud_Models_Vod_VodGetVideoInfosResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_VodGetVideoInfosResponse_descriptor,
         new java.lang.String[] { "ResponseMetadata", "Result", });
     internal_static_Vcloud_Models_Vod_VodUpdateVideoInfoResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_Vcloud_Models_Vod_VodUpdateVideoInfoResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_VodUpdateVideoInfoResponse_descriptor,
         new java.lang.String[] { "ResponseMetadata", });
     internal_static_Vcloud_Models_Vod_VodGetRecommendedPosterResponse_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_Vcloud_Models_Vod_VodGetRecommendedPosterResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_VodGetRecommendedPosterResponse_descriptor,
         new java.lang.String[] { "ResponseMetadata", "Result", });
     internal_static_Vcloud_Models_Vod_VodUpdateVideoPublishStatusResponse_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_Vcloud_Models_Vod_VodUpdateVideoPublishStatusResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_VodUpdateVideoPublishStatusResponse_descriptor,
         new java.lang.String[] { "ResponseMetadata", });
     internal_static_Vcloud_Models_Vod_VodStartWorkflowResponse_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_Vcloud_Models_Vod_VodStartWorkflowResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Vcloud_Models_Vod_VodStartWorkflowResponse_descriptor,
         new java.lang.String[] { "ResponseMetadata", "Result", });
-    com.bytedanceapi.model.common.Base.getDescriptor();
+    com.bytedanceapi.model.base.Base.getDescriptor();
     com.bytedanceapi.model.vod.business.VodPlay.getDescriptor();
     com.bytedanceapi.model.vod.business.VodMedia.getDescriptor();
     com.bytedanceapi.model.vod.business.VodUpload.getDescriptor();
