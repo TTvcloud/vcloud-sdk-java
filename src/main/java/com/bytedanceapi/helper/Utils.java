@@ -3,6 +3,7 @@ package com.bytedanceapi.helper;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.MessageOrBuilder;
 import com.google.protobuf.util.JsonFormat;
@@ -164,20 +165,23 @@ public class Utils {
 
     // 对于List类型entry，逗号连接生成string value
     public static Map<String, String> protoBufferToMap(MessageOrBuilder obj) throws InvalidProtocolBufferException {
-        Map<String, Object> map = JSONObject.toJavaObject(JSONObject.parseObject(JsonFormat.printer().includingDefaultValueFields().print(obj)), Map.class);
+        Map map = JSONObject.toJavaObject(JSONObject.parseObject(JsonFormat.printer().includingDefaultValueFields().print(obj)), Map.class);
         Map<String, String> params = new HashMap<>();
-        for (Map.Entry<String, Object> entry : map.entrySet()) {
-            if (entry.getValue().getClass() == Integer.class) {
-                params.put(entry.getKey(), ((Integer) entry.getValue()).toString());
-            } else if (entry.getValue().getClass() == String.class) {
-                params.put(entry.getKey(), (String) entry.getValue());
-            } else if (entry.getValue().getClass() == JSONArray.class) {
-                List<String> list = (List<String>) entry.getValue();
-                try {
-                    params.put(entry.getKey(), URLEncoder.encode(String.join(",", list), "UTF-8"));
-                } catch (UnsupportedEncodingException e) {
-                    params.put(entry.getKey(), "");
-                }
+        for (Object entry : map.entrySet()) {
+            if (map.get(entry).getClass() == Integer.class) {
+                params.put(entry.toString(), ((Integer) map.get(entry)).toString());
+            } else if (map.get(entry).getClass() == String.class) {
+                params.put(entry.toString(), (String) map.get(entry));
+            } else if (map.get(entry).getClass() == Boolean.class) {
+                params.put(entry.toString(), ((Boolean) map.get(entry)).toString());
+            } else if (map.get(entry).getClass() == Float.class) {
+                params.put(entry.toString(), ((Float) map.get(entry)).toString());
+            } else if (map.get(entry).getClass() == Double.class) {
+                params.put(entry.toString(), ((Double) map.get(entry)).toString());
+            } else if (map.get(entry).getClass() == Byte.class) {
+                params.put(entry.toString(), ((Byte) map.get(entry)).toString());
+            } else {
+                params.put(entry.toString(), JSONObject.toJSONString(map.get(entry)));
             }
         }
         return params;
