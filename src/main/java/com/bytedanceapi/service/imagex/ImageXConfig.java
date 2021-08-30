@@ -138,7 +138,7 @@ public class ImageXConfig {
                                     add(new BasicHeader("Accept", "application/json"));
                                 }
                             });
-                            put(Const.Credentials, new Credentials(Const.INNER_REGION_AP_SINGAPORT_1, "ImageX"));
+                            put(Const.Credentials, new Credentials(Const.INNER_REGION_US_EASE_2, "ImageX"));
                         }
                     }
             ));
