@@ -13,7 +13,7 @@ public class Const {
     public static final String INNER_REGION_CN_NORTH_1 = "cn-north-1-inner";
     public static final String INNER_REGION_AP_SINGAPORT_1 = "ap-singapore-1-inner";
     public static final String INNER_REGION_US_EAST_1 = "us-east-1-inner";
-    public static final String INNER_REGION_US_EASE_2 = "us-east-2-inner";
+    public static final String INNER_REGION_US_EAST_2 = "us-east-2-inner";
 
     public static final String TIME_FORMAT_V4 = "yyyyMMdd'T'HHmmss'Z'";
 
