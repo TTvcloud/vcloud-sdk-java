@@ -66,6 +66,22 @@ public class ImageXConfig {
                         }
                     }
             ));
+            put(Const.REGION_US_EAST_2, new ServiceInfo(
+                    new HashMap<String, Object>(){
+                        {
+                            put(Const.CONNECTION_TIMEOUT, 5000);
+                            put(Const.SOCKET_TIMEOUT, 5000);
+                            put(Const.Scheme, "https");
+                            put(Const.Host, "imagex-us-east-2.bytevcloudapi.com");
+                            put(Const.Header, new ArrayList<Header>() {
+                                {
+                                    add(new BasicHeader("Accept", "application/json"));
+                                }
+                            });
+                            put(Const.Credentials, new Credentials(Const.REGION_US_EAST_2, "ImageX"));
+                        }
+                    }
+            ));
             put(Const.INNER_REGION_CN_NORTH_1, new ServiceInfo(
                     new HashMap<String, Object>() {
                         {
@@ -108,6 +124,21 @@ public class ImageXConfig {
                                 }
                             });
                             put(Const.Credentials, new Credentials(Const.INNER_REGION_AP_SINGAPORT_1, "ImageX"));
+                        }
+                    }
+            ));
+            put(Const.INNER_REGION_US_EAST_2, new ServiceInfo(
+                    new HashMap<String, Object>() {
+                        {
+                            put(Const.CONNECTION_TIMEOUT, 5000);
+                            put(Const.SOCKET_TIMEOUT, 5000);
+                            put(Const.Host, "imagex-us-east-2.byted.org");
+                            put(Const.Header, new ArrayList<Header>() {
+                                {
+                                    add(new BasicHeader("Accept", "application/json"));
+                                }
+                            });
+                            put(Const.Credentials, new Credentials(Const.INNER_REGION_US_EAST_2, "ImageX"));
                         }
                     }
             ));
