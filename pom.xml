@@ -42,7 +42,7 @@
         <jre.version>1.8</jre.version>
         <skipTests>true</skipTests>
         <dep.maven-surefire-plugin.version>2.9</dep.maven-surefire-plugin.version>
-        <httpcomponents.version>4.5.2</httpcomponents.version>
+        <httpcomponents.version>4.5.13</httpcomponents.version>
         <fastjson.version>1.2.78</fastjson.version>
         <lombok.version>1.16.22</lombok.version>
         <commons-lang3.version>3.10</commons-lang3.version>
